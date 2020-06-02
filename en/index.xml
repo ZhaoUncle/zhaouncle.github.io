@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>易波叶平</title>
-        <link>https://example.com/en/</link>
+        <link>https://zhaouncle.github.io/en/</link>
         <description>About LoveIt Theme</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor> 17817186860@163.com (易波叶平)</managingEditor>
             <webMaster> 17817186860@163.com (易波叶平)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-            <atom:link href="https://example.com/en/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://zhaouncle.github.io/en/index.xml" rel="self" type="application/rss+xml" />
         </channel>
 </rss>
