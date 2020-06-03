@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>python - 分类 - 易波叶平</title>
+        <link>https://zhaouncle.github.io/categories/python/</link>
+        <description>python - 分类 - 易波叶平</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (易波叶平)</managingEditor>
+            <webMaster> 17817186860@163.com (易波叶平)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 Jun 2020 15:15:26 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python</title>
+    <link>https://zhaouncle.github.io/python/</link>
+    <pubDate>Wed, 03 Jun 2020 15:15:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://zhaouncle.github.io/python/</guid>
+    <description><![CDATA[<h1 id="re">re</h1>
+<p>python
+django</p>
+<p>requests</p>]]></description>
+</item></channel>
+</rss>
