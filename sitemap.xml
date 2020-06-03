@@ -1,16 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://zhaouncle.github.io/en/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://zhaouncle.github.io/zh-cn/sitemap.xml</loc>
-		
-	   	<lastmod>2020-06-02T20:23:58+08:00</lastmod>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>https://zhaouncle.github.io/books/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/categories/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/posts/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/categories/%E4%B8%8D%E5%B0%BD%E5%A6%82%E4%B9%A6/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/%E6%96%87%E5%AD%A6/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/%E9%98%85%E8%AF%BB/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/categories/%E9%98%85%E8%AF%BB/</loc><lastmod>2020-06-02T20:23:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
