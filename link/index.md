@@ -2,10 +2,12 @@
 
 *一些常用的相关链接*
 
-[loveit Doc]<https://hugoloveit.com/zh-cn/>
+1. {{< link "https://hugoloveit.com/zh-cn/" "loveit Doc：有关 loveit 的相关文档介绍" >}}
 
-[LoveIt Github]<https://github.com/dillonzq/LoveIt>
+1. {{< link "https://github.com/dillonzq/LoveIt>" "LoveIt Github" >}}
 
-[atomic-algolia]<https://github.com/chrisdmacrae/atomic-algolia>
+1. {{< link "https://www.algolia.com/apps/8GC6CRN3M8/dashboard" "Algolia：用于网站搜索" >}}
 
-[Algolia]<https://www.algolia.com/apps/8GC6CRN3M8/dashboard>
+1. {{< link "https://github.com/chrisdmacrae/atomic-algolia" "atomic-algolia：自动更新 index.json" >}}
+
+
