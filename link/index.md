@@ -4,7 +4,7 @@
 
 1. {{< link "https://hugoloveit.com/zh-cn/" "loveit Doc：有关 loveit 的相关文档介绍" >}}
 
-1. {{< link "https://github.com/dillonzq/LoveIt>" "LoveIt Github" >}}
+1. {{< link "https://github.com/dillonzq/LoveIt" "LoveIt Github" >}}
 
 1. {{< link "https://www.algolia.com/apps/8GC6CRN3M8/dashboard" "Algolia：用于网站搜索" >}}
 
