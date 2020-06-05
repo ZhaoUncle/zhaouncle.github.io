@@ -9,15 +9,19 @@ Hugo 号称构建网站最快的框架，看过其他相关资料，hexo 在文�
 
 # 安装
 
-2.1 mac 安装 hugo
+1. mac 安装 hugo
+  
 ```shell
 brew install hugo
 ```
-2.2 确认安装成功，可用命令行检查版本号进行测试
+
+2. 确认安装成功，可用命令行检查版本号进行测试
+   
 ```shell
 hugo version
 ```
-2.3 其他平台可用直接下载二进制包进行使用，无需编译
+
+3. 其他平台可用直接下载二进制包进行使用，无需编译
    
    <https://github.com/gohugoio/hugo/releases>
 
@@ -27,6 +31,7 @@ hugo version
 ```shell
 hugo new site MyBlogHugo
 ```
+
 2. 创建完站点后的文件结构
 ```shell
 MyBlogHugo
@@ -64,8 +69,44 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 hugo server --disableFastRender
 ```
 
-2. 参数含义：
+参数含义：
 
 disableFastRender：实时将文章的内容更新到站点，不需要重启也能边修改边观看效果。
+
+2. 生成静态文件，会在MyBlogHugo 下面生成 public 的静态文件目录
+
+``` shell
+hugo
+```
+
+# 配置 Github Pages
+
+1. 登录 github，在设置那里创建个人 repo 仓库，一共 2 个，一个是 <username>.github.io 作为个人站点 public 的静态文件，一个是 MyBlogHugo 作为除了 public 这个静态目录的所有文件的仓库。记得创建空repo，不要添加 README 文件哦。
+   
+   {{< figure src="/images/WX20200605-112904@2x.png" title="图 1" >}}
+
+2. 初始化仓库 MyBlogHugo，public 目录要忽略，不上传
+```shell
+cd MyBlogHugo
+echo "!public/" >> .gitignore 
+git init
+git remote add origin git@github.com:ZhaoUncle/MyBlogHugo.git
+git add .
+git commit -m "no public"
+git pull --rebase origin master
+git push -u origin master
+```
+
+3. 初始化仓库 zhaouncle.github.io
+```shell
+cd public
+git init
+git remote add origin git@github.com:ZhaoUncle/zhaouncle.github.io.git
+git add .
+git commit -m "my blog hugo"
+git pull --rebase origin master
+git push -u origin master
+```
+
 
 
