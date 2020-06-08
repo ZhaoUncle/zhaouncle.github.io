@@ -250,16 +250,15 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 
 > 注意的问题：
 
->> 1. 证书权限没设置，创建好默认为 600，手动修改为 640
+> 1. 证书权限没设置，创建好默认为 600，手动修改为 640
 启动报错相关：
 org.elasticsearch.ElasticsearchSecurityException: failed to load SSL configuration [xpack.security.transport.ssl]
 Caused by: org.elasticsearch.ElasticsearchException: failed to initialize SSL TrustManager - not permitted to read truststore file [/etc/elasticsearch/elastic-certificates.p12]
 Caused by: java.nio.file.AccessDeniedException: /etc/elasticsearch/elastic-certificates.p12
 
->> 2. 权限查看及修改
+> 2. 权限查看及修改
 [root@node01 elasticsearch]# ll /etc/elasticsearch/elastic-certificates.p12
 -rw------- 1  640 elasticsearch  3451 Apr 16 18:57 elastic-certificates.p12
-
 [root@node01 elasticsearch]# chmod 640 /etc/elasticsearch/elastic-certificates.p12 
 
 
