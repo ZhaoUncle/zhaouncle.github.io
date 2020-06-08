@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://zhaouncle.github.io/categories/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://zhaouncle.github.io/categories/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://zhaouncle.github.io/en/categories/"
@@ -11,12 +11,15 @@
                     hreflang="zh-cn"
                     href="https://zhaouncle.github.io/categories/"
                     /></url><url>
-            <loc>https://zhaouncle.github.io/categories/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.github.io/tags/hugo/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.github.io/categories/hugo/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.github.io/hugo/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.github.io/posts/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.github.io/tags/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://zhaouncle.github.io/categories/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/elk_01/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/elasticsearch/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/elk/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/categories/elk/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/kibana/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/logstash/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/posts/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://zhaouncle.github.io/en/tags/"
@@ -25,8 +28,7 @@
                     hreflang="zh-cn"
                     href="https://zhaouncle.github.io/tags/"
                     /></url><url>
-            <loc>https://zhaouncle.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.github.io/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://zhaouncle.github.io/</loc><lastmod>2020-06-08T16:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://zhaouncle.github.io/en/"
@@ -35,6 +37,10 @@
                     hreflang="zh-cn"
                     href="https://zhaouncle.github.io/"
                     /></url><url>
+            <loc>https://zhaouncle.github.io/tags/hugo/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/categories/hugo/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/hugo/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2020-06-05T11:52:42&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://zhaouncle.github.io/categories/documentation/</loc><lastmod>2020-06-05T08:43:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://zhaouncle.github.io/categories/documentation/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/</loc><lastmod>2020-06-05T08:43:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://zhaouncle.github.io/tags/%E6%97%A0%E8%A8%80/</loc><lastmod>2020-06-05T08:43:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
