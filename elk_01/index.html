@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.github.io\/elk_01\/"
-        },"image": ["https:\/\/zhaouncle.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "elk, elasticsearch, kibana, logstash","wordcount":  3598 ,
+        },"image": ["https:\/\/zhaouncle.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "elk, elasticsearch, kibana, logstash","wordcount":  3591 ,
         "url": "https:\/\/zhaouncle.github.io\/elk_01\/","datePublished": "2020-06-08T15:36:44+08:00","dateModified": "2020-06-08T16:41:09+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/zhaouncle.github.io\/images\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">centos7 安装 ELK 7.6.2</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>elk</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3598 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3591 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -157,7 +157,7 @@
         <li><a href="#33-安装-elasticsearch--hq">3.3 安装 elasticsearch -HQ</a></li>
       </ul>
     </li>
-    <li><a href="#4安装-kibana">4.安装 Kibana</a>
+    <li><a href="#4-安装-kibana">4. 安装 Kibana</a>
       <ul>
         <li><a href="#41-引用">4.1 引用：</a></li>
         <li><a href="#42-安装">4.2 安装：</a></li>
@@ -373,14 +373,12 @@ wget https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.6.2-x86_
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install elasticsearch
 yum -y install kibana
 yum -y install filebeat
 yum -y install auditbeat
-yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="23-es-配置修改3-台机都要其中-nodename-配置不同其他一样">2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样</h2>
@@ -973,7 +971,7 @@ supervisorctl status
             data-sizes="auto"
             alt="/images/elk_02.png" />
     </a>
-<h1 id="4安装-kibana">4.安装 Kibana</h1>
+<h1 id="4-安装-kibana">4. 安装 Kibana</h1>
 <h2 id="41-引用">4.1 引用：</h2>
 <blockquote>
 <p>Kibana是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用Kibana，可以通过各种图表进行高级数据分析及展示。</p>

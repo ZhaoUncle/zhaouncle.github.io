@@ -104,7 +104,6 @@ yum -y install elasticsearch
 yum -y install kibana
 yum -y install filebeat
 yum -y install auditbeat
-yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
 ```
 
 ## 2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样
@@ -405,7 +404,7 @@ web端访问结果：http://192.168.110.245:5000/
 
 {{< image src="/images/elk_02.png" >}}
 
-# 4.安装 Kibana
+# 4. 安装 Kibana
 ## 4.1 引用：
 
 > Kibana是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用Kibana，可以通过各种图表进行高级数据分析及展示。
