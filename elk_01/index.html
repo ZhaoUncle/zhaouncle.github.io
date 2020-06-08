@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.github.io\/elk_01\/"
-        },"image": ["https:\/\/zhaouncle.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "elk, elasticsearch, kibana, logstash","wordcount":  3591 ,
+        },"image": ["https:\/\/zhaouncle.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "elk, elasticsearch, kibana, logstash","wordcount":  3598 ,
         "url": "https:\/\/zhaouncle.github.io\/elk_01\/","datePublished": "2020-06-08T15:36:44+08:00","dateModified": "2020-06-08T16:41:09+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/zhaouncle.github.io\/images\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">centos7 安装 ELK 7.6.2</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>elk</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3591 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3598 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -656,22 +656,41 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 </blockquote>
 <blockquote>
 <ol>
-<li>证书权限没设置，创建好默认为 600，手动修改为 640
-启动报错相关：
+<li>证书权限没设置，创建好默认为 600，手动修改为 640</li>
+</ol>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">启动报错相关：
 org.elasticsearch.ElasticsearchSecurityException: failed to load SSL configuration [xpack.security.transport.ssl]
 Caused by: org.elasticsearch.ElasticsearchException: failed to initialize SSL TrustManager - not permitted to read truststore file [/etc/elasticsearch/elastic-certificates.p12]
-Caused by: java.nio.file.AccessDeniedException: /etc/elasticsearch/elastic-certificates.p12</li>
-</ol>
-</blockquote>
-<blockquote>
+Caused by: java.nio.file.AccessDeniedException: /etc/elasticsearch/elastic-certificates.p12
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <ol start="2">
-<li>权限查看及修改
-[root@node01 elasticsearch]# ll /etc/elasticsearch/elastic-certificates.p12
--rw&mdash;&mdash;- 1  640 elasticsearch  3451 Apr 16 18:57 elastic-certificates.p12
-[root@node01 elasticsearch]# chmod 640 /etc/elasticsearch/elastic-certificates.p12</li>
+<li>权限查看及修改</li>
 </ol>
 </blockquote>
-<h2 id="29-将-node01-的证书-scp-到-02-和-03并启动-02-和-03的-es">2.9 将 node01 的证书 scp 到 02 和 03，并启动 02 和 03的 es</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# ll /etc/elasticsearch/elastic-certificates.p12
+-rw------- 1  640 elasticsearch  3451 Apr 16 18:57 elastic-certificates.p12
+[root@node01 elasticsearch]# chmod 640 /etc/elasticsearch/elastic-certificates.p12 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="29-将-node01-的证书-scp-到-02-和-03并启动-02-和-03的-es">2.9 将 node01 的证书 scp 到 02 和 03，并启动 02 和 03的 es</h2>
 <blockquote>
 <p>这里有三个证书</p>
 <blockquote>
