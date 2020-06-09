@@ -584,6 +584,6 @@ EOF
 
 {{< image src="/images/elk08.png" >}}
 
-最好我们到 discover 这里就可以看到相关试图了
+最后我们到 Discover 这里就可以看到相关试图了
 
 {{< image src="/images/elk09.png" >}}
