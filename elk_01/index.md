@@ -1,4 +1,4 @@
-# centos7 安装 ELK 7.6.2
+# Centos7 安装 ELK 7.6.2
 
 
 <!--more-->
