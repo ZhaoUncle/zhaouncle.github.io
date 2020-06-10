@@ -86,7 +86,7 @@ echo 'vm.max_map_count=262144' >> /etc/sysctl.conf
 yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
 ```
 
-# 2、安装 es 集群
+# 2. 安装 es 集群
 
 ## 2.1 官网下载
 ```
