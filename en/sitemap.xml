@@ -2,30 +2,30 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://zhaouncle.github.io/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://www.zhaouncle.com/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://zhaouncle.github.io/categories/"
+                        href="https://www.zhaouncle.com/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://zhaouncle.github.io/en/categories/"
+                    href="https://www.zhaouncle.com/en/categories/"
                     /></url><url>
-            <loc>https://zhaouncle.github.io/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://www.zhaouncle.com/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://zhaouncle.github.io/tags/"
+                        href="https://www.zhaouncle.com/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://zhaouncle.github.io/en/tags/"
+                    href="https://www.zhaouncle.com/en/tags/"
                     /></url><url>
-            <loc>https://zhaouncle.github.io/en/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://www.zhaouncle.com/en/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://zhaouncle.github.io/"
+                        href="https://www.zhaouncle.com/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://zhaouncle.github.io/en/"
+                    href="https://www.zhaouncle.com/en/"
                     /></url></urlset>
