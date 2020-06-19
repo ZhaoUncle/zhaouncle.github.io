@@ -570,7 +570,7 @@ EOF
 
 {{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_05.png" >}}
 
-## 7.1.5 在 kibana 打开“Management”》》“Elasticsearch”》》“IndexManagement”，可以看到 filebeat 的索引
+## 7.1.5 在 kibana 打开“Management”->>“Elasticsearch”->>“IndexManagement”，可以看到 filebeat 的索引
 
 {{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_06.png" >}}
 
