@@ -39,19 +39,19 @@
 
 
 
-![image-20200627215434095](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200627215434095.png)
+![image-20200627215434095](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627215434095.png)
 
 ### 2.2 我这里选择香港作为存储地区
 
-![image-20200627220838802](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200627220838802.png)
+![image-20200627220838802](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627220838802.png)
 
 ### 2.3 创建index，要与config.toml 的配置 index 一样
 
-![image-20200627220936376](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200627220936376.png)
+![image-20200627220936376](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627220936376.png)
 
 ### 2.4 将 API Keys 里面补充到 config.toml 里面
 
-![image-20200627221400836](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200627221400836.png)
+![image-20200627221400836](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627221400836.png)
 
 
 
@@ -195,10 +195,10 @@ esac
 
 > sh deploy.sh 1：启动 hugo 作为本地调试使用，实时将文章的内容更新到站点，不需要重启也能边修改边观看效果。
 >
-> sh deploy.sh 2：将 MyHugoBlog 上传到 Github 存储库
+> sh deploy.sh 2：将 MyHugoBlog 上传到 Github 存储库。
 >
-> sh deploy.sh 3：将 public 静态文件站点上传到Github Pages 存储库
+> sh deploy.sh 3：将 public 静态文件站点上传到Github Pages 存储库，并更新 algolia 的索引。
 >
-> sh deploy.sh 4：主要是用来调试 cdn，评论系统等，所以要用 production 变量来启动
+> sh deploy.sh 4：主要是用来调试 cdn，评论系统等，所以要用 production 变量来启动。
 >
-> sh deploy.sh 5：查看官方例子，方便调试
+> sh deploy.sh 5：查看官方例子，方便调试。
