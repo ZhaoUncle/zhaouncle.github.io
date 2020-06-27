@@ -37,21 +37,25 @@
 
 ### 2.1 登录 [Algolia 官网](https://www.algolia.com/) ，注册账号，创建 Application 名为 “test01”作为举例，默认选择 “FREE” 即可，这里自定义名称
 
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627215434095.png" width="800" hegiht="250" align=center/>
 
 
-![image-20200627215434095](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627215434095.png)
 
 ### 2.2 我这里选择香港作为存储地区
 
-![image-20200627220838802](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627220838802.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627220838802.png" width="800" hegiht="250" align=center />
+
+
 
 ### 2.3 创建index，要与config.toml 的配置 index 一样
 
-![image-20200627220936376](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627220936376.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627220936376.png" width="800" hegiht="250" align=center />
+
+
 
 ### 2.4 将 API Keys 里面补充到 config.toml 里面
 
-![image-20200627221400836](https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627221400836.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/image-20200627221400836.png" width="800" hegiht="250" align=center />
 
 
 

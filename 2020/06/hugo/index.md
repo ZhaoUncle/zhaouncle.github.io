@@ -95,9 +95,10 @@ MyBlogHugo
    hugo new posts/test01.md
    ```
 
+5. default.md 查看
+
    ```shell
-   cat archetypes/default.md
-   ---
+   \---
    title: "{{ replace .TranslationBaseName "-" " " | title }}"
    subtitle: ""
    date: {{ .Date }}
@@ -122,9 +123,11 @@ MyBlogHugo
      enable: false
    lightgallery: false
    license: ""
-   ---
+   
+   \---
    
    <!--more-->
+   
    
    ```
 
@@ -132,13 +135,15 @@ MyBlogHugo
 
 # 配置 Github Pages
 
+
+
 1. 登录 github，在设置那里创建个人 repo 仓库，一共 2 个，一个是 <username>.github.io 作为个人站点 public 的静态文件，一个是 MyBlogHugo 作为除了 public 这个静态目录的所有文件的仓库。记得创建空repo，不要添加 README 文件哦。
   
    
 
   
   
-  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/WX20200605-112904@2x.png" width="800" hegiht="250" align=center title="图 1"/>
+  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/WX20200605-112904@2x.png" width="800" hegiht="250" align=center/>
   
   
   
