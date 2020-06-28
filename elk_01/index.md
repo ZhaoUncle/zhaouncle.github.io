@@ -365,7 +365,9 @@ docker run -p 9800:9800 -d --link elasticsearch:demo containerize/elastichd
 
 web端访问结果：http://192.168.110.245:9800/
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_01.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_01.png" width="800" hegiht="250" align=center />
+
+
 
 ## 3.3 安装 elasticsearch -HQ
 
@@ -405,7 +407,9 @@ docker run -p 5000:5000 elastichq/elasticsearch-hq
 ```
 web端访问结果：http://192.168.110.245:5000/
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_02.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_02.png" width="800" hegiht="250" align=center />
+
+
 
 # 4. 安装 Kibana
 ## 4.1 引用：
@@ -460,9 +464,9 @@ systemctl status kibana
 
 http://192.168.110.245:5601/ ，这里要用 elastic 账号登录，使用 kibana 登录是无法，会报错 403 没权限
 
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_03.png" width="800" hegiht="250" align=center />
 
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_03.png" >}}
 
 ## 4.6 内存限制
 参考资料：<https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es>
@@ -498,7 +502,9 @@ cd /usr/share/logstash
 hello
 ```
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_04.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_04.png" width="800" hegiht="250" align=center />
+
+
 
 
 # 6. node02、03安装 filebeat
@@ -568,22 +574,33 @@ EOF
 
 启动结果部分截图：
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_05.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_05.png" width="800" hegiht="250" align=center />
+
+
 
 ## 7.1.5 在 kibana 打开“Management”->>“Elasticsearch”->>“IndexManagement”，可以看到 filebeat 的索引
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_06.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk_06.png" width="800" hegiht="250" align=center />
+
+
 
 然后我们到 kiabana 那里添加 index 试试。
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk10.png" >}}
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk07.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk10.png" width="800" hegiht="250" align=center />
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk07.png" width="800" hegiht="250" align=center />
+
+
 
 
 创建成功
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk08.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk08.png" width="800" hegiht="250" align=center />
+
+
 
 最后我们到 Discover 这里就可以看到相关试图了
 
-{{< image src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk09.png" >}}
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/elk09.png" width="800" hegiht="250" align=center />
+
+
