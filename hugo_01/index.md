@@ -59,6 +59,16 @@
 
 
 
+### 2.5 如何删除不需要的APP
+
+### 2.5.1 找到设置界面
+
+![image-20200702135909204](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200702135909204.png)
+
+### 2.5.2 进入 Applications 配置，点击 小三点进行删除
+
+![image-20200702135956072](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200702135956072.png)
+
 ## 3 使用 [atomic-algolia](https://github.com/chrisdmacrae/atomic-algolia) 来完成自动更新索引
 
 ### 3.1 首先安装 npm，这里不介绍
