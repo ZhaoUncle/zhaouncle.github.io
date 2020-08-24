@@ -1,4 +1,4 @@
-# PicGo_Typora
+# Typora + PicGo 编写 hugo md + 图床
 
 
 <!--more-->
@@ -36,17 +36,72 @@ Markdown 文档编写时可使用本地图片，但是无法在网络上使用�
 ## 5.设置 GitHub Toekn
 参考：https://docs.github.com/cn/github/authenticating-to-github/creating-a-personal-access-token
 
+**Token 权限只要设置 “repo” 即可。**
+
+- token：
+
+```shell
+|-seetings 
+|-- Developer settings 
+|------Personal access tokens 下生成
+
+注意：token 只会显示一次，记得保存如果你不建议重新配置一次的话
+```
+
 ![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken.png)
 ![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken2.png)
 ![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken3.png)
-![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken4.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken4.png" width="800" hegiht="250" align=center/>
+
+
 
 ## 6.配置 PicGo (GitHub) 图床
 参考：https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A
 
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/20200824095351.png" width="800" hegiht="250" align=center/>
 
 
-![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/20200824095351.png)
+
+## 7. 使用了 CDN 加速
+
+```shell
+https://cdn.jsdelivr.net/gh/用户名/仓库名
+```
+
+## 8.Typora 设置
+
+**记得“验证图片上传选项”**
+
+![image-20200824103801757](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/image-20200824103801757.png)
+
+
+
+![image-20200824114030892](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200824114030892.png)
+
+
+
+## 9. 之后你截图然后直接复制到 Typora，它就会自动转化为 markdown 的图片格式并指向你设置的 github 的 url 地址了。
+
+
+
+## 10.MyHugoBlog 设置子模块到 images
+
+这一步是介于之前的 hugo 的配置，其它人可以忽略。
+
+```shel
+MyBlogHugo/static/
+rm -rf images
+git submodule add https://github.com/ZhaoUncle/images.git images
+
+cd MyBlogHugo
+#添加 sub pull 到 deploy.sh 脚本
+gitsubmoduleImages(){
+	cd static/images/
+	git submodule foreach git pull
+}
+```
+
+
 
 
 

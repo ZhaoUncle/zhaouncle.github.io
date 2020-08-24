@@ -4,7 +4,14 @@
         <link>https://www.zhaouncle.com/tags/hugo/</link>
         <description>hugo - 标签 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 27 Jun 2020 13:07:02 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 24 Aug 2020 09:38:23 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>Typora &#43; PicGo 编写 hugo md &#43; 图床</title>
+    <link>https://www.zhaouncle.com/picgo_typora/</link>
+    <pubDate>Mon, 24 Aug 2020 09:38:23 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/picgo_typora/</guid>
+    <description><![CDATA[Typora + PicGo 编写 hugo md + 图床]]></description>
+</item><item>
     <title>Hugo（二）algolia 博客搜索及自动化处理脚本</title>
     <link>https://www.zhaouncle.com/hugo_01/</link>
     <pubDate>Sat, 27 Jun 2020 13:07:02 &#43;0800</pubDate>

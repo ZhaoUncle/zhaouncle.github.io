@@ -143,7 +143,7 @@ MyBlogHugo
 
   
   
-  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/zhaouncle.github.io/images/WX20200605-112904@2x.png" width="800" hegiht="250" align=center/>
+  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/WX20200605-112904@2x.png" width="800" hegiht="250" align=center/>
   
   
   
