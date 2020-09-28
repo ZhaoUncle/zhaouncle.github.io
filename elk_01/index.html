@@ -121,68 +121,78 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#10-初始化环境官网参考">1.0 初始化环境官网参考</a></li>
-    <li><a href="#11-架构">1.1 架构</a></li>
-    <li><a href="#12-配置-hosts">1.2 配置 hosts</a></li>
-    <li><a href="#13-修改-hostname">1.3 修改 hostname</a></li>
-    <li><a href="#14-时间同步联网状态">1.4 时间同步(联网状态)</a></li>
-    <li><a href="#15-关闭-selinux">1.5 关闭 selinux</a></li>
-    <li><a href="#16-关闭防火墙">1.6 关闭防火墙</a></li>
-    <li><a href="#17-内存解锁和文件限制">1.7 内存解锁和文件限制</a></li>
-    <li><a href="#18-关闭-swap-缓存">1.8 关闭 swap 缓存</a></li>
-    <li><a href="#19-设置-es-用户内存限制大小">1.9 设置 es 用户内存限制大小</a></li>
-    <li><a href="#110-不能-root-用户启动">1.10 不能 root 用户启动</a></li>
-    <li><a href="#111-java版本">1.11 java版本</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#21-官网下载">2.1 官网下载</a></li>
-    <li><a href="#22-yum-直接安装则可">2.2 yum 直接安装则可</a></li>
-    <li><a href="#23-es-配置修改3-台机都要其中-nodename-配置不同其他一样">2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样</a></li>
-    <li><a href="#24-如果是-yum-安装的方式需要修改es的启动文件">2.4 如果是 yum 安装的方式需要修改es的启动文件</a></li>
-    <li><a href="#25-如果你要设置-es-的内存大小有两个地方">2.5 如果你要设置 es 的内存大小，有两个地方</a></li>
-    <li><a href="#26--在-node01-配置证书我这里设置的空密码直接回车便可">2.6  在 node01 配置证书，我这里设置的空密码，直接回车便可。</a></li>
-    <li><a href="#27-node01启动-es">2.7 node01启动 es</a></li>
-    <li><a href="#28-node01配置账号密码完成tls通信">2.8 node01，配置账号密码完成tls通信</a></li>
-    <li><a href="#29-将-node01-的证书-scp-到-02-和-03并启动-02-和-03的-es">2.9 将 node01 的证书 scp 到 02 和 03，并启动 02 和 03的 es</a></li>
-    <li><a href="#210-基于-api-的检查集群是否搭建成功">2.10 基于 api 的检查，集群是否搭建成功。</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#30-有哪些-web-ui">3.0 有哪些 web ui</a></li>
-    <li><a href="#31-如果带账号密码访问的话-url">3.1 如果带账号密码访问的话 url</a></li>
-    <li><a href="#32-安装web-ui管理工具elastichd">3.2 安装web UI管理工具ElasticHD:</a></li>
-    <li><a href="#33-安装-elasticsearch--hq">3.3 安装 elasticsearch -HQ</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#41-引用">4.1 引用：</a></li>
-    <li><a href="#42-安装">4.2 安装：</a></li>
-    <li><a href="#43-修改配置文件">4.3 修改配置文件</a></li>
-    <li><a href="#44-启动">4.4 启动</a></li>
-    <li><a href="#45-open-kibana-url">4.5 open kibana url</a></li>
-    <li><a href="#46-内存限制">4.6 内存限制</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#51-安装-logstash">5.1 安装 logstash</a></li>
-    <li><a href="#52-配置文件">5.2 配置文件</a></li>
-    <li><a href="#53-修改内存地址">5.3 修改内存地址</a></li>
-    <li><a href="#54-手动测试输入-hello">5.4 手动测试，输入 hello</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#61-安装">6.1 安装</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#案例一官方例子">案例一：官方例子</a></li>
-    <li><a href="#参考">参考：</a></li>
-    <li><a href="#711在-node02-调整-logstash-配置">7.1.1在 node02 调整 logstash 配置</a></li>
-    <li><a href="#712检查端口是否启动">7.1.2检查端口是否启动：</a></li>
-    <li><a href="#713-在-node02-配置-filebeat">7.1.3 在 node02 配置 filebeat</a></li>
-    <li><a href="#714-启动-filebeat">7.1.4 启动 filebeat</a></li>
-    <li><a href="#715-在-kibana-打开management-elasticsearch-indexmanagement可以看到-filebeat-的索引">7.1.5 在 kibana 打开“Management”-&raquo;“Elasticsearch”-&raquo;“IndexManagement”，可以看到 filebeat 的索引</a></li>
+    <li><a href="#1-初始化环境">1. 初始化环境</a>
+      <ul>
+        <li><a href="#10-初始化环境官网参考">1.0 初始化环境官网参考</a></li>
+        <li><a href="#11-架构">1.1 架构</a></li>
+        <li><a href="#12-配置-hosts">1.2 配置 hosts</a></li>
+        <li><a href="#13-修改-hostname">1.3 修改 hostname</a></li>
+        <li><a href="#14-时间同步联网状态">1.4 时间同步(联网状态)</a></li>
+        <li><a href="#15-关闭-selinux">1.5 关闭 selinux</a></li>
+        <li><a href="#16-关闭防火墙">1.6 关闭防火墙</a></li>
+        <li><a href="#17-内存解锁和文件限制">1.7 内存解锁和文件限制</a></li>
+        <li><a href="#18-关闭-swap-缓存">1.8 关闭 swap 缓存</a></li>
+        <li><a href="#19-设置-es-用户内存限制大小">1.9 设置 es 用户内存限制大小</a></li>
+        <li><a href="#110-不能-root-用户启动">1.10 不能 root 用户启动</a></li>
+        <li><a href="#111-java版本">1.11 java版本</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-安装-es-集群">2. 安装 es 集群</a>
+      <ul>
+        <li><a href="#21-官网下载">2.1 官网下载</a></li>
+        <li><a href="#22-yum-直接安装则可">2.2 yum 直接安装则可</a></li>
+        <li><a href="#23-es-配置修改3-台机都要其中-nodename-配置不同其他一样">2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样</a></li>
+        <li><a href="#24-如果是-yum-安装的方式需要修改es的启动文件">2.4 如果是 yum 安装的方式需要修改es的启动文件</a></li>
+        <li><a href="#25-如果你要设置-es-的内存大小有两个地方">2.5 如果你要设置 es 的内存大小，有两个地方</a></li>
+        <li><a href="#26--在-node01-配置证书我这里设置的空密码直接回车便可">2.6  在 node01 配置证书，我这里设置的空密码，直接回车便可。</a></li>
+        <li><a href="#27-node01启动-es">2.7 node01启动 es</a></li>
+        <li><a href="#28-node01配置账号密码完成tls通信">2.8 node01，配置账号密码完成tls通信</a></li>
+        <li><a href="#29-将-node01-的证书-scp-到-02-和-03并启动-02-和-03的-es">2.9 将 node01 的证书 scp 到 02 和 03，并启动 02 和 03的 es</a></li>
+        <li><a href="#210-基于-api-的检查集群是否搭建成功">2.10 基于 api 的检查，集群是否搭建成功。</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-安装-es-的-web-ui">3. 安装 es 的 web UI</a>
+      <ul>
+        <li><a href="#30-有哪些-web-ui">3.0 有哪些 web ui</a></li>
+        <li><a href="#31-如果带账号密码访问的话-url">3.1 如果带账号密码访问的话 url</a></li>
+        <li><a href="#32-安装web-ui管理工具elastichd">3.2 安装web UI管理工具ElasticHD:</a></li>
+        <li><a href="#33-安装-elasticsearch--hq">3.3 安装 elasticsearch -HQ</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-安装-kibana">4. 安装 Kibana</a>
+      <ul>
+        <li><a href="#41-引用">4.1 引用：</a></li>
+        <li><a href="#42-安装">4.2 安装：</a></li>
+        <li><a href="#43-修改配置文件">4.3 修改配置文件</a></li>
+        <li><a href="#44-启动">4.4 启动</a></li>
+        <li><a href="#45-open-kibana-url">4.5 open kibana url</a></li>
+        <li><a href="#46-内存限制">4.6 内存限制</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-node02-安装-logstash">5. node02 安装 logstash</a>
+      <ul>
+        <li><a href="#51-安装-logstash">5.1 安装 logstash</a></li>
+        <li><a href="#52-配置文件">5.2 配置文件</a></li>
+        <li><a href="#53-修改内存地址">5.3 修改内存地址</a></li>
+        <li><a href="#54-手动测试输入-hello">5.4 手动测试，输入 hello</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-node0203安装-filebeat">6. node02、03安装 filebeat</a>
+      <ul>
+        <li><a href="#61-安装">6.1 安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-日志处理">7. 日志处理</a>
+      <ul>
+        <li><a href="#案例一官方例子">案例一：官方例子</a></li>
+        <li><a href="#参考">参考：</a></li>
+        <li><a href="#711在-node02-调整-logstash-配置">7.1.1在 node02 调整 logstash 配置</a></li>
+        <li><a href="#712检查端口是否启动">7.1.2检查端口是否启动：</a></li>
+        <li><a href="#713-在-node02-配置-filebeat">7.1.3 在 node02 配置 filebeat</a></li>
+        <li><a href="#714-启动-filebeat">7.1.4 启动 filebeat</a></li>
+        <li><a href="#715-在-kibana-打开management-elasticsearch-indexmanagement可以看到-filebeat-的索引">7.1.5 在 kibana 打开“Management”-&raquo;“Elasticsearch”-&raquo;“IndexManagement”，可以看到 filebeat 的索引</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="1-初始化环境">1. 初始化环境</h1>
