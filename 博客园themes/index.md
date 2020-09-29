@@ -11,9 +11,11 @@
 
 先在博客园申请开通博客，这里就不做介绍了，然后[申请 js 权限](https://i.cnblogs.com/settings)（博客侧边栏公告）
 
-![](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928084358.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928084358.png" width="600" hegiht="250" align=center/>
 
-![](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928090420-20200928090440540.png)
+
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928090420-20200928090440540.png" width="600" hegiht="250" align=center/>
 
 
 
@@ -23,49 +25,55 @@
 
 ## 3.1 用户设置
 
-![image-20200928101839678](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928101839678.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928101839678.png" width="600" hegiht="250" align=center/>
+
+
 
 **参数：**
 
->标题：主要影响后台的显示；
+>1. 标题：主要影响后台的显示；
 >
->博客地址名：https://www.cnblog.com/博客地址名/，这个只会修改只能通过邮件申请，我申请过一次，申请完之后用了 js 的话，还会用旧的链接地址访问，需要把 css 和 js 的代码清掉保存，再重新填写再保存，才能快速清除；
+>2. 博客地址名：https://www.cnblog.com/博客地址名/，这个只会修改只能通过邮件申请，我申请过一次，申请完之后用了 js 的话，还会用旧的链接地址访问，需要把 css 和 js 的代码清掉保存，再重新填写再保存，才能快速清除；
 >
->登录用户名：这个影响不大，因为下面有个显示名称，就是替换这个的
+>3. 登录用户名：这个影响不大，因为下面有个显示名称，就是替换这个的
 >
->密码：忽略
+>4. 密码：忽略
 >
->显示名称（作者名）：这里会替换掉登录用户名的显示规则，会影响浏览器标签那里的 title，还有显示作者的地方；
+>5. 显示名称（作者名）：这里会替换掉登录用户名的显示规则，会影响浏览器标签那里的 title，还有显示作者的地方；
 >
->邮箱：评论那里可以选择发送邮箱
+>6. 邮箱：评论那里可以选择发送邮箱
 >
->回复通知邮箱：默认楼上那个
+>7. 回复通知邮箱：默认楼上那个
 >
->时区：utc+8 即可，北京时间
+>8. 时区：utc+8 即可，北京时间
 >
->语言与地区：简体中文
+>9. 语言与地区：简体中文
 
 
 
 ## 3.2 模板设置
 
-![image-20200928102152457](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928102152457.png)
+
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928102152457.png" width="600" hegiht="250" align=center/>
+
+
 
 **参数：**
 
-> 博客皮肤：选择SimpleMemory
+> 1. 博客皮肤：选择SimpleMemory
 >
-> 页面定制 CSS 代码：
+> 2. 页面定制 CSS 代码：
 >
-> > CSS代码位置：[/src/style/base.min.css](https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@v1.3.3/src/style/base.min.css) ，拷贝此文件代码至页面定制CSS代码文本框处即可。
+>    2.1 CSS代码位置：[/src/style/base.min.css](https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@v1.3.3/src/style/base.min.css) ，拷贝此文件代码至页面定制CSS代码文本框处即可。
 >
-> > /src/style/base.min.css 的修改参考 /src/style/base.css。博客设置请使用压缩版本，直接使用 /src/style/base.css 会字符超限！
+>    2.2 /src/style/base.min.css 的修改参考 /src/style/base.css。博客设置请使用压缩版本，直接使用 /src/style/base.css 会字符超限！
 >
-> 禁用模板默认 CSS：**这里要记得 ![image-20200928112416329](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928112416329.png)**
+> 3. 禁用模板默认 CSS：**这里要记得 ![image-20200928112416329](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928112416329.png)**
 >
-> 博客侧边栏公告：
+> 4. 博客侧边栏公告：
 >
-> > JavaScript 对象是被命名值的容器。值以名称:值对的方式来书写（名称和值由冒号分隔）。
+>    4.1 JavaScript 对象是被命名值的容器。值以名称:值对的方式来书写（名称和值由冒号分隔）。
 
 ```js
 <script type="text/javascript">
@@ -123,7 +131,7 @@
 
 ## 3.3 开启公告控件
 
-![image-20200928133928766](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928133928766.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928133928766.png" width="600" hegiht="250" align=center/>
 
 
 
@@ -139,7 +147,9 @@
 
 ### 4.1.1 查看菜单栏
 
-![image-20200928162846066](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928162846066.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928162846066.png" width="200" hegiht="250" align=center/>
+
+
 
 [字体图标库](https://bndong.github.io/Cnblogs-Theme-SimpleMemory/v1.1/#/Docs/Customization/fonticon) 列举了部分内置的图标，但是还有一些需要自定义，比如 “k8sYmal 生成器” 这个图标就没有内置，需要我们自己去 iconfont ，阿里的图标库自定义。
 
@@ -151,9 +161,13 @@
 
 我们先进到 “资源管理” -- “我发起的项目” ，创建一个 “博客园” 项目，如图所示
 
-![image-20200928163537767](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163537767.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163537767.png" width="600" hegiht="250" align=center/>
 
-![image-20200928163721514](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163721514.png)
+
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163721514.png" width="600" hegiht="250" align=center/>
+
+
 
 
 
@@ -161,7 +175,7 @@
 
 然后生成代码，填入 3.2 的 “博客侧边栏公告” 的 js 对象 **fontIconExtend** 更换成你自己的就行了，这个要添加图标进去后才能生成。
 
-![image-20200928163806514](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163806514.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163806514.png" alt="image-20200928163806514" style="zoom:67%;" />
 
 
 
@@ -177,13 +191,13 @@
 
 点击购物车图标，然后 “添加至项目” 即可，当然你也可以忽略前面创建项目的步骤，直接在这里的![image-20200928164444244](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164444244.png)选中添加项目也行，随你自己喜欢了。
 
-![image-20200928164401982](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164401982.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164401982.png" width="400" hegiht="250" align=center alt="image-20200928164401982"/>
 
 ### 4.1.7 添加成功
 
 点击确定，就添加成功了，然后在“生成代码”就好啦，鼠标移动到图标上面，直接复制代码，
 
-![image-20200928164637400](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164637400.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164637400.png" alt="image-20200928164637400" style="zoom: 25%;" />
 
 ### 4.1.8 配置 js 对象
 
@@ -214,7 +228,7 @@
 background-repeat: repeat;background-attachment: fixed;background-size:cover;cursor: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/cursor.ico),auto;
 ```
 
-![image-20200928170447277](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928170447277.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928170447277.png" alt="image-20200928170447277" style="zoom: 33%;" />
 
 ### 4.2.3 添加 js 代码
 
@@ -232,7 +246,7 @@ background-repeat: repeat;background-attachment: fixed;background-size:cover;cur
 
 
 
-![image-20200928170753274](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928170753274.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928170753274.png" alt="image-20200928170753274" style="zoom:50%;" />
 
 #### 4.2.3.2 文字特效
 
@@ -291,7 +305,7 @@ jQuery(document).ready(function($) {
 
 ### 4.3.2 添加站点
 
-![image-20200928174154923](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174154923.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174154923.png" alt="image-20200928174154923" style="zoom:33%;" />
 
 ### 4.3.3 获取统计代码 ID
 
@@ -312,9 +326,164 @@ jQuery(document).ready(function($) {
 </div>
 ```
 
-![image-20200928174738903](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174738903.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174738903.png" alt="image-20200928174738903" style="zoom: 67%;" />
 
 
+
+## 4.4 天气预报
+
+### 4.4.1 心知天气
+
+[注册登录](https://www.seniverse.com/signup?callback=%2Findex)，这就我无需多说啦！
+
+### 4.4.2 天气插件
+
+[Weather Widget](https://www.seniverse.com/widget)，我们这里直接点击 “**立即免费试用**” 就可以啦。
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928232605509.png" alt="image-20200928232605509" style="zoom: 33%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928232224.png" style="zoom: 33%;" />
+
+
+
+### 4.4.3 天气插件配置
+
+#### 4.4.3.1 自定义配置
+
+> 自动定位：这里不知为何我电脑定位到“福州”，所以我干脆关了算了，可能是免费版导致的。
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928233502331.png" alt="image-20200928233502331" style="zoom: 25%;" />
+
+#### 4.4.3.2 生成代码
+
+将生成的 JS 代码复制到 “**页脚 HTML 代码**”中，放在 4.3 网站统计的下面就好。
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928233706388.png" alt="image-20200928233706388" style="zoom: 67%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928234644921.png" alt="image-20200928234644921" style="zoom:67%;" />
+
+### 4.4.4 效果如图所示
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928235057890.png" alt="image-20200928235057890" style="zoom: 50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928235137699.png" alt="image-20200928235137699" style="zoom:50%;" />
+
+## 4.5 背景图片
+
+### 4.5.1 原因 
+
+打开一篇博文，你是否因其空荡荡的背景而觉得索然无味呢？这个时候我没就要利用自己强大的 copy 能力，给自己找张好看的背景丢上去咯
+
+### 4.5.2 配置到 CSS 的 body 代码段
+
+```css
+background-image: url("https://img2018.cnblogs.com/blog/1358881/201909/1358881-20190910100015098-837598352.jpg");
+```
+
+如图所示：
+
+![image-20200929091203925](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929091203925.png)
+
+### 4.5.1 效果图如下
+
+![image-20200929092309224](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929092309224.png)
+
+## 4.6 网抑云音乐
+
+### 4.6.0 效果图
+
+![image-20200929103039509](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929103039509.png)
+
+### 4.6.1 获取网抑云 ID
+
+打开网页版网抑云，然后选择你想播放的歌单，歌单可以是你自己的也可以是别人的，只要歌曲能播放就行，然后把 uri 后面的 id 给 copy 出来
+
+![image-20200929100851791](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929100851791.png)
+
+### 4.6.2 代码添加
+
+将一下代码添加至页脚Html代码中，更改 **歌单 ID** 为你自己的即可
+
+```
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<meting-js
+        id="歌单ID"
+        lrc-type="0"
+        server="netease"
+        order="random"
+        type="playlist"
+        fixed="true"
+        list-olded="true">
+</meting-js>
+```
+
+如图所示，代码存放位置，直接放在之前的代码后面就行
+
+![image-20200929102832380](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929102832380.png)
+
+## 4.7 去掉反对按钮
+
+### 4.7.1 何谓反对按钮
+
+看到这个按钮，下意识就想删了，大家可不要给我反对哦，否则就不更新了呢，不过我也不给你这个按钮，哈哈！
+
+![image-20200929134759718](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929134759718.png)
+
+![image-20200929134740622](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929134740622.png)
+
+### 4.7.2 在配置 CSS
+
+在 **页面定制 CSS 代码 ** 里面直接在最后一行添加一下代码即可，记得保存由
+
+```css
+#rightBuryit{display: none !important;}
+```
+
+如图所示：
+
+![image-20200929135044670](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929135044670.png)
+
+### 4.7.3 效果图
+
+这个时候我们再看就没有啦，我是不是很鸡贼呢？
+
+![image-20200929135145293](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929135145293.png)
+
+## 4.8 复制文字加版权
+
+> 当用户复制文中内容(ctrl+C或鼠标右击复制)时，会自动加上版权文字，csdn的代码复制以及知乎的内容复制都有此功能。
+
+### 4.8.1 添加到**页首 HTML 代码 **
+
+```js
+<!--自动复制添加版权-->
+<script language="javascript" type="text/javascript">
+jQuery(document).on('copy', function(e)
+    {
+      var selected = window.getSelection();
+      var selectedText = selected.toString().replace(/\n/g, '<br>');  // Solve the line breaks conversion issue 处理换行转换的问题
+      var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>' 
+                            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
+                            + '作者：易波叶平<br> 源地址：' + document.location.href
+                            + '<br>来源：博客园cnblogs<br>© 版权声明：本文为博主原创文章，转载请附上博文链接！';
+      var copyHolder = $('<div>', {id: 'temp', html: selectedText + copyFooter, style: {position: 'absolute', left: '-99999px'}});
+        
+      $('body').append(copyHolder);
+      selected.selectAllChildren( copyHolder[0] );
+      window.setTimeout(function() {
+          copyHolder.remove();
+      },0);
+    });
+</script>
+```
+
+如图所示：直接在鼠标特效后面换行加上就好，然后及的保存
+
+![image-20200929140933762](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929140933762.png)
 
 # 5. 参考资料
 
@@ -323,5 +492,9 @@ https://github.com/BNDong/Cnblogs-Theme-SimpleMemory
 https://bndong.github.io/Cnblogs-Theme-SimpleMemory/v1.1/#/
 
 https://www.cnblogs.com/wkfvawl/p/9414180.html
+
+https://github.com/metowolf/MetingJS
+
+https://www.cnblogs.com/enjoy233/p/10328361.html#%E5%A4%8D%E5%88%B6%E6%AD%A3%E6%96%87%E6%96%87%E5%AD%97%E6%97%B6%E8%87%AA%E5%8A%A8%E5%8A%A0%E7%89%88%E6%9D%83
 
 
