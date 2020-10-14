@@ -3,13 +3,15 @@
 
 <!--more-->
 
+**记得点“推荐”或者“关注”哦！！！**
+
 # 1. 主题
 
 [Cnblogs-Theme-SimpleMemory 1.3.3 版本](https://github.com/BNDong/Cnblogs-Theme-SimpleMemory/tree/v1.3.3)
 
 # 2. 权限申请
 
-先在博客园申请开通博客，这里就不做介绍了，然后[申请 js 权限](https://i.cnblogs.com/settings)（博客侧边栏公告）
+先在博客园申请开通博客，这里就不做介绍了，然后在 **“博客侧边栏公告”** [申请 js 权限](https://i.cnblogs.com/settings)（博客侧边栏公告）
 
 <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928084358.png" width="600" hegiht="250" align=center/>
 
@@ -320,6 +322,7 @@ jQuery(document).ready(function($) {
 进入博客园后台设置，配置**页脚 HTML 代码**，将 4.3.3 的统计 ID 替换，然后 copy 进去
 
 ```js
+<!--友盟访问统计-->
 <div id="cnzzProtocol"  style="display: none;">
     <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_你的统计ID'></span>
     <script src='https://v1.cnzz.com/z_stat.php?id=你的统计ID&online=1&show=line' type='text/javascript'></script>
@@ -440,18 +443,20 @@ background-image: url("https://img2018.cnblogs.com/blog/1358881/201909/1358881-2
 在 **页面定制 CSS 代码 ** 里面直接在最后一行添加一下代码即可，记得保存由
 
 ```css
-#rightBuryit{display: none !important;}
+#rightBuryit{display: none !important;}.buryit{display: none;}
 ```
 
 如图所示：
 
-![image-20200929135044670](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929135044670.png)
+![image-20200929232353044](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929232353044.png)
 
 ### 4.7.3 效果图
 
 这个时候我们再看就没有啦，我是不是很鸡贼呢？
 
 ![image-20200929135145293](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929135145293.png)
+
+![image-20200929232045242](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929232045242.png)
 
 ## 4.8 复制文字加版权
 
@@ -485,6 +490,107 @@ jQuery(document).on('copy', function(e)
 
 ![image-20200929140933762](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929140933762.png)
 
+## 4.9 看板娘
+
+### 4.9.1 效果图
+
+![image-20200930132532566](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930132532566.png)
+
+### 4.9.2 所有文件
+
+可以私聊博主要，博主没有藏私，也可以在下面的代码里面自己获取，如果合适，请给个推荐和关注，感谢博主的无私贡献，虽然博主也是从其他地方获取来着。
+
+**[点击推荐和关注才会下载哦，不然会出错的呢 emmmm!!!](https://github.com/ZhaoUncle/images/tree/master/static/kanbanniang)**
+
+### 4.9.3 “博客侧边栏公告 ”设置
+
+```js
+<!--看板娘-->
+<div class="waifu" id="waifu">
+    <div class="waifu-tips" style="opacity: 1;"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+      <span class="fui-home"></span>
+      <span class="fui-chat"></span>
+      <span class="fui-eye"></span>
+      <span class="fui-user"></span>
+      <span class="fui-photo"></span>
+      <span class="fui-info-circle"></span>
+      <span class="fui-cross"></span>
+    </div> 
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/live2d.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/waifu-tips.js"></script>
+<script type="text/javascript">initModel()</script>
+
+```
+
+![image-20200930141616463](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930141616463.png)
+
+### 4.9.4 “页首 HTML 代码”配置
+
+```
+<!--看板娘-->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/waifu.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/flat-ui.min.css"/>
+```
+
+![image-20200930141533232](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930141533232.png)
+
+
+
+## 4.10 更改置顶图标
+
+### 4.10.1 效果图
+
+原本是 iconfont 的默认图标，我这里用个小火箭给替代了。
+
+![image-20201001153701615](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201001153701615.png)
+
+![image-20201001153954054](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201001153954054.png)
+
+### 4.10.2 配置
+
+在**页面定制 CSS 代码**那里最后直接追加即可，记得选择保存哦！
+
+```css
+i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/o_rocket.png) no-repeat center center;}
+
+```
+
+![image-20201001153846665](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201001153846665.png)
+
+
+
+
+
+## 4.11 评论区优化
+
+### 4.11.1效果图
+
+![image-20201002203505959](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201002203505959.png)
+
+### 4.11.2 配置 “页面定制 CSS 代码 ”
+
+```
+#tbCommentBody {background: #fff url(https://gitee.com/dbnuo/Cnblogs-Theme-SimpleMemory/raw/master/img/comment_bg.jpg) right -65px;background-size: 250px;background-repeat: no-repeat;}
+```
+
+![image-20201002203553522](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201002203553522.png)
+
+
+
+## 4.12 放大图片（low）
+
+### 4.12.1 配置 “页面定制 CSS 代码 ”
+
+```
+.post img {cursor: pointer;transition: all 0.5s;}.post img:hover {transform: scale(1.3);}
+```
+
+
+
 # 5. 参考资料
 
 https://github.com/BNDong/Cnblogs-Theme-SimpleMemory
@@ -497,4 +603,8 @@ https://github.com/metowolf/MetingJS
 
 https://www.cnblogs.com/enjoy233/p/10328361.html#%E5%A4%8D%E5%88%B6%E6%AD%A3%E6%96%87%E6%96%87%E5%AD%97%E6%97%B6%E8%87%AA%E5%8A%A8%E5%8A%A0%E7%89%88%E6%9D%83
 
+https://www.cnblogs.com/yjlaugus/p/8724881.html#/c/subject/p/8724881.html
 
+https://live2d.fghrsh.net/demo/1.4.2/
+
+https://github.com/fghrsh/live2d_demo

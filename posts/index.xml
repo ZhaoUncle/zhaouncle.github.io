@@ -4,7 +4,14 @@
         <link>https://www.zhaouncle.com/posts/</link>
         <description>所有文章 | 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 27 Sep 2020 17:47:02 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 30 Sep 2020 10:46:26 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>jsdelivr 缓存刷新</title>
+    <link>https://www.zhaouncle.com/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98/</link>
+    <pubDate>Wed, 30 Sep 2020 10:46:26 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98/</guid>
+    <description><![CDATA[jsdelivr 缓存刷新]]></description>
+</item><item>
     <title>博客园主题</title>
     <link>https://www.zhaouncle.com/%E5%8D%9A%E5%AE%A2%E5%9B%ADthemes/</link>
     <pubDate>Sun, 27 Sep 2020 17:47:02 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://www.zhaouncle.com/githubtry/</guid>
     <description><![CDATA[Github 个人主页玩耍初试]]></description>
-</item><item>
-    <title>庄子*逍遥游</title>
-    <link>https://www.zhaouncle.com/%E5%BA%84%E5%AD%90/</link>
-    <pubDate>Sun, 19 Jul 2020 12:36:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E5%BA%84%E5%AD%90/</guid>
-    <description><![CDATA[逍遥游]]></description>
 </item></channel>
 </rss>
