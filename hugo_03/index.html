@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/hugo_03\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  783 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  823 ,
         "url": "https:\/\/www.zhaouncle.com\/hugo_03\/","datePublished": "2020-10-29T15:33:30+08:00","dateModified": "2020-10-29T15:33:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo（三）自定义域名&amp;cloudfare github pages 加速https</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-29">2020-10-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 783 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-29">2020-10-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 823 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/hugo_03/" class="leancloud_visitors" data-flag-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -119,9 +119,20 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>GitHub Pages + CloudFlare是建立网站的最简单方法之一。</p>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一github-pages--cloudflare是建立网站的最简单方法之一">一、GitHub Pages + CloudFlare是建立网站的最简单方法之一。</a>
+      <ul>
+        <li><a href="#1-配置-github-pages-域名">1. 配置 github pages 域名</a></li>
+        <li><a href="#2在-usernamegithubio-仓库下面创建一个-cname-的文件并写入自己的域名">2.在 username.github.io 仓库下面创建一个 CNAME 的文件并写入自己的域名</a></li>
+      </ul>
+    </li>
+    <li><a href="#二利用cloudflare为基于github-pages的hugo博客添加https支持">二、利用Cloudflare为基于GitHub Pages的Hugo博客添加HTTPS支持</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="一github-pages--cloudflare是建立网站的最简单方法之一">一、GitHub Pages + CloudFlare是建立网站的最简单方法之一。</h1>
 <p>github pages，我这里选择了 hugo+LoveIt 的静态页面 blog 架构，有兴趣自己查看之前的文章。</p>
+<h2 id="1-配置-github-pages-域名">1. 配置 github pages 域名</h2>
 <p>为了使用自己的域名，而不是 username.github.io，我这里使用了 github pages 的设置，进到“Settings”里面，往下拉可以看到，一个是设置自己的顶级域名，不要 zhaouncle.com，一个是开启 https 的选项。开启他可以用 <a href="https://zhaouncle.github.io">https://zhaouncle.github.io</a>进行访问，另外 https 做 seo 会优先进行，所以开启是有好处的，好像 2018 年才开始有这个功能。以前只能通过反代或者 cloudfare 实现 https。</p>
 <p><img
         class="lazyload"
@@ -139,7 +150,16 @@
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153714603.png"
         title="image-20201029153714603" /></p>
-<p>利用Cloudflare为基于GitHub Pages的Hexo博客添加HTTPS支持</p>
+<h2 id="2在-usernamegithubio-仓库下面创建一个-cname-的文件并写入自己的域名">2.在 username.github.io 仓库下面创建一个 CNAME 的文件并写入自己的域名</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png"
+        title="image-20201029155629786" /></p>
+<h1 id="二利用cloudflare为基于github-pages的hugo博客添加https支持">二、利用Cloudflare为基于GitHub Pages的Hugo博客添加HTTPS支持</h1>
 <p>1、cloudfare 注册之后会给你两个 dns 地址，我这里是在阿里云上面购买的域名，于是去注册一个，我这里那 zhaowp.com举个例子</p>
 <p><img
         class="lazyload"
