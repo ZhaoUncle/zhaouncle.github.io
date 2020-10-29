@@ -589,6 +589,66 @@ i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/i
 .post img {cursor: pointer;transition: all 0.5s;}.post img:hover {transform: scale(1.3);}
 ```
 
+## 4.13 个人书单
+
+![image-20201014175117428](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png)
+
+### 4.13.1 创建随笔
+
+markdown 格式直接创建一个新“随笔”，然后 markdown 文档模式添加已下数据即可
+
+```
+<input id="bookListFlg" type="hidden">
+```
+
+### 4.13.2 配置书单数据
+
+博客侧边栏公告设置，因为数据量很大，直接在最后一行新起，就不嵌套在原有的配置里面，不过我觉得后期应该直接加到 github管理引用才方便，期待中。
+
+```
+<!--书单-->
+<script type="text/javascript">
+window.cnblogsConfig.bookList = [
+        {
+            title: '在读',
+            books: [
+                {
+                    cover: 'https://images.weserv.nl/?url=https://wfqqreader-1252317822.image.myqcloud.com/cover/71/25066071/t6_25066071.jpg&default=ssl:images.weserv.nl/?url=https://img3.doubanio.com/view/subject/l/public/s29962521.jpg',
+                    name: '断舍离',
+                    formerNname: '',
+                    author: '[日]山下英子',
+                    translator: '贾耀平',
+                    press: '湖南文艺出版社',
+                    year: '2019-01|2020-10-14',
+                    score: 2,
+                }
+            ]
+        },
+        {
+            title: '已读',
+            books: [
+                {
+                    cover: 'https://images.weserv.nl/?url=https://wfqqreader-1252317822.image.myqcloud.com/cover/509/413509/t6_413509.jpg&default=ssl:images.weserv.nl/?url=https://img3.doubanio.com/view/subject/l/public/s27311101.jpg',
+                    name: '知行合一王阳明',
+                    formerNname: '',
+                    author: '度阴山',
+                    translator: '',
+                    press: '北京联合出版公司',
+                    year: '2014-07|2020-04',
+                    score: 4,
+                },
+            ]
+        },
+    ];
+</script>
+```
+
+如图所在位置所示：
+
+![image-20201014174943992](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png)
+
+
+
 
 
 # 5. 参考资料

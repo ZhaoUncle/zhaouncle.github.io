@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/%E5%8D%9A%E5%AE%A2%E5%9B%ADthemes\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客","wordcount":  4611 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客","wordcount":  4982 ,
         "url": "https:\/\/www.zhaouncle.com\/%E5%8D%9A%E5%AE%A2%E5%9B%ADthemes\/","datePublished": "2020-09-27T17:47:02+08:00","dateModified": "2020-09-27T17:47:02+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/images\/blog\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">博客园主题</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/blog/"><i class="far fa-folder fa-fw"></i>blog</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-27">2020-09-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4611 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-27">2020-09-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4982 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/%E5%8D%9A%E5%AE%A2%E5%9B%ADthemes/" class="leancloud_visitors" data-flag-title="博客园主题">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -233,6 +233,12 @@
         <li><a href="#412-放大图片low">4.12 放大图片（low）</a>
           <ul>
             <li><a href="#4121-配置-页面定制-css-代码-">4.12.1 配置 “页面定制 CSS 代码 ”</a></li>
+          </ul>
+        </li>
+        <li><a href="#413-个人书单">4.13 个人书单</a>
+          <ul>
+            <li><a href="#4131-创建随笔">4.13.1 创建随笔</a></li>
+            <li><a href="#4132-配置书单数据">4.13.2 配置书单数据</a></li>
           </ul>
         </li>
       </ul>
@@ -1043,7 +1049,113 @@ jQuery(document).ready(function($) {
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">.post img {cursor: pointer;transition: all 0.5s;}.post img:hover {transform: scale(1.3);}
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="5-参考资料">5. 参考资料</h1>
+</div><h2 id="413-个人书单">4.13 个人书单</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png"
+        title="image-20201014175117428" /></p>
+<h3 id="4131-创建随笔">4.13.1 创建随笔</h3>
+<p>markdown 格式直接创建一个新“随笔”，然后 markdown 文档模式添加已下数据即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;input id=&#34;bookListFlg&#34; type=&#34;hidden&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4132-配置书单数据">4.13.2 配置书单数据</h3>
+<p>博客侧边栏公告设置，因为数据量很大，直接在最后一行新起，就不嵌套在原有的配置里面，不过我觉得后期应该直接加到 github管理引用才方便，期待中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;!--书单--&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.cnblogsConfig.bookList = [
+        {
+            title: &#39;在读&#39;,
+            books: [
+                {
+                    cover: &#39;https://images.weserv.nl/?url=https://wfqqreader-1252317822.image.myqcloud.com/cover/71/25066071/t6_25066071.jpg&amp;default=ssl:images.weserv.nl/?url=https://img3.doubanio.com/view/subject/l/public/s29962521.jpg&#39;,
+                    name: &#39;断舍离&#39;,
+                    formerNname: &#39;&#39;,
+                    author: &#39;[日]山下英子&#39;,
+                    translator: &#39;贾耀平&#39;,
+                    press: &#39;湖南文艺出版社&#39;,
+                    year: &#39;2019-01|2020-10-14&#39;,
+                    score: 2,
+                }
+            ]
+        },
+        {
+            title: &#39;已读&#39;,
+            books: [
+                {
+                    cover: &#39;https://images.weserv.nl/?url=https://wfqqreader-1252317822.image.myqcloud.com/cover/509/413509/t6_413509.jpg&amp;default=ssl:images.weserv.nl/?url=https://img3.doubanio.com/view/subject/l/public/s27311101.jpg&#39;,
+                    name: &#39;知行合一王阳明&#39;,
+                    formerNname: &#39;&#39;,
+                    author: &#39;度阴山&#39;,
+                    translator: &#39;&#39;,
+                    press: &#39;北京联合出版公司&#39;,
+                    year: &#39;2014-07|2020-04&#39;,
+                    score: 4,
+                },
+            ]
+        },
+    ];
+&lt;/script&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>如图所在位置所示：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png"
+        title="image-20201014174943992" /></p>
+<h1 id="5-参考资料">5. 参考资料</h1>
 <p><a href="https://github.com/BNDong/Cnblogs-Theme-SimpleMemory">https://github.com/BNDong/Cnblogs-Theme-SimpleMemory</a></p>
 <p><a href="https://bndong.github.io/Cnblogs-Theme-SimpleMemory/v1.1/#/">https://bndong.github.io/Cnblogs-Theme-SimpleMemory/v1.1/#/</a></p>
 <p><a href="https://www.cnblogs.com/wkfvawl/p/9414180.html">https://www.cnblogs.com/wkfvawl/p/9414180.html</a></p>
