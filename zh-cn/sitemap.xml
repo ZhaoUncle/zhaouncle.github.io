@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.zhaouncle.com/categories/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://www.zhaouncle.com/categories/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://www.zhaouncle.com/en/categories/"
@@ -11,11 +11,11 @@
                     hreflang="zh-cn"
                     href="https://www.zhaouncle.com/categories/"
                     /></url><url>
-            <loc>https://www.zhaouncle.com/tags/hugo/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.zhaouncle.com/categories/hugo/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.zhaouncle.com/hugo_03/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.zhaouncle.com/posts/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.zhaouncle.com/tags/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://www.zhaouncle.com/tags/hugo/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.zhaouncle.com/categories/hugo/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.zhaouncle.com/hugo_03/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.zhaouncle.com/posts/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.zhaouncle.com/tags/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://www.zhaouncle.com/en/tags/"
@@ -24,8 +24,8 @@
                     hreflang="zh-cn"
                     href="https://www.zhaouncle.com/tags/"
                     /></url><url>
-            <loc>https://www.zhaouncle.com/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://www.zhaouncle.com/</loc><lastmod>2020-10-29T15:33:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://www.zhaouncle.com/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://www.zhaouncle.com/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://www.zhaouncle.com/en/"
@@ -74,7 +74,7 @@
             <loc>https://www.zhaouncle.com/categories/%E4%BA%BA%E7%89%A9%E8%87%AA%E4%BC%A0/</loc><lastmod>2020-06-27T13:19:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.zhaouncle.com/tags/%E6%9E%97%E5%BE%BD%E5%9B%A0/</loc><lastmod>2020-06-27T13:19:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.zhaouncle.com/%E6%9E%97%E5%BE%BD%E5%9B%A0/</loc><lastmod>2020-06-27T13:19:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://www.zhaouncle.com/hugo_02/</loc><lastmod>2020-06-27T13:07:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://www.zhaouncle.com/hugo_02/</loc><lastmod>2020-10-29T16:02:04&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://www.zhaouncle.com/20200626/</loc><lastmod>2020-09-08T11:31:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://www.zhaouncle.com/elk_01/</loc><lastmod>2020-10-29T14:55:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://www.zhaouncle.com/tags/elasticsearch/</loc><lastmod>2020-10-29T14:55:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
