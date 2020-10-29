@@ -32,7 +32,7 @@
         },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Notion","wordcount":  1172 ,
         "url": "https:\/\/www.zhaouncle.com\/notion\/","datePublished": "2020-07-28T15:20:26+08:00","dateModified": "2020-08-24T14:00:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
-            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/images\/blog\/avatar.png"},"author": {
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "赵叔"
             },"description": "Notion 绑定自定义域名"
@@ -145,7 +145,7 @@
 </ol>
 <h2 id="原理说明">原理说明</h2>
 <p>官方目前不打算推出自定义域名的特性。如果你将自己的域名设置为隐式转发会在前端看到一个这样的提示。</p>
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion01.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion01.png" width="800" hegiht="250" align=center/>
 <p>其主要的检验手段是在前端 js 做校验， Notion 是一个典型的单页应用，利用 Cloudflare 的 worker 做代理，将 js 中的 <a href="http://notion.so/" target="_blank" rel="noopener noreffer">notion.so</a> 全部替换成自己的域名，这样即可绕过校验。</p>
 <ol>
 <li>如果访问 app.js，则替换 js 中的域名，使前端域名校验失效。</li>
@@ -171,16 +171,16 @@
 <li>为域名配置一条 a 记录，ip 地址随便填（不知道填什么就 ping 下 <a href="http://www.cloudfare.com">www.cloudfare.com</a> ，例如 104.17.209.9 ），但是要通过 cf proxy，打开 Cloudflare 的「DNS」编辑页面，添加一条记录。如下图：</li>
 </ol>
 <p>注意，其中的 IPv4 地址部分，虽然你可以改成任意 DNS 的 IP，或者是你自己的服务器，但是当你的 IP 为国内 IP 时，有概率会因为备案问题而 404。</p>
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion02.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion02.png" width="800" hegiht="250" align=center/>
 <ol start="3">
 <li>创建 Workers，查看如下的“worker 代码”</li>
 </ol>
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion03.png" width="800" hegiht="250" align=center/>
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion04.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion03.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion04.png" width="800" hegiht="250" align=center/>
 <ol start="4">
 <li>添加一条 route，并指向上方的 worker rule</li>
 </ol>
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion05.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion05.png" width="800" hegiht="250" align=center/>
 <h3 id="worker-代码">Worker 代码</h3>
 <p>配置 worker：https://www.bilibili.com/video/av64011915/</p>
 <p>cloudfare网址链接：<a href="https://dash.cloudflare.com/" target="_blank" rel="noopener noreffer">https://dash.cloudflare.com</a></p>

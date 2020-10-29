@@ -13,11 +13,11 @@
 
 先在博客园申请开通博客，这里就不做介绍了，然后在 **“博客侧边栏公告”** [申请 js 权限](https://i.cnblogs.com/settings)（博客侧边栏公告）
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928084358.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20200928084358.png" width="600" hegiht="250" align=center/>
 
 
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928090420-20200928090440540.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20200928090420-20200928090440540.png" width="600" hegiht="250" align=center/>
 
 
 
@@ -27,7 +27,7 @@
 
 ## 3.1 用户设置
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928101839678.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928101839678.png" width="600" hegiht="250" align=center/>
 
 
 
@@ -57,7 +57,7 @@
 
 
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928102152457.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928102152457.png" width="600" hegiht="250" align=center/>
 
 
 
@@ -71,7 +71,7 @@
 >
 >    2.2 /src/style/base.min.css 的修改参考 /src/style/base.css。博客设置请使用压缩版本，直接使用 /src/style/base.css 会字符超限！
 >
-> 3. 禁用模板默认 CSS：**这里要记得 ![image-20200928112416329](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928112416329.png)**
+> 3. 禁用模板默认 CSS：**这里要记得 ![image-20200928112416329](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928112416329.png)**
 >
 > 4. 博客侧边栏公告：
 >
@@ -82,7 +82,7 @@
     window.cnblogsConfig = {
         GhVersions    : 'v1.3.3',  //这里的版本要与最下面的 scripts 引用的 js 版本一致
         blogUser      : "欲戴王冠，必承其重...易波叶平",  //用户名，主要是首页打开的为孩子
-        blogAvatar    : "https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/avatar.png", //用户头像
+        blogAvatar    : "https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png", //用户头像
         blogStartDate : "2017-11-17",  // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
         webpageTitleOnblur: '(oﾟvﾟ)ノ Hi', //离开页面，title 显示的文字
         webpageTitleFocus: '(*´∇｀*) 欢迎回来！',//点击页面，title 显示的文字
@@ -96,14 +96,14 @@
         //homeBannerText: "好好学习，天天向上！",我这里不设置，用的主题的自动获取，默认获取诗词
         //homeBannerTextType: "jinrishici", //jinrishici：每次刷新随机获取一句古诗词;one：每日获取一句话
         homeTopImg: [ //首页轮播图，可以设置多个进行轮播
-            "https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/home_top_bg.webp",
+            "https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/home_top_bg.webp",
             "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/home_top_bg.webp"
         ],
         essayTopImg: [//文章页面最上面那个图片，每次刷新随机选择
-            "https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/nothome_top_bg.webp",
-            "https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/wallhaven-4o5zm9.webp"
+            "https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/nothome_top_bg.webp",
+            "https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/wallhaven-4o5zm9.webp"
         ],
-        menuUserInfoBgImg: 'https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/menu_bg.gif',//菜单栏个人信息背景图
+        menuUserInfoBgImg: 'https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/menu_bg.gif',//菜单栏个人信息背景图
         codeLineNumber: true, //代码行号渲染
         essayCodeHighlightingType: "prettify",//代码渲染高亮
         essayCodeHighlighting: "obsidian", // 代码渲染主题
@@ -114,8 +114,8 @@
         },
         reward: { //文章打赏按钮，显示在页面右下角。
             enable: true,
-            wechatpay: 'https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/WechatPay.png',//我这里设置的赞赏码
-            alipay: 'https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/Alipay.png',//支付宝付款码
+            wechatpay: 'https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WechatPay.png',//我这里设置的赞赏码
+            alipay: 'https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/Alipay.png',//支付宝付款码
         },
         bottomBlogroll: [ // 友情链接，[[链接名,链接]....]
             ["易波叶平", 'https://zhaouncle.com/'],
@@ -133,11 +133,11 @@
 
 ## 3.3 开启公告控件
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928133928766.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928133928766.png" width="600" hegiht="250" align=center/>
 
 
 
-公告这里要选上![image-20200928112416329](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928112416329.png)，否则部分 js 文件会无法生效，其他的就自行参考自己的需要了。
+公告这里要选上![image-20200928112416329](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928112416329.png)，否则部分 js 文件会无法生效，其他的就自行参考自己的需要了。
 
 到了这一步，基本上一个完整的博客主题就搭建完成了，保存即可自由玩耍写博客了。
 
@@ -149,7 +149,7 @@
 
 ### 4.1.1 查看菜单栏
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928162846066.png" width="200" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928162846066.png" width="200" hegiht="250" align=center/>
 
 
 
@@ -163,11 +163,11 @@
 
 我们先进到 “资源管理” -- “我发起的项目” ，创建一个 “博客园” 项目，如图所示
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163537767.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928163537767.png" width="600" hegiht="250" align=center/>
 
 
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163721514.png" width="600" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928163721514.png" width="600" hegiht="250" align=center/>
 
 
 
@@ -177,7 +177,7 @@
 
 然后生成代码，填入 3.2 的 “博客侧边栏公告” 的 js 对象 **fontIconExtend** 更换成你自己的就行了，这个要添加图标进去后才能生成。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928163806514.png" alt="image-20200928163806514" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928163806514.png" alt="image-20200928163806514" style="zoom:67%;" />
 
 
 
@@ -185,21 +185,21 @@
 
 你可以直接搜索 “kubernetes”，也可以直接一个一个搜，不过一般不会这么傻吧？哈哈。重要的是选中图标，把鼠标移到图标上面，然后添加进购物车
 
-![image-20200928164246239](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164246239.png)
+![image-20200928164246239](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928164246239.png)
 
 
 
 ### 4.1.6 从购物车添加至项目
 
-点击购物车图标，然后 “添加至项目” 即可，当然你也可以忽略前面创建项目的步骤，直接在这里的![image-20200928164444244](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164444244.png)选中添加项目也行，随你自己喜欢了。
+点击购物车图标，然后 “添加至项目” 即可，当然你也可以忽略前面创建项目的步骤，直接在这里的![image-20200928164444244](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928164444244.png)选中添加项目也行，随你自己喜欢了。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164401982.png" width="400" hegiht="250" align=center alt="image-20200928164401982"/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928164401982.png" width="400" hegiht="250" align=center alt="image-20200928164401982"/>
 
 ### 4.1.7 添加成功
 
 点击确定，就添加成功了，然后在“生成代码”就好啦，鼠标移动到图标上面，直接复制代码，
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928164637400.png" alt="image-20200928164637400" style="zoom: 25%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928164637400.png" alt="image-20200928164637400" style="zoom: 25%;" />
 
 ### 4.1.8 配置 js 对象
 
@@ -214,11 +214,11 @@
 
 #### 4.2.1.1 烟花特效，我自己在使用的
 
-![image-20200928164637400](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/博客园鼠标特效%201.gif)
+![image-20200928164637400](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/博客园鼠标特效%201.gif)
 
 #### 4.2.1.2 文字特效
 
-![image-20200928164637400](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E9%BC%A0%E6%A0%87%E7%89%B9%E6%95%88%202-20200928182225432.gif)
+![image-20200928164637400](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E9%BC%A0%E6%A0%87%E7%89%B9%E6%95%88%202-20200928182225432.gif)
 
 ### 4.2.2 添加鼠标图像
 
@@ -227,10 +227,10 @@
 注意：至于如何快速找到 body，要么你直接浏览器 F12 搜，要么把 css 代码 copy 出来咯，改完再放进去不就好了吗
 
 ```css
-background-repeat: repeat;background-attachment: fixed;background-size:cover;cursor: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/cursor.ico),auto;
+background-repeat: repeat;background-attachment: fixed;background-size:cover;cursor: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/cursor.ico),auto;
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928170447277.png" alt="image-20200928170447277" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928170447277.png" alt="image-20200928170447277" style="zoom: 33%;" />
 
 ### 4.2.3 添加 js 代码
 
@@ -242,13 +242,13 @@ background-repeat: repeat;background-attachment: fixed;background-size:cover;cur
 
 ```js
 <!--鼠标点击特效，烟花效应-->
-<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/mouse-click.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/static/mouse-click.js"></script>
 <canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
 ```
 
 
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928170753274.png" alt="image-20200928170753274" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928170753274.png" alt="image-20200928170753274" style="zoom:50%;" />
 
 #### 4.2.3.2 文字特效
 
@@ -297,25 +297,25 @@ jQuery(document).ready(function($) {
 
 > CNZZ 也就是友盟的网站统计功能，主题整合 CNZZ 网站统计，并对样式进行了优化。如果需要本功能，请首先去 CNZZ 配置网站的统计，然后修改下面的代码，添加至页脚 Html 代码中。
 
-![image-20200928174817556](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174817556.png)
+![image-20200928174817556](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928174817556.png)
 
 ### 4.3.1 配置 CNZZ
 
 网址：[U-Web](https://web.umeng.com/main.php?c=site&a=show)
 
-![image-20200928173853524](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928173853524.png)
+![image-20200928173853524](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928173853524.png)
 
 ### 4.3.2 添加站点
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174154923.png" alt="image-20200928174154923" style="zoom:33%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928174154923.png" alt="image-20200928174154923" style="zoom:33%;" />
 
 ### 4.3.3 获取统计代码 ID
 
-![image-20200928174331794](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174331794.png)
+![image-20200928174331794](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928174331794.png)
 
 ### 4.3.4 开启详细数据
 
-![image-20200928174425996](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174425996.png)
+![image-20200928174425996](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928174425996.png)
 
 ### 4.3.4 配置页脚 HTML 代码
 
@@ -329,7 +329,7 @@ jQuery(document).ready(function($) {
 </div>
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928174738903.png" alt="image-20200928174738903" style="zoom: 67%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928174738903.png" alt="image-20200928174738903" style="zoom: 67%;" />
 
 
 
@@ -343,9 +343,9 @@ jQuery(document).ready(function($) {
 
 [Weather Widget](https://www.seniverse.com/widget)，我们这里直接点击 “**立即免费试用**” 就可以啦。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928232605509.png" alt="image-20200928232605509" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928232605509.png" alt="image-20200928232605509" style="zoom: 33%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/20200928232224.png" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20200928232224.png" style="zoom: 33%;" />
 
 
 
@@ -355,21 +355,21 @@ jQuery(document).ready(function($) {
 
 > 自动定位：这里不知为何我电脑定位到“福州”，所以我干脆关了算了，可能是免费版导致的。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928233502331.png" alt="image-20200928233502331" style="zoom: 25%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928233502331.png" alt="image-20200928233502331" style="zoom: 25%;" />
 
 #### 4.4.3.2 生成代码
 
 将生成的 JS 代码复制到 “**页脚 HTML 代码**”中，放在 4.3 网站统计的下面就好。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928233706388.png" alt="image-20200928233706388" style="zoom: 67%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928233706388.png" alt="image-20200928233706388" style="zoom: 67%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928234644921.png" alt="image-20200928234644921" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928234644921.png" alt="image-20200928234644921" style="zoom:67%;" />
 
 ### 4.4.4 效果如图所示
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928235057890.png" alt="image-20200928235057890" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928235057890.png" alt="image-20200928235057890" style="zoom: 50%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200928235137699.png" alt="image-20200928235137699" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200928235137699.png" alt="image-20200928235137699" style="zoom:50%;" />
 
 ## 4.5 背景图片
 
@@ -385,23 +385,23 @@ background-image: url("https://img2018.cnblogs.com/blog/1358881/201909/1358881-2
 
 如图所示：
 
-![image-20200929091203925](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929091203925.png)
+![image-20200929091203925](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929091203925.png)
 
 ### 4.5.1 效果图如下
 
-![image-20200929092309224](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929092309224.png)
+![image-20200929092309224](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929092309224.png)
 
 ## 4.6 网抑云音乐
 
 ### 4.6.0 效果图
 
-![image-20200929103039509](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929103039509.png)
+![image-20200929103039509](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929103039509.png)
 
 ### 4.6.1 获取网抑云 ID
 
 打开网页版网抑云，然后选择你想播放的歌单，歌单可以是你自己的也可以是别人的，只要歌曲能播放就行，然后把 uri 后面的 id 给 copy 出来
 
-![image-20200929100851791](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929100851791.png)
+![image-20200929100851791](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929100851791.png)
 
 ### 4.6.2 代码添加
 
@@ -426,7 +426,7 @@ background-image: url("https://img2018.cnblogs.com/blog/1358881/201909/1358881-2
 
 如图所示，代码存放位置，直接放在之前的代码后面就行
 
-![image-20200929102832380](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929102832380.png)
+![image-20200929102832380](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929102832380.png)
 
 ## 4.7 去掉反对按钮
 
@@ -434,9 +434,9 @@ background-image: url("https://img2018.cnblogs.com/blog/1358881/201909/1358881-2
 
 看到这个按钮，下意识就想删了，大家可不要给我反对哦，否则就不更新了呢，不过我也不给你这个按钮，哈哈！
 
-![image-20200929134759718](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929134759718.png)
+![image-20200929134759718](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929134759718.png)
 
-![image-20200929134740622](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929134740622.png)
+![image-20200929134740622](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929134740622.png)
 
 ### 4.7.2 在配置 CSS
 
@@ -448,15 +448,15 @@ background-image: url("https://img2018.cnblogs.com/blog/1358881/201909/1358881-2
 
 如图所示：
 
-![image-20200929232353044](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929232353044.png)
+![image-20200929232353044](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929232353044.png)
 
 ### 4.7.3 效果图
 
 这个时候我们再看就没有啦，我是不是很鸡贼呢？
 
-![image-20200929135145293](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929135145293.png)
+![image-20200929135145293](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929135145293.png)
 
-![image-20200929232045242](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929232045242.png)
+![image-20200929232045242](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929232045242.png)
 
 ## 4.8 复制文字加版权
 
@@ -488,13 +488,13 @@ jQuery(document).on('copy', function(e)
 
 如图所示：直接在鼠标特效后面换行加上就好，然后及的保存
 
-![image-20200929140933762](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200929140933762.png)
+![image-20200929140933762](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200929140933762.png)
 
 ## 4.9 看板娘
 
 ### 4.9.1 效果图
 
-![image-20200930132532566](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930132532566.png)
+![image-20200930132532566](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930132532566.png)
 
 ### 4.9.2 所有文件
 
@@ -520,23 +520,23 @@ jQuery(document).on('copy', function(e)
     </div> 
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/live2d.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/waifu-tips.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/static/kanbanniang/live2d.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/static/kanbanniang/waifu-tips.js"></script>
 <script type="text/javascript">initModel()</script>
 
 ```
 
-![image-20200930141616463](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930141616463.png)
+![image-20200930141616463](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930141616463.png)
 
 ### 4.9.4 “页首 HTML 代码”配置
 
 ```
 <!--看板娘-->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/waifu.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/static/kanbanniang/flat-ui.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/static/kanbanniang/waifu.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/static/kanbanniang/flat-ui.min.css"/>
 ```
 
-![image-20200930141533232](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930141533232.png)
+![image-20200930141533232](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930141533232.png)
 
 
 
@@ -546,20 +546,20 @@ jQuery(document).on('copy', function(e)
 
 原本是 iconfont 的默认图标，我这里用个小火箭给替代了。
 
-![image-20201001153701615](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201001153701615.png)
+![image-20201001153701615](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201001153701615.png)
 
-![image-20201001153954054](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201001153954054.png)
+![image-20201001153954054](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201001153954054.png)
 
 ### 4.10.2 配置
 
 在**页面定制 CSS 代码**那里最后直接追加即可，记得选择保存哦！
 
 ```css
-i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/o_rocket.png) no-repeat center center;}
+i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/o_rocket.png) no-repeat center center;}
 
 ```
 
-![image-20201001153846665](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201001153846665.png)
+![image-20201001153846665](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201001153846665.png)
 
 
 
@@ -569,7 +569,7 @@ i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/i
 
 ### 4.11.1效果图
 
-![image-20201002203505959](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201002203505959.png)
+![image-20201002203505959](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201002203505959.png)
 
 ### 4.11.2 配置 “页面定制 CSS 代码 ”
 
@@ -577,7 +577,7 @@ i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/i
 #tbCommentBody {background: #fff url(https://gitee.com/dbnuo/Cnblogs-Theme-SimpleMemory/raw/master/img/comment_bg.jpg) right -65px;background-size: 250px;background-repeat: no-repeat;}
 ```
 
-![image-20201002203553522](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201002203553522.png)
+![image-20201002203553522](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201002203553522.png)
 
 
 
@@ -591,7 +591,7 @@ i.iconfont.icon-zhiding {background: url(https://cdn.jsdelivr.net/gh/ZhaoUncle/i
 
 ## 4.13 个人书单
 
-![image-20201014175117428](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014175117428.png)
+![image-20201014175117428](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201014175117428.png)
 
 ### 4.13.1 创建随笔
 
@@ -645,7 +645,7 @@ window.cnblogsConfig.bookList = [
 
 如图所在位置所示：
 
-![image-20201014174943992](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20201014174943992.png)
+![image-20201014174943992](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201014174943992.png)
 
 
 

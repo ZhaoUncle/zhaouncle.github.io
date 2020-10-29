@@ -7,19 +7,19 @@
 
 自定义个人主页之后你会发现除了项目的展示，还有个人的其他信息介绍。下面是小编设计的个人主页，初次尝试，请勿见笑！
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/github01.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/github01.png" width="800" hegiht="250" align=center/>
 
 ## 2. 在你的 github 上创建一个新仓库
 
  这个新仓库的名称要和你登录账号名称保持一致。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/github03.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/github03.png" width="800" hegiht="250" align=center/>
 
 创建结果：
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/github04.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/github04.png" width="800" hegiht="250" align=center/>
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/github05.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/github05.png" width="800" hegiht="250" align=center/>
 
 ## 3. 将远程仓库拉到本地电脑上
 

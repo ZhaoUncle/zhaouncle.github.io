@@ -15,19 +15,19 @@
 
 - 登录Github，在 Settings->Personal access tokens->Generate new token 生成一个访问token，点击 https://github.com/settings/tokens/new 这个超链接，就是创建你的token。
 
-  ![image-20200902144750477](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200902144750477.png)
+  ![image-20200902144750477](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200902144750477.png)
 
 - 可以通过一以下链接，创建一个 github 私有仓库 “Private” 就可以，这是这个插件好用的地方。
 
   https://github.com/new
 
-  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200902145023927.png" width="600" hegiht="250" align=center/>
+  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200902145023927.png" width="600" hegiht="250" align=center/>
 
   
 
 - 点击插件，依次输入“github 用户名”——“github token”——“github 仓库名称/bookmark.json”
 
-  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200902145148139.png" width="600" hegiht="250" align=center/>
+  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200902145148139.png" width="600" hegiht="250" align=center/>
 
   1. “书签插件”，左键点击可以直接配置选项
   2. Username：表示github 用户名

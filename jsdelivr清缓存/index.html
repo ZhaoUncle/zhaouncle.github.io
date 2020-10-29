@@ -32,7 +32,7 @@
         },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "cdn","wordcount":  601 ,
         "url": "https:\/\/www.zhaouncle.com\/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98\/","datePublished": "2020-09-30T10:46:26+08:00","dateModified": "2020-09-30T10:46:26+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
-            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/images\/blog\/avatar.png"},"author": {
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "赵叔"
             },"description": "jsdelivr 缓存刷新"
@@ -156,9 +156,9 @@
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">#github 原图
 https://github.com/ZhaoUncle/images/blob/master/blog/avatar.png
 #master 默认不需要加版本号
-https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/avatar.png
+https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
 #如果你有多个分支多版本管理
-https://cdn.jsdelivr.net/gh/ZhaoUncle/images@master/blog/avatar.png
+https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="3-jsdelivr-缓存刷新方法">3. jsdelivr 缓存刷新方法</h1>
@@ -171,10 +171,10 @@ https://cdn.jsdelivr.net/gh/ZhaoUncle/images@master/blog/avatar.png
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930110114144.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930110114144.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930110114144.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930110114144.png 2x"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930110114144.png"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png"
         title="image-20200930110114144" /></p>
 <h1 id="4-发现推送上去但是-cdn-打不开啥原因">4. 发现推送上去，但是 cdn 打不开？啥原因</h1>
 <p>其实也就是 cdn 缓存边缘节点还没缓存过去，方法如 3 那样直接 purge 访问强制刷新到边缘节点就好啦。</p></div><div class="post-footer" id="post-footer">

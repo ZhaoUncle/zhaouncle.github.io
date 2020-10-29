@@ -19,7 +19,7 @@
 
 官方目前不打算推出自定义域名的特性。如果你将自己的域名设置为隐式转发会在前端看到一个这样的提示。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion01.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion01.png" width="800" hegiht="250" align=center/>
 
 其主要的检验手段是在前端 js 做校验， Notion 是一个典型的单页应用，利用 Cloudflare 的 worker 做代理，将 js 中的 [notion.so](http://notion.so/) 全部替换成自己的域名，这样即可绕过校验。
 
@@ -44,17 +44,17 @@
 
 注意，其中的 IPv4 地址部分，虽然你可以改成任意 DNS 的 IP，或者是你自己的服务器，但是当你的 IP 为国内 IP 时，有概率会因为备案问题而 404。
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion02.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion02.png" width="800" hegiht="250" align=center/>
 
 3. 创建 Workers，查看如下的“worker 代码”
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion03.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion03.png" width="800" hegiht="250" align=center/>
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion04.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion04.png" width="800" hegiht="250" align=center/>
 
 4. 添加一条 route，并指向上方的 worker rule
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/notion05.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion05.png" width="800" hegiht="250" align=center/>
 
 
 

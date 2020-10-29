@@ -27,9 +27,9 @@ master 仓库的 https://github.com/ZhaoUncle/images
 #github 原图
 https://github.com/ZhaoUncle/images/blob/master/blog/avatar.png
 #master 默认不需要加版本号
-https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/avatar.png
+https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
 #如果你有多个分支多版本管理
-https://cdn.jsdelivr.net/gh/ZhaoUncle/images@master/blog/avatar.png
+https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
 ```
 
 
@@ -48,7 +48,7 @@ https://cdn.jsdelivr.net/gh/ZhaoUncle/images@master/blog/avatar.png
 
 我直接在浏览器访问这个接口得出以下数据，返回status: ok，就代表完成了。
 
-![image-20200930110114144](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200930110114144.png)
+![image-20200930110114144](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png)
 
 # 4. 发现推送上去，但是 cdn 打不开？啥原因
 

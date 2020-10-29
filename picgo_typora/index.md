@@ -48,17 +48,17 @@ Markdown 文档编写时可使用本地图片，但是无法在网络上使用�
 注意：token 只会显示一次，记得保存如果你不建议重新配置一次的话
 ```
 
-![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken.png)
-![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken2.png)
-![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken3.png)
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/githubToken4.png" width="800" hegiht="250" align=center/>
+![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png)
+![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png)
+![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken4.png" width="800" hegiht="250" align=center/>
 
 
 
 ## 6.配置 PicGo (GitHub) 图床
 参考：https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/20200824095351.png" width="800" hegiht="250" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/20200824095351.png" width="800" hegiht="250" align=center/>
 
 
 
@@ -72,11 +72,11 @@ https://cdn.jsdelivr.net/gh/用户名/仓库名
 
 **记得“验证图片上传选项”**
 
-![image-20200824103801757](https://cdn.jsdelivr.net/gh/ZhaoUncle/images//blog/image-20200824103801757.png)
+![image-20200824103801757](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/image-20200824103801757.png)
 
 
 
-![image-20200824114030892](https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/image-20200824114030892.png)
+![image-20200824114030892](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200824114030892.png)
 
 
 

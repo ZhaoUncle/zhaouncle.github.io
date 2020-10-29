@@ -398,7 +398,7 @@
 
 ### 2020 年 08 月 07 日
 
-<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/images/blog/08a268a7536468e8263fda199e84ebed.jpg" width="400" hegiht="150" align=center/>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/08a268a7536468e8263fda199e84ebed.jpg" width="400" hegiht="150" align=center/>
 
 >爱会
 >
