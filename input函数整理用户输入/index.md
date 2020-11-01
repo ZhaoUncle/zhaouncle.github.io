@@ -3,6 +3,8 @@
 
 <!--more-->
 
+把 fmt.Scan 用户输入整理成函数，方便底层调用，重复代码
+
 ```go
 package main
 
