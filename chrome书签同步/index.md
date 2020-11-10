@@ -17,7 +17,7 @@
 
   ![image-20200902144750477](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200902144750477.png)
 
-- 可以通过一以下链接，创建一个 github 私有仓库 “Private” 就可以，这是这个插件好用的地方。
+- 可以通过以下链接，创建一个 github 私有仓库 “Private” 就可以，这是这个插件好用的地方。
 
   https://github.com/new
 
@@ -37,17 +37,14 @@
   5. Upload：是上传到git上面(每次使用书签后 请点击上传)
   6. Download： 是下载网络上的书签 （换电脑以后可以点击download进行同步）
   7. Remember Me：是指记住这些配置
-  8. 
-
+  
 - 上传结果演示
 
-  ![image-20200902150629952](/Users/aomine/Library/Application%20Support/typora-user-images/image-20200902150629952.png)
+  ![image-20201103165126194](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201103165126194.png)
 
   
-
-
-
-
+  
+  
 
 
 
