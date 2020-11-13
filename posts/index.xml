@@ -4,7 +4,14 @@
         <link>https://www.zhaouncle.com/posts/</link>
         <description>所有文章 | 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Nov 2020 18:02:16 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Nov 2020 08:36:32 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>解决 go get下载包慢或者失败的问题</title>
+    <link>https://www.zhaouncle.com/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Wed, 11 Nov 2020 08:36:32 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[【Golang】解决 go get下载包慢或者失败的问题]]></description>
+</item><item>
     <title>【Python】如何结束退出 py 脚本</title>
     <link>https://www.zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/</link>
     <pubDate>Tue, 10 Nov 2020 18:02:16 &#43;0800</pubDate>
@@ -20,10 +27,10 @@
     <description><![CDATA[vscode 设置 Golang 开发环境]]></description>
 </item><item>
     <title>【Golang】字符串的查找方法小结</title>
-    <link>https://www.zhaouncle.com/golang%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+    <link>https://www.zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/</link>
     <pubDate>Sat, 31 Oct 2020 23:52:01 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://www.zhaouncle.com/golang%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+    <guid>https://www.zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/</guid>
     <description><![CDATA[Golang 字符串的查找方法小结]]></description>
 </item><item>
     <title>【Golang】自定义 input 函数整理用户输入</title>
@@ -45,7 +52,7 @@
     <pubDate>Thu, 29 Oct 2020 18:12:02 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://www.zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B4%E6%95%B0%E7%9A%84%E8%BD%AC%E6%8D%A2%E7%84%B6%E5%90%8E%E6%89%93%E5%8D%B0%E7%B1%BB%E5%9E%8B/</guid>
-    <description><![CDATA[字符串与 int 的转换然后打印类型]]></description>
+    <description><![CDATA[【Golang】字符串与 int 的转换然后打印类型]]></description>
 </item><item>
     <title>【Golang】map 使用映射存储操作指令及调用函数关系</title>
     <link>https://www.zhaouncle.com/map%E4%BD%BF%E7%94%A8%E6%98%A0%E5%B0%84%E5%AD%98%E5%82%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4%E5%8F%8A%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E5%85%B3%E7%B3%BB/</link>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://www.zhaouncle.com/hugo_03/</guid>
     <description><![CDATA[github blog 自定义域名，外加 https cdn 加速]]></description>
-</item><item>
-    <title>Github Pages 图床</title>
-    <link>https://www.zhaouncle.com/github%E5%9B%BE%E5%BA%8A/</link>
-    <pubDate>Thu, 29 Oct 2020 15:15:54 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/github%E5%9B%BE%E5%BA%8A/</guid>
-    <description><![CDATA[github 图床 cdn]]></description>
 </item></channel>
 </rss>
