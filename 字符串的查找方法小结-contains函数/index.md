@@ -62,6 +62,69 @@
    }
    ```
 
+   参考：
+   
+   ```go
+   package main
+   
+   import (
+   	"fmt"
+   	"strings"
+   )
+   
+   var (
+   	coins = 50
+   	users = []string{
+   		"Matthew", "Sarah", "Augustus", "Heidi", "Emilie", "Peter", "Giana", "Adriano", "Aaron", "Elizabeth",
+   	}
+   	distribution = make(map[string]int, len(users))
+   	rewardRules  = map[string]int{
+   		"e": 1,
+   		"i": 2,
+   		"o": 3,
+   		"u": 4,
+   	}
+   )
+   
+   func dispatchCoin() int {
+   	var leftCoins int
+   	for _, name := range users {
+   		tempCount := 0
+   		for k, v := range rewardRules {
+   			tempCount += strings.Count(strings.ToLower(name), k) * v
+   		}
+   		distribution[name] = tempCount
+   	}
+   	for k, v := range distribution {
+   		fmt.Printf("【%v】分到多少枚【%d】金币\n", k, v)
+   		leftCoins += v
+   	}
+   	return coins - leftCoins
+   }
+   
+   func main() {
+   	left := dispatchCoin()
+   	fmt.Println("剩下：", left)
+   
+   }
+   ```
+   
+   结果：
+   
+   ```go
+   【Sarah】分到多少枚【0】金币
+   【Heidi】分到多少枚【5】金币
+   【Giana】分到多少枚【2】金币
+   【Adriano】分到多少枚【5】金币
+   【Aaron】分到多少枚【3】金币
+   【Elizabeth】分到多少枚【4】金币
+   【Matthew】分到多少枚【1】金币
+   【Augustus】分到多少枚【12】金币
+   【Emilie】分到多少枚【6】金币
+   【Peter】分到多少枚【2】金币
+   剩下： 10
+   ```
+   
    
 
 # 参考：

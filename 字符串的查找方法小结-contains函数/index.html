@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Golang, go","wordcount":  211 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Golang, go","wordcount":  626 ,
         "url": "https:\/\/www.zhaouncle.com\/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0\/","datePublished": "2020-10-31T23:52:01+08:00","dateModified": "2020-10-31T23:52:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">【Golang】字符串的查找方法小结</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-31">2020-10-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 211 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/" class="leancloud_visitors" data-flag-title="【Golang】字符串的查找方法小结">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-31">2020-10-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 626 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/" class="leancloud_visitors" data-flag-title="【Golang】字符串的查找方法小结">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -221,6 +221,126 @@
 </span><span class="c1"></span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ContainsAny</span><span class="p">(</span><span class="s">&#34;aomineKing&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))</span>     <span class="c1">//false
 </span><span class="c1"></span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ContainsAny</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))</span>               <span class="c1">//false
 </span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+   
+<span class="kn">import</span> <span class="p">(</span>
+ <span class="s">&#34;fmt&#34;</span>
+ <span class="s">&#34;strings&#34;</span>
+<span class="p">)</span>
+   
+<span class="kd">var</span> <span class="p">(</span>
+ <span class="nx">coins</span> <span class="p">=</span> <span class="mi">50</span>
+ <span class="nx">users</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span>
+     <span class="s">&#34;Matthew&#34;</span><span class="p">,</span> <span class="s">&#34;Sarah&#34;</span><span class="p">,</span> <span class="s">&#34;Augustus&#34;</span><span class="p">,</span> <span class="s">&#34;Heidi&#34;</span><span class="p">,</span> <span class="s">&#34;Emilie&#34;</span><span class="p">,</span> <span class="s">&#34;Peter&#34;</span><span class="p">,</span> <span class="s">&#34;Giana&#34;</span><span class="p">,</span> <span class="s">&#34;Adriano&#34;</span><span class="p">,</span> <span class="s">&#34;Aaron&#34;</span><span class="p">,</span> <span class="s">&#34;Elizabeth&#34;</span><span class="p">,</span>
+ <span class="p">}</span>
+ <span class="nx">distribution</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">users</span><span class="p">))</span>
+ <span class="nx">rewardRules</span>  <span class="p">=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+     <span class="s">&#34;e&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s">&#34;i&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="s">&#34;o&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+     <span class="s">&#34;u&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+ <span class="p">}</span>
+<span class="p">)</span>
+   
+<span class="kd">func</span> <span class="nf">dispatchCoin</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">leftCoins</span> <span class="kt">int</span>
+ <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">name</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">users</span> <span class="p">{</span>
+     <span class="nx">tempCount</span> <span class="o">:=</span> <span class="mi">0</span>
+     <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">rewardRules</span> <span class="p">{</span>
+         <span class="nx">tempCount</span> <span class="o">+=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Count</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">name</span><span class="p">),</span> <span class="nx">k</span><span class="p">)</span> <span class="o">*</span> <span class="nx">v</span>
+     <span class="p">}</span>
+     <span class="nx">distribution</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="p">=</span> <span class="nx">tempCount</span>
+ <span class="p">}</span>
+ <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">distribution</span> <span class="p">{</span>
+     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;【%v】分到多少枚【%d】金币\n&#34;</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+     <span class="nx">leftCoins</span> <span class="o">+=</span> <span class="nx">v</span>
+ <span class="p">}</span>
+ <span class="k">return</span> <span class="nx">coins</span> <span class="o">-</span> <span class="nx">leftCoins</span>
+<span class="p">}</span>
+   
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="nx">left</span> <span class="o">:=</span> <span class="nf">dispatchCoin</span><span class="p">()</span>
+ <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;剩下：&#34;</span><span class="p">,</span> <span class="nx">left</span><span class="p">)</span>
+   
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="err">【</span><span class="nx">Sarah</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">0</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Heidi</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">5</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Giana</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">2</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Adriano</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">5</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Aaron</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">3</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Elizabeth</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">4</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Matthew</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">1</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Augustus</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">12</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Emilie</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">6</span><span class="err">】</span><span class="nx">金币</span>
+<span class="err">【</span><span class="nx">Peter</span><span class="err">】</span><span class="nx">分到多少枚</span><span class="err">【</span><span class="mi">2</span><span class="err">】</span><span class="nx">金币</span>
+<span class="nx">剩下</span><span class="err">：</span> <span class="mi">10</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
