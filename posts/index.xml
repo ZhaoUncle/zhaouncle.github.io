@@ -4,7 +4,58 @@
         <link>https://www.zhaouncle.com/posts/</link>
         <description>所有文章 | 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Dec 2020 16:04:40 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Dec 2020 20:44:48 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>于二零二零年：终章</title>
+    <link>https://www.zhaouncle.com/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</link>
+    <pubDate>Mon, 28 Dec 2020 20:44:48 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</guid>
+    <description><![CDATA[<p>2020 年年终有感</p>
+<p>###摘抄</p>
+<blockquote>
+<p>人生难得是从容。</p>
+</blockquote>
+<blockquote>
+<p>难的是放下现有能得到的触手可及，去追寻未知。</p>
+</blockquote>
+<blockquote>
+<p>我要在你平庸无奇的回忆里，做一个闪闪发光的神经病。</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>我天性不宜交际。</p>
+<p>在多数场合，我不是觉得对方乏味，就是害怕对方觉得我乏味。</p>
+<p>可是我既不愿忍受对方的乏味，也不愿费劲
+使自己显得有趣，</p>
+<p>那都太累了。</p>
+</blockquote>
+<blockquote>
+<p>我独处时最轻松，因为我不觉得自己乏味。
+即使乏味，也自己承受，</p>
+<p>不累及他人，无需感到不安。</p>
+</blockquote>
+<p>——周国平《风中的纸屑》</p>
+</blockquote>
+<blockquote>
+<p>你要克服懒惰，你要克服游手好闲，你要克服漫长的白日梦，你要克服一蹴而就的妄想，你要克服自以为是浅薄的幽默感。你要独立生长在这世上，不寻找不依靠，因为冷漠寡情的人孤独一生。你要坚强，振作，自立，不能软弱，逃避，害怕。不要沉溺在消极负面得情绪里，要正面阳光得对待生活和爱你的人。</p>
+<p>——网易云热评</p>
+</blockquote>
+<blockquote>
+<p>我因为爱你，所以常常想跟你道歉。我的爱沉重、污浊，里面带有许多令人不快的东西，比如悲伤、忧愁、自怜、绝望，我的心又这样脆弱不堪，自己总被这些负面情绪打败，好像在一个沼泽里越挣扎越下沉。而我爱你，就是想把你也拖进来，却希望你救我。</p>
+</blockquote>
+<blockquote>
+<p>人们迟早会发现自己爱的不是现实中的他,而是想象中的他,现实中的他只是他们所创造梦中情人 的一个模板,他们迟早会发现梦中情人与模板的差距,适应了就走下去没适应就分开,你与大多数 人不同的是,你不需要模板&rdquo; &ldquo;但是我喜欢上了一个不存在的人,她只是我虚构出来的,这难道不是一种病态? &quot; &ldquo;不,不是,其实你很幸运,不管他是不是真是存在,能爱就很幸运了。</p>
+<p>—— 刘慈欣《三体》</p>
+</blockquote>
+<blockquote>
+<p>我所有的自负皆来自我的自卑，所有的英雄气概都来自于我的软弱。嘴里振振有词是因为心里满是怀疑，深情是因为痛恨自己无 情。这世界没有一件事是虚空而生的，站在光里，背后就会有阴影，这深夜里一片静默，是因为你没有听见声音。</p>
+<p>——坦白书</p>
+</blockquote>
+<blockquote>
+<p>每个人都不是一座孤岛，一个人必须是这世界最坚固的岛屿，然后才能成为大陆的一部分。</p>
+<p>——海明威</p>
+</blockquote>]]></description>
+</item><item>
     <title>【Golang】练习 tailf 简单模拟</title>
     <link>https://www.zhaouncle.com/%E7%BB%83%E4%B9%A0-tailf%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/</link>
     <pubDate>Sun, 06 Dec 2020 16:04:40 &#43;0800</pubDate>
@@ -67,12 +118,5 @@
     <author>作者</author>
     <guid>https://www.zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
     <description><![CDATA[vscode 设置 Golang 开发环境]]></description>
-</item><item>
-    <title>【Golang】字符串的查找方法小结</title>
-    <link>https://www.zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/</link>
-    <pubDate>Sat, 31 Oct 2020 23:52:01 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/</guid>
-    <description><![CDATA[Golang 字符串的查找方法小结]]></description>
 </item></channel>
 </rss>
