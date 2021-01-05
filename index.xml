@@ -4,9 +4,30 @@
         <link>https://www.zhaouncle.com/</link>
         <description>欲戴王冠，必承其重</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Dec 2020 20:44:48 &#43;0800</lastBuildDate>
+            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 05 Jan 2021 15:35:17 &#43;0800</lastBuildDate>
             <atom:link href="https://www.zhaouncle.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>【Nginx】 正则在线测试</title>
+    <link>https://www.zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</link>
+    <pubDate>Tue, 05 Jan 2021 15:35:17 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</guid>
+    <description><![CDATA[【Nginx】 正则在线测试]]></description>
+</item><item>
+    <title>【Nginx】url 带有 “https://” 双斜杠特殊处理</title>
+    <link>https://www.zhaouncle.com/nginx-uri%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86/</link>
+    <pubDate>Tue, 05 Jan 2021 14:16:03 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/nginx-uri%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86/</guid>
+    <description><![CDATA[【Nginx】url 带有 “https://” 双斜杠特殊处理]]></description>
+</item><item>
+    <title>陶渊明</title>
+    <link>https://www.zhaouncle.com/%E9%99%B6%E6%B8%8A%E6%98%8E/</link>
+    <pubDate>Tue, 05 Jan 2021 14:15:37 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/%E9%99%B6%E6%B8%8A%E6%98%8E/</guid>
+    <description><![CDATA[应尽便须尽，无复独多虑。]]></description>
+</item><item>
     <title>于二零二零年：终章</title>
     <link>https://www.zhaouncle.com/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</link>
     <pubDate>Mon, 28 Dec 2020 20:44:48 &#43;0800</pubDate>
@@ -99,26 +120,5 @@
     <author>作者</author>
     <guid>https://www.zhaouncle.com/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
     <description><![CDATA[【Golang】类型转换之 cast 包]]></description>
-</item><item>
-    <title>解决 go get下载包慢或者失败的问题</title>
-    <link>https://www.zhaouncle.com/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Wed, 11 Nov 2020 08:36:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[【Golang】解决 go get下载包慢或者失败的问题]]></description>
-</item><item>
-    <title>【Python】如何结束退出 py 脚本</title>
-    <link>https://www.zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/</link>
-    <pubDate>Tue, 10 Nov 2020 18:02:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/</guid>
-    <description><![CDATA[如何结束退出 python 脚本]]></description>
-</item><item>
-    <title>【Golang】vscode 设置 go 开发环境</title>
-    <link>https://www.zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
-    <pubDate>Sun, 01 Nov 2020 16:47:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
-    <description><![CDATA[vscode 设置 Golang 开发环境]]></description>
 </item></channel>
 </rss>
