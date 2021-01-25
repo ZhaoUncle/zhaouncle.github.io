@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>【ELK】elastalert 日志告警 - 易波叶平</title><meta name="Description" content="【ELK】elastalert 日志告警：邮件、钉钉、企业微信"><meta property="og:title" content="【ELK】elastalert 日志告警" />
+<meta property="og:description" content="【ELK】elastalert 日志告警：邮件、钉钉、企业微信" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.zhaouncle.com/elasticleart-%E5%91%8A%E8%AD%A6/" />
+<meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
+<meta property="article:published_time" content="2021-01-15T15:36:44+08:00" />
+<meta property="article:modified_time" content="2021-01-15T15:36:44+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
+
+<meta name="twitter:title" content="【ELK】elastalert 日志告警"/>
+<meta name="twitter:description" content="【ELK】elastalert 日志告警：邮件、钉钉、企业微信"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.zhaouncle.com/elasticleart-%E5%91%8A%E8%AD%A6/" /><link rel="prev" href="https://www.zhaouncle.com/prometheus%E7%83%AD%E5%8A%A0%E8%BD%BD%E6%96%B9%E6%B3%95/" /><link rel="next" href="https://www.zhaouncle.com/kibana-%E5%AE%89%E8%A3%85%E5%88%A0%E9%99%A4%E6%8F%92%E4%BB%B6/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "【ELK】elastalert 日志告警",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.zhaouncle.com\/elasticleart-%E5%91%8A%E8%AD%A6\/"
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ELK, elastalert","wordcount":  3999 ,
+        "url": "https:\/\/www.zhaouncle.com\/elasticleart-%E5%91%8A%E8%AD%A6\/","datePublished": "2021-01-15T15:36:44+08:00","dateModified": "2021-01-15T15:36:44+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "赵叔"
+            },"description": "【ELK】elastalert 日志告警：邮件、钉钉、企业微信"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/link" title="友链"> 友链 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/elasticleart-%E5%91%8A%E8%AD%A6/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/link" title="友链">友链</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/elasticleart-%E5%91%8A%E8%AD%A6/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">【ELK】elastalert 日志告警</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>ELK</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-15">2021-01-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3999 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/elasticleart-%E5%91%8A%E8%AD%A6/" class="leancloud_visitors" data-flag-title="【ELK】elastalert 日志告警">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一环境">一、环境</a>
+      <ul>
+        <li><a href="#11-elastalert-工作原理">1.1 ElastAlert 工作原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#二安装配置-elastalert">二、安装配置 elastalert</a>
+      <ul>
+        <li><a href="#21-安装-python36">2.1 安装 python3.6</a>
+          <ul>
+            <li><a href="#223-configyaml-配置文件">2.2.3 config.yaml 配置文件</a></li>
+          </ul>
+        </li>
+        <li><a href="#24-服务启动方法">2.4 服务启动方法</a>
+          <ul>
+            <li><a href="#241-service-启动管理">2.4.1 service 启动管理</a></li>
+            <li><a href="#242-supervisor-启动管理">2.4.2 supervisor 启动管理</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#三告警测试">三、告警测试</a>
+      <ul>
+        <li><a href="#31-es-测试索引">3.1 es 测试索引</a>
+          <ul>
+            <li><a href="#313-查看有哪些索引">3.1.3 查看有哪些索引</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-邮件告警">3.2 邮件告警</a>
+          <ul>
+            <li><a href="#321-创建测试告警规则">3.2.1 创建测试告警规则</a></li>
+            <li><a href="#322-发送邮件的账号密码">3.2.2 发送邮件的账号密码</a></li>
+            <li><a href="#323-启动告警规则并发送测试数据">3.2.3 启动告警规则并发送测试数据</a></li>
+            <li><a href="#332-安装依赖">3.3.2 安装依赖</a></li>
+            <li><a href="#334-启动告警规则并发送测试数据">3.3.4 启动告警规则并发送测试数据</a></li>
+            <li><a href="#335-钉钉机器人配置">3.3.5 钉钉机器人配置</a></li>
+          </ul>
+        </li>
+        <li><a href="#34-微信告警">3.4 微信告警</a></li>
+        <li><a href="#35-告警格式优化">3.5 告警格式优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#四kibana-添加-elastalert-插件">四、kibana 添加 elastalert 插件</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#411-演示效果">4.1.1 演示效果</a></li>
+          </ul>
+        </li>
+        <li><a href="#42-安装-elastalert-kibana-plugin">4.2 安装 elastalert-kibana-plugin</a>
+          <ul>
+            <li><a href="#421-安装命令">4.2.1 安装命令</a></li>
+            <li><a href="#422-配置">4.2.2 配置</a></li>
+            <li><a href="#432-更改配置api-server-端用的配置是configjson">4.3.2 更改配置，api server 端用的配置是config.json</a></li>
+            <li><a href="#433-更改-elastalert-配置">4.3.3 更改 elastalert 配置</a></li>
+            <li><a href="#434-docker-composeyml-配置文件">4.3.4 docker-compose.yml 配置文件</a></li>
+            <li><a href="#435-启动">4.3.5 启动</a></li>
+          </ul>
+        </li>
+        <li><a href="#44-出现的报错">4.4 出现的报错：</a></li>
+      </ul>
+    </li>
+    <li><a href="#五告警规则详解">五、告警规则详解</a></li>
+    <li><a href="#七告警需求整理">七、告警需求整理</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="一环境">一、环境</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">系统：centos7
+elk 版本：7.6.2
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="11-elastalert-工作原理">1.1 ElastAlert 工作原理</h2>
+<p>周期性的查询Elastsearch并且将数据传递给规则类型，规则类型定义了需要查询哪些数据。</p>
+<p>当一个规则匹配触发，就会给到一个或者多个的告警，这些告警具体会根据规则的配置来选择告警途径，就是告警行为，比如邮件、钉钉、tg、slack、企业微信等</p>
+<p><a href="https://elastalert.readthedocs.io/en/latest/elastalert.html#" target="_blank" rel="noopener noreffer">ElastAlert 手册</a></p>
+<h1 id="二安装配置-elastalert">二、安装配置 elastalert</h1>
+<p><strong>Tips：Elastalert 0.2.0 之后使用 Python 3.6，不再使用 Python 2 版本</strong></p>
+<h2 id="21-安装-python36">2.1 安装 python3.6</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#安装EPEL和IUS软件源
+yum install epel-release -y
+yum install https://centos7.iuscommunity.org/ius-release.rpm -y
+#安装python3.6
+yum install python36u python36u-devel python36u-pip -y
+#ln -s /usr/bin/python3.6 /bin/python3
+#ln -s /usr/bin/pip3.6 /bin/pip3
+</code></pre></td></tr></table>
+</div>
+</div><p>##2.2 安装 elastalert</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip3 install elastalert
+</code></pre></td></tr></table>
+</div>
+</div><p>###2.2.1 配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /opt/soft/
+git clone https://github.com/Yelp/elastalert.git 
+cd elastalert
+cp config.yaml.example config.yaml
+mkdir rules
+</code></pre></td></tr></table>
+</div>
+</div><p>###2.2.2 样例</p>
+<p><a href="https://github.com/Yelp/elastalert/tree/master/example_rules">https://github.com/Yelp/elastalert/tree/master/example_rules</a></p>
+<h3 id="223-configyaml-配置文件">2.2.3 config.yaml 配置文件</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#规则目录
+rules_folder: /opt/soft/elastalert/rules
+#多久从ES中查询一次
+run_every:
+  seconds: 30
+#是查询窗口的大小，从每个查询运行的时间向后延伸。对于其中use_count_query或use_terms_query设置为true的规则，此值将被忽略。
+buffer_time:
+  minutes: 15
+#连接elasticsearch配置
+es_host: 127.0.0.1
+es_port: 9200
+es_username: elastic
+es_password: xxxxxxxx
+#elastalert索引名称
+writeback_index: elastalert_status
+writeback_alias: elastalert_alerts
+#失败重试限制
+alert_time_limit:
+  days: 2
+  
+</code></pre></td></tr></table>
+</div>
+</div><p>**以下配置没使用，只做介绍  **</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#### 使用 TLS 连接诶 elastsearch
+#use_ssl: True
+#验证 tls 证书
+#verify_certs: True
+#带正文的GET请求是Elasticsearch的默认选项。如果因为某些原因失败了，你可以通过&#39;GET&#39;，&#39;POST&#39;或&#39;source&#39;,具体可以查看以下(http://elasticsearch-py.readthedocs.io/en/master/connection.html?highlight=send_get_body_as#transport)
+#es_send_get_body_as: GET
+
+# 开启 ssl 认证证书
+#verify_certs: True
+#ca_certs: /path/to/cacert.pem
+#client_cert: /path/to/client_cert.pem
+#client_key: /path/to/client_key.key
+
+</code></pre></td></tr></table>
+</div>
+</div><p>###2.2.4 在 elasticsearch 中创建 elastalert 的日志索引</p>
+<p>**Tips :  **如果索引已存在，则不会重新创建</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">elastalert-create-index --index elastalert
+</code></pre></td></tr></table>
+</div>
+</div><p>输出结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ProcessController:  Elastic Version: 7.6.2
+Reading Elastic 6 index mappings:
+Reading index mapping &#39;es_mappings/6/silence.json&#39;
+Reading index mapping &#39;es_mappings/6/elastalert_status.json&#39;
+Reading index mapping &#39;es_mappings/6/elastalert.json&#39;
+Reading index mapping &#39;es_mappings/6/past_elastalert.json&#39;
+Reading index mapping &#39;es_mappings/6/elastalert_error.json&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>##2.3 常用命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 测试规则文件
+elastalert-test-rule rule.yaml
+
+# 启动监控报警
+python3 -m elastalert.elastalert --verbose --rule /root/elastalert/example_rules/rule.yaml
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="24-服务启动方法">2.4 服务启动方法</h2>
+<p><strong>Tips: 启动指定家目录的原因主要是有调用，可以少写路径，比如不需要指定 config.yml，rule 里面的 yml 文件可以少写路径指定==</strong></p>
+<h3 id="241-service-启动管理">2.4.1 service 启动管理</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 创建elastalert服务文件
+vim /etc/systemd/system/elastalert.service
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[Unit]
+Description=elastalert
+After=elasticsearch.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=on-failure
+WorkingDirectory=/opt/soft/elastalert
+ExecStart=/usr/bin/python3 -m elastalert.elastalert --verbose --config /opt/soft/elastalert/config.yaml 
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="242-supervisor-启动管理">2.4.2 supervisor 启动管理</h3>
+<p>安装supervisor</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install -y supervisor
+systemctl enable supervisord
+</code></pre></td></tr></table>
+</div>
+</div><p>编写elastalert supervisord守护进程</p>
+<p><code>vim /etc/supervisord.d/elastalert.ini</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[program:elastalert]
+directory=/opt/soft/elastalert
+command=/usr/bin/python3 -m elastalert.elastalert --verbose
+autostart=true
+startsecs=5
+autorestart=true
+startretries=10
+redirect_stderr=true
+stdout_logfile_maxbytes=20MB
+stdout_logfile_backups=5
+stdout_logfile=/var/log/elastalert/elastalert.log
+</code></pre></td></tr></table>
+</div>
+</div><p>启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable supervisord
+systemctl restart supervisord
+systemctl start supervisord
+systemctl stop supervisord
+supervisorctl status
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="三告警测试">三、告警测试</h1>
+<h2 id="31-es-测试索引">3.1 es 测试索引</h2>
+<p>###3.1.1 创建并推送数据到 index</p>
+<p><code>curl -X POST &quot;http://elastic:passwd@127.0.0.1:9200/test-alert/test&quot; -H 'Content-Type: application/json' -d '{&quot;@timestamp&quot;: &quot;'$(date --iso-8601=seconds)'&quot;, &quot;field&quot;: &quot;value&quot;}'</code></p>
+<p>输出：</p>
+<p><code>{&quot;_index&quot;:&quot;test-alert&quot;,&quot;_type&quot;:&quot;test&quot;,&quot;_id&quot;:&quot;inH1I3cBMJwNYi416aLN&quot;,&quot;_version&quot;:1,&quot;result&quot;:&quot;created&quot;,&quot;_shards&quot;:{&quot;total&quot;:2,&quot;successful&quot;:1,&quot;failed&quot;:0},&quot;_seq_no&quot;:0,&quot;_primary_term&quot;:1}</code></p>
+<p>###3.1.2 删除 index</p>
+<p><code>curl -X DELETE http://elastic:passwd@127.0.0.1:9200/test-alert</code></p>
+<p>输出：</p>
+<p><code>{&quot;acknowledged&quot;:true}</code></p>
+<h3 id="313-查看有哪些索引">3.1.3 查看有哪些索引</h3>
+<p><code>curl 'http://elastic:passwd@127.0.0.1:9200/_cat/indices?v'</code></p>
+<p>###3.1.4查看索引内容：</p>
+<p><code>curl -X GET http://elastic:passwd@127.0.0.1:9200/test-alert/_search</code></p>
+<p>输出结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">{&#34;took&#34;:2,&#34;timed_out&#34;:false,&#34;shards&#34;:{&#34;total&#34;:1,&#34;successful&#34;:1,&#34;skipped&#34;:0,&#34;failed&#34;:0},&#34;hits&#34;:{&#34;total&#34;:{&#34;value&#34;:4,&#34;relation&#34;:&#34;eq&#34;},&#34;max_score&#34;:1.0,&#34;hits&#34;:[{&#34;index&#34;:&#34;test-alert&#34;,&#34;type&#34;:&#34;test&#34;,&#34;id&#34;:&#34;inH1I3cBMJwNYi416aLN&#34;,&#34;score&#34;:1.0,&#34;source&#34;:{&#34;@timestamp&#34;: &#34;2021-01-21T08:01:52+00:00&#34;, &#34;field&#34;: &#34;value&#34;}},{&#34;index&#34;:&#34;test-alert&#34;,&#34;type&#34;:&#34;test&#34;,&#34;id&#34;:&#34;0ocXJHcBMJwNYi41y3rG&#34;,&#34;score&#34;:1.0,&#34;source&#34;:{&#34;@timestamp&#34;: &#34;2021-01-21T08:37:55+0000&#34;, &#34;field&#34;: &#34;value&#34;}},{&#34;index&#34;:&#34;test-alert&#34;,&#34;type&#34;:&#34;test&#34;,&#34;id&#34;:&#34;aZAiJHcBMJwNYi41QTqW&#34;,&#34;score&#34;:1.0,&#34;source&#34;:{&#34;@timestamp&#34;: &#34;2021-01-21T08:49:20+0000&#34;, &#34;field&#34;: &#34;value&#34;}},{&#34;index&#34;:&#34;test-alert&#34;,&#34;type&#34;:&#34;test&#34;,&#34;id&#34;:&#34;1ZMmJHcBMJwNYi41h4z8&#34;,&#34;score&#34;:1.0,&#34;source&#34;:{&#34;@timestamp&#34;: &#34;2021-01-21T08:54:00+0000&#34;, &#34;field&#34;: &#34;value&#34;}}]}}
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210121170230728.png" alt="image-20210121170230728" style="zoom:50%;" /></p>
+<h2 id="32-邮件告警">3.2 邮件告警</h2>
+<h3 id="321-创建测试告警规则">3.2.1 创建测试告警规则</h3>
+<p><code>vim /opt/soft/elastalert/rules/emailtt.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">name: test-alert
+type: any
+# es 的监控索引
+index: test-ale*
+
+# 发现 1 次就告警
+num_events: 1
+#1 分钟检查1次，和上面一起配合就是 1 分钟内触发 1 次规则就告警
+timeframe:
+  minutes: 1
+  
+#告警规则，查询索引内 field 字段的值 value，可以用正则进行匹配
+filter:
+- query:
+    query_string:
+      query: &#34;field: *value*&#34;
+      
+## smtp 邮件 server 配置
+smtp_host: smtp.zoho.com
+smtp_port: 465
+smtp_ssl: true
+from_addr: &#34;test@qq.com&#34;
+### 发送邮件的账号密码
+smtp_auth_file: /opt/soft/elastalert/elastalert/smtp_auth_file.yml
+
+#告警方式
+alert:
+- &#34;email&#34;
+
+#设置只需要的告警字段
+include: [&#34;_index&#34;,&#34;uri&#34;,&#34;remote_addr&#34;,&#34;http_x_forwarded_for&#34;,&#34;status&#34;]
+
+#邮件标题
+alert_subject: &#34;test-alert 正式环境 告警 {}&#34;
+#告警邮件接收人
+email:
+- &#34;test@qq.com&#34;
+- &#34;test1@qq.comk&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="322-发送邮件的账号密码">3.2.2 发送邮件的账号密码</h3>
+<p><code>vi /opt/soft/elastalert/elastalert/smtp_auth_file.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 发件箱的qq邮箱地址，也就是用户名
+user: test@qq.com
+# 不是qq邮箱的登录密码，是授权码
+password: passwd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="323-启动告警规则并发送测试数据">3.2.3 启动告警规则并发送测试数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /opt/soft/elastalert
+python3 -m elastalert.elastalert --verbose --rule /opt/soft/elastalert/rules/emailtt.yml
+</code></pre></td></tr></table>
+</div>
+</div><p>##3.3 钉钉告警</p>
+<p>###3.3.1 下载插件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /opt/soft/elastalert
+git clone https://github.com/xuyaoqiang/elastalert-dingtalk-plugin
+cp elastalert-dingtalk-plugin/elastalert_modules/dingtalk_alert.py elastalert/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="332-安装依赖">3.3.2 安装依赖</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#查看依赖文件elastalert-dingtalk-plugin/requirements.txt，在对比 pip list 之后，我发现只需要安装以下内容即可
+
+pip3 install pyOpenSSL==16.2.0
+pip3 install requests==2.18.1
+pip3 install setuptools&gt;=11.3
+</code></pre></td></tr></table>
+</div>
+</div><p>###3.3.3 创建测试告警规则</p>
+<p><code>vim /opt/soft/elastalert/rules/dingtt.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">name: Example frequency rule
+type: any
+index: test-alert
+num_events: 1
+timeframe:
+  minutes: 1
+filter:
+- query:
+    query_string:
+      query: &#34;field: value&#34;
+
+
+#告警方式
+alert:
+- &#34;elastalert.dingtalk_alert.DingTalkAlerter&#34;
+
+#钉钉接口
+dingtalk_webhook: &#34;https://oapi.dingtalk.com/robot/send?access_token=钉钉机器人 api token&#34;
+dingtalk_msgtype: &#34;text&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="334-启动告警规则并发送测试数据">3.3.4 启动告警规则并发送测试数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /opt/soft/elastalert
+python3 -m elastalert.elastalert --verbose --rule /opt/soft/elastalert/rules/dingtt.yml
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="335-钉钉机器人配置">3.3.5 钉钉机器人配置</h3>
+<p>具体可以查看<a href="https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq" target="_blank" rel="noopener noreffer">钉钉机器人开发文档</a></p>
+<ol>
+<li>最简单可以使用加 ip 方式</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210121170019750.png" alt="image-20210121170019750" style="zoom:33%;" /></p>
+<ol start="2">
+<li>加关键字，就是发送到钉钉的信息里面有某个关键字</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210121165909770.png" alt="image-20210121165909770" style="zoom: 33%;" /></p>
+<p>###3.3.6 测试结果告警内容如下所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210121165950134.png" alt="image-20210121165950134" style="zoom:33%;" /></p>
+<h2 id="34-微信告警">3.4 微信告警</h2>
+<p>###3.4.1 参考</p>
+<p><a href="https://github.com/anjia0532/elastalert-wechat-plugin">https://github.com/anjia0532/elastalert-wechat-plugin</a></p>
+<p><a href="https://anjia0532.github.io/2017/02/16/elastalert-wechat-plugin/">https://anjia0532.github.io/2017/02/16/elastalert-wechat-plugin/</a></p>
+<p><a href="https://github.com/anjia0532/elastalert-docker">https://github.com/anjia0532/elastalert-docker</a></p>
+<h2 id="35-告警格式优化">3.5 告警格式优化</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 注意上下字段对应
+alert_text: |
+    kibana_url: &#34;https://hostname:5601/app/kibana&#34;
+    alarm_reason: &#34;1分钟内login.php至少被访问10次&#34;
+    alarm_name: {}
+    request_uri: {}
+    request_ip: {}
+    response_status: {}
+alert_text_args:
+    - name
+    - request
+    - clientip
+    - response
+alert_text_type: alert_text_only
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="四kibana-添加-elastalert-插件">四、kibana 添加 elastalert 插件</h1>
+<p>##4.1 elastalert-kibana-plugin插件</p>
+<p>kibana中elastalert插件，可以实现在kibana界面上编辑elastalert的告警规则配置。</p>
+<p>kibana 的 elastalert 插件需要使用新的 <a href="https://github.com/bitsensor/elastalert" target="_blank" rel="noopener noreffer">bitsensor/elastalert</a> api 服务</p>
+<h3 id="411-演示效果">4.1.1 演示效果</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/showcase.gif" alt="Showcase" style="zoom: 50%;" /></p>
+<h2 id="42-安装-elastalert-kibana-plugin">4.2 安装 elastalert-kibana-plugin</h2>
+<p>官网主推：<a href="https://github.com/bitsensor/elastalert-kibana-plugin" target="_blank" rel="noopener noreffer">bitsensor/elastalert-kibana-plugin</a></p>
+<p>但是楼上那个很多小版本都没有，以上没有的话推荐使用以下版本：</p>
+<p><a href="https://github.com/nsano-rururu/elastalert-kibana-plugin" target="_blank" rel="noopener noreffer">nsano-rururu/elastalert-kibana-plugin</a></p>
+<p>目前版本支持：</p>
+<ul>
+<li><a href="https://github.com/nsano-rururu/elastalert-kibana-plugin/releases/tag/1.2.0" target="_blank" rel="noopener noreffer">Kibana 6.8.1～6.8.12、7.5.1～7.8.1</a></li>
+<li><a href="https://github.com/nsano-rururu/elastalert-kibana-plugin/releases/tag/1.3.0" target="_blank" rel="noopener noreffer">Kibana 7.9.0～7.9.3</a></li>
+</ul>
+<h3 id="421-安装命令">4.2.1 安装命令</h3>
+<p><code>/usr/share/kibana/bin/kibana-plugin install https://github.com/nsano-rururu/elastalert-kibana-plugin/releases/download/1.2.0/elastalert-kibana-plugin-1.2.0-7.6.2.zip --allow-root</code></p>
+<h3 id="422-配置">4.2.2 配置</h3>
+<blockquote>
+<p>默认情况下，插件将连接到 localhost:3030，也就是 kibana 和 elastalert 在同一台服务器上面，那么就不需要添加以下配置。如果您的ElastAlert服务器在其他主机或端口上运行，请在config / kibana.yml文件中添加更改以下选项：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">elastalert-kibana-plugin.serverHost: 192.168.1.1
+elastalert-kibana-plugin.serverPort: 9000
+</code></pre></td></tr></table>
+</div>
+</div><p>##4.3 安装 elastalert_docker</p>
+<p>查看 nsano 提供的 <a href="https://github.com/nsano-rururu/elastalert-kibana-plugin/wiki/ElastAlert-Server-Docker-Images" target="_blank" rel="noopener noreffer">elastalert api 服务支持列表</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122151817830.png" alt="image-20210122151817830" style="zoom: 50%;" /></p>
+<p>我使用的是 <a href="https://hub.docker.com/r/praecoapp/elastalert-server" target="_blank" rel="noopener noreffer">praecoapp/elastalert-server</a> 提供的 docker 镜像对应 <a href="https://github.com/Yelp/elastalert/releases/tag/v0.2.4" target="_blank" rel="noopener noreffer">elastalert 0.2.4 版本</a></p>
+<p><a href="https://github.com/nsano-rururu/elastalert-kibana-plugin/wiki/docker-compose-sample" target="_blank" rel="noopener noreffer">docker-compose sample 示例参考</a></p>
+<p>###4.3.1 安装命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /opt/soft/
+git clone https://github.com/bitsensor/elastalert.git elastalert_docker
+cd elastalert_docker
+mkdir rules 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="432-更改配置api-server-端用的配置是configjson">4.3.2 更改配置，api server 端用的配置是config.json</h3>
+<p><code>vi config/config.json</code></p>
+<p>因为我的 kibana 和 elastalert docker 是同一台机，所以我主要修改 es 的配置就可以</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">{
+  &#34;appName&#34;: &#34;elastalert-server&#34;,
+  &#34;port&#34;: 3030,
+  &#34;wsport&#34;: 3333,
+  &#34;elastalertPath&#34;: &#34;/opt/elastalert&#34;,
+  &#34;verbose&#34;: false,
+  &#34;es_debug&#34;: false,
+  &#34;debug&#34;: false,
+  &#34;rulesPath&#34;: {
+    &#34;relative&#34;: true,
+    &#34;path&#34;: &#34;/rules&#34;
+  },
+  &#34;templatesPath&#34;: {
+    &#34;relative&#34;: true,
+    &#34;path&#34;: &#34;/rule_templates&#34;
+  },
+  &#34;es_host&#34;: &#34;192.168.3.30&#34;,
+  &#34;es_port&#34;: 9200,
+  &#34;writeback_index&#34;: &#34;elastalert_status&#34;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="433-更改-elastalert-配置">4.3.3 更改 elastalert 配置</h3>
+<p><code>vi ./config/elastalert.yaml </code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">es_host: 192.168.3.30
+es_port: 9200
+rules_folder: rules
+
+run_every:
+  seconds: 5
+
+buffer_time:
+  minutes: 1
+
+es_username: elastic
+es_password: passwd
+
+writeback_index: elastalert_status
+
+alert_time_limit:
+  days: 2
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="434-docker-composeyml-配置文件">4.3.4 docker-compose.yml 配置文件</h3>
+<p><code>vi docker-compose.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">version: &#39;3&#39;
+services:
+  elastalert:
+    image: praecoapp/elastalert-server:20210104
+    container_name: elastalert
+    hostname: elastalert
+    restart: always
+    network_mode: &#34;host&#34;
+    ports:
+      - &#34;3030:3030&#34;
+      - &#34;3333:3333&#34;
+    volumes:
+      - ./config/elastalert.yaml:/opt/elastalert/config.yaml
+      - ./config/elastalert-test.yaml:/opt/elastalert/config-test.yaml
+      - ./config/config.json:/opt/elastalert-server/config/config.json
+      - ./rules:/opt/elastalert/rules
+      - ./rule_templates:/opt/elastalert/rule_templates
+      #- ./elastalert:/opt/elastalert/elastalert，#这一句先注释掉，下面有个操作
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="435-启动">4.3.5 启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker-compose up -d
+##然后把 docker 镜像里面的 elastalert 复制出来
+docker cp elastalert:/opt/elastalert/elastalert .
+##再把docker-compose.yml 里面的 volumes 的注释项去掉重新启动
+docker-compose up -d
+</code></pre></td></tr></table>
+</div>
+</div><p>###4.3.6 配套钉钉插件和规则测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /opt/soft/elastalert_docker
+git clone https://github.com/xuyaoqiang/elastalert-dingtalk-plugin
+cp elastalert-dingtalk-plugin/elastalert_modules/dingtalk_alert.py elastalert/
+##安装依赖
+docker exec -it elastalert pip install pyOpenSSL==16.2.0
+docker exec -it elastalert pip install requests==2.18.1
+docker exec -it elastalert pip install setuptools&gt;=11.3
+#创建规则
+touch rules/dingtt.yml
+#授权，否则页面无法编辑，具体可以看下面的报错示例
+chown centos.centos rules/dingtt.yml
+#重新启动 elastalert 容器
+docker restart elastalert
+##查看日志
+docker logs -f --tail=20 elastalert
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="44-出现的报错">4.4 出现的报错：</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122095020201.png" alt="image-20210122095020201" style="zoom:50%;" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">01:50:07.285Z ERROR elastalert-server:
+    Routes:  Request for &#39;/rules/:id&#39; failed with error: 
+    
+     [Error: EACCES: permission denied, open &#39;/opt/elastalert/rules/dingtt.yaml&#39;] {
+      errno: -13,
+      code: &#39;EACCES&#39;,
+      syscall: &#39;open&#39;,
+      path: &#39;/opt/elastalert/rules/dingtt.yaml&#39;
+    }
+</code></pre></td></tr></table>
+</div>
+</div><p>解决办法：</p>
+<ol>
+<li>直接 chmod 777 -R /opt/soft/elastalert_docker/rules/</li>
+<li>直接 chown centos.centos /opt/soft/elastalert_docker/rules/*</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122095445225.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122095445225.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122095445225.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122095445225.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20210122095445225.png"
+        title="image-20210122095445225" /></p>
+<h1 id="五告警规则详解">五、告警规则详解</h1>
+<p><a href="https://elastalert.readthedocs.io/en/latest/ruletypes.html" target="_blank" rel="noopener noreffer">ElastAlert 规则介绍</a></p>
+<p>##5.1 告警类型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ElastAlert包含几种具有常见监视范例的规则类型：
+any: 匹配任何与给定过滤器匹配的事件,这个是查到了什么便直接报警，属于自定义选项；
+frequency: 匹配Y时间内至少有X个事件的地方
+spike: 当事件发生率增加或减少时匹配，API 流量陡然上升并马上恢复的时候；
+flatline: 在Y时间内少于X个事件时进行匹配，内存或者CPU使用率下降的时候；
+blacklist并whitelist输入: 当某个字段与黑名单/白名单匹配时匹配，昨天的那个疑似爬虫的 IP 地址又出现了；
+change: 当某个字段在一段时间内具有两个不同的值时进行匹配，应用的状态突然从 UP 转为 DOWN；
+new_term: 当字段中出现从未见过的术语时进行匹配，某个枚举类型字段，突然出现了未定义的类型；
+cardinality:当字段的唯一值数量大于或小于阈值时匹配，线上的 API 服务器突然挂了一台，它是根据唯一值的数量来判定的；
+</code></pre></td></tr></table>
+</div>
+</div><p>##5.2 报警抑制：减少重复报警</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 用来区分报警，跟 realert 配合使用，在这里意味着，
+# 5 分钟内如果有重复报警，那么当 name 不同时，会当做不同的报警处理，可以是数组
+query_key:
+  - name
+
+# 5 分钟内相同的报警不会重复发送
+realert:
+  minutes: 5
+
+# 指数级扩大 realert 时间，中间如果有报警，
+# 则按照 5 -&gt; 10 -&gt; 20 -&gt; 40 -&gt; 60 不断增大报警时间到制定的最大时间，
+# 如果之后报警减少，则会慢慢恢复原始 realert 时间
+exponential_realert:
+  hours: 1
+</code></pre></td></tr></table>
+</div>
+</div><p>##5.3 报警聚合：相同报警，聚合为一条</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 根据报警的内，将相同的报警安装 name 来聚合
+aggregation_key: name
+
+# 聚合报警的内容，只展示 name 与 message
+summary_table_fields:
+  - name
+  - message
+</code></pre></td></tr></table>
+</div>
+</div><p>##5.4 报警格式化：突出重要信息</p>
+<p>在这里，你可以自定义 alert 的内容，它的内部使用 Python 的 format 来实现的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">alert_subject: &#34;Error {} @{}&#34;
+alert_subject_args:
+  - name
+  - &#34;@timestamp&#34;
+
+alert_text_type: alert_text_only
+alert_text: |
+  ### Error frequency exceeds
+  &gt; Name: {}
+  &gt; Message: {}
+  &gt; Host: {} ({})
+alert_text_args:
+  - name
+  - message
+  - hostname
+  - host
+</code></pre></td></tr></table>
+</div>
+</div><p>#六、告警接收方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Email
+Slack
+企业微信
+钉钉
+alerta：https://github.com/alerta/alerta，告警接收平台
+JIRA
+OpsGenie
+Commands
+HipChat
+MS Teams
+Telegram
+AWS SNS
+VictorOps
+PagerDuty
+Exotel
+Twilio
+Gitter
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="七告警需求整理">七、告警需求整理</h1>
+<p>整理下实施ELK最起码要实现的需求：</p>
+<ul>
+<li>查询条件（精确匹配）：一级域名、二级域名、客户真实IP、HTTP状态码、HTTP方法、request_time、response_time、代理IP、body_bytes_sent</li>
+<li>查询条件（模糊匹配）：url（如查找SQL注入关键字）、refere（流量来源）、agent（如查找搜索引擎）</li>
+<li>近期（1周、1个月）内整体请求量走势情况；</li>
+<li>如果发现总体走势异常，要很方便找到那个域名走势异常；</li>
+<li>过去一个周期内（1天、1周、1月）所有请求构成，按不同域名出饼图；</li>
+<li>实时监控爬虫IP过高的频率访问（如单个IP1分钟请求超过100次报警）；</li>
+<li>实时监控500状态请求情况（如单个域名1分钟出现30个500就报警）；</li>
+</ul>
+<h1 id="参考">参考</h1>
+<p><a href="https://github.com/Yelp/elastalert">https://github.com/Yelp/elastalert</a></p>
+<p><a href="https://github.com/bitsensor/elastalert">https://github.com/bitsensor/elastalert</a></p>
+<p><a href="https://github.com/bitsensor/elastalert-kibana-plugin">https://github.com/bitsensor/elastalert-kibana-plugin</a></p>
+<p><a href="https://github.com/xuyaoqiang/elastalert-dingtalk-plugin">https://github.com/xuyaoqiang/elastalert-dingtalk-plugin</a></p>
+<p><a href="https://github.com/anjia0532/elastalert-wechat-plugin">https://github.com/anjia0532/elastalert-wechat-plugin</a></p>
+<p><a href="https://segmentfault.com/a/1190000017553282">https://segmentfault.com/a/1190000017553282</a></p>
+<p><a href="https://blog.csdn.net/wenwenxiong/article/details/106048313">https://blog.csdn.net/wenwenxiong/article/details/106048313</a></p>
+<p><a href="https://www.cnblogs.com/liuxinyustu/articles/14228934.html">https://www.cnblogs.com/liuxinyustu/articles/14228934.html</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/elasticleart-%E5%91%8A%E8%AD%A6/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/elk/">ELK</a>,&nbsp;<a href="/tags/elastalert/">elastalert</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/prometheus%E7%83%AD%E5%8A%A0%E8%BD%BD%E6%96%B9%E6%B3%95/" class="prev" rel="prev" title="Prometheus热加载方法"><i class="fas fa-angle-left fa-fw"></i>Prometheus热加载方法</a>
+            <a href="/kibana-%E5%AE%89%E8%A3%85%E5%88%A0%E9%99%A4%E6%8F%92%E4%BB%B6/" class="next" rel="next" title="【ELK】kibana 安装删除插件">【ELK】kibana 安装删除插件<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.67.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"qC7mcE4DIvgzHTOc5YaLNdUp-MdYXbMMI","appKey":"aBX50Ypl9zqu3sGf0PNLlPaW","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"博主很懒，什么都没有留下！","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"8GC6CRN3M8","algoliaIndex":"index.zh-cn","algoliaSearchKey":"d4467e8c57c2b12f53da9c8ec1c629be","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168242983-1');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></body>
+</html>

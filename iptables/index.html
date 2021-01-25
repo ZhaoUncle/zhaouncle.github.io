@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://www.zhaouncle.com/iptables/" />
 <meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
 <meta property="article:published_time" content="2020-11-09T16:33:47+08:00" />
-<meta property="article:modified_time" content="2021-01-05T16:38:04+08:00" />
+<meta property="article:modified_time" content="2021-01-22T17:07:11+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
 
@@ -29,8 +29,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/iptables\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "iptables","wordcount":  44 ,
-        "url": "https:\/\/www.zhaouncle.com\/iptables\/","datePublished": "2020-11-09T16:33:47+08:00","dateModified": "2021-01-05T16:38:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "iptables","wordcount":  481 ,
+        "url": "https:\/\/www.zhaouncle.com\/iptables\/","datePublished": "2020-11-09T16:33:47+08:00","dateModified": "2021-01-22T17:07:11+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
@@ -110,7 +110,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">【iptables】 简单使用</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/iptables/"><i class="far fa-folder fa-fw"></i>iptables</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-09">2020-11-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 44 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-09">2020-11-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 481 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/iptables/" class="leancloud_visitors" data-flag-title="【iptables】 简单使用">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -121,7 +121,8 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#iptables-管理">iptables 管理</a></li>
+    <li><a href="#ip-白名单">ip 白名单</a>
       <ul>
         <li>
           <ul>
@@ -133,15 +134,105 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="1-禁止访问外部某个端口">1. 禁止访问外部某个端口</h3>
+            </div><div class="content" id="content"><h1 id="iptables-管理">iptables 管理</h1>
+<p>iptables 端口映射配置步骤：</p>
+<ol>
+<li>保存现有配置，执行如下命令：iptables-save &gt; iptables.config</li>
+<li>编辑iptables.config 映射对应端口</li>
+<li>更新配置，执行如下命令：iptables-restore &lt; iptables.config</li>
+</ol>
+<h1 id="ip-白名单">ip 白名单</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># sample configuration for iptables service
+# you can edit this manually or use system-config-firewall
+# please do not ask us to add additional ports/services to this default configuration
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+
+##设置 ip 白名单
+-N whitelist
+##添加IP到白名单
+-A whitelist -s xx.xx.xx.xx/32 -j ACCEPT　　　　
+
+##不配置 witelist 列表，允许内网 ip 访问某端口
+-A INPUT -s 192.168.105.0/24 -p tcp -m tcp --dport 22 -j ACCEPT
+-A INPUT -s 10.25.10.0/24 -p tcp -m tcp --dport 22 -j ACCEPT
+
+##禁止访问 27017
+-A INPUT -p tcp -m tcp --dport 27017 -j DROP
+
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+
+##whitelist调用白名单IP列表，22端口只允许白名单IP使用
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j whitelist　
+
+##whitelist调用白名单IP列表，3306端口只允许白名单IP使用
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j whitelist　　
+
+##无调用白名单，外网可访问
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT　　　　　　
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="1-禁止访问外部某个端口">1. 禁止访问外部某个端口</h3>
 <p><code>iptables -A OUTPUT -p tcp --dport 6382 -j DROP</code></p>
 <h3 id="2-禁止访问某个-ip-的某个端口">2. 禁止访问某个 ip 的某个端口</h3>
 <p><code>iptables -A OUTPUT -p tcp -d 192.168.1.10 --dport 6382 -j DROP</code></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-01-05&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/dbea0de9ef2d3d3ec54fa8036534e933062b46e5" target="_blank" title="commit by 赵伟平(957189008@qq.com) dbea0de9ef2d3d3ec54fa8036534e933062b46e5: change MyBlogHugo site 二  1  5 16:38:04 CST 2021">
-                                    <i class="fas fa-hashtag fa-fw"></i>dbea0de</a></span>
+                <span>更新于 2021-01-22&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/5b6fb04a680660bdb578521d86e5378739750d00" target="_blank" title="commit by 赵伟平(957189008@qq.com) 5b6fb04a680660bdb578521d86e5378739750d00: change MyBlogHugo site 五  1 22 17:07:11 CST 2021">
+                                    <i class="fas fa-hashtag fa-fw"></i>5b6fb04</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>
