@@ -4,7 +4,14 @@
         <link>https://www.zhaouncle.com/tags/nginx/</link>
         <description>nginx - 标签 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 05 Jan 2021 15:35:17 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/nginx/" rel="self" type="application/rss+xml" /><item>
+            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Apr 2021 09:28:45 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/nginx/" rel="self" type="application/rss+xml" /><item>
+    <title>Nginx 允许 frame 嵌套</title>
+    <link>https://www.zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/</link>
+    <pubDate>Fri, 02 Apr 2021 09:28:45 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/</guid>
+    <description><![CDATA[Nginx 允许 frame 嵌套]]></description>
+</item><item>
     <title>【Nginx】 正则在线测试</title>
     <link>https://www.zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</link>
     <pubDate>Tue, 05 Jan 2021 15:35:17 &#43;0800</pubDate>

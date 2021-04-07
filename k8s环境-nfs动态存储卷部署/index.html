@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>K8s环境 nfs 动态存储卷部署 - 易波叶平</title><meta name="Description" content="K8s环境 nfs 动态存储卷部署"><meta property="og:title" content="K8s环境 nfs 动态存储卷部署" />
+<meta property="og:description" content="K8s环境 nfs 动态存储卷部署" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" />
+<meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
+<meta property="article:published_time" content="2021-04-04T09:04:11+08:00" />
+<meta property="article:modified_time" content="2021-04-04T09:04:11+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
+
+<meta name="twitter:title" content="K8s环境 nfs 动态存储卷部署"/>
+<meta name="twitter:description" content="K8s环境 nfs 动态存储卷部署"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" /><link rel="prev" href="https://www.zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/" /><link rel="next" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "K8s环境 nfs 动态存储卷部署",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2\/"
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s","wordcount":  2135 ,
+        "url": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2\/","datePublished": "2021-04-04T09:04:11+08:00","dateModified": "2021-04-04T09:04:11+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "赵叔"
+            },"description": "K8s环境 nfs 动态存储卷部署"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/link" title="友链"> 友链 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/link" title="友链">友链</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">K8s环境 nfs 动态存储卷部署</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-04">2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2135 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="K8s环境 nfs 动态存储卷部署">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#nfs动态存储卷">NFS动态存储卷</a>
+      <ul>
+        <li><a href="#环境">环境</a></li>
+        <li><a href="#预备知识">预备知识</a></li>
+        <li><a href="#创建-nfs-服务器">创建 NFS 服务器</a>
+          <ul>
+            <li><a href="#安装nfs-utils">安装nfs-utils</a></li>
+            <li><a href="#配置nfs-server">配置nfs-server</a></li>
+            <li><a href="#启动nfs服务">启动NFS服务</a></li>
+            <li><a href="#检查nfs服务提供是否正常">检查NFS服务提供是否正常</a></li>
+          </ul>
+        </li>
+        <li><a href="#在客户端验证">在客户端验证</a></li>
+        <li><a href="#安装-nfs-client-provisioner">安装 nfs-client-provisioner</a>
+          <ul>
+            <li><a href="#在任意一个master节点执行下面安装nfs-client-provisioner">在任意一个master节点执行下面，安装<code>nfs-client-provisioner</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#验证安装">验证安装</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="nfs动态存储卷">NFS动态存储卷</h1>
+<h2 id="环境">环境</h2>
+<ul>
+<li>系统：CentOS7</li>
+<li>K8s 1.20</li>
+</ul>
+<h2 id="预备知识">预备知识</h2>
+<p>如果你不知道NFS是做什么的，那么请参考下面链接（包括但不限于）进行学习：</p>
+<ul>
+<li><a href="https://baike.baidu.com/item/NFS/812203" target="_blank" rel="noopener noreffer">NFS</a></li>
+<li>nfs 是基于网络共享存储，所以在大数据量场景下不适用，在环境搭建测试学习 k8s 阶段反而很合适，当然，小业务量场景下也非常合适使用。</li>
+<li>NFS 允许系统将其目录和文件共享给网络上的其他系统。通过 NFS，用户和应用程序可以访问远程系统上的文件，就象它们是本地文件一样。</li>
+</ul>
+<p>##使用前要注意 k8s 版本</p>
+<p>在v1.20.0中禁用了selfLink，在 v1.21 中将会彻底的移除，In k8s 1.20 they have removed selfLink as per <a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md" target="_blank" rel="noopener noreffer">release notes</a>.</p>
+<p>报错：<code>selfLink was empty</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 deploy]# kubectl logs -f nfs-client-provisioner-cf84d684-vtns2
+.....
+E0324 15:05:21.127112       1 controller.go:1004] provision &#34;default/test-claim&#34; class &#34;managed-nfs-storage&#34;: unexpected error getting claim reference: selfLink was empty, can&#39;t make reference
+</code></pre></td></tr></table>
+</div>
+</div><p>参考：</p>
+<ul>
+<li>
+<p><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/issues/25">https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/issues/25</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kubernetes/kubernetes/pull/94397">https://github.com/kubernetes/kubernetes/pull/94397</a></p>
+</li>
+<li>
+<p><a href="https://wqblogs.com/2021/01/27/k8s%E5%AF%B9%E6%8E%A5nfs%E5%AD%98%E5%82%A8/">https://wqblogs.com/2021/01/27/k8s%E5%AF%B9%E6%8E%A5nfs%E5%AD%98%E5%82%A8/</a></p>
+</li>
+</ul>
+<p>解决办法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">如果是 kubeadm 基于 yaml 安装 kube-apiserver方式安装：
+Current workaround is to edit /etc/kubernetes/manifests/kube-apiserver.yaml
+
+Under here:
+
+spec:
+  containers:
+  - command:
+    - kube-apiserver
+Add this line:
+- --feature-gates=RemoveSelfLink=false
+
+The do this:
+kubectl apply -f /etc/kubernetes/manifests/kube-apiserver.yaml
+kubectl apply -f /etc/kubernetes/manifests/kube-apiserver.yaml
+
+如果是 二进制安装的话，add --feature-gates=RemoveSelfLink=false to /opt/kubernetes/cfg/kube-apiserver.conf，然后 restart 一下， 
+(I had to do it twice to get it to work)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="创建-nfs-服务器">创建 NFS 服务器</h2>
+<h3 id="安装nfs-utils">安装nfs-utils</h3>
+<ul>
+<li>在集群每一个节点安装<code>nfs-utils</code>，master 和 node 节点等。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install -y nfs-utils
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置nfs-server">配置nfs-server</h3>
+<ul>
+<li>创建共享目录</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p /ifs/kubernetes/
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>编辑<code>/etc/exports</code>文件添加需要共享目录，每个目录的设置独占一行，编写格式如下：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">NFS共享目录路径客户机IP段(参数1,参数2,...,参数n)
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>例如：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">/ifs/kubernetes 192.168.110.0/24(rw,no_root_squash)
+</code></pre></td></tr></table>
+</div>
+</div><p>参数说明:</p>
+<blockquote>
+<p>ro只读访问</p>
+<p>rw读写访问</p>
+<p>sync所有数据在请求时写入共享</p>
+<p>asyncnfs在写入数据前可以响应请求</p>
+<p>securenfs通过1024以下的安全TCP/IP端口发送</p>
+<p>insecurenfs通过1024以上的端口发送</p>
+<p>wdelay如果多个用户要写入nfs目录，则归组写入（默认）</p>
+<p>no_wdelay如果多个用户要写入nfs目录，则立即写入，当使用async时，无需此设置hide在nfs共享目录中不共享其子目录</p>
+<p>no_hide共享nfs目录的子目录</p>
+<p>subtree_check如果共享/usr/bin之类的子目录时，强制nfs检查父目录的权限（默认）</p>
+<p>no_subtree_check不检查父目录权限</p>
+<p>all_squash共享文件的UID和GID映射匿名用户anonymous，适合公用目录</p>
+<p>no_all_squash保留共享文件的UID和GID（默认）</p>
+<p>root_squashroot用户的所有请求映射成如anonymous用户一样的权限（默认）</p>
+<p>no_root_squashroot用户具有根目录的完全管理访问权限</p>
+<p>anonuid=xxx指定nfs服务器/etc/passwd文件中匿名用户的UID</p>
+<p>anongid=xxx指定nfs服务器/etc/passwd文件中匿名用户的GID</p>
+</blockquote>
+<ul>
+<li>注1：尽量指定IP段最小化授权可以访问NFS 挂载的资源的客户端</li>
+<li>注2：经测试参数insecure必须要加，否则客户端挂载出错mount.nfs: access denied by server while mounting</li>
+</ul>
+<h3 id="启动nfs服务">启动NFS服务</h3>
+<ul>
+<li>配置完成后，您可以在终端提示符后运行以下命令来启动 NFS 服务器：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable nfs
+systemctl start nfs
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="检查nfs服务提供是否正常">检查NFS服务提供是否正常</h3>
+<ul>
+<li>到客户机上执行showmount命令进行检查</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node05 ~]# showmount -e
+Export list for node05:
+/ifs/kubernetes 192.168.110.0/24
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="在客户端验证">在客户端验证</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@k8s-node1 ~]# yum -y install nfs-utils
+[root@k8s-node1 ~]# mount -t nfs 192.168.110.239:/ifs/kubernetes /mnt
+[root@k8s-node1 ~]# df -h|grep mnt
+192.168.110.239:/ifs/kubernetes   37G  4.2G   33G  12% /mnt
+[root@k8s-node1 ~]# touch /mnt/a.txt
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-nfs-client-provisioner">安装 nfs-client-provisioner</h2>
+<p>###在集群每一个节点安装<code>nfs-utils</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install -y nfs-utils
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="在任意一个master节点执行下面安装nfs-client-provisioner">在任意一个master节点执行下面，安装<code>nfs-client-provisioner</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install git
+git clone https://github.com/kubernetes-incubator/external-storage
+cd external-storage/nfs-client/deploy/
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>commit 版本：<code>201f40d78a9d3fd57d8a441cfc326988d88f35ec</code></li>
+</ul>
+<p>###安装：</p>
+<p>需要修改的地方：</p>
+<ul>
+<li>
+<p>rbac.yaml ：默认使用 default 的 namespace，如果有需要要自行更改</p>
+</li>
+<li>
+<p>class.yaml ：场景 storageclass 存储卷</p>
+</li>
+<li>
+<p>deployment.yaml  ：这个文件是创建 nfs client，供其他 pod 调用客户端，这里除了使用 default 的 namespace 之外，还要修改 nfs 的配置</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># cat deployment.yaml 
+......省略
+      containers:
+        - name: nfs-client-provisioner
+          image: quay.io/external_storage/nfs-client-provisioner:latest  #网络不好要换成国内的镜像地址
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: fuseim.pri/ifs
+            - name: NFS_SERVER
+              value: 192.168.110.239   ### 这里要换成 nfs 主机的 地址
+            - name: NFS_PATH
+              value: /ifs/kubernetes   ### 这里要换成 nfs 的存储路径
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 192.168.110.239		### 这里要换成 nfs 主机的 地址
+            path: /ifs/kubernetes		### 这里要换成 nfs 的存储路径
+</code></pre></td></tr></table>
+</div>
+</div><p>部署：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl apply -f rbac.yaml 
+kubectl apply -f class.yaml 
+kubectl apply -f deployment.yaml 
+</code></pre></td></tr></table>
+</div>
+</div><p>安装结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 deploy]# kubectl get pod
+NAME                                    READY   STATUS    RESTARTS   AGE
+nfs-client-provisioner-cf84d684-cxpmd   1/1     Running   0          6m37s
+[root@node01 deploy]# kubectl get sc
+NAME                  PROVISIONER      RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+managed-nfs-storage   fuseim.pri/ifs   Delete          Immediate           false                  6m40s    
+[root@node01 deploy]# kubectl get  serviceaccounts 
+NAME                     SECRETS   AGE
+default                  1         3h48m
+nfs-client-provisioner   1         7m25s
+[root@node01 deploy]# kubectl logs nfs-client-provisioner-cf84d684-cxpmd 
+I0404 05:53:56.745867       1 leaderelection.go:185] attempting to acquire leader lease  default/fuseim.pri-ifs...
+E0404 05:53:56.759885       1 event.go:259] Could not construct reference to: &#39;&amp;v1.Endpoints{TypeMeta:v1.TypeMeta{Kind:&#34;&#34;, APIVersion:&#34;&#34;}, ObjectMeta:v1.ObjectMeta{Name:&#34;fuseim.pri-ifs&#34;, GenerateName:&#34;&#34;, Namespace:&#34;default&#34;, SelfLink:&#34;&#34;, UID:&#34;522dc6e9-bb00-49bb-8d11-71a2f85be921&#34;, ResourceVersion:&#34;19718&#34;, Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63753112436, loc:(*time.Location)(0x1956800)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string(nil), Annotations:map[string]string{&#34;control-plane.alpha.kubernetes.io/leader&#34;:&#34;{\&#34;holderIdentity\&#34;:\&#34;nfs-client-provisioner-cf84d684-cxpmd_24f93740-950a-11eb-921c-c69636fbe444\&#34;,\&#34;leaseDurationSeconds\&#34;:15,\&#34;acquireTime\&#34;:\&#34;2021-04-04T05:53:56Z\&#34;,\&#34;renewTime\&#34;:\&#34;2021-04-04T05:53:56Z\&#34;,\&#34;leaderTransitions\&#34;:0}&#34;}, OwnerReferences:[]v1.OwnerReference(nil), Initializers:(*v1.Initializers)(nil), Finalizers:[]string(nil), ClusterName:&#34;&#34;}, Subsets:[]v1.EndpointSubset(nil)}&#39; due to: &#39;selfLink was empty, can&#39;t make reference&#39;. Will not report event: &#39;Normal&#39; &#39;LeaderElection&#39; &#39;nfs-client-provisioner-cf84d684-cxpmd_24f93740-950a-11eb-921c-c69636fbe444 became leader&#39;
+I0404 05:53:56.759957       1 leaderelection.go:194] successfully acquired lease default/fuseim.pri-ifs
+I0404 05:53:56.759997       1 controller.go:631] Starting provisioner controller fuseim.pri/ifs_nfs-client-provisioner-cf84d684-cxpmd_24f93740-950a-11eb-921c-c69636fbe444!
+I0404 05:53:56.860178       1 controller.go:680] Started provisioner controller fuseim.pri/ifs_nfs-client-provisioner-cf84d684-cxpmd_24f93740-950a-11eb-921c-c69636fbe444!
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="验证安装">验证安装</h2>
+<ul>
+<li>该 git 提供了两个测试例子：test-pod.yaml 和 test-claim.yaml ,创建 pvc 和 pod 去验证 nfs</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl apply -f test-pod.yaml 
+kubectl apply -f test-claim.yaml 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>验证是否正常</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 deploy]# kubectl get pvc
+NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS          AGE
+test-claim   Bound    pvc-35ef9c39-fa80-4b0e-9a3c-fdb755beddf9   1Mi        RWX            managed-nfs-storage   10s
+[root@node01 deploy]# kubectl get pod
+NAME                                    READY   STATUS      RESTARTS   AGE
+nfs-client-provisioner-cf84d684-brlfk   1/1     Running     0          71s
+test-pod                                0/1     Completed   0          23s
+</code></pre></td></tr></table>
+</div>
+</div><p>查看日志，正常创建test-claim</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 deploy]# kubectl logs -f nfs-client-provisioner-cf84d684-brlfk 
+......
+I0404 06:15:53.548454       1 event.go:221] Event(v1.ObjectReference{Kind:&#34;PersistentVolumeClaim&#34;, Namespace:&#34;default&#34;, Name:&#34;test-claim&#34;, UID:&#34;35ef9c39-fa80-4b0e-9a3c-fdb755beddf9&#34;, APIVersion:&#34;v1&#34;, ResourceVersion:&#34;22423&#34;, FieldPath:&#34;&#34;}): type: &#39;Normal&#39; reason: &#39;ProvisioningSucceeded&#39; Successfully provisioned volume pvc-35ef9c39-fa80-4b0e-9a3c-fdb755beddf9
+</code></pre></td></tr></table>
+</div>
+</div><p>查看 nfs 存储，也成功创建</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node05 kubernetes]# ll
+total 0
+drwxrwxrwx 2 root root 21 Apr  4 14:15 default-test-claim-pvc-35ef9c39-fa80-4b0e-9a3c-fdb755beddf9
+[root@node05 kubernetes]# pwd
+/ifs/kubernetes
+</code></pre></td></tr></table>
+</div>
+</div><p>pod状态为<code>Completed</code>则为正常，若长时间为<code>ContainerCreating</code>状态则为不正常，请确认安装操作步骤是否正确。</p>
+<ul>
+<li>清除测试用例</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> kubelete delete -f test-claim.yaml  &amp;&amp;  kubelete delete -f test-pod.yaml
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-04-04</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/k8s/">k8s</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/" class="prev" rel="prev" title="Nginx 允许 frame 嵌套"><i class="fas fa-angle-left fa-fw"></i>Nginx 允许 frame 嵌套</a>
+            <a href="/k8s%E7%8E%AF%E5%A2%83-%E5%91%BD%E4%BB%A4%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" class="next" rel="next" title="K8s环境命令行自动补全">K8s环境命令行自动补全<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.67.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+
+            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>   
+
+            <div class="footer-line"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                    <span id="busuanzi_container_site_uv">本文总阅读量<span id="busuanzi_value_site_uv"></span>人次</span></div>         
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"qC7mcE4DIvgzHTOc5YaLNdUp-MdYXbMMI","appKey":"aBX50Ypl9zqu3sGf0PNLlPaW","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"博主很懒，什么都没有留下！","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"8GC6CRN3M8","algoliaIndex":"index.zh-cn","algoliaSearchKey":"d4467e8c57c2b12f53da9c8ec1c629be","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168242983-1');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></body>
+</html>
