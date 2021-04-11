@@ -1,4 +1,4 @@
-# K8s java 微服务部署示例
+# 【k8s】java 微服务部署示例
 
 
 <!--more-->
@@ -266,3 +266,49 @@ ingress.networking.k8s.io/portal    <none>   portal.ctnrs.com              80   
 ![image-20210406235002238](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210406235002.png)
 
 ![image-20210406235023413](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210406235023.png)
+
+
+
+
+
+# 3. 接入 skywalking
+
+## 3.1 Skywalking server 版部署，请参考
+
+[K8s环境 Helm部署skywalking](https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/)
+
+## 3.2 下载 skywalking 8.4.0版本
+
+>我们主要使用 agen 端，一定要与 server 端版本对应
+
+````
+cd /data
+wget https://mirror-hk.koddos.net/apache/skywalking/8.4.0/apache-skywalking-apm-es7-8.4.0.tar.gz
+tar xf apache-skywalking-apm-es7-8.4.0.tar.gz 
+
+### 这条是删除命令，你们可别乱来。。。。
+for i in `find  /data/simple-microservice/ -name skywalking`;do rm -rf $i && cp -rp /data/apache-skywalking-apm-bin-es7/agent/ $i;done
+````
+
+
+
+## 3.3 修改 Dockerfile 中 java 的启动命令
+
+之前我们改成了 ip+nodeport 的形式，现在改回去直接 k8s 内部 serviceName+namespace 的访问形式。
+
+```
+for i in `find ./ -name "Dockerfile"`;do  sed -i 's#192.168.31.90:11800#skywalking-oap.skywalking:11800#g' $i;done
+```
+
+skywalking 的 svc 状态如下，只要 oap 的接口
+
+```
+[root@node01 k8s]# kubectl get svc -n skywalking
+NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)               AGE
+skywalking-oap   ClusterIP   10.0.0.3     <none>        12800/TCP,11800/TCP   5h22m
+skywalking-ui    NodePort    10.0.0.232   <none>        80:30008/TCP          5h22m
+```
+
+## 3.4 查看 skywalking 的 java 微服务
+
+![image-20210412000307837](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png)

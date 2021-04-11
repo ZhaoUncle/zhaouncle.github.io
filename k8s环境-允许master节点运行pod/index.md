@@ -1,9 +1,9 @@
-# K8s环境 允许 master 节点运行 pod
+# 【k8s】允许 master 节点运行 pod
 
 
 <!--more-->
 
-### 查看 所有 node 节点的调度
+### 1. 查看 所有 node 节点的调度
 
 ```
 [root@node01 efk]# kubectl describe node|grep -E "Name:|Taints:"
@@ -17,7 +17,7 @@ Taints:             <none>
 
 
 
-### 去除 k8s-master1 节点不允许配置的 label
+### 2. 去除 k8s-master1 节点不允许配置的 label
 
 ```
 kubectl taint node k8s-master1 node-role.kubernetes.io/master-
@@ -25,7 +25,7 @@ kubectl taint node k8s-master1 node-role.kubernetes.io/master-
 
 
 
-### 所有节点不允许调度的 label 去除
+### 3. 所有节点不允许调度的 label 去除
 
 ```
 kubectl taint nodes --all node-role.kubernetes.io/master-
@@ -33,7 +33,7 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 
 
-###重新设置 master 节点不允许调度 pod
+###4. 重新设置 master 节点不允许调度 pod
 
 ```
 kubectl taint node k8s-master1 node-role.kubernetes.io/master=:NoSchedule

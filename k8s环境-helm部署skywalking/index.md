@@ -1,13 +1,13 @@
-# K8s环境 Helm部署skywalking
+# 【k8s】Helm 部署 skywalking
 
 
 <!--more-->
 
-# 前言
+# 1. 前言
 
 本实验文档基于单机 es7 作为 skywalking 的后端存储，使用 nfs 动态卷 storageclass，es 没有使用账号密码。
 
-# 环境
+# 2. 环境
 
 - k8s 集群：v1.20.4 版本
 
@@ -26,13 +26,13 @@
 
 
 
-#nfs 安装
+#3. nfs 安装
 
 **参考**：[K8s环境 nfs 动态存储卷部署](https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/)
 
-# elasticsearch 安装
+# 4. elasticsearch 安装
 
-##  安装 es 7.12.0
+##  4.1 安装 es 7.12.0
 
 ```
 cat >  elasticsearch-single.yaml  << EOF
@@ -117,15 +117,15 @@ kubectl apply -f elasticsearch-single.yaml
 
 
 
-# 安装 skywalking
+# 5. 安装 skywalking
 
-## 安装 helm
+## 5.1 安装 helm
 
 ```
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 ```
 
-##初始化 skywalking 的 charts 配置
+##5.2 初始化 skywalking 的 charts 配置
 
 ```
 # clone helm 仓库
@@ -142,7 +142,7 @@ kubectl create namespace skywalking
 
 
 
-##配置 skywalking 的 vaules 配置参数：
+##5.3 配置 skywalking 的 vaules 配置参数：
 
 初始化完成后需要自行调整配置文件，配置 oap-server 使用外部 ES，当然你也可以使用 values 自带的 es 的配置示例，这里不做过多介绍
 
@@ -172,32 +172,32 @@ elasticsearch:
 EOF
 ```
 
-##helm 安装 skywalking 8.4.0
+##5.4 helm 安装 skywalking 8.4.0
 
 ```
 helm install skywalking skywalking -n  skywalking  -f ./skywalking/values-my-es-01.yaml
 ```
 
-###卸载方式：
+###5.4.1 卸载方式：
 
 ```
 helm uninstall skywalking -n skywalking
 ```
 
-###持续查看 pod 安装进度
+###5.4.2 持续查看 pod 安装进度
 
 ```
 kubectl get pod -n skywalking -w
 ```
 
-###对外暴露 skywalking 端口，临时，但是本篇我用了 NodePort 的方法开放了端口，生产中也可以使用 ingress 的方式开放
+###5.4.3 对外暴露 skywalking 端口，临时，但是本篇我用了 NodePort 的方法开放了端口，生产中也可以使用 ingress 的方式开放
 
 ```
 export POD_NAME=$(kubectl get pods --namespace skywalking -l "app=skywalking,release=skywalking,component=ui" -o jsonpath="{.items[0].metadata.name}")
 kubectl port-forward $POD_NAME 8080:8080 --namespace skywalking
 ```
 
-###查看 skywalking 的访问：其实就是 k8s master/node ip + nodeport
+###5.4.4 查看 skywalking 的访问：其实就是 k8s master/node ip + nodeport
 
 ```
 export NODE_PORT=$(kubectl get --namespace skywalking -o jsonpath="{.spec.ports[0].nodePort}" services skywalking-ui)
@@ -205,7 +205,7 @@ export NODE_IP=$(kubectl get nodes --namespace skywalking -o jsonpath="{.items[0
 echo http://$NODE_IP:$NODE_PORT
 ```
 
-##运行状态检查
+##5.5 运行状态检查
 
 ```
 [root@node01 chart]# kubectl get pod,svc -n skywalking
@@ -222,7 +222,7 @@ service/skywalking-ui    NodePort    10.0.0.87    <none>        80:30553/TCP    
 
 
 
-##结果：
+##5.6 结果：
 
 es 多了一堆 index
 
@@ -232,11 +232,14 @@ skywalking 访问状态
 
 ![image-20210411183850273](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210411183850.png)
 
-#部署一个 java 微服务示例，并接入 skywalking
+
+
+# 6. 部署一个 java 微服务示例，并接入 skywalking
 
 参考：[K8s java 微服务部署示例](https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/)
 
-#参考：
+#7. 参考：
 
 - https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&mid=2247495145&idx=1&sn=87c5ff37f836d53c98304a88870d2e6d&chksm=eac6ccc0ddb145d6192df1ec738b885f979a868f96dbd6116eb05953989e64a67713d78f039e&mpshare=1&scene=1&srcid=04098L9gzve10EptJBFeLVHq&sharer_sharetime=1617928300892&sharer_shareid=09464b4a0389b967659ba78076a1ef58#rd
-- 
+
+  

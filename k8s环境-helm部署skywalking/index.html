@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>K8s环境 Helm部署skywalking - 易波叶平</title><meta name="Description" content="K8s环境 Helm部署skywalking"><meta property="og:title" content="K8s环境 Helm部署skywalking" />
-<meta property="og:description" content="K8s环境 Helm部署skywalking" />
+        <title>【k8s】Helm 部署 skywalking - 易波叶平</title><meta name="Description" content="【k8s】Helm部署skywalking"><meta property="og:title" content="【k8s】Helm 部署 skywalking" />
+<meta property="og:description" content="【k8s】Helm部署skywalking" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" />
 <meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
 
-<meta name="twitter:title" content="K8s环境 Helm部署skywalking"/>
-<meta name="twitter:description" content="K8s环境 Helm部署skywalking"/>
+<meta name="twitter:title" content="【k8s】Helm 部署 skywalking"/>
+<meta name="twitter:description" content="【k8s】Helm部署skywalking"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,18 +24,18 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "K8s环境 Helm部署skywalking",
+        "headline": "【k8s】Helm 部署 skywalking",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s, skywalking","wordcount":  973 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s, skywalking","wordcount":  969 ,
         "url": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking\/","datePublished": "2021-04-11T17:34:51+08:00","dateModified": "2021-04-11T17:34:51+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "赵叔"
-            },"description": "K8s环境 Helm部署skywalking"
+            },"description": "【k8s】Helm部署skywalking"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -108,10 +108,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">K8s环境 Helm部署skywalking</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">【k8s】Helm 部署 skywalking</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 973 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" class="leancloud_visitors" data-flag-title="K8s环境 Helm部署skywalking">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 969 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" class="leancloud_visitors" data-flag-title="【k8s】Helm 部署 skywalking">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -121,23 +121,24 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#环境">环境</a></li>
-    <li><a href="#elasticsearch-安装">elasticsearch 安装</a>
+    <li><a href="#1-前言">1. 前言</a></li>
+    <li><a href="#2-环境">2. 环境</a></li>
+    <li><a href="#4-elasticsearch-安装">4. elasticsearch 安装</a>
       <ul>
-        <li><a href="#安装-es-7120">安装 es 7.12.0</a></li>
+        <li><a href="#41-安装-es-7120">4.1 安装 es 7.12.0</a></li>
       </ul>
     </li>
-    <li><a href="#安装-skywalking">安装 skywalking</a>
+    <li><a href="#5-安装-skywalking">5. 安装 skywalking</a>
       <ul>
-        <li><a href="#安装-helm">安装 helm</a></li>
+        <li><a href="#51-安装-helm">5.1 安装 helm</a></li>
       </ul>
     </li>
+    <li><a href="#6-部署一个-java-微服务示例并接入-skywalking">6. 部署一个 java 微服务示例，并接入 skywalking</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+            </div><div class="content" id="content"><h1 id="1-前言">1. 前言</h1>
 <p>本实验文档基于单机 es7 作为 skywalking 的后端存储，使用 nfs 动态卷 storageclass，es 没有使用账号密码。</p>
-<h1 id="环境">环境</h1>
+<h1 id="2-环境">2. 环境</h1>
 <ul>
 <li>k8s 集群：v1.20.4 版本</li>
 </ul>
@@ -174,10 +175,10 @@
 </ul>
 </li>
 </ul>
-<p>#nfs 安装</p>
+<p>#3. nfs 安装</p>
 <p><strong>参考</strong>：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" target="_blank" rel="noopener noreffer">K8s环境 nfs 动态存储卷部署</a></p>
-<h1 id="elasticsearch-安装">elasticsearch 安装</h1>
-<h2 id="安装-es-7120">安装 es 7.12.0</h2>
+<h1 id="4-elasticsearch-安装">4. elasticsearch 安装</h1>
+<h2 id="41-安装-es-7120">4.1 安装 es 7.12.0</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -340,8 +341,8 @@ EOF
 kubectl apply -f elasticsearch-single.yaml 
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="安装-skywalking">安装 skywalking</h1>
-<h2 id="安装-helm">安装 helm</h2>
+</div><h1 id="5-安装-skywalking">5. 安装 skywalking</h1>
+<h2 id="51-安装-helm">5.1 安装 helm</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -350,7 +351,7 @@ kubectl apply -f elasticsearch-single.yaml
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 </code></pre></td></tr></table>
 </div>
-</div><p>##初始化 skywalking 的 charts 配置</p>
+</div><p>##5.2 初始化 skywalking 的 charts 配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -377,7 +378,7 @@ helm dep up skywalking
 kubectl create namespace skywalking
 </code></pre></td></tr></table>
 </div>
-</div><p>##配置 skywalking 的 vaules 配置参数：</p>
+</div><p>##5.3 配置 skywalking 的 vaules 配置参数：</p>
 <p>初始化完成后需要自行调整配置文件，配置 oap-server 使用外部 ES，当然你也可以使用 values 自带的 es 的配置示例，这里不做过多介绍</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -431,7 +432,7 @@ elasticsearch:
 EOF
 </code></pre></td></tr></table>
 </div>
-</div><p>##helm 安装 skywalking 8.4.0</p>
+</div><p>##5.4 helm 安装 skywalking 8.4.0</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -440,7 +441,7 @@ EOF
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">helm install skywalking skywalking -n  skywalking  -f ./skywalking/values-my-es-01.yaml
 </code></pre></td></tr></table>
 </div>
-</div><p>###卸载方式：</p>
+</div><p>###5.4.1 卸载方式：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -449,7 +450,7 @@ EOF
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">helm uninstall skywalking -n skywalking
 </code></pre></td></tr></table>
 </div>
-</div><p>###持续查看 pod 安装进度</p>
+</div><p>###5.4.2 持续查看 pod 安装进度</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -458,7 +459,7 @@ EOF
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get pod -n skywalking -w
 </code></pre></td></tr></table>
 </div>
-</div><p>###对外暴露 skywalking 端口，临时，但是本篇我用了 NodePort 的方法开放了端口，生产中也可以使用 ingress 的方式开放</p>
+</div><p>###5.4.3 对外暴露 skywalking 端口，临时，但是本篇我用了 NodePort 的方法开放了端口，生产中也可以使用 ingress 的方式开放</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -469,7 +470,7 @@ EOF
 kubectl port-forward $POD_NAME 8080:8080 --namespace skywalking
 </code></pre></td></tr></table>
 </div>
-</div><p>###查看 skywalking 的访问：其实就是 k8s master/node ip + nodeport</p>
+</div><p>###5.4.4 查看 skywalking 的访问：其实就是 k8s master/node ip + nodeport</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -482,7 +483,7 @@ export NODE_IP=$(kubectl get nodes --namespace skywalking -o jsonpath=&#34;{.ite
 echo http://$NODE_IP:$NODE_PORT
 </code></pre></td></tr></table>
 </div>
-</div><p>##运行状态检查</p>
+</div><p>##5.5 运行状态检查</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -509,7 +510,7 @@ service/skywalking-oap   ClusterIP   10.0.0.88    &lt;none&gt;        12800/TCP,
 service/skywalking-ui    NodePort    10.0.0.87    &lt;none&gt;        80:30553/TCP          115s
 </code></pre></td></tr></table>
 </div>
-</div><p>##结果：</p>
+</div><p>##5.6 结果：</p>
 <p>es 多了一堆 index</p>
 <p><img
         class="lazyload"
@@ -528,12 +529,11 @@ service/skywalking-ui    NodePort    10.0.0.87    &lt;none&gt;        80:30553/T
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210411183850.png"
         title="image-20210411183850273" /></p>
-<p>#部署一个 java 微服务示例，并接入 skywalking</p>
+<h1 id="6-部署一个-java-微服务示例并接入-skywalking">6. 部署一个 java 微服务示例，并接入 skywalking</h1>
 <p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" target="_blank" rel="noopener noreffer">K8s java 微服务部署示例</a></p>
-<p>#参考：</p>
+<p>#7. 参考：</p>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&amp;mid=2247495145&amp;idx=1&amp;sn=87c5ff37f836d53c98304a88870d2e6d&amp;chksm=eac6ccc0ddb145d6192df1ec738b885f979a868f96dbd6116eb05953989e64a67713d78f039e&amp;mpshare=1&amp;scene=1&amp;srcid=04098L9gzve10EptJBFeLVHq&amp;sharer_sharetime=1617928300892&amp;sharer_shareid=09464b4a0389b967659ba78076a1ef58#rd">https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&amp;mid=2247495145&amp;idx=1&amp;sn=87c5ff37f836d53c98304a88870d2e6d&amp;chksm=eac6ccc0ddb145d6192df1ec738b885f979a868f96dbd6116eb05953989e64a67713d78f039e&amp;mpshare=1&amp;scene=1&amp;srcid=04098L9gzve10EptJBFeLVHq&amp;sharer_sharetime=1617928300892&amp;sharer_shareid=09464b4a0389b967659ba78076a1ef58#rd</a></li>
-<li></li>
 </ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -559,7 +559,7 @@ service/skywalking-ui    NodePort    10.0.0.87    &lt;none&gt;        80:30553/T
         </section>
     </div>
 
-    <div class="post-nav"><a href="/k8s%E7%8E%AF%E5%A2%83-%E5%85%81%E8%AE%B8master%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8Cpod/" class="prev" rel="prev" title="K8s环境 允许 master 节点运行 pod"><i class="fas fa-angle-left fa-fw"></i>K8s环境 允许 master 节点运行 pod</a></div>
+    <div class="post-nav"><a href="/k8s%E7%8E%AF%E5%A2%83-%E5%85%81%E8%AE%B8master%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8Cpod/" class="prev" rel="prev" title="【k8s】允许 master 节点运行 pod"><i class="fas fa-angle-left fa-fw"></i>【k8s】允许 master 节点运行 pod</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

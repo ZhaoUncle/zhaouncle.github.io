@@ -5,11 +5,11 @@
         <description>微服务部署 - 标签 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
             <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 05 Apr 2021 13:15:31 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2/" rel="self" type="application/rss+xml" /><item>
-    <title>K8s java 微服务部署示例</title>
+    <title>【k8s】java 微服务部署示例</title>
     <link>https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/</link>
     <pubDate>Mon, 05 Apr 2021 13:15:31 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/</guid>
-    <description><![CDATA[K8s java 微服务部署示例]]></description>
+    <description><![CDATA[【k8s】java 微服务部署示例]]></description>
 </item></channel>
 </rss>

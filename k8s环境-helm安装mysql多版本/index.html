@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>K8s环境 Helm 安装 mysql 多版本 - 易波叶平</title><meta name="Description" content="Helm 安装 mysql 多版本"><meta property="og:title" content="K8s环境 Helm 安装 mysql 多版本" />
-<meta property="og:description" content="Helm 安装 mysql 多版本" />
+        <title>【k8s】Helm 安装 mysql 多版本 - 易波叶平</title><meta name="Description" content="【k8s】Helm 安装 mysql 多版本"><meta property="og:title" content="【k8s】Helm 安装 mysql 多版本" />
+<meta property="og:description" content="【k8s】Helm 安装 mysql 多版本" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/" />
 <meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
@@ -15,27 +15,27 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
 
-<meta name="twitter:title" content="K8s环境 Helm 安装 mysql 多版本"/>
-<meta name="twitter:description" content="Helm 安装 mysql 多版本"/>
+<meta name="twitter:title" content="【k8s】Helm 安装 mysql 多版本"/>
+<meta name="twitter:description" content="【k8s】Helm 安装 mysql 多版本"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/" /><link rel="prev" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" /><link rel="next" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-%E5%85%81%E8%AE%B8master%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8Cpod/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/" /><link rel="prev" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" /><link rel="next" href="https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-pv%E4%B8%80%E7%9B%B4%E5%A4%84%E5%9C%A8terminating%E7%8A%B6%E6%80%81/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "K8s环境 Helm 安装 mysql 多版本",
+        "headline": "【k8s】Helm 安装 mysql 多版本",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "helm, k8s","wordcount":  1638 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "helm, k8s","wordcount":  1637 ,
         "url": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC\/","datePublished": "2021-04-06T17:54:05+08:00","dateModified": "2021-04-06T17:54:05+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "赵叔"
-            },"description": "Helm 安装 mysql 多版本"
+            },"description": "【k8s】Helm 安装 mysql 多版本"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -108,10 +108,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">K8s环境 Helm 安装 mysql 多版本</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">【k8s】Helm 安装 mysql 多版本</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1638 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/" class="leancloud_visitors" data-flag-title="K8s环境 Helm 安装 mysql 多版本">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1637 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/" class="leancloud_visitors" data-flag-title="【k8s】Helm 安装 mysql 多版本">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -128,7 +128,7 @@
       </ul>
     </li>
     <li><a href="#3-安装">3. 安装</a></li>
-    <li><a href="#4查看默认参数和变量">4.查看默认参数和变量</a></li>
+    <li><a href="#4-查看默认参数和变量">4. 查看默认参数和变量</a></li>
     <li><a href="#5-登录mysql">5. 登录mysql</a></li>
   </ul>
 </nav></div>
@@ -203,7 +203,7 @@ helm pull stable/mysql	#会下载mysql-1.6.9.tgz
 helm  pull stable/mysql --version 1.6.0  #会下载mysql-1.6.0.tgz
 </code></pre></td></tr></table>
 </div>
-</div><p>##2. 更改版本</p>
+</div><p>#2. 更改版本</p>
 <p>**Tips：**由 1.1 可知，我们下载的 stable/mysql 是 mysql5.7 的版本，以下方式可以不记住 charts 版本号就可以修改 mysql 版本</p>
 <h2 id="21-修改-chartyaml">2.1 修改 Chart.yaml</h2>
 <p>修改 mysql 版本号<code>appVersion</code> 由原来的 5.7.30 改为 5.6.50和 chart 版本号<code>version</code></p>
@@ -476,7 +476,7 @@ nfs-client-provisioner-cf84d684-brlfk   1/1     Running     11         2d7h
 
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="4查看默认参数和变量">4.查看默认参数和变量</h1>
+</div><h1 id="4-查看默认参数和变量">4. 查看默认参数和变量</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -676,8 +676,8 @@ MySQL [(none)]&gt;
         </section>
     </div>
 
-    <div class="post-nav"><a href="/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" class="prev" rel="prev" title="K8s java 微服务部署示例"><i class="fas fa-angle-left fa-fw"></i>K8s java 微服务部署示例</a>
-            <a href="/k8s%E7%8E%AF%E5%A2%83-%E5%85%81%E8%AE%B8master%E8%8A%82%E7%82%B9%E8%BF%90%E8%A1%8Cpod/" class="next" rel="next" title="K8s环境 允许 master 节点运行 pod">K8s环境 允许 master 节点运行 pod<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" class="prev" rel="prev" title="【k8s】java 微服务部署示例"><i class="fas fa-angle-left fa-fw"></i>【k8s】java 微服务部署示例</a>
+            <a href="/k8s%E7%8E%AF%E5%A2%83-pv%E4%B8%80%E7%9B%B4%E5%A4%84%E5%9C%A8terminating%E7%8A%B6%E6%80%81/" class="next" rel="next" title="【k8s】pv 处在 Terminating 状态">【k8s】pv 处在 Terminating 状态<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

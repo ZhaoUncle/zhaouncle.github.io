@@ -1,4 +1,4 @@
-# K8s环境 Helm 安装 mysql 多版本
+# 【k8s】Helm 安装 mysql 多版本
 
 
 <!--more-->
@@ -48,7 +48,7 @@ helm pull stable/mysql	#会下载mysql-1.6.9.tgz
 helm  pull stable/mysql --version 1.6.0  #会下载mysql-1.6.0.tgz
 ```
 
-##2. 更改版本
+#2. 更改版本
 
 **Tips：**由 1.1 可知，我们下载的 stable/mysql 是 mysql5.7 的版本，以下方式可以不记住 charts 版本号就可以修改 mysql 版本
 
@@ -204,7 +204,7 @@ nfs-client-provisioner-cf84d684-brlfk   1/1     Running     11         2d7h
 
 
 
-# 4.查看默认参数和变量
+# 4. 查看默认参数和变量
 
 ```
 [root@node01 helm]# helm status mysql56

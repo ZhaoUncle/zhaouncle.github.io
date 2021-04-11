@@ -3,7 +3,7 @@
 
 <!--more-->
 
-# 环境
+# 1. 环境
 
 - 系统：centos7
 - docker：19.03.9
@@ -12,7 +12,7 @@
 
 
 
-# 安装 docker
+# 2. 安装 docker
 
 ```
 yum remove docker docker-common docker-selinux docker-engine
@@ -24,7 +24,7 @@ yum install docker-ce
 
 ```
 
-配置 docker 镜像加速和日志分割
+##2.1 配置 docker 镜像加速和日志分割
 
 ```
 cat << EOF > /etc/docker/daemon.json 
@@ -41,7 +41,7 @@ EOF
 
 
 
-# 安装 docker-compose
+# 3. 安装 docker-compose
 
 ```
 curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -52,11 +52,11 @@ docker-compose --version
 
 
 
-# 安装 harbor
+# 4. 安装 harbor
 
 **Tips：**为什么要用 https 而不用 http访问 harbor 镜像仓库呢，因为如果用 http 的话，必须在访问的客户端更改 docker 的 daemon.json 文件添加`--insecure-registry`，如果你客户端机器多的话，改起来麻烦还得重启 docker，但是用 https 访问，就无须更改 daemon.json 配置文件了，这是好处，如果你重启不受影响，那就随你 http 或者 https 了。
 
-## 生成 https 证书
+## 4.1 生成 https 证书
 
 我为了测试方便，直接使用 IP 方式作为访问，如果要改成域名，直接一键替换就好，还要 在步骤 2.3 要把 v3.ext 的IP=192.168.110.239`改成 以下方式：
 
@@ -181,7 +181,7 @@ systemctl restart docker
 
 
 
-## 安装harbor
+## 4.2 安装
 
 harbor 分为在线安装和下线安装两种，其实就是你的安装包完不完整的问题而已啦，我这里用下线安装方式
 
@@ -239,7 +239,7 @@ proxy:
 
 
 
-## harbor 开启 helm 的 charts 仓库配置
+## 4.3 harbor 开启 helm 的 charts 仓库配置
 
 ```
 ./install.sh --with-chartmuseum	
