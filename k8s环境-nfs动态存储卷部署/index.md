@@ -3,8 +3,6 @@
 
 <!--more-->
 
-# NFS动态存储卷
-
 ## 环境
 
 - 系统：CentOS7
@@ -137,8 +135,8 @@ NFS共享目录路径客户机IP段(参数1,参数2,...,参数n)
 - 配置完成后，您可以在终端提示符后运行以下命令来启动 NFS 服务器：
 
 ```
-systemctl enable nfs
-systemctl start nfs
+systemctl start nfs && systemctl start rpcbind
+systemctl enable nfs && systemctl enable rpcbind
 ```
 
 ### 检查NFS服务提供是否正常
@@ -163,7 +161,7 @@ Export list for node05:
 
 
 
-## 安装 nfs-client-provisioner
+## yml 方式：安装 nfs-client-provisioner
 
 ###在集群每一个节点安装`nfs-utils`
 
@@ -291,3 +289,99 @@ pod状态为`Completed`则为正常，若长时间为`ContainerCreating`状态�
 ```
  kubelete delete -f test-claim.yaml  &&  kubelete delete -f test-pod.yaml
 ```
+
+
+
+## helm 方式：安装 nfs-client
+
+注意事项：与上面 yml 注意一样
+
+>1. nfs-client-provisioner部署到刚刚创建的nfs命名空间下
+>2. storageClass.name #指定storageClassName名称，用于 PVC 自动绑定专属动态 PV 上
+>3. 需要指定NFS服务器的IP 地址(192.168.110.239)，以及共享名称路径(/ifs/kubernetes)
+
+### 创建 nfs 动态 pv 命名空间
+
+```
+kubectl create ns nfs
+```
+
+###配置 nfs-client 的启动参数
+
+产看配置：`helm show values helm-stable/nfs-client-provisioner`
+
+```
+cat >  /data/helm/nfs-client/nfs-client.yaml << EOF
+# NFS 设置
+nfs:
+  server: 192.168.110.239
+  path: /ifs/kubernetes
+storageClass:
+  # 此配置用于绑定 PVC 和 PV
+  name: nfs-client-manager
+  
+  # 资源回收策略
+#主要用于绑定的PVC删除后，资源释放后如何处理该PVC在存储设备上写入的数据。 
+#Retain：保留，删除PVC后，PV保留数据；
+#Recycle：回收空间，删除PVC后，简单的清除文件；（NFS和HostPath存储支持）
+#Delete：删除，删除PVC后，与PV相连接的后端存储会删除数据；（AWS EBS、Azure Disk、Cinder volumes、GCE PD支持）
+  reclaimPolicy: Retain
+# 使用镜像
+image:
+  repository: azure/nfs-client-provisioner
+# 副本数量
+#replicaCount: 1
+EOF
+```
+
+###部署 nfs-client-provisioner
+
+helm 添加 charts 源
+
+```
+helm repo add helm-stable https://charts.helm.sh/stable   
+helm repo add azure http://mirror.azure.cn/kubernetes/charts/
+helm repo add incubator https://charts.helm.sh/incubator
+helm repo update
+```
+
+指定 chart 版本
+
+```
+helm install nfs-cleint-storage -n nfs --values nfs-client.yaml helm-stable/nfs-client-provisioner --version 1.2.8
+```
+
+不指定默认版本
+
+```
+helm install nfs-cleint-storage1 -n nfs --values nfs-client.yaml helm-stable/nfs-client-provisioner
+```
+
+查看版本
+
+```
+helm search repo nfs-client-provisioner
+```
+
+安装后校验
+
+```
+#查看 nfs namespace 下的 app
+helm list -n nfs 
+#查看所有 namespace 的 app
+helm list -A
+```
+
+
+
+###不走配置文件，直接命令启动方式为：
+
+```
+helm install nfs-storage helm-stable/nfs-client-provisioner \
+--set nfs.server=192.168.110.239 \
+--set nfs.path=/ifs/kubernetes \
+--set storageClass.name=nfs-storage \
+--set storageClass.defaultClass=true
+```
+
+

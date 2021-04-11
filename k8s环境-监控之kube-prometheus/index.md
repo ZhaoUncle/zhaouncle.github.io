@@ -7,7 +7,6 @@
 
 - k8s 1.20
 - kube-prometheus release-0.7
-- 
 
 在过去的几年中，云计算已经成为及分布式计算最火热的技术之一，其中 Docker、Kubernetes、Prometheus 等开源软件的发展极大地推动了云计算的发展。本文首先从 Prometheus 是如何监控 Kubernetes 入手，介绍 Prometheus Operator 组件。接着详细介绍基于 Kubernetes 的两种 Prometheus 部署方式，最后介绍服务配置、监控对象以及数据展示和告警。通过本文，大家可以在 Kubernetes 集群的基础上学习和搭建完善的 Prometheus 监控系统。
 
