@@ -312,3 +312,7 @@ skywalking-ui    NodePort    10.0.0.232   <none>        80:30008/TCP          5h
 ## 3.4 查看 skywalking 的 java 微服务
 
 ![image-20210412000307837](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png)
+
+# 4. 参考
+
+- https://github.com/lizhenliang/simple-microservice

@@ -93,6 +93,44 @@ docker exec -t <container name> gitlab-backup create
 - 如上节执行备份数据
 - 修改 docker-compose.yml 的 images，然后`docker-compose up -d`
 
+
+
+# 将 github 代码导入 gitlab
+
+## 设置 GitHub Toekn
+参考：https://docs.github.com/cn/github/authenticating-to-github/creating-a-personal-access-token
+
+**Token 权限只要设置 “repo” 即可。**
+
+- token：
+
+```shell
+|-seetings 
+|-- Developer settings 
+|------Personal access tokens 下生成
+
+注意：token 只会显示一次，记得保存如果你不建议重新配置一次的话
+```
+
+![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png)
+![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png)
+![image-20200824095351728](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png)
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken4.png" width="800" hegiht="250" align=center/>
+
+## gitlab 导入 github 步骤如下
+
+gitlab 主页选择 “New project”--> "Import project"-->"Github"-->"输入 github token"-->"选择你要导入的项目，然后直接 import 点击即可"
+
+![image-20210414104153504](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104153.png)
+
+![image-20210414104246006](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104246.png)
+
+![image-20210414104301671](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104307.png)
+
+![image-20210414104413603](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104413.png)
+
+![image-20210414104454887](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104454.png)
+
 #参考：
 
 - https://docs.gitlab.com/omnibus/docker/#install-gitlab-using-docker-compose

@@ -246,3 +246,61 @@ proxy:
 ```
 
 ![image-20210405123446713](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210405123446.png)
+
+
+
+## 4.4 使用Harbor作为Chart仓库
+
+启用后，默认创建的项目就带有helm charts功能了。
+
+**1、安装push插件**
+
+https://github.com/chartmuseum/helm-push
+
+```shell
+helm plugin install https://github.com/chartmuseum/helm-push
+```
+
+**2、添加repo**
+
+```
+helm repo add  --username admin --password Harbor12345 myrepo http://192.168.110.239/chartrepo/library
+```
+
+如果用的自签名的证书，则会报错
+
+```
+# 增加仓库，因为使用的自签名证书，所以命令上需要加上，若不加上则会报错：Error: Looks like "https://www.harbor.mobi/chartrepo/myrepo" is not a valid chart repository or cannot be reached: Get https://www.harbor.mobi/chartrepo/myrepo/index.yaml: x509: certificate signed by unknown authority
+```
+
+指定证书添加 repo
+
+```
+helm repo add --ca-file /data/helm/ssl/192.168.110.239.crt --cert-file /data/helm/ssl/192.168.110.239.cert --key-file /data/helm/ssl/192.168.110.239.key myrepo https://192.168.110.239/chartrepo/library
+```
+
+查看
+
+```
+[root@node01 ssl]# helm repo ls
+NAME            URL                                                   
+stable          http://mirror.azure.cn/kubernetes/charts              
+aliyun          https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+incubator       https://charts.helm.sh/incubator                      
+helm-stable     https://charts.helm.sh/stable                         
+azure           http://mirror.azure.cn/kubernetes/charts/             
+elastic         https://helm.elastic.co                               
+library         https://192.168.110.239/chartrepo/library 
+```
+
+
+
+**3、推送与安装Chart**
+
+```
+helm push ms-0.1.0.tgz --username=admin --password=Harbor12345 --ca-file /data/helm/ssl/192.168.110.239.crt --cert-file /data/helm/ssl/192.168.110.239.cert --key-file /data/helm/ssl/192.168.110.239.key https://192.168.110.239/chartrepo/library
+
+helm install ms myrepo/ms
+```
+
+

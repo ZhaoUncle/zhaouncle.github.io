@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "gitlab","wordcount":  774 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "gitlab","wordcount":  1105 ,
         "url": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85\/","datePublished": "2021-04-04T22:01:12+08:00","dateModified": "2021-04-04T22:01:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Gitlab安装</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/gitlab/"><i class="far fa-folder fa-fw"></i>gitlab</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-04">2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 774 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/" class="leancloud_visitors" data-flag-title="Gitlab安装">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-04">2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1105 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/" class="leancloud_visitors" data-flag-title="Gitlab安装">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -126,6 +126,12 @@
         <li><a href="#首次访问-gitlab">首次访问 gitlab</a></li>
         <li><a href="#gitlab-数据备份">gitlab 数据备份</a></li>
         <li><a href="#升级-gitlab">升级 gitlab</a></li>
+      </ul>
+    </li>
+    <li><a href="#将-github-代码导入-gitlab">将 github 代码导入 gitlab</a>
+      <ul>
+        <li><a href="#设置-github-toekn">设置 GitHub Toekn</a></li>
+        <li><a href="#gitlab-导入-github-步骤如下">gitlab 导入 github 步骤如下</a></li>
       </ul>
     </li>
   </ul>
@@ -250,6 +256,96 @@ cat &gt; /etc/cron.d/gitlab-backup <span class="s">&lt;&lt; EOF
 <li>如上节执行备份数据</li>
 <li>修改 docker-compose.yml 的 images，然后<code>docker-compose up -d</code></li>
 </ul>
+<h1 id="将-github-代码导入-gitlab">将 github 代码导入 gitlab</h1>
+<h2 id="设置-github-toekn">设置 GitHub Toekn</h2>
+<p>参考：https://docs.github.com/cn/github/authenticating-to-github/creating-a-personal-access-token</p>
+<p><strong>Token 权限只要设置 “repo” 即可。</strong></p>
+<ul>
+<li>token：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="p">|</span>-seetings 
+<span class="p">|</span>-- Developer settings 
+<span class="p">|</span>------Personal access tokens 下生成
+
+注意：token 只会显示一次，记得保存如果你不建议重新配置一次的话
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken.png"
+        title="image-20200824095351728" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken2.png"
+        title="image-20200824095351728" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken3.png"
+        title="image-20200824095351728" />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main//blog/githubToken4.png" width="800" hegiht="250" align=center/></p>
+<h2 id="gitlab-导入-github-步骤如下">gitlab 导入 github 步骤如下</h2>
+<p>gitlab 主页选择 “New project”&ndash;&gt; &ldquo;Import project&rdquo;&ndash;&gt;&quot;Github&rdquo;&ndash;&gt;&quot;输入 github token&rdquo;&ndash;&gt;&quot;选择你要导入的项目，然后直接 import 点击即可&rdquo;</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104153.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104153.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104153.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104153.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104153.png"
+        title="image-20210414104153504" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104246.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104246.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104246.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104246.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104246.png"
+        title="image-20210414104246006" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104307.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104307.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104307.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104307.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104307.png"
+        title="image-20210414104301671" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104413.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104413.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104413.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104413.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104413.png"
+        title="image-20210414104413603" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104454.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104454.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104454.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104454.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414104454.png"
+        title="image-20210414104454887" /></p>
 <p>#参考：</p>
 <ul>
 <li>

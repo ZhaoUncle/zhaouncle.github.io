@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-harbor%E5%AE%89%E8%A3%85\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "harbor, k8s","wordcount":  1611 ,
+        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "harbor, k8s","wordcount":  1852 ,
         "url": "https:\/\/www.zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-harbor%E5%AE%89%E8%A3%85\/","datePublished": "2021-04-04T22:00:57+08:00","dateModified": "2021-04-04T22:00:57+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Harbor安装</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-04">2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1611 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-04">2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1852 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-harbor%E5%AE%89%E8%A3%85/" class="leancloud_visitors" data-flag-title="Harbor安装">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -129,6 +129,7 @@
         <li><a href="#41-生成-https-证书">4.1 生成 https 证书</a></li>
         <li><a href="#42-安装">4.2 安装</a></li>
         <li><a href="#43-harbor-开启-helm-的-charts-仓库配置">4.3 harbor 开启 helm 的 charts 仓库配置</a></li>
+        <li><a href="#44-使用harbor作为chart仓库">4.4 使用Harbor作为Chart仓库</a></li>
       </ul>
     </li>
   </ul>
@@ -535,7 +536,85 @@ proxy:
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210405123446.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210405123446.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210405123446.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210405123446.png"
-        title="image-20210405123446713" /></p></div><div class="post-footer" id="post-footer">
+        title="image-20210405123446713" /></p>
+<h2 id="44-使用harbor作为chart仓库">4.4 使用Harbor作为Chart仓库</h2>
+<p>启用后，默认创建的项目就带有helm charts功能了。</p>
+<p><strong>1、安装push插件</strong></p>
+<p><a href="https://github.com/chartmuseum/helm-push">https://github.com/chartmuseum/helm-push</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">helm plugin install https://github.com/chartmuseum/helm-push
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>2、添加repo</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">helm repo add  --username admin --password Harbor12345 myrepo http://192.168.110.239/chartrepo/library
+</code></pre></td></tr></table>
+</div>
+</div><p>如果用的自签名的证书，则会报错</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 增加仓库，因为使用的自签名证书，所以命令上需要加上，若不加上则会报错：Error: Looks like &#34;https://www.harbor.mobi/chartrepo/myrepo&#34; is not a valid chart repository or cannot be reached: Get https://www.harbor.mobi/chartrepo/myrepo/index.yaml: x509: certificate signed by unknown authority
+</code></pre></td></tr></table>
+</div>
+</div><p>指定证书添加 repo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">helm repo add --ca-file /data/helm/ssl/192.168.110.239.crt --cert-file /data/helm/ssl/192.168.110.239.cert --key-file /data/helm/ssl/192.168.110.239.key myrepo https://192.168.110.239/chartrepo/library
+</code></pre></td></tr></table>
+</div>
+</div><p>查看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 ssl]# helm repo ls
+NAME            URL                                                   
+stable          http://mirror.azure.cn/kubernetes/charts              
+aliyun          https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+incubator       https://charts.helm.sh/incubator                      
+helm-stable     https://charts.helm.sh/stable                         
+azure           http://mirror.azure.cn/kubernetes/charts/             
+elastic         https://helm.elastic.co                               
+library         https://192.168.110.239/chartrepo/library 
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>3、推送与安装Chart</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">helm push ms-0.1.0.tgz --username=admin --password=Harbor12345 --ca-file /data/helm/ssl/192.168.110.239.crt --cert-file /data/helm/ssl/192.168.110.239.cert --key-file /data/helm/ssl/192.168.110.239.key https://192.168.110.239/chartrepo/library
+
+helm install ms myrepo/ms
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
