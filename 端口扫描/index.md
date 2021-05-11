@@ -44,7 +44,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.28 seconds
 
 #2. Telnet 确认端口是否可以通信
 
-`telnet  192.168.3.319100`
+`telnet  192.168.3.31 9100`
 
 
 
