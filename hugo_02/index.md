@@ -63,11 +63,11 @@
 
 ### 2.5.1 找到设置界面
 
-![image-20200702135909204](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200702135909204.png)
+![image-20200702135909204](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135909204.png)
 
 ### 2.5.2 进入 Applications 配置，点击 小三点进行删除
 
-![image-20200702135956072](/Users/aomine/Documents/hugo/MyBlogHugo/static/images/image-20200702135956072.png)
+![image-20200702135956072](https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135956072.png)
 
 ## 3 使用 [atomic-algolia](https://github.com/chrisdmacrae/atomic-algolia) 来完成自动更新索引
 
