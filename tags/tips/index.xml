@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tips - 标签 - 易波叶平</title>
-        <link>/tags/tips/</link>
+        <link>https://zhaouncle.com/tags/tips/</link>
         <description>Tips - 标签 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 19 Aug 2020 10:55:55 &#43;0800</lastBuildDate><atom:link href="/tags/tips/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 19 Aug 2020 10:55:55 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/tips/" rel="self" type="application/rss+xml" /><item>
     <title>Wechat_文章搜索方法</title>
-    <link>/wechat_%E6%96%87%E7%AB%A0%E6%90%9C%E7%B4%A2/</link>
+    <link>https://zhaouncle.com/wechat_%E6%96%87%E7%AB%A0%E6%90%9C%E7%B4%A2/</link>
     <pubDate>Wed, 19 Aug 2020 10:55:55 &#43;0800</pubDate><author>
         <name>赵叔</name>
-    </author><guid>/wechat_%E6%96%87%E7%AB%A0%E6%90%9C%E7%B4%A2/</guid>
+    </author><guid>https://zhaouncle.com/wechat_%E6%96%87%E7%AB%A0%E6%90%9C%E7%B4%A2/</guid>
     <description><![CDATA[微信公众号文章搜索方法]]></description>
 </item></channel>
 </rss>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>图床 - 标签 - 易波叶平</title>
-        <link>/tags/%E5%9B%BE%E5%BA%8A/</link>
+        <link>https://zhaouncle.com/tags/%E5%9B%BE%E5%BA%8A/</link>
         <description>图床 - 标签 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 24 Aug 2020 09:38:23 &#43;0800</lastBuildDate><atom:link href="/tags/%E5%9B%BE%E5%BA%8A/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 24 Aug 2020 09:38:23 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/%E5%9B%BE%E5%BA%8A/" rel="self" type="application/rss+xml" /><item>
     <title>Typora &#43; PicGo 编写 hugo md &#43; 图床</title>
-    <link>/picgo_typora/</link>
+    <link>https://zhaouncle.com/picgo_typora/</link>
     <pubDate>Mon, 24 Aug 2020 09:38:23 &#43;0800</pubDate><author>
         <name>赵叔</name>
-    </author><guid>/picgo_typora/</guid>
+    </author><guid>https://zhaouncle.com/picgo_typora/</guid>
     <description><![CDATA[Typora + PicGo 编写 hugo md + 图床]]></description>
 </item></channel>
 </rss>

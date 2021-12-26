@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>阅读 - 标签 - 易波叶平</title>
-        <link>/tags/%E9%98%85%E8%AF%BB/</link>
+        <link>https://zhaouncle.com/tags/%E9%98%85%E8%AF%BB/</link>
         <description>阅读 - 标签 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Tue, 02 Jun 2020 20:09:02 &#43;0800</lastBuildDate><atom:link href="/tags/%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Tue, 02 Jun 2020 20:09:02 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
     <title>Books</title>
-    <link>/books/</link>
+    <link>https://zhaouncle.com/books/</link>
     <pubDate>Tue, 02 Jun 2020 20:09:02 &#43;0800</pubDate><author>
         <name>赵叔</name>
-    </author><guid>/books/</guid>
+    </author><guid>https://zhaouncle.com/books/</guid>
     <description><![CDATA[闲来读之，不尽如书]]></description>
 </item></channel>
 </rss>
