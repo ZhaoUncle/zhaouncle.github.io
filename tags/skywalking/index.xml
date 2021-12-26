@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>skywalking - 标签 - 易波叶平</title>
-        <link>https://www.zhaouncle.com/tags/skywalking/</link>
+        <link>/tags/skywalking/</link>
         <description>skywalking - 标签 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 11 Apr 2021 17:34:51 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/skywalking/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 11 Apr 2021 17:34:51 &#43;0800</lastBuildDate><atom:link href="/tags/skywalking/" rel="self" type="application/rss+xml" /><item>
     <title>【k8s】Helm 部署 skywalking</title>
-    <link>https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/</link>
-    <pubDate>Sun, 11 Apr 2021 17:34:51 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/</guid>
+    <link>/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/</link>
+    <pubDate>Sun, 11 Apr 2021 17:34:51 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/</guid>
     <description><![CDATA[【k8s】Helm部署skywalking]]></description>
 </item></channel>
 </rss>

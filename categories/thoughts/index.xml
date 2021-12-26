@@ -1,22 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Thoughts - 分类 - 易波叶平</title>
-        <link>https://www.zhaouncle.com/categories/thoughts/</link>
+        <link>/categories/thoughts/</link>
         <description>Thoughts - 分类 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 05 Jan 2021 14:15:37 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/categories/thoughts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Tue, 05 Jan 2021 14:15:37 &#43;0800</lastBuildDate><atom:link href="/categories/thoughts/" rel="self" type="application/rss+xml" /><item>
     <title>陶渊明</title>
-    <link>https://www.zhaouncle.com/%E9%99%B6%E6%B8%8A%E6%98%8E/</link>
-    <pubDate>Tue, 05 Jan 2021 14:15:37 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E9%99%B6%E6%B8%8A%E6%98%8E/</guid>
+    <link>/%E9%99%B6%E6%B8%8A%E6%98%8E/</link>
+    <pubDate>Tue, 05 Jan 2021 14:15:37 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E9%99%B6%E6%B8%8A%E6%98%8E/</guid>
     <description><![CDATA[应尽便须尽，无复独多虑。]]></description>
 </item><item>
     <title>于二零二零年：终章</title>
-    <link>https://www.zhaouncle.com/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</link>
-    <pubDate>Mon, 28 Dec 2020 20:44:48 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</guid>
+    <link>/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</link>
+    <pubDate>Mon, 28 Dec 2020 20:44:48 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E4%BA%8C%E9%9B%B6%E4%BA%8C%E9%9B%B6%E5%B9%B4%E7%BB%88%E7%AB%A0/</guid>
     <description><![CDATA[<p>2020 年年终有感</p>
 <p>###摘抄</p>
 <blockquote>
@@ -51,7 +51,7 @@
 <p>我因为爱你，所以常常想跟你道歉。我的爱沉重、污浊，里面带有许多令人不快的东西，比如悲伤、忧愁、自怜、绝望，我的心又这样脆弱不堪，自己总被这些负面情绪打败，好像在一个沼泽里越挣扎越下沉。而我爱你，就是想把你也拖进来，却希望你救我。</p>
 </blockquote>
 <blockquote>
-<p>人们迟早会发现自己爱的不是现实中的他,而是想象中的他,现实中的他只是他们所创造梦中情人 的一个模板,他们迟早会发现梦中情人与模板的差距,适应了就走下去没适应就分开,你与大多数 人不同的是,你不需要模板&rdquo; &ldquo;但是我喜欢上了一个不存在的人,她只是我虚构出来的,这难道不是一种病态? &quot; &ldquo;不,不是,其实你很幸运,不管他是不是真是存在,能爱就很幸运了。</p>
+<p>人们迟早会发现自己爱的不是现实中的他,而是想象中的他,现实中的他只是他们所创造梦中情人 的一个模板,他们迟早会发现梦中情人与模板的差距,适应了就走下去没适应就分开,你与大多数 人不同的是,你不需要模板&quot; &ldquo;但是我喜欢上了一个不存在的人,她只是我虚构出来的,这难道不是一种病态? &quot; &ldquo;不,不是,其实你很幸运,不管他是不是真是存在,能爱就很幸运了。</p>
 <p>—— 刘慈欣《三体》</p>
 </blockquote>
 <blockquote>
@@ -64,52 +64,52 @@
 </blockquote>]]></description>
 </item><item>
     <title>三毛</title>
-    <link>https://www.zhaouncle.com/%E4%B8%89%E6%AF%9B/</link>
-    <pubDate>Wed, 12 Aug 2020 08:44:30 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E4%B8%89%E6%AF%9B/</guid>
+    <link>/%E4%B8%89%E6%AF%9B/</link>
+    <pubDate>Wed, 12 Aug 2020 08:44:30 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E4%B8%89%E6%AF%9B/</guid>
     <description><![CDATA[三毛相关摘抄]]></description>
 </item><item>
     <title>三十而已</title>
-    <link>https://www.zhaouncle.com/%E4%B8%89%E5%8D%81%E8%80%8C%E5%B7%B2/</link>
-    <pubDate>Sun, 09 Aug 2020 15:45:10 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E4%B8%89%E5%8D%81%E8%80%8C%E5%B7%B2/</guid>
+    <link>/%E4%B8%89%E5%8D%81%E8%80%8C%E5%B7%B2/</link>
+    <pubDate>Sun, 09 Aug 2020 15:45:10 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E4%B8%89%E5%8D%81%E8%80%8C%E5%B7%B2/</guid>
     <description><![CDATA[电视剧《三十而已》]]></description>
 </item><item>
     <title>庄子*逍遥游</title>
-    <link>https://www.zhaouncle.com/%E5%BA%84%E5%AD%90/</link>
-    <pubDate>Sun, 19 Jul 2020 12:36:31 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E5%BA%84%E5%AD%90/</guid>
+    <link>/%E5%BA%84%E5%AD%90/</link>
+    <pubDate>Sun, 19 Jul 2020 12:36:31 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E5%BA%84%E5%AD%90/</guid>
     <description><![CDATA[逍遥游]]></description>
 </item><item>
     <title>林徽因</title>
-    <link>https://www.zhaouncle.com/%E6%9E%97%E5%BE%BD%E5%9B%A0/</link>
-    <pubDate>Sat, 27 Jun 2020 13:19:52 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E6%9E%97%E5%BE%BD%E5%9B%A0/</guid>
+    <link>/%E6%9E%97%E5%BE%BD%E5%9B%A0/</link>
+    <pubDate>Sat, 27 Jun 2020 13:19:52 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E6%9E%97%E5%BE%BD%E5%9B%A0/</guid>
     <description><![CDATA[一个人的气质里，藏着她读过的书]]></description>
 </item><item>
     <title>于 2020 年 6 月 26 日</title>
-    <link>https://www.zhaouncle.com/20200626/</link>
-    <pubDate>Fri, 26 Jun 2020 20:44:48 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/20200626/</guid>
+    <link>/20200626/</link>
+    <pubDate>Fri, 26 Jun 2020 20:44:48 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/20200626/</guid>
     <description><![CDATA[<p>2020 年端午节有想</p>]]></description>
 </item><item>
     <title>万事开头难</title>
-    <link>https://www.zhaouncle.com/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/</link>
-    <pubDate>Fri, 05 Jun 2020 08:43:08 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/</guid>
+    <link>/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/</link>
+    <pubDate>Fri, 05 Jun 2020 08:43:08 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Books</title>
-    <link>https://www.zhaouncle.com/books/</link>
-    <pubDate>Tue, 02 Jun 2020 20:09:02 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/books/</guid>
+    <link>/books/</link>
+    <pubDate>Tue, 02 Jun 2020 20:09:02 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/books/</guid>
     <description><![CDATA[闲来读之，不尽如书]]></description>
 </item></channel>
 </rss>

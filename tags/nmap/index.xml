@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>nmap - 标签 - 易波叶平</title>
-        <link>https://www.zhaouncle.com/tags/nmap/</link>
+        <link>/tags/nmap/</link>
         <description>nmap - 标签 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Nov 2020 16:35:16 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/nmap/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 09 Nov 2020 16:35:16 &#43;0800</lastBuildDate><atom:link href="/tags/nmap/" rel="self" type="application/rss+xml" /><item>
     <title>端口扫描和脚本批量测通</title>
-    <link>https://www.zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</link>
-    <pubDate>Mon, 09 Nov 2020 16:35:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</guid>
+    <link>/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</link>
+    <pubDate>Mon, 09 Nov 2020 16:35:16 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

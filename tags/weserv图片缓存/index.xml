@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Weserv图片缓存 - 标签 - 易波叶平</title>
-        <link>https://www.zhaouncle.com/tags/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/</link>
+        <link>/tags/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/</link>
         <description>Weserv图片缓存 - 标签 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 14 Oct 2020 10:05:42 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/tags/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 14 Oct 2020 10:05:42 &#43;0800</lastBuildDate><atom:link href="/tags/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/" rel="self" type="application/rss+xml" /><item>
     <title>Weserv图片缓存</title>
-    <link>https://www.zhaouncle.com/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/</link>
-    <pubDate>Wed, 14 Oct 2020 10:05:42 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/</guid>
+    <link>/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/</link>
+    <pubDate>Wed, 14 Oct 2020 10:05:42 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/weserv%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/</guid>
     <description><![CDATA[Weserv图片缓存]]></description>
 </item></channel>
 </rss>

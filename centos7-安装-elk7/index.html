@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>【ELK】Centos7 安装 elk 7.6.2 - 易波叶平</title><meta name="Description" content="【ELK】centos7 安装 elk 7.6.2"><meta property="og:title" content="【ELK】Centos7 安装 elk 7.6.2" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">【ELK】Centos7 安装 elk 7.6.2 - 易波叶平</title><meta name="Description" content="【ELK】centos7 安装 elk 7.6.2"><meta property="og:title" content="【ELK】Centos7 安装 elk 7.6.2" />
 <meta property="og:description" content="【ELK】centos7 安装 elk 7.6.2" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/" />
-<meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
+<meta property="og:url" content="/centos7-%E5%AE%89%E8%A3%85-elk7/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-08T15:36:44+08:00" />
-<meta property="article:modified_time" content="2020-06-08T15:36:44+08:00" />
+<meta property="article:modified_time" content="2020-06-08T15:36:44+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
+
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
+<meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="【ELK】Centos7 安装 elk 7.6.2"/>
 <meta name="twitter:description" content="【ELK】centos7 安装 elk 7.6.2"/>
-<meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/" /><link rel="prev" href="https://www.zhaouncle.com/hugo/" /><link rel="next" href="https://www.zhaouncle.com/20200626/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="/centos7-%E5%AE%89%E8%A3%85-elk7/" /><link rel="prev" href="/hugo/" /><link rel="next" href="/20200626/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +32,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/www.zhaouncle.com\/centos7-%E5%AE%89%E8%A3%85-elk7\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ELK, elasticsearch, kibana, logstash","wordcount":  3622 ,
-        "url": "https:\/\/www.zhaouncle.com\/centos7-%E5%AE%89%E8%A3%85-elk7\/","datePublished": "2020-06-08T15:36:44+08:00","dateModified": "2020-06-08T15:36:44+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "\/centos7-%E5%AE%89%E8%A3%85-elk7\/"
+        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ELK, elasticsearch, kibana, logstash","wordcount":  3622 ,
+        "url": "\/centos7-%E5%AE%89%E8%A3%85-elk7\/","datePublished": "2020-06-08T15:36:44+08:00","dateModified": "2020-06-08T15:36:44+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
@@ -38,38 +42,49 @@
             },"description": "【ELK】centos7 安装 elk 7.6.2"
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/link" title="友链"> 友链 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><a class="menu-item" href="https://reading.zhaouncle.com" title="Reading" rel="noopener noreffer" target="_blank"><i class='fas fa-book'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/centos7-%E5%AE%89%E8%A3%85-elk7/" selected>简体中文</option></select>
-                    </a><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/link" title="友链"> 友链 </a><a class="menu-item" href="/showcase/"> 作品 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="/authors/"> 作者 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/https:/link.zhaouncle.com"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="/https:/github.com/dillonzq/LoveIt" title="GitHub"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/https:/zhaouncle.com/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="/https:/k8syaml.com/" title="k8syaml"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="/https:/www.cnblogs.com/UncleZhao/" title="博客园"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -77,25 +92,29 @@
         </div>
         <div class="menu" id="menu-mobile"><div class="search-wrapper">
                     <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索" id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
                     </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/link" title="友链">友链</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a class="menu-item" href="https://reading.zhaouncle.com" title="Reading" rel="noopener noreffer" target="_blank"><i class='fas fa-book'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/link" title="友链">友链</a><a class="menu-item" href="/showcase/" title="">作品</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="/authors/" title="">作者</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/https:/link.zhaouncle.com" title=""><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="/https:/github.com/dillonzq/LoveIt" title="GitHub"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/https:/zhaouncle.com/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="/https:/k8syaml.com/" title="k8syaml"><i class='fab fa-docker'></i></a><a class="menu-item" href="/https:/www.cnblogs.com/UncleZhao/" title="博客园"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/centos7-%E5%AE%89%E8%A3%85-elk7/" selected>简体中文</option></select>
-                </a></div>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
     </div>
 </header>
 <div class="search-dropdown desktop">
@@ -105,12 +124,14 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">【ELK】Centos7 安装 elk 7.6.2</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>ELK</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3622 字&nbsp;
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【ELK】Centos7 安装 elk 7.6.2</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>ELK</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3622 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/centos7-%E5%AE%89%E8%A3%85-elk7/" class="leancloud_visitors" data-flag-title="【ELK】Centos7 安装 elk 7.6.2">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -195,9 +216,17 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="1-初始化环境">1. 初始化环境</h1>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+                <div class="details-summary admonition-title">
+                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+                </div>
+                <div class="details-content">
+                    <div class="admonition-content">
+                        本文最后更新于 <span class="timeago" datetime="2020-06-08T15:36:44" title="June 8, 2020">2020-06-08</span>，文中内容可能已过时。</div>
+                </div>
+            </div><h1 id="1-初始化环境">1. 初始化环境</h1>
 <h2 id="10-初始化环境官网参考">1.0 初始化环境官网参考</h2>
-<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html</a></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html</a></p>
 <h2 id="11-架构">1.1 架构</h2>
 <table>
 <thead>
@@ -228,14 +257,14 @@
 <h2 id="12-配置-hosts">1.2 配置 hosts</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">cat <span class="s">&lt;&lt; EOF &gt;&gt; /etc/hosts
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cat <span class="s">&lt;&lt; EOF &gt;&gt; /etc/hosts
 </span><span class="s">192.168.110.245 node01
 </span><span class="s">192.168.110.246 node02 
 </span><span class="s">192.168.110.247 node03
@@ -245,12 +274,12 @@
 </div><h2 id="13-修改-hostname">1.3 修改 hostname</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">hostnamectl set-hostname node01
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hostnamectl set-hostname node01
 hostnamectl set-hostname node02
 hostnamectl set-hostname node03
 </code></pre></td></tr></table>
@@ -258,34 +287,34 @@ hostnamectl set-hostname node03
 </div><h2 id="14-时间同步联网状态">1.4 时间同步(联网状态)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install ntpdate
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum -y install ntpdate
 /bin/echo <span class="s2">&#34;* */1 * * * /usr/sbin/ntpdate pool.ntp.org &gt; /dev/null 2&gt;&amp;1&#34;</span> &gt;&gt; /var/spool/cron/root
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="15-关闭-selinux">1.5 关闭 selinux</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">setenforce <span class="m">0</span> <span class="c1">#临时，马上生效</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">setenforce <span class="m">0</span> <span class="c1">#临时，马上生效</span>
 sed -i <span class="s1">&#39;s/enforcing/disabled/&#39;</span> /etc/selinux/config <span class="c1">#永久，重启生效</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="16-关闭防火墙">1.6 关闭防火墙</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">iptables -F 
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">iptables -F 
 systemctl stop firewalld
 systemctl disable firewalld
 </code></pre></td></tr></table>
@@ -293,7 +322,7 @@ systemctl disable firewalld
 </div><h2 id="17-内存解锁和文件限制">1.7 内存解锁和文件限制</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -304,7 +333,7 @@ systemctl disable firewalld
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#临时修改，重启失效</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#临时修改，重启失效</span>
 <span class="nb">ulimit</span> -n <span class="m">65535</span>
 <span class="c1">#永久修改，重启生效</span>
 cat <span class="s">&lt;&lt; EOF &gt;&gt;/etc/security/limits.conf
@@ -318,22 +347,22 @@ cat <span class="s">&lt;&lt; EOF &gt;&gt;/etc/security/limits.conf
 </div><h2 id="18-关闭-swap-缓存">1.8 关闭 swap 缓存</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">swapoff -a <span class="c1">#临时</span>
-sed -i <span class="s1">&#39;/swap/s/^/#/&#39;</span> /etc/fstab <span class="c1">#永久</span> 
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">swapoff -a <span class="c1">#临时</span>
+sed -i <span class="s1">&#39;/swap/s/^/#/&#39;</span> /etc/fstab <span class="c1">#永久 </span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="19-设置-es-用户内存限制大小">1.9 设置 es 用户内存限制大小</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">sysctl -w vm.max_map_count<span class="o">=</span><span class="m">262144</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sysctl -w vm.max_map_count<span class="o">=</span><span class="m">262144</span>
 <span class="nb">echo</span> <span class="s1">&#39;vm.max_map_count=262144&#39;</span> &gt;&gt; /etc/sysctl.conf
 </code></pre></td></tr></table>
 </div>
@@ -344,24 +373,24 @@ sed -i <span class="s1">&#39;/swap/s/^/#/&#39;</span> /etc/fstab <span class="c1
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="2-安装-es-集群">2. 安装 es 集群</h1>
 <h2 id="21-官网下载">2.1 官网下载</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-x86_64.rpm
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-x86_64.rpm
 wget https://artifacts.elastic.co/downloads/kibana/kibana-7.6.2-x86_64.rpm
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.2-x86_64.rpm
 wget https://artifacts.elastic.co/downloads/logstash/logstash-7.6.2.rpm
@@ -371,13 +400,13 @@ wget https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.6.2-x86_
 </div><h2 id="22-yum-直接安装则可">2.2 yum 直接安装则可</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install elasticsearch
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum -y install elasticsearch
 yum -y install kibana
 yum -y install filebeat
 yum -y install auditbeat
@@ -386,7 +415,7 @@ yum -y install auditbeat
 </div><h2 id="23-es-配置修改3-台机都要其中-nodename-配置不同其他一样">2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -411,7 +440,7 @@ yum -y install auditbeat
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /etc/elasticsearch/ &amp;&amp; cp elasticsearch.yml elasticsearch.yml.orig
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /etc/elasticsearch/ &amp;&amp; cp elasticsearch.yml elasticsearch.yml.orig
 
 cat &lt;&lt; EOF &gt; elasticsearch.yml
 cluster.name: es-cluster
@@ -438,7 +467,7 @@ EOF
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -453,7 +482,7 @@ EOF
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">解释说明：
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">解释说明：
 cluster.name 集群名字，同一个集群中使用相同名字，单机就随意
 node.name: es-cluster 节点名字，每台机都不一样
 bootstrap.memory_lock: true 将进程地址所在 RAM 空间中，以防止 es 内存被换出，交换对性能，节点稳定性非常不利，应不惜一切代价避免交换。它可能导致垃圾收集持续数分钟而不是毫秒，并且可能导致节点响应缓慢甚至断开与群集的连接。在弹性分布式系统中，让操作系统杀死该节点更为有效。
@@ -472,7 +501,7 @@ xpack.security.transport.ssl.enabled: true  TLS 功能，可对通信进行加�
 <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html#systemd" target="_blank" rel="noopener noreffer">参考地址</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -482,7 +511,7 @@ xpack.security.transport.ssl.enabled: true  TLS 功能，可对通信进行加�
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">cat /usr/lib/systemd/system/elasticsearch.service
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cat /usr/lib/systemd/system/elasticsearch.service
 <span class="o">[</span>Service<span class="o">]</span>
 <span class="nv">LimitMEMLOCK</span><span class="o">=</span>infinity
 
@@ -495,7 +524,7 @@ sudo systemctl daemon-reload
 </div><h2 id="25-如果你要设置-es-的内存大小有两个地方">2.5 如果你要设置 es 的内存大小，有两个地方</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -504,7 +533,7 @@ sudo systemctl daemon-reload
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">1、jvm.options
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1、jvm.options
 cat /etc/elasticsearch/jvm.options 
 -Xms512m
 -Xmx512m
@@ -516,7 +545,7 @@ cat /etc/elasticsearch/jvm.options
 </div><h2 id="26--在-node01-配置证书我这里设置的空密码直接回车便可">2.6  在 node01 配置证书，我这里设置的空密码，直接回车便可。</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -525,7 +554,7 @@ cat /etc/elasticsearch/jvm.options
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/usr/share/elasticsearch/bin/elasticsearch-certutil ca
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/usr/share/elasticsearch/bin/elasticsearch-certutil ca
 /usr/share/elasticsearch/bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12 
 cp /usr/share/elasticsearch/{elastic-stack-ca.p12,elastic-certificates.p12} /etc/elasticsearch/
 chmod 640 /etc/elasticsearch/elastic-certificates.p12 
@@ -536,7 +565,7 @@ chmod 640 /etc/elasticsearch/elastic-certificates.p12
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -545,7 +574,7 @@ chmod 640 /etc/elasticsearch/elastic-certificates.p12
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">生成CA证书 bin/elasticsearch-certutil ca，将产生新文件 elastic-stack-ca.p12。该 elasticsearch-certutil 命令还会提示你输入密码以保护文件和密钥，请保留该文件的副本并记住其密码。
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">生成CA证书 bin/elasticsearch-certutil ca，将产生新文件 elastic-stack-ca.p12。该 elasticsearch-certutil 命令还会提示你输入密码以保护文件和密钥，请保留该文件的副本并记住其密码。
 为集群中的每个节点生成证书和私钥 bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12，将产生新文件 elastic-certificates.p12。系统还会提示你输入密码，你可以输入证书和密钥的密码，也可以按Enter键将密码留空。默认情况下 elasticsearch-certutil 生成没有主机名信息的证书，这意味着你可以将证书用于集群中的每个节点，另外要关闭主机名验证。
 
 注意：如果你在创建证书时输入了密码，那可以通过下面的方法设置。
@@ -557,12 +586,12 @@ chmod 640 /etc/elasticsearch/elastic-certificates.p12
 </div><h2 id="27-node01启动-es">2.7 node01启动 es</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl start elasticsearch
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl start elasticsearch
 systemctl enable elasticsearch
 systemctl status elasticsearch
 </code></pre></td></tr></table>
@@ -571,16 +600,16 @@ systemctl status elasticsearch
 <p>命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
 </code></pre></td></tr></table>
 </div>
 </div><p>结果：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -610,7 +639,7 @@ systemctl status elasticsearch
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
 Initiating the setup of passwords for reserved users elastic,apm_system,kibana,logstash_system,beats_system,remote_monitoring_user.
 You will be prompted to enter passwords as the process progresses.
 Please confirm that you would like to continue [y/N]y
@@ -643,12 +672,12 @@ Changed password for user [elastic]
 </div><p>检查：检查 node01是否启动并且密码访问正常</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# curl http://192.168.110.245:9200/_cat/nodes?v -u elastic:123456
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# curl http://192.168.110.245:9200/_cat/nodes?v -u elastic:123456
 ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
 192.168.110.245           12          90   3    0.07    0.08     0.08 dilm      *      node01
 </code></pre></td></tr></table>
@@ -663,13 +692,13 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">启动报错相关：
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">启动报错相关：
 org.elasticsearch.ElasticsearchSecurityException: failed to load SSL configuration [xpack.security.transport.ssl]
 Caused by: org.elasticsearch.ElasticsearchException: failed to initialize SSL TrustManager - not permitted to read truststore file [/etc/elasticsearch/elastic-certificates.p12]
 Caused by: java.nio.file.AccessDeniedException: /etc/elasticsearch/elastic-certificates.p12
@@ -682,12 +711,12 @@ Caused by: java.nio.file.AccessDeniedException: /etc/elasticsearch/elastic-certi
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# ll /etc/elasticsearch/elastic-certificates.p12
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# ll /etc/elasticsearch/elastic-certificates.p12
 -rw------- 1  640 elasticsearch  3451 Apr 16 18:57 elastic-certificates.p12
 [root@node01 elasticsearch]# chmod 640 /etc/elasticsearch/elastic-certificates.p12 
 </code></pre></td></tr></table>
@@ -703,7 +732,7 @@ elastic-certificates.p12：这个是 cert 验证证书，es 集群就是通过�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -711,7 +740,7 @@ elastic-certificates.p12：这个是 cert 验证证书，es 集群就是通过�
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">scp /etc/elasticsearch/{elasticsearch.keystore,elastic-stack-ca.p12,elastic-certificates.p12} root@node02:/etc/elasticsearch/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">scp /etc/elasticsearch/{elasticsearch.keystore,elastic-stack-ca.p12,elastic-certificates.p12} root@node02:/etc/elasticsearch/
 scp /etc/elasticsearch/{elasticsearch.keystore,elastic-stack-ca.p12,elastic-certificates.p12} root@node03:/etc/elasticsearch/
 
 systemctl start elasticsearch
@@ -725,10 +754,10 @@ systemctl status elasticsearch
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl http://192.168.110.245:9200/_cat/health?v -u elastic:123456
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">curl http://192.168.110.245:9200/_cat/health?v -u elastic:123456
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -736,10 +765,10 @@ systemctl status elasticsearch
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl http://192.168.110.245:9200/_cat/nodes?v -u elastic:123456
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">curl http://192.168.110.245:9200/_cat/nodes?v -u elastic:123456
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -747,7 +776,7 @@ systemctl status elasticsearch
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -757,7 +786,7 @@ systemctl status elasticsearch
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# curl http://192.168.110.245:9200/_cat/health?v -u elastic:123456
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elasticsearch]# curl http://192.168.110.245:9200/_cat/health?v -u elastic:123456
 epoch      timestamp cluster    status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1591345666 08:27:46  es-cluster green           3         3      2   1    0    0        0             0                  -                100.0%
 [root@node01 elasticsearch]# curl http://192.168.110.245:9200/_cat/nodes?v -u elastic:123456
@@ -781,47 +810,47 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 <tr>
 <td>ElasticHD</td>
 <td>我喜欢用这个，因为临时使用可以直接./ElasticHD 启动，方便快捷。 有 sql 转 json 的小工具，很好用</td>
-<td><a href="https://github.com/360EntSecGroup-Skylar/ElasticHD/">https://github.com/360EntSecGroup-Skylar/ElasticHD/</a></td>
+<td><a href="https://github.com/360EntSecGroup-Skylar/ElasticHD/" target="_blank" rel="noopener noreffer">https://github.com/360EntSecGroup-Skylar/ElasticHD/</a></td>
 </tr>
 <tr>
 <td>elasticsearch-HQ</td>
 <td>要安装 python3.6 有 es 默认的接口查询，还有 node 节点的监控数据</td>
-<td><a href="https://github.com/ElasticHQ/elasticsearch-HQ/">https://github.com/ElasticHQ/elasticsearch-HQ/</a></td>
+<td><a href="https://github.com/ElasticHQ/elasticsearch-HQ/" target="_blank" rel="noopener noreffer">https://github.com/ElasticHQ/elasticsearch-HQ/</a></td>
 </tr>
 <tr>
 <td>dejavu</td>
 <td>支持从 json 和 csv 导入导出数据</td>
-<td><a href="https://github.com/appbaseio/dejavu/">https://github.com/appbaseio/dejavu/</a></td>
+<td><a href="https://github.com/appbaseio/dejavu/" target="_blank" rel="noopener noreffer">https://github.com/appbaseio/dejavu/</a></td>
 </tr>
 <tr>
 <td>cerebro</td>
 <td></td>
-<td><a href="https://github.com/lmenezes/cerebro">https://github.com/lmenezes/cerebro</a></td>
+<td><a href="https://github.com/lmenezes/cerebro" target="_blank" rel="noopener noreffer">https://github.com/lmenezes/cerebro</a></td>
 </tr>
 <tr>
 <td>elasticsearch-head</td>
 <td></td>
-<td><a href="https://github.com/mobz/elasticsearch-head">https://github.com/mobz/elasticsearch-head</a></td>
+<td><a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="noopener noreffer">https://github.com/mobz/elasticsearch-head</a></td>
 </tr>
 <tr>
 <td>elasticsearch-browser</td>
 <td>不支持 5.0 之后</td>
-<td><a href="https://github.com/OlegKunitsyn/elasticsearch-browser">https://github.com/OlegKunitsyn/elasticsearch-browser</a></td>
+<td><a href="https://github.com/OlegKunitsyn/elasticsearch-browser" target="_blank" rel="noopener noreffer">https://github.com/OlegKunitsyn/elasticsearch-browser</a></td>
 </tr>
 <tr>
 <td>elasticsearch-kopf</td>
 <td>支持 2.0之前,cerebro 是其替代品</td>
-<td><a href="https://github.com/lmenezes/elasticsearch-kopf">https://github.com/lmenezes/elasticsearch-kopf</a></td>
+<td><a href="https://github.com/lmenezes/elasticsearch-kopf" target="_blank" rel="noopener noreffer">https://github.com/lmenezes/elasticsearch-kopf</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="31-如果带账号密码访问的话-url">3.1 如果带账号密码访问的话 url</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://elastic:123456@192.168.110.245:9200
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">http://elastic:123456@192.168.110.245:9200
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="32-安装web-ui管理工具elastichd">3.2 安装web UI管理工具ElasticHD:</h2>
@@ -831,13 +860,13 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 <p>（1）安装supervisord</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install supervisor
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install supervisor
 echo_supervisord_conf &gt; supervisord.conf
 systemctl start supervisord
 systemctl enable supervisord
@@ -846,7 +875,7 @@ systemctl enable supervisord
 </div><p>（2）安装 elasticHD</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -867,7 +896,7 @@ systemctl enable supervisord
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install xdg-utils
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install xdg-utils
 cd /usr/local/src/
 wget https://github.com/360EntSecGroup-Skylar/ElasticHD/releases/download/1.4/elasticHD_linux_amd64.zip
 unzip elasticHD_linux_amd64.zip 
@@ -893,14 +922,14 @@ supervisorctl status
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -p 9800:9800 -d --link elasticsearch:demo containerize/elastichd
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">docker run -p 9800:9800 -d --link elasticsearch:demo containerize/elastichd
 </code></pre></td></tr></table>
 </div>
 </div><p>web端访问结果：http://192.168.110.245:9800/</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_01.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_01.png" width="800" hegiht="250" align=center />
 <h2 id="33-安装-elasticsearch--hq">3.3 安装 elasticsearch -HQ</h2>
 <blockquote>
 <p>普通安装：</p>
@@ -908,16 +937,16 @@ supervisorctl status
 <p>(1)安装python3.6</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install python3 python3-pip python3-devel -y
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">yum install python3 python3-pip python3-devel -y
 </code></pre></td></tr></table>
 </div>
 </div><p>(2) 安装 elasticsearch-HQ</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -938,7 +967,7 @@ supervisorctl status
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /usr/local/src/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /usr/local/src/
 wget -O elasticsearch-HQ.zip  https://github.com/ElasticHQ/elasticsearch-HQ/archive/master.zip
 unzip elasticsearch-HQ.zip 
 mv elasticsearch-HQ-master /usr/local/elasticsearch-HQ
@@ -964,14 +993,14 @@ supervisorctl status
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -p 5000:5000 elastichq/elasticsearch-hq
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">docker run -p 5000:5000 elastichq/elasticsearch-hq
 </code></pre></td></tr></table>
 </div>
 </div><p>web端访问结果：http://192.168.110.245:5000/</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_02.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_02.png" width="800" hegiht="250" align=center />
 <h1 id="4-安装-kibana">4. 安装 Kibana</h1>
 <h2 id="41-引用">4.1 引用：</h2>
 <blockquote>
@@ -983,7 +1012,7 @@ supervisorctl status
 <h2 id="42-安装">4.2 安装：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -992,7 +1021,7 @@ supervisorctl status
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install kibana-7.6.2-x86_64.rpm 
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install kibana-7.6.2-x86_64.rpm 
 
 #创建日志路径
 mkdir /var/log/kibana
@@ -1004,7 +1033,7 @@ chown -R kibana /var/log/kibana/
 </div><h2 id="43-修改配置文件">4.3 修改配置文件</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1026,7 +1055,7 @@ chown -R kibana /var/log/kibana/
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elk]# cat /etc/kibana/kibana.yml |grep -Ev &#39;^#|^$&#39;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node01 elk]# cat /etc/kibana/kibana.yml |grep -Ev &#39;^#|^$&#39;
 #kibana 端口号
 server.port: 5601
 #kibana 内网 ip
@@ -1051,36 +1080,36 @@ xpack.security.enabled: true
 </div><h2 id="44-启动">4.4 启动</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl restart kibana
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl restart kibana
 systemctl status kibana
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="45-open-kibana-url">4.5 open kibana url</h2>
 <p>http://192.168.110.245:5601/ ，这里要用 elastic 账号登录，使用 kibana 登录是无法，会报错 403 没权限</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_03.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_03.png" width="800" hegiht="250" align=center />
 <h2 id="46-内存限制">4.6 内存限制</h2>
-<p>参考资料：<a href="https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es">https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es</a></p>
+<p>参考资料：<a href="https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es</a></p>
 <p>默认内存限制 1.4GB，如果过需要可以通过环境变量进行替换，一般不需要更改。</p>
 <h1 id="5-node02-安装-logstash">5. node02 安装 logstash</h1>
 <h2 id="51-安装-logstash">5.1 安装 logstash</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install logstash-7.6.2.rpm
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install logstash-7.6.2.rpm
 cp /etc/logstash/logstash.yml /etc/logstash/logstash.yml.orig
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="52-配置文件">5.2 配置文件</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1089,7 +1118,7 @@ cp /etc/logstash/logstash.yml /etc/logstash/logstash.yml.orig
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node02 elk]# cat /etc/logstash/logstash.yml|grep -Ev &#39;#|^$&#39;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node02 elk]# cat /etc/logstash/logstash.yml|grep -Ev &#39;#|^$&#39;
 path.data: /var/lib/logstash
 # 配置自动加载配置，这样就无须在更改配置时手动重启 logstash 引起数据丢失
 config.reload.automatic: true
@@ -1101,12 +1130,12 @@ path.logs: /var/log/logstash
 </div><h2 id="53-修改内存地址">5.3 修改内存地址</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">vim /etc/logstash/jvm.options
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">vim /etc/logstash/jvm.options
 -Xms1g
 -Xmx1g
 </code></pre></td></tr></table>
@@ -1114,27 +1143,27 @@ path.logs: /var/log/logstash
 </div><h2 id="54-手动测试输入-hello">5.4 手动测试，输入 hello</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /usr/share/logstash
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /usr/share/logstash
 ./bin/logstash -e &#39;input { stdin { } } output { stdout { } }&#39;
 hello
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_04.png" width="800" hegiht="250" align=center /></p>
+</div><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_04.png" width="800" hegiht="250" align=center />
 <h1 id="6-node0203安装-filebeat">6. node02、03安装 filebeat</h1>
 <h2 id="61-安装">6.1 安装</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install filebeat-7.6.2-x86_64.rpm 
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install filebeat-7.6.2-x86_64.rpm 
 cd /etc/filebeat
 cp filebeat.yml filebeat.yml.orig
 </code></pre></td></tr></table>
@@ -1142,12 +1171,12 @@ cp filebeat.yml filebeat.yml.orig
 </div><h1 id="7-日志处理">7. 日志处理</h1>
 <h2 id="案例一官方例子">案例一：官方例子</h2>
 <h2 id="参考">参考：</h2>
-<p><a href="https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html">https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html</a>
-<a href="https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html">https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html</a></p>
+<p><a href="https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html</a>
+<a href="https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html</a></p>
 <h2 id="711在-node02-调整-logstash-配置">7.1.1在 node02 调整 logstash 配置</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1167,7 +1196,7 @@ cp filebeat.yml filebeat.yml.orig
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /etc/logstash/conf.d/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /etc/logstash/conf.d/
 cat &lt;&lt;EOF&gt; /etc/logstash/conf.d/example.conf 
 input {
   beats {
@@ -1190,18 +1219,18 @@ systemctl restart logstash
 </div><h2 id="712检查端口是否启动">7.1.2检查端口是否启动：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@node02 elk]# netstat -nltp|grep 5044
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[root@node02 elk]# netstat -nltp|grep 5044
 tcp6       0      0 :::5044                 :::*                    LISTEN      31422/java   
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="713-在-node02-配置-filebeat">7.1.3 在 node02 配置 filebeat</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1214,7 +1243,7 @@ tcp6       0      0 :::5044                 :::*                    LISTEN      
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /root/src/elk
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /root/src/elk
 wget https://download.elastic.co/demos/logstash/gettingstarted/logstash-tutorial.log.gz
 gzip -d logstash-tutorial.log.gz 
 cat &lt;&lt;EOF&gt; filebeat.yml
@@ -1230,23 +1259,25 @@ EOF
 </div><h2 id="714-启动-filebeat">7.1.4 启动 filebeat</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/usr/share/filebeat/bin/filebeat -e -c filebeat.yml  -d &#34;publish&#34;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/usr/share/filebeat/bin/filebeat -e -c filebeat.yml  -d &#34;publish&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p>启动结果部分截图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_05.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_05.png" width="800" hegiht="250" align=center />
 <h2 id="715-在-kibana-打开management-elasticsearch-indexmanagement可以看到-filebeat-的索引">7.1.5 在 kibana 打开“Management”-&raquo;“Elasticsearch”-&raquo;“IndexManagement”，可以看到 filebeat 的索引</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_06.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_06.png" width="800" hegiht="250" align=center />
 <p>然后我们到 kiabana 那里添加 index 试试。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk10.png" width="800" hegiht="250" align=center /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk07.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk10.png" width="800" hegiht="250" align=center />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk07.png" width="800" hegiht="250" align=center />
 <p>创建成功</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk08.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk08.png" width="800" hegiht="250" align=center />
 <p>最后我们到 Discover 这里就可以看到相关试图了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk09.png" width="800" hegiht="250" align=center /></p></div><div class="post-footer" id="post-footer">
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk09.png" width="800" hegiht="250" align=center /></div>
+
+        <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -1255,11 +1286,10 @@ EOF
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/centos7-%E5%AE%89%E8%A3%85-elk7/index.md" target="_blank">阅读原始文档</a>
-                        </span></div>
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/centos7-%E5%AE%89%E8%A3%85-elk7/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
             <div class="post-info-share">
-                <span></span>
+                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2" data-via="xxxx" data-hashtags="ELK,elasticsearch,kibana,logstash"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-hashtag="ELK"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Line" data-sharer="line" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Myspace" data-sharer="myspace" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2" data-description="【ELK】centos7 安装 elk 7.6.2"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 Blogger" data-sharer="blogger" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2" data-description="【ELK】centos7 安装 elk 7.6.2"><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Evernote" data-sharer="evernote" data-url="/centos7-%E5%AE%89%E8%A3%85-elk7/" data-title="【ELK】Centos7 安装 elk 7.6.2"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -1277,26 +1307,30 @@ EOF
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.67.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
+                    </span></div>
+            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+        </div></footer></div>
 
-            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>  
-
-            <div class="footer-line"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-                    <span id="busuanzi_container_site_uv">本文总阅读量<span id="busuanzi_value_site_uv"></span>人次</span></div>   
-             
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"qC7mcE4DIvgzHTOc5YaLNdUp-MdYXbMMI","appKey":"aBX50Ypl9zqu3sGf0PNLlPaW","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"博主很懒，什么都没有留下！","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"8GC6CRN3M8","algoliaIndex":"index.zh-cn","algoliaSearchKey":"d4467e8c57c2b12f53da9c8ec1c629be","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-168242983-1');
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></body>
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"qC7mcE4DIvgzHTOc5YaLNdUp-MdYXbMMI","appKey":"aBX50Ypl9zqu3sGf0PNLlPaW","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"博主很懒，什么都没有留下！","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/valine/Valine.min.js" defer></script><script type="text/javascript" src="/js/valine.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><link rel="stylesheet" href="/lib/valine/valine.min.css"></div>
+</body>
+
 </html>

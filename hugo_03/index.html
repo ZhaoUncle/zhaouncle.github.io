@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Hugo（三）自定义域名&amp;cloudfare github pages 加速https - 易波叶平</title><meta name="Description" content="github blog 自定义域名，外加 https cdn 加速"><meta property="og:title" content="Hugo（三）自定义域名&amp;cloudfare github pages 加速https" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Hugo（三）自定义域名&amp;cloudfare github pages 加速https - 易波叶平</title><meta name="Description" content="github blog 自定义域名，外加 https cdn 加速"><meta property="og:title" content="Hugo（三）自定义域名&amp;cloudfare github pages 加速https" />
 <meta property="og:description" content="github blog 自定义域名，外加 https cdn 加速" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.zhaouncle.com/hugo_03/" />
-<meta property="og:image" content="https://www.zhaouncle.com/logo.png"/>
+<meta property="og:url" content="/hugo_03/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-29T15:33:30+08:00" />
-<meta property="article:modified_time" content="2020-10-29T16:02:04+08:00" />
+<meta property="article:modified_time" content="2020-10-29T16:02:04+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
+
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://www.zhaouncle.com/logo.png"/>
+<meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="Hugo（三）自定义域名&amp;cloudfare github pages 加速https"/>
 <meta name="twitter:description" content="github blog 自定义域名，外加 https cdn 加速"/>
-<meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.zhaouncle.com/hugo_03/" /><link rel="prev" href="https://www.zhaouncle.com/github%E5%9B%BE%E5%BA%8A/" /><link rel="next" href="https://www.zhaouncle.com/forcase%E5%BE%AA%E7%8E%AF%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="/hugo_03/" /><link rel="prev" href="/github%E5%9B%BE%E5%BA%8A/" /><link rel="next" href="/forcase%E5%BE%AA%E7%8E%AF%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +32,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/www.zhaouncle.com\/hugo_03\/"
-        },"image": ["https:\/\/www.zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  823 ,
-        "url": "https:\/\/www.zhaouncle.com\/hugo_03\/","datePublished": "2020-10-29T15:33:30+08:00","dateModified": "2020-10-29T16:02:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "\/hugo_03\/"
+        },"image": ["\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  823 ,
+        "url": "\/hugo_03\/","datePublished": "2020-10-29T15:33:30+08:00","dateModified": "2020-10-29T16:02:04+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
                 "@type": "Person",
@@ -38,38 +42,49 @@
             },"description": "github blog 自定义域名，外加 https cdn 加速"
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/link" title="友链"> 友链 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><a class="menu-item" href="https://reading.zhaouncle.com" title="Reading" rel="noopener noreffer" target="_blank"><i class='fas fa-book'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/hugo_03/" selected>简体中文</option></select>
-                    </a><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/link" title="友链"> 友链 </a><a class="menu-item" href="/showcase/"> 作品 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="/authors/"> 作者 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/https:/link.zhaouncle.com"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="/https:/github.com/dillonzq/LoveIt" title="GitHub"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/https:/zhaouncle.com/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="/https:/k8syaml.com/" title="k8syaml"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="/https:/www.cnblogs.com/UncleZhao/" title="博客园"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>易波叶平</a>
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -77,25 +92,29 @@
         </div>
         <div class="menu" id="menu-mobile"><div class="search-wrapper">
                     <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索" id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
                     </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/link" title="友链">友链</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="https://zhaouncle.com/uptime-status/" title="UpStatus" rel="noopener noreffer" target="_blank"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a class="menu-item" href="https://reading.zhaouncle.com" title="Reading" rel="noopener noreffer" target="_blank"><i class='fas fa-book'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/link" title="友链">友链</a><a class="menu-item" href="/showcase/" title="">作品</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="/authors/" title="">作者</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/https:/link.zhaouncle.com" title=""><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="/https:/github.com/dillonzq/LoveIt" title="GitHub"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/https:/zhaouncle.com/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="/https:/k8syaml.com/" title="k8syaml"><i class='fab fa-docker'></i></a><a class="menu-item" href="/https:/www.cnblogs.com/UncleZhao/" title="博客园"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/hugo_03/" selected>简体中文</option></select>
-                </a></div>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
     </div>
 </header>
 <div class="search-dropdown desktop">
@@ -105,12 +124,14 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Hugo（三）自定义域名&amp;cloudfare github pages 加速https</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>赵叔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-29">2020-10-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 823 字&nbsp;
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo（三）自定义域名&amp;cloudfare github pages 加速https</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-29">2020-10-29</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-10-29">2020-10-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 823 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/hugo_03/" class="leancloud_visitors" data-flag-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -130,190 +151,198 @@
     <li><a href="#二利用cloudflare为基于github-pages的hugo博客添加https支持">二、利用Cloudflare为基于GitHub Pages的Hugo博客添加HTTPS支持</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="一github-pages--cloudflare是建立网站的最简单方法之一">一、GitHub Pages + CloudFlare是建立网站的最简单方法之一。</h1>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+                <div class="details-summary admonition-title">
+                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+                </div>
+                <div class="details-content">
+                    <div class="admonition-content">
+                        本文最后更新于 <span class="timeago" datetime="2020-10-29T16:02:04" title="October 29, 2020">2020-10-29</span>，文中内容可能已过时。</div>
+                </div>
+            </div><h1 id="一github-pages--cloudflare是建立网站的最简单方法之一">一、GitHub Pages + CloudFlare是建立网站的最简单方法之一。</h1>
 <p>github pages，我这里选择了 hugo+LoveIt 的静态页面 blog 架构，有兴趣自己查看之前的文章。</p>
 <h2 id="1-配置-github-pages-域名">1. 配置 github pages 域名</h2>
-<p>为了使用自己的域名，而不是 username.github.io，我这里使用了 github pages 的设置，进到“Settings”里面，往下拉可以看到，一个是设置自己的顶级域名，不要 zhaouncle.com，一个是开启 https 的选项。开启他可以用 <a href="https://zhaouncle.github.io">https://zhaouncle.github.io</a>进行访问，另外 https 做 seo 会优先进行，所以开启是有好处的，好像 2018 年才开始有这个功能。以前只能通过反代或者 cloudfare 实现 https。</p>
+<p>为了使用自己的域名，而不是 username.github.io，我这里使用了 github pages 的设置，进到“Settings”里面，往下拉可以看到，一个是设置自己的顶级域名，不要 zhaouncle.com，一个是开启 https 的选项。开启他可以用 <a href="https://zhaouncle.github.io" target="_blank" rel="noopener noreffer">https://zhaouncle.github.io</a>进行访问，另外 https 做 seo 会优先进行，所以开启是有好处的，好像 2018 年才开始有这个功能。以前只能通过反代或者 cloudfare 实现 https。</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153651726.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153651726.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153651726.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153651726.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153651726.png"
-        title="img" /></p>
+        title="img"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153714603.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153714603.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153714603.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153714603.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153714603.png"
-        title="image-20201029153714603" /></p>
+        title="image-20201029153714603"
+    /></p>
 <h2 id="2在-usernamegithubio-仓库下面创建一个-cname-的文件并写入自己的域名">2.在 username.github.io 仓库下面创建一个 CNAME 的文件并写入自己的域名</h2>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029155629786.png"
-        title="image-20201029155629786" /></p>
+        title="image-20201029155629786"
+    /></p>
 <h1 id="二利用cloudflare为基于github-pages的hugo博客添加https支持">二、利用Cloudflare为基于GitHub Pages的Hugo博客添加HTTPS支持</h1>
 <p>1、cloudfare 注册之后会给你两个 dns 地址，我这里是在阿里云上面购买的域名，于是去注册一个，我这里那 zhaowp.com举个例子</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153728901.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153728901.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153728901.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153728901.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153728901.png"
-        title="image-20201029153728901" /></p>
+        title="image-20201029153728901"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153747126.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153747126.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153747126.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153747126.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153747126.png"
-        title="image-20201029153747126" /></p>
+        title="image-20201029153747126"
+    /></p>
 <p>这一步先跳过，等会在进行编辑</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153811185.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153811185.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153811185.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153811185.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153811185.png"
-        title="image-20201029153811185" /></p>
+        title="image-20201029153811185"
+    /></p>
 <p>这一步要去我们的域名采购商那里进行 dns 的更改</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153825639.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153825639.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153825639.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153825639.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153825639.png"
-        title="image-20201029153825639" /></p>
+        title="image-20201029153825639"
+    /></p>
 <p>这一步默认就行，无需变动</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153841882.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153841882.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153841882.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153841882.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029153841882.png"
-        title="image-20201029153841882" /></p>
+        title="image-20201029153841882"
+    /></p>
 <p>我们可以看到在 Overview 这里，没有进行 dns 服务器更改这里会一直提示，我这里是阿里云的域名购买商，于是去进行更改 dns 服务器地址的操作，因为我之前已经填好了上面的步骤，所以用 zhaowp.com举个例子，别觉得奇怪</p>
 <p>周到对应的域名，点击管理</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154438966.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154438966.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154438966.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154438966.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154438966.png"
-        title="image-20201029154438966" /></p>
+        title="image-20201029154438966"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154503255.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154503255.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154503255.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154503255.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154503255.png"
-        title="image-20201029154503255" /></p>
+        title="image-20201029154503255"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154100218.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154100218.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154100218.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154100218.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154100218.png"
-        title="image-20201029154100218" /></p>
+        title="image-20201029154100218"
+    /></p>
 <p>点击确定之后我们回到 cloudfare 进行操作，等了几分钟我们发现这里解析成功了，</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154045353.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154045353.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154045353.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154045353.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154045353.png"
-        title="image-20201029154045353" /></p>
+        title="image-20201029154045353"
+    /></p>
 <p>我们在 dns 这里设置 4 个 dns A 记录和 1 个CNAME 记录</p>
 <p>add recore的时候 A 记录这里可以用@表示，这样cloudfare 会自己解析成你要的域名了，也就是现在为啥A 记录是域名的原因了。</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154543042.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154543042.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154543042.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154543042.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154543042.png"
-        title="img" /></p>
+        title="img"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154556897.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154556897.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154556897.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154556897.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154556897.png"
-        title="image-20201029154556897" /></p>
+        title="image-20201029154556897"
+    /></p>
 <p>然后到 SSL/TLS这里配置证书启用情况，我这里选了FULL，为何要选 FULL 呢，因为我在 github 上面开启了 https，所以需要进行双方的证书认证，否则无法打开网站</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154721577.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154721577.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154721577.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154721577.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154721577.png"
-        title="image-20201029154721577" /></p>
+        title="image-20201029154721577"
+    /></p>
 <p>最后，我们创建一条规则，即最简单的永远使用 ssl 访问这个域名，点击 create 一条规则</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154739334.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154739334.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154739334.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154739334.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154739334.png"
-        title="image-20201029154739334" /></p>
+        title="image-20201029154739334"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154753244.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154753244.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154753244.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154753244.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154753244.png"
-        title="image-20201029154753244" /></p>
+        title="image-20201029154753244"
+    /></p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154809732.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154809732.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154809732.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154809732.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154809732.png"
-        title="image-20201029154809732" /></p>
+        title="image-20201029154809732"
+    /></p>
 <p>我刚举了个 zhaowp 的例子，现在要删了，因为我没这个域名</p>
 <p><img
         class="lazyload"
-        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154824563.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154824563.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154824563.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154824563.png 2x"
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201029154824563.png"
-        title="image-20201029154824563" /></p></div><div class="post-footer" id="post-footer">
+        title="image-20201029154824563"
+    /></p></div>
+
+        <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-10-29&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/8a193bafe1475a5e5aa8226a9629656c96c589f3" target="_blank" title="commit by Aomine(123zhaoweiping@gmail.com) 8a193bafe1475a5e5aa8226a9629656c96c589f3: change MyBlogHugo site 四 10 29 16:02:04 CST 2020">
-                                    <i class="fas fa-hashtag fa-fw"></i>8a193ba</a></span>
+                <span>更新于 2020-10-29</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/hugo_03/index.md" target="_blank">阅读原始文档</a>
-                        </span></div>
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/hugo_03/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
             <div class="post-info-share">
-                <span></span>
+                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https" data-via="xxxx" data-hashtags="hugo,博客"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="/hugo_03/" data-hashtag="hugo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Line" data-sharer="line" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Myspace" data-sharer="myspace" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https" data-description="github blog 自定义域名，外加 https cdn 加速"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 Blogger" data-sharer="blogger" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https" data-description="github blog 自定义域名，外加 https cdn 加速"><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Evernote" data-sharer="evernote" data-url="/hugo_03/" data-title="Hugo（三）自定义域名&amp;cloudfare github pages 加速https"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -331,26 +360,30 @@
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.67.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
+                    </span></div>
+            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+        </div></footer></div>
 
-            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>  
-
-            <div class="footer-line"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-                    <span id="busuanzi_container_site_uv">本文总阅读量<span id="busuanzi_value_site_uv"></span>人次</span></div>   
-             
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"qC7mcE4DIvgzHTOc5YaLNdUp-MdYXbMMI","appKey":"aBX50Ypl9zqu3sGf0PNLlPaW","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"博主很懒，什么都没有留下！","recordIP":true,"visitor":true}},"search":{"algoliaAppID":"8GC6CRN3M8","algoliaIndex":"index.zh-cn","algoliaSearchKey":"d4467e8c57c2b12f53da9c8ec1c629be","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-168242983-1');
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></body>
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"qC7mcE4DIvgzHTOc5YaLNdUp-MdYXbMMI","appKey":"aBX50Ypl9zqu3sGf0PNLlPaW","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"博主很懒，什么都没有留下！","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/valine/Valine.min.js" defer></script><script type="text/javascript" src="/js/valine.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><link rel="stylesheet" href="/lib/valine/valine.min.css"></div>
+</body>
+
 </html>

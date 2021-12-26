@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>前端 - 分类 - 易波叶平</title>
-        <link>https://www.zhaouncle.com/categories/%E5%89%8D%E7%AB%AF/</link>
+        <link>/categories/%E5%89%8D%E7%AB%AF/</link>
         <description>前端 - 分类 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor> 17817186860@163.com (赵叔)</managingEditor>
-            <webMaster> 17817186860@163.com (赵叔)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 04 Jan 2020 09:07:34 &#43;0800</lastBuildDate><atom:link href="https://www.zhaouncle.com/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sat, 04 Jan 2020 09:07:34 &#43;0800</lastBuildDate><atom:link href="/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
     <title>【layui】tepmlet 格式化 table 数据</title>
-    <link>https://www.zhaouncle.com/layui_templet-%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
-    <pubDate>Sat, 04 Jan 2020 09:07:34 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.zhaouncle.com/layui_templet-%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+    <link>/layui_templet-%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+    <pubDate>Sat, 04 Jan 2020 09:07:34 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>/layui_templet-%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
     <description><![CDATA[【layui】tepmlet 格式化 table 数据]]></description>
 </item></channel>
 </rss>
