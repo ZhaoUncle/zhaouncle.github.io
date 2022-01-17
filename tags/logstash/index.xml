@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>logstash - 标签 - 易波叶平</title>
-        <link>https://zhaouncle.com/tags/logstash/</link>
-        <description>logstash - 标签 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 08 Jun 2020 15:36:44 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/logstash/" rel="self" type="application/rss+xml" /><item>
-    <title>【ELK】Centos7 安装 elk 7.6.2</title>
-    <link>https://zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/</link>
-    <pubDate>Mon, 08 Jun 2020 15:36:44 &#43;0800</pubDate><author>
-        <name>赵叔</name>
-    </author><guid>https://zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/</guid>
-    <description><![CDATA[【ELK】centos7 安装 elk 7.6.2]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>logstash - 标签 - 易波叶平</title><link>https://zhaouncle.com/tags/logstash/</link><description>logstash - 标签 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 08 Jun 2020 15:36:44 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/logstash/" rel="self" type="application/rss+xml"/><item><title>【ELK】Centos7 安装 elk 7.6.2</title><link>https://zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/</link><pubDate>Mon, 08 Jun 2020 15:36:44 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/</guid><description>【ELK】centos7 安装 elk 7.6.2</description></item></channel></rss>

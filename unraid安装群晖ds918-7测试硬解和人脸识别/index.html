@@ -1,217 +1,170 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
+<!doctype html><html lang=zh-cn>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" />
-    <title class="pjax-title">Unraid安装群晖DS918&#43;7测试硬解和人脸识别 - 易波叶平</title><meta name="Description" content="欲戴王冠，必承其重"><meta property="og:title" content="Unraid安装群晖DS918&#43;7测试硬解和人脸识别" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" /><meta property="og:image" content="https://zhaouncle.com/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-26T17:32:40+08:00" />
-<meta property="article:modified_time" content="2021-12-26T17:32:40+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://zhaouncle.com/logo.png"/>
-
-<meta name="twitter:title" content="Unraid安装群晖DS918&#43;7测试硬解和人脸识别"/>
-<meta name="twitter:description" content=""/>
-<meta name="application-name" content="DoIt">
-<meta name="apple-mobile-web-app-title" content="DoIt">
-
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" /><link rel="prev" href="https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Unraid安装群晖DS918+7测试硬解和人脸识别",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/zhaouncle.com\/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Unraid, nas","wordcount":  2504 ,
-        "url": "https:\/\/zhaouncle.com\/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB\/","datePublished": "2021-12-26T17:32:40+08:00","dateModified": "2021-12-26T17:32:40+08:00","publisher": {
-            "@type": "Organization",
-            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
-                "@type": "Person",
-                "name": "赵叔"
-            },"description": ""
-    }
-    </script></head>
-
-<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
-        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
-        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
-        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
-        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
-    </script>
-    <div id="back-to-top"></div>
-    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
-                    <i class="fas fa-adjust fa-fw"></i>
-                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
-                        <option value="light">浅色</option>
-                        <option value="dark">深色</option>
-                        <option value="black">黑色</option>
-                        <option value="auto">跟随系统</option>
-                    </select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
-                <i class="fas fa-adjust fa-fw"></i>
-                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
-                    <option value="light">浅色</option>
-                    <option value="dark">深色</option>
-                    <option value="black">黑色</option>
-                    <option value="auto">跟随系统</option>
-                </select>
-            </a></div>
-    </div>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<title class=pjax-title>Unraid安装群晖DS918+7测试硬解和人脸识别 - 易波叶平</title><meta name=Description content="欲戴王冠，必承其重"><meta property="og:title" content="Unraid安装群晖DS918+7测试硬解和人脸识别">
+<meta property="og:description" content>
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/"><meta property="og:image" content="https://zhaouncle.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-12-26T17:32:40+08:00">
+<meta property="article:modified_time" content="2021-12-26T17:32:40+08:00"><meta property="og:site_name" content="我的全新 Hugo 网站 2021">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://zhaouncle.com/logo.png">
+<meta name=twitter:title content="Unraid安装群晖DS918+7测试硬解和人脸识别">
+<meta name=twitter:description content>
+<meta name=application-name content="DoIt">
+<meta name=apple-mobile-web-app-title content="DoIt">
+<meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/><link rel=prev href=https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/><link rel=next href=https://zhaouncle.com/%E5%8D%95%E8%87%82%E7%9B%98%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0"><meta name=msvalidate.01 content="C7D99901D0D018E2FA741CC205405B28"><meta name=baidu-site-verification content="Dnx20VKWrw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Unraid安装群晖DS918+7测试硬解和人脸识别","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhaouncle.com\/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB\/"},"image":["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Unraid, nas","wordcount":2504,"url":"https:\/\/zhaouncle.com\/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB\/","datePublished":"2021-12-26T17:32:40+08:00","dateModified":"2021-12-26T17:32:40+08:00","publisher":{"@type":"Organization","name":"目瞪狗呆","logo":"https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author":{"@type":"Person","name":"赵叔"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else'auto'==='light'||'auto'==='dark'||'auto'==='black'?(setTheme('auto'),saveTheme('auto')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=desktop-header-typeit class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/about> 关于 </a><a class=menu-item href=/categories/thoughts/ title=杂谈> 杂谈 </a><a class=menu-item href=/series/> 系列 </a><a class=menu-item href=https://link.zhaouncle.com rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i> </a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i> </a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i> </a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=mobile-header-typeit class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/about title>关于</a><a class=menu-item href=/categories/thoughts/ title=杂谈>杂谈</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=https://link.zhaouncle.com title rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i></a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i></a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i></a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i></a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
 </header>
 <div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
+<div id=search-dropdown-desktop></div>
 </div>
 <div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
+<div id=search-dropdown-mobile></div>
 </div>
-<main class="main">
-            <div class="container"><div class="toc" id="toc-auto">
-        <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Unraid安装群晖DS918&#43;7测试硬解和人脸识别</h1><h2 class="single-subtitle">Unraid 安装群晖 DS918&#43;7.0.1 测试GPU 硬件解码和照片人脸识别</h2><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/unraid/"><i class="far fa-folder fa-fw"></i>Unraid</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-26">2021-12-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-12-26">2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2504 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" class="leancloud_visitors" data-flag-title="Unraid安装群晖DS918&#43;7测试硬解和人脸识别">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" class="comment_count" data-flag-title="Unraid安装群晖DS918&#43;7测试硬解和人脸识别">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png"
-        title="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png" height="auto" width="auto"
-    /></div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#一环境">一、环境：</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#21-创建-vms-虚拟机">2.1 创建 VMS 虚拟机</a></li>
-            <li><a href="#22-配置-dsm-群辉虚拟机的选项">2.2 配置 DSM 群辉虚拟机的选项</a></li>
-            <li><a href="#23-因为网卡驱动集成了virtio所以现在不需要改成-e1000-都可以正常使用了">2.3 因为网卡驱动集成了virtio，所以现在不需要改成 e1000 都可以正常使用了</a></li>
-            <li><a href="#24-硬盘直通">2.4 硬盘直通</a></li>
-            <li><a href="#25-然后就是一步一步的创建了开机启动很多步骤都卡在了-55原因会有很多这里略过">2.5 然后就是一步一步的创建了，开机启动，很多步骤都卡在了 55%，原因会有很多，这里略过。</a></li>
-            <li><a href="#26-待到安装完成基本上httpspinpaismzdmcom285004按照正常的群辉开启动配置一步一步下去就好了不过需要注意下几个略过的地方">2.6 待到安装完成，基<a href="https://pinpai.smzdm.com/285004/">本上</a>按照正常的群辉开启动配置一步一步下去就好了，不过需要注意下几个略过的地方</a></li>
-            <li><a href="#27-安装-synology-photos">2.7 安装 Synology Photos</a></li>
-            <li><a href="#28-安装-video-station">2.8 安装 Video Station</a></li>
-            <li><a href="#29-群辉开启ssh登录并设置root账号密码">2.9 群辉开启ssh登录，并设置root账号密码</a></li>
-            <li><a href="#210-修改sshd-配置然后重启sshd服务无需重启群辉虚拟机">2.10 修改sshd 配置，然后重启sshd服务，无需重启群辉虚拟机</a></li>
-          </ul>
-        </li>
-        <li><a href="#三unraid-开启核显虚拟化给群辉">三、Unraid 开启核显虚拟化给群辉</a>
-          <ul>
-            <li><a href="#30-主板开启-gpu-共享内存为-1024m其他测试发现都有问题无法开启核显虚拟化直通">3.0 主板开启 gpu 共享内存为 1024M，其他测试发现都有问题，无法开启核显虚拟化直通；</a></li>
-            <li><a href="#31-安装-intel-gvt-g-插件然后重启-unraid">3.1 安装 Intel GVT-g 插件，然后重启 Unraid；</a></li>
-            <li><a href="#32-将虚拟-gpu-核显导入群辉虚拟系统使用">3.2 将虚拟 GPU 核显导入群辉虚拟系统使用；</a></li>
-            <li><a href="#33-因为-gpu-的位置问题需要修改他的总线位置改成红框内的样子bus0x00-slot0x02否则会导致核显识别有问题">3.3 因为 gpu 的位置问题，需要修改他的总线位置改成红框内的样子“bus=‘0x00’ slot=‘0x02’”，否则会导致核显识别有问题；</a></li>
-            <li><a href="#34-然后删除位置重叠的这段代码红框内也可以单独删除bus0x00-slot-0x02那4行以下二选一删除即可">3.4 然后删除位置重叠的这段代码（红框内），也可以单独删除“bus=&ldquo;0x00 slot= 0x02”那4行，以下二选一删除即可</a></li>
-            <li><a href="#35-用-winscp-导入核显驱动重启群辉虚拟机">3.5 用 winscp 导入核显驱动，重启群辉虚拟机</a></li>
-            <li><a href="#36-ssh-进入查看一下总线位置和核显是否启动">3.6 ssh 进入查看一下总线位置和核显是否启动</a></li>
-            <li><a href="#37-然后再打开viedo-station-测试是否能够转码即可">3.7 然后再打开Viedo Station ，测试是否能够转码即可</a></li>
-          </ul>
-        </li>
-        <li><a href="#四群晖-ds9187-硬刚-cpu-开启-photos-人脸识别">四、群晖 DS918+7 硬刚 CPU 开启 Photos 人脸识别</a>
-          <ul>
-            <li><a href="#41-先确认一下-synology-photos-的版本必须是-110-0224">4.1 先确认一下 Synology Photos 的版本必须是 1.1.0-0224</a></li>
-            <li><a href="#42-先停用-synology-photos">4.2 先停用 Synology Photos</a></li>
-            <li><a href="#43-ssh-登录群辉虚拟机然后执行以下命令">4.3 ssh 登录群辉虚拟机，然后执行以下命令</a></li>
-            <li><a href="#44-重新启动-synology-photos并打开人脸识别就正常了">4.4 重新启动 Synology Photos，并打开人脸识别，就正常了。</a></li>
-          </ul>
-        </li>
-        <li><a href="#五总结">五、总结</a>
-          <ul>
-            <li><a href="#51-群辉-ds918_701-目前人脸识别不正常的话那只能通过cpu进行人脸ai识别功能如果想要gpu的话还是老实用623的版本吧另外ds3615-70-因为用的是cpu进行人脸识别所以如果没有硬解视频的需求直接用ds3615就好了也就省的折腾时间成本也是白花花的大银子不说了都是泪">5.1 群辉 DS918+_7.0.1 目前人脸识别不正常的话，那只能通过CPU进行人脸AI识别功能，如果想要GPU的话，还是老实用6.2.3的版本吧，另外DS3615-7.0 因为用的是cpu进行人脸识别，所以如果没有硬解视频的需求，直接用DS3615就好了，也就省的折腾（时间成本也是白花花的大银子，不说了都是泪）</a></li>
-            <li><a href="#52-ds918_701-cpu-驱动是jinlife大佬提出来的具体可以看一下链接">5.2 DS918+_7.0.1 CPU 驱动，是jinlife大佬提出来的，具体可以看一下链接</a></li>
-            <li><a href="#53-ds91870以上成功的案例具体可以查看两个网站可以的统计信息和网友的评论">5.3 DS918+7.0以上成功的案例具体可以查看👇🏻两个网站可以的统计信息和网友的评论。</a></li>
-            <li><a href="#531-核显直通所需要的驱动包和-cpu-是否支持硬解的说明可以参考人生观大佬的文章">5.3.1 核显直通所需要的驱动包和 cpu 是否支持硬解的说明，可以参考人生观大佬的文章；</a></li>
-            <li><a href="#54-以上步骤都尝试之后如果还不能人脸识别可能有以下几个尝试不一定有用也可能是我瞎尝试乱讲且看且忘记">5.4 以上步骤都尝试之后，如果还不能人脸识别，可能有以下几个尝试，不一定有用，也可能是我瞎尝试，乱讲，且看且忘记</a></li>
-            <li><a href="#55-unraid安装群辉虚拟系统名称不能用特殊符号否则会导致-intel-gvt-g-插件导入虚拟化核显失败不会显示那一段核显直通的代码">5.5 Unraid安装群辉虚拟系统名称不能用特殊符号，否则会导致 Intel GVT-g 插件导入虚拟化核显失败，不会显示那一段核显直通的代码</a></li>
-            <li><a href="#56-如果你之前手动在-unraid-开启过核显驱动并且在启动文件里面写好了需要删掉或注释掉">5.6 如果你之前手动在 Unraid 开启过核显驱动，并且在启动文件里面写好了，需要删掉或注释掉</a></li>
-            <li><a href="#57-intel-gvt-g-插件支持的-cpu-型号">5.7 Intel-GVT-g 插件支持的 CPU 型号</a></li>
-            <li><a href="#58-为什么gpu核显要在-000000020-的位置么因为虚拟机的核显id位置和物理机的核显id位置不一致httpspinpaismzdmcom102375其实最简单的做法就是用-lscpi-看看白裙的核显位置就是了另外一个就是intel-gvt-g-插件的位置也有显示">5.8 为什么GPU核显要在 0000.00.02.0 的位置么，因为虚拟机的核显ID位置和物理机的核显ID位置不<a href="https://pinpai.smzdm.com/102375/">一致</a>，其实最简单的做法就是用 lscpi 看看白裙的核显位置就是了，另外一个就是Intel GVT-g 插件的位置也有显示。</a></li>
-            <li><a href="#59-intel-gvt-g-使用过程中因为多次导入gpu到虚拟机然后因为使用过程中没有正常停机从插件删除核显配置就把dsm虚拟机删了后面在重新到插件里面导入gpu就会报错gpu不够用了因为被分配到之前的机器上没有释放掉解决办法也简单先删除掉插件之后再重启unraid重新安装配置就好了">5.9 Intel-GVT-g 使用过程中因为多次导入gpu到虚拟机，然后因为使用过程中没有正常停机从插件删除核显配置，就把DSM虚拟机删了，后面在重新到插件里面导入gpu，就会报错gpu不够用了，因为被分配到之前的机器上没有释放掉，解决办法也简单，先删除掉插件之后再重启Unraid，重新安装配置就好了</a></li>
-            <li><a href="#510-正常的步骤如下先停止dsm群辉虚拟机然后从插件删除">5.10 正常的步骤如下，先停止DSM群辉虚拟机，然后从插件删除</a></li>
-            <li><a href="#511-为何要把-cpu-人脸识别驱动导入到某个位置因为另外两个都是软连接到-libsynophoto-plugin-modelso10就像是win的快捷方式一样都需要修改最终的boss才能生效">5.11 为何要把 cpu 人脸识别驱动导入到某个位置，因为另外两个都是软连接到 libsynophoto-plugin-model.so.1.0，就像是win的快捷方式一样，都需要修改最终的boss才能生效。</a></li>
-            <li><a href="#512-命令行重建索引方式">5.12 命令行重建索引方式</a></li>
-            <li><a href="#513-如果有些驱动没集成你也可以自己编译参考如下">5.13 如果有些驱动没集成，你也可以自己编译，参考如下</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Unraid安装群晖DS918+7测试硬解和人脸识别</h1><h2 class=single-subtitle>Unraid 安装群晖 DS918+7.0.1 测试GPU 硬件解码和照片人脸识别</h2><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=http://zhaouncle.github.io title=Author target=_blank rel="noopener noreffer author" class=author>赵叔</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/unraid/><i class="far fa-folder fa-fw"></i>Unraid</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-26>2021-12-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-12-26>2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2504 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id=/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/ class=leancloud_visitors data-flag-title=Unraid安装群晖DS918+7测试硬解和人脸识别>
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;<span id=/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/ class=comment_count data-flag-title=Unraid安装群晖DS918+7测试硬解和人脸识别>
+<i class="far fa-comments fa-fw"></i>&nbsp;<span class=waline-comment-count id=waline-comment-count></span>&nbsp;条评论
+</span>&nbsp;</div>
+</div><div class=featured-image><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png title=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png height=auto width=auto></div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#一环境>一、环境：</a>
+<ul>
+<li>
+<ul>
+<li><a href=#21-创建-vms-虚拟机>2.1 创建 VMS 虚拟机</a></li>
+<li><a href=#22-配置-dsm-群辉虚拟机的选项>2.2 配置 DSM 群辉虚拟机的选项</a></li>
+<li><a href=#23-因为网卡驱动集成了virtio所以现在不需要改成-e1000-都可以正常使用了>2.3 因为网卡驱动集成了virtio，所以现在不需要改成 e1000 都可以正常使用了</a></li>
+<li><a href=#24-硬盘直通>2.4 硬盘直通</a></li>
+<li><a href=#25-然后就是一步一步的创建了开机启动很多步骤都卡在了-55原因会有很多这里略过>2.5 然后就是一步一步的创建了，开机启动，很多步骤都卡在了 55%，原因会有很多，这里略过。</a></li>
+<li><a href=#26-待到安装完成基本上httpspinpaismzdmcom285004按照正常的群辉开启动配置一步一步下去就好了不过需要注意下几个略过的地方>2.6 待到安装完成，基<a href=https://pinpai.smzdm.com/285004/>本上</a>按照正常的群辉开启动配置一步一步下去就好了，不过需要注意下几个略过的地方</a></li>
+<li><a href=#27-安装-synology-photos>2.7 安装 Synology Photos</a></li>
+<li><a href=#28-安装-video-station>2.8 安装 Video Station</a></li>
+<li><a href=#29-群辉开启ssh登录并设置root账号密码>2.9 群辉开启ssh登录，并设置root账号密码</a></li>
+<li><a href=#210-修改sshd-配置然后重启sshd服务无需重启群辉虚拟机>2.10 修改sshd 配置，然后重启sshd服务，无需重启群辉虚拟机</a></li>
+</ul>
+</li>
+<li><a href=#三unraid-开启核显虚拟化给群辉>三、Unraid 开启核显虚拟化给群辉</a>
+<ul>
+<li><a href=#30-主板开启-gpu-共享内存为-1024m其他测试发现都有问题无法开启核显虚拟化直通>3.0 主板开启 gpu 共享内存为 1024M，其他测试发现都有问题，无法开启核显虚拟化直通；</a></li>
+<li><a href=#31-安装-intel-gvt-g-插件然后重启-unraid>3.1 安装 Intel GVT-g 插件，然后重启 Unraid；</a></li>
+<li><a href=#32-将虚拟-gpu-核显导入群辉虚拟系统使用>3.2 将虚拟 GPU 核显导入群辉虚拟系统使用；</a></li>
+<li><a href=#33-因为-gpu-的位置问题需要修改他的总线位置改成红框内的样子bus0x00-slot0x02否则会导致核显识别有问题>3.3 因为 gpu 的位置问题，需要修改他的总线位置改成红框内的样子“bus=‘0x00’ slot=‘0x02’”，否则会导致核显识别有问题；</a></li>
+<li><a href=#34-然后删除位置重叠的这段代码红框内也可以单独删除bus0x00-slot-0x02那4行以下二选一删除即可>3.4 然后删除位置重叠的这段代码（红框内），也可以单独删除“bus=&ldquo;0x00 slot= 0x02”那4行，以下二选一删除即可</a></li>
+<li><a href=#35-用-winscp-导入核显驱动重启群辉虚拟机>3.5 用 winscp 导入核显驱动，重启群辉虚拟机</a></li>
+<li><a href=#36-ssh-进入查看一下总线位置和核显是否启动>3.6 ssh 进入查看一下总线位置和核显是否启动</a></li>
+<li><a href=#37-然后再打开viedo-station-测试是否能够转码即可>3.7 然后再打开Viedo Station ，测试是否能够转码即可</a></li>
+</ul>
+</li>
+<li><a href=#四群晖-ds9187-硬刚-cpu-开启-photos-人脸识别>四、群晖 DS918+7 硬刚 CPU 开启 Photos 人脸识别</a>
+<ul>
+<li><a href=#41-先确认一下-synology-photos-的版本必须是-110-0224>4.1 先确认一下 Synology Photos 的版本必须是 1.1.0-0224</a></li>
+<li><a href=#42-先停用-synology-photos>4.2 先停用 Synology Photos</a></li>
+<li><a href=#43-ssh-登录群辉虚拟机然后执行以下命令>4.3 ssh 登录群辉虚拟机，然后执行以下命令</a></li>
+<li><a href=#44-重新启动-synology-photos并打开人脸识别就正常了>4.4 重新启动 Synology Photos，并打开人脸识别，就正常了。</a></li>
+</ul>
+</li>
+<li><a href=#五总结>五、总结</a>
+<ul>
+<li><a href=#51-群辉-ds918_701-目前人脸识别不正常的话那只能通过cpu进行人脸ai识别功能如果想要gpu的话还是老实用623的版本吧另外ds3615-70-因为用的是cpu进行人脸识别所以如果没有硬解视频的需求直接用ds3615就好了也就省的折腾时间成本也是白花花的大银子不说了都是泪>5.1 群辉 DS918+_7.0.1 目前人脸识别不正常的话，那只能通过CPU进行人脸AI识别功能，如果想要GPU的话，还是老实用6.2.3的版本吧，另外DS3615-7.0 因为用的是cpu进行人脸识别，所以如果没有硬解视频的需求，直接用DS3615就好了，也就省的折腾（时间成本也是白花花的大银子，不说了都是泪）</a></li>
+<li><a href=#52-ds918_701-cpu-驱动是jinlife大佬提出来的具体可以看一下链接>5.2 DS918+_7.0.1 CPU 驱动，是jinlife大佬提出来的，具体可以看一下链接</a></li>
+<li><a href=#53-ds91870以上成功的案例具体可以查看两个网站可以的统计信息和网友的评论>5.3 DS918+7.0以上成功的案例具体可以查看👇🏻两个网站可以的统计信息和网友的评论。</a></li>
+<li><a href=#531-核显直通所需要的驱动包和-cpu-是否支持硬解的说明可以参考人生观大佬的文章>5.3.1 核显直通所需要的驱动包和 cpu 是否支持硬解的说明，可以参考人生观大佬的文章；</a></li>
+<li><a href=#54-以上步骤都尝试之后如果还不能人脸识别可能有以下几个尝试不一定有用也可能是我瞎尝试乱讲且看且忘记>5.4 以上步骤都尝试之后，如果还不能人脸识别，可能有以下几个尝试，不一定有用，也可能是我瞎尝试，乱讲，且看且忘记</a></li>
+<li><a href=#55-unraid安装群辉虚拟系统名称不能用特殊符号否则会导致-intel-gvt-g-插件导入虚拟化核显失败不会显示那一段核显直通的代码>5.5 Unraid安装群辉虚拟系统名称不能用特殊符号，否则会导致 Intel GVT-g 插件导入虚拟化核显失败，不会显示那一段核显直通的代码</a></li>
+<li><a href=#56-如果你之前手动在-unraid-开启过核显驱动并且在启动文件里面写好了需要删掉或注释掉>5.6 如果你之前手动在 Unraid 开启过核显驱动，并且在启动文件里面写好了，需要删掉或注释掉</a></li>
+<li><a href=#57-intel-gvt-g-插件支持的-cpu-型号>5.7 Intel-GVT-g 插件支持的 CPU 型号</a></li>
+<li><a href=#58-为什么gpu核显要在-000000020-的位置么因为虚拟机的核显id位置和物理机的核显id位置不一致httpspinpaismzdmcom102375其实最简单的做法就是用-lscpi-看看白裙的核显位置就是了另外一个就是intel-gvt-g-插件的位置也有显示>5.8 为什么GPU核显要在 0000.00.02.0 的位置么，因为虚拟机的核显ID位置和物理机的核显ID位置不<a href=https://pinpai.smzdm.com/102375/>一致</a>，其实最简单的做法就是用 lscpi 看看白裙的核显位置就是了，另外一个就是Intel GVT-g 插件的位置也有显示。</a></li>
+<li><a href=#59-intel-gvt-g-使用过程中因为多次导入gpu到虚拟机然后因为使用过程中没有正常停机从插件删除核显配置就把dsm虚拟机删了后面在重新到插件里面导入gpu就会报错gpu不够用了因为被分配到之前的机器上没有释放掉解决办法也简单先删除掉插件之后再重启unraid重新安装配置就好了>5.9 Intel-GVT-g 使用过程中因为多次导入gpu到虚拟机，然后因为使用过程中没有正常停机从插件删除核显配置，就把DSM虚拟机删了，后面在重新到插件里面导入gpu，就会报错gpu不够用了，因为被分配到之前的机器上没有释放掉，解决办法也简单，先删除掉插件之后再重启Unraid，重新安装配置就好了</a></li>
+<li><a href=#510-正常的步骤如下先停止dsm群辉虚拟机然后从插件删除>5.10 正常的步骤如下，先停止DSM群辉虚拟机，然后从插件删除</a></li>
+<li><a href=#511-为何要把-cpu-人脸识别驱动导入到某个位置因为另外两个都是软连接到-libsynophoto-plugin-modelso10就像是win的快捷方式一样都需要修改最终的boss才能生效>5.11 为何要把 cpu 人脸识别驱动导入到某个位置，因为另外两个都是软连接到 libsynophoto-plugin-model.so.1.0，就像是win的快捷方式一样，都需要修改最终的boss才能生效。</a></li>
+<li><a href=#512-命令行重建索引方式>5.12 命令行重建索引方式</a></li>
+<li><a href=#513-如果有些驱动没集成你也可以自己编译参考如下>5.13 如果有些驱动没集成，你也可以自己编译，参考如下</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="一环境">一、环境：</h1>
+</div><div class=content id=content><h1 id=一环境>一、环境：</h1>
 <hr>
-<p>以下环境只在于体验群辉系统带来的体验感，在保持口袋经济稳定的情况下，我们还是应该购买正规的群晖NAS<a href="https://www.smzdm.com/fenlei/fuwuqi/" target="_blank" rel="noopener noreffer">服务器</a>，体验和学习可以用黑群晖系统安装虚拟机来作为体验，有能力还是要买台白裙做冷备。</p>
+<p>以下环境只在于体验群辉系统带来的体验感，在保持口袋经济稳定的情况下，我们还是应该购买正规的群晖NAS<a href=https://www.smzdm.com/fenlei/fuwuqi/ target=_blank rel="noopener noreffer">服务器</a>，体验和学习可以用黑群晖系统安装虚拟机来作为体验，有能力还是要买台白裙做冷备。</p>
 <ul>
 <li>
 <p>unraid：6.9.2</p>
@@ -223,419 +176,118 @@
 <p>cpu：i9-10900t es 测试不显版 QTB0</p>
 </li>
 <li>
-<p>主板：B460M Steel Legend 钢铁<a href="https://pinpai.smzdm.com/117439/" target="_blank" rel="noopener noreffer">传奇</a></p>
+<p>主板：B460M Steel Legend 钢铁<a href=https://pinpai.smzdm.com/117439/ target=_blank rel="noopener noreffer">传奇</a></p>
 </li>
 </ul>
 <p>二、安装群辉虚拟系统</p>
 <hr>
-<h3 id="21-创建-vms-虚拟机">2.1 创建 VMS 虚拟机</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png"
-        title="WX20211220-222436@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png"
-        title="WX20211220-222512@2x"
-    /></p>
-<h3 id="22-配置-dsm-群辉虚拟机的选项">2.2 配置 DSM 群辉虚拟机的选项</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png"
-        title="WX20211220-223514@2x"
-    /></p>
-<h3 id="23-因为网卡驱动集成了virtio所以现在不需要改成-e1000-都可以正常使用了">2.3 因为网卡驱动集成了virtio，所以现在不需要改成 e1000 都可以正常使用了</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png"
-        title="WX20211220-223547@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png"
-        title="WX20211220-223724@2x"
-    /></p>
-<h3 id="24-硬盘直通">2.4 硬盘直通</h3>
+<h3 id=21-创建-vms-虚拟机>2.1 创建 VMS 虚拟机</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222436@2x.png title=WX20211220-222436@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222512@2x.png title=WX20211220-222512@2x></p>
+<h3 id=22-配置-dsm-群辉虚拟机的选项>2.2 配置 DSM 群辉虚拟机的选项</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223514@2x.png title=WX20211220-223514@2x></p>
+<h3 id=23-因为网卡驱动集成了virtio所以现在不需要改成-e1000-都可以正常使用了>2.3 因为网卡驱动集成了virtio，所以现在不需要改成 e1000 都可以正常使用了</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223547@2x.png title=WX20211220-223547@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223724@2x.png title=WX20211220-223724@2x></p>
+<h3 id=24-硬盘直通>2.4 硬盘直通</h3>
 <blockquote>
 <p>其实就是把在“SHARES”里面，我们没有把硬盘给 UNRAID 组阵列的名称复制出来，加上“/dev/disk/by-id/ata-”前缀，整个路径分配给群辉虚拟机就好了，是不是很简单捏，不过前提是你要安装“Unassigned Devices”这个插件，才会显示未被Unraid使用和格式化的硬盘、usb、虚拟硬盘==；</p>
 </blockquote>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png"
-        title="WX20211220-222728@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png"
-        title="WX20211220-222849@2x"
-    /></p>
-<h3 id="25-然后就是一步一步的创建了开机启动很多步骤都卡在了-55原因会有很多这里略过">2.5 然后就是一步一步的创建了，开机启动，很多步骤都卡在了 55%，原因会有很多，这里略过。</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png"
-        title="WX20211221-100258"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png"
-        title="WX20211220-223803@2x"
-    /></p>
-<h3 id="26-待到安装完成基本上httpspinpaismzdmcom285004按照正常的群辉开启动配置一步一步下去就好了不过需要注意下几个略过的地方">2.6 待到安装完成，基<a href="https://pinpai.smzdm.com/285004/" target="_blank" rel="noopener noreffer">本上</a>按照正常的群辉开启动配置一步一步下去就好了，不过需要注意下几个略过的地方</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png"
-        title="WX20211220-231433@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png"
-        title="WX20211220-231454@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png"
-        title="WX20211220-231511@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png"
-        title="WX20211220-231525@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png"
-        title="WX20211220-231537@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png"
-        title="WX20211220-231610@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png"
-        title="WX20211220-231619@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png"
-        title="WX20211220-231631@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png"
-        title="WX20211220-231644@2x"
-    /></p>
-<h3 id="27-安装-synology-photos">2.7 安装 Synology Photos</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222728@2x.png title=WX20211220-222728@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-222849@2x.png title=WX20211220-222849@2x></p>
+<h3 id=25-然后就是一步一步的创建了开机启动很多步骤都卡在了-55原因会有很多这里略过>2.5 然后就是一步一步的创建了，开机启动，很多步骤都卡在了 55%，原因会有很多，这里略过。</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-100258.png title=WX20211221-100258></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-223803@2x.png title=WX20211220-223803@2x></p>
+<h3 id=26-待到安装完成基本上httpspinpaismzdmcom285004按照正常的群辉开启动配置一步一步下去就好了不过需要注意下几个略过的地方>2.6 待到安装完成，基<a href=https://pinpai.smzdm.com/285004/ target=_blank rel="noopener noreffer">本上</a>按照正常的群辉开启动配置一步一步下去就好了，不过需要注意下几个略过的地方</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231433@2x.png title=WX20211220-231433@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231454@2x.png title=WX20211220-231454@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231511@2x.png title=WX20211220-231511@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231525@2x.png title=WX20211220-231525@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231537@2x.png title=WX20211220-231537@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231610@2x.png title=WX20211220-231610@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231619@2x.png title=WX20211220-231619@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231631@2x.png title=WX20211220-231631@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231644@2x.png title=WX20211220-231644@2x></p>
+<h3 id=27-安装-synology-photos>2.7 安装 Synology Photos</h3>
 <blockquote>
 <p>这个时候我们上传图片并开启“人物相册”，也就是人脸识别空间，会发现，一直开在等待上传中，这里就表示，人脸识别失败了，需要用一些非常规手段去实现“人脸AI”功能。</p>
 </blockquote>
-<p><img
-        class="lazyload"
-        data-src="https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg"
-        data-srcset="https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg, https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg 1.5x, https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg 2x"
-        data-sizes="auto"
-        alt="https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg"
-        title="https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png"
-        title="WX20211220-232043@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png"
-        title="WX20211220-232056@2x"
-    />](<a href="https://post.smzdm.com/p/a5dl2808/pic_22/" target="_blank" rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_22/</a>)</p>
-<h3 id="28-安装-video-station">2.8 安装 Video Station</h3>
+<p><img class=lazyload data-src=https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg data-srcset="https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg, https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg 1.5x, https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg 2x" data-sizes=auto alt=https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg title=https://qnam.smzdm.com/202112/21/61c12079476a4228.png_e1080.jpg></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232043@2x.png title=WX20211220-232043@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232056@2x.png title=WX20211220-232056@2x>](<a href=https://post.smzdm.com/p/a5dl2808/pic_22/ target=_blank rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_22/</a>)</p>
+<h3 id=28-安装-video-station>2.8 安装 Video Station</h3>
 <blockquote>
 <p>这里硬解测试是失败的，无法进行硬解转码，需要半洗白，同时把核显驱动补上。</p>
 </blockquote>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png"
-        title="WX20211221-091152"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png"
-        title="WX20211221-092118"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png"
-        title="WX20211221-092219"
-    /></p>
-<h3 id="29-群辉开启ssh登录并设置root账号密码">2.9 群辉开启ssh登录，并设置root账号密码</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091152.png title=WX20211221-091152></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092118.png title=WX20211221-092118></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092219.png title=WX20211221-092219></p>
+<h3 id=29-群辉开启ssh登录并设置root账号密码>2.9 群辉开启ssh登录，并设置root账号密码</h3>
 <blockquote>
 <p>#这里输入的是你安装群辉系统的第一个创建的用户的密码，我创建的是unclezhao，所以输入他的密码回车就行了</p>
 <p>sudo su -</p>
 <p>synouser &ndash;setpw root qwe@1234</p>
 </blockquote>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png"
-        title="WX20211220-231813@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png"
-        title="WX20211221-091608"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png"
-        title="WX20211221-091732"
-    /></p>
-<h3 id="210-修改sshd-配置然后重启sshd服务无需重启群辉虚拟机">2.10 修改sshd 配置，然后重启sshd服务，无需重启群辉虚拟机</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png"
-        title="WX20211221-091636"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png"
-        title="WX20211221-091645"
-    />](<a href="https://post.smzdm.com/p/a5dl2808/pic_30/" target="_blank" rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_30/</a>)</p>
-<h2 id="三unraid-开启核显虚拟化给群辉">三、Unraid 开启核显虚拟化给群辉</h2>
-<h3 id="30-主板开启-gpu-共享内存为-1024m其他测试发现都有问题无法开启核显虚拟化直通">3.0 主板开启 gpu 共享内存为 1024M，其他测试发现都有问题，无法开启核显虚拟化直通；</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg"
-        title="IMG_20211215_005049"
-    /></p>
-<h3 id="31-安装-intel-gvt-g-插件然后重启-unraid">3.1 安装 Intel GVT-g 插件，然后重启 Unraid；</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png"
-        title="WX20211220-213424@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png"
-        title="WX20211220-213630@2x"
-    /></p>
-<h3 id="32-将虚拟-gpu-核显导入群辉虚拟系统使用">3.2 将虚拟 GPU 核显导入群辉虚拟系统使用；</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png"
-        title="WX20211220-214526@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png"
-        title="WX20211220-232244@2x"
-    />](<a href="https://post.smzdm.com/p/a5dl2808/pic_35/" target="_blank" rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_35/</a>)</p>
-<h3 id="33-因为-gpu-的位置问题需要修改他的总线位置改成红框内的样子bus0x00-slot0x02否则会导致核显识别有问题">3.3 因为 gpu 的位置问题，需要修改他的总线位置改成红框内的样子“bus=‘0x00’ slot=‘0x02’”，否则会导致核显识别有问题；</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png"
-        title="WX20211220-232416@2x"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png"
-        title="WX20211220-232629@2x"
-    />](<a href="https://post.smzdm.com/p/a5dl2808/pic_37/" target="_blank" rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_37/</a>)</p>
-<h3 id="34-然后删除位置重叠的这段代码红框内也可以单独删除bus0x00-slot-0x02那4行以下二选一删除即可">3.4 然后删除位置重叠的这段代码（红框内），也可以单独删除“bus=&ldquo;0x00 slot= 0x02”那4行，以下二选一删除即可</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png"
-        title="WX20211221-095854"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png"
-        title="WX20211221-090857"
-    /></p>
-<h3 id="35-用-winscp-导入核显驱动重启群辉虚拟机">3.5 用 winscp 导入核显驱动，重启群辉虚拟机</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png"
-        title="WX20211221-095555"
-    /></p>
-<h3 id="36-ssh-进入查看一下总线位置和核显是否启动">3.6 ssh 进入查看一下总线位置和核显是否启动</h3>
-<p><img
-        class="lazyload"
-        data-src="/Users/aomine/Movies/obs/nodone/WX20211221-092402.png"
-        data-srcset="/Users/aomine/Movies/obs/nodone/WX20211221-092402.png, /Users/aomine/Movies/obs/nodone/WX20211221-092402.png 1.5x, /Users/aomine/Movies/obs/nodone/WX20211221-092402.png 2x"
-        data-sizes="auto"
-        alt="/Users/aomine/Movies/obs/nodone/WX20211221-092402.png"
-        title="WX20211221-092402"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png"
-        title="WX20211221-093614"
-    /></p>
-<h3 id="37-然后再打开viedo-station-测试是否能够转码即可">3.7 然后再打开Viedo Station ，测试是否能够转码即可</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png"
-        title="WX20211221-175148"
-    /></p>
-<h2 id="四群晖-ds9187-硬刚-cpu-开启-photos-人脸识别">四、群晖 DS918+7 硬刚 CPU 开启 Photos 人脸识别</h2>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-231813@2x.png title=WX20211220-231813@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091608.png title=WX20211221-091608></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091732.png title=WX20211221-091732></p>
+<h3 id=210-修改sshd-配置然后重启sshd服务无需重启群辉虚拟机>2.10 修改sshd 配置，然后重启sshd服务，无需重启群辉虚拟机</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091636.png title=WX20211221-091636></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091645.png title=WX20211221-091645>](<a href=https://post.smzdm.com/p/a5dl2808/pic_30/ target=_blank rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_30/</a>)</p>
+<h2 id=三unraid-开启核显虚拟化给群辉>三、Unraid 开启核显虚拟化给群辉</h2>
+<h3 id=30-主板开启-gpu-共享内存为-1024m其他测试发现都有问题无法开启核显虚拟化直通>3.0 主板开启 gpu 共享内存为 1024M，其他测试发现都有问题，无法开启核显虚拟化直通；</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/IMG_20211215_005049.jpeg title=IMG_20211215_005049></p>
+<h3 id=31-安装-intel-gvt-g-插件然后重启-unraid>3.1 安装 Intel GVT-g 插件，然后重启 Unraid；</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213424@2x.png title=WX20211220-213424@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213630@2x.png title=WX20211220-213630@2x></p>
+<h3 id=32-将虚拟-gpu-核显导入群辉虚拟系统使用>3.2 将虚拟 GPU 核显导入群辉虚拟系统使用；</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214526@2x.png title=WX20211220-214526@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232244@2x.png title=WX20211220-232244@2x>](<a href=https://post.smzdm.com/p/a5dl2808/pic_35/ target=_blank rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_35/</a>)</p>
+<h3 id=33-因为-gpu-的位置问题需要修改他的总线位置改成红框内的样子bus0x00-slot0x02否则会导致核显识别有问题>3.3 因为 gpu 的位置问题，需要修改他的总线位置改成红框内的样子“bus=‘0x00’ slot=‘0x02’”，否则会导致核显识别有问题；</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232416@2x.png title=WX20211220-232416@2x></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232629@2x.png title=WX20211220-232629@2x>](<a href=https://post.smzdm.com/p/a5dl2808/pic_37/ target=_blank rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_37/</a>)</p>
+<h3 id=34-然后删除位置重叠的这段代码红框内也可以单独删除bus0x00-slot-0x02那4行以下二选一删除即可>3.4 然后删除位置重叠的这段代码（红框内），也可以单独删除“bus=&ldquo;0x00 slot= 0x02”那4行，以下二选一删除即可</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095854.png title=WX20211221-095854></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090857.png title=WX20211221-090857></p>
+<h3 id=35-用-winscp-导入核显驱动重启群辉虚拟机>3.5 用 winscp 导入核显驱动，重启群辉虚拟机</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-095555.png title=WX20211221-095555></p>
+<h3 id=36-ssh-进入查看一下总线位置和核显是否启动>3.6 ssh 进入查看一下总线位置和核显是否启动</h3>
+<p><img class=lazyload data-src=/Users/aomine/Movies/obs/nodone/WX20211221-092402.png data-srcset="/Users/aomine/Movies/obs/nodone/WX20211221-092402.png, /Users/aomine/Movies/obs/nodone/WX20211221-092402.png 1.5x, /Users/aomine/Movies/obs/nodone/WX20211221-092402.png 2x" data-sizes=auto alt=/Users/aomine/Movies/obs/nodone/WX20211221-092402.png title=WX20211221-092402></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093614.png title=WX20211221-093614></p>
+<h3 id=37-然后再打开viedo-station-测试是否能够转码即可>3.7 然后再打开Viedo Station ，测试是否能够转码即可</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-175148.png title=WX20211221-175148></p>
+<h2 id=四群晖-ds9187-硬刚-cpu-开启-photos-人脸识别>四、群晖 DS918+7 硬刚 CPU 开启 Photos 人脸识别</h2>
 <blockquote>
 <p>群辉选择 DS918+7.0.1 硬解人脸识别，使用 gpu 直通或者 Intel VTG-g 核显虚拟化直通后，还是无法人脸识别的，还是老老实实走 CPU 人脸识别吧，起码还是能用，硬解（其实在这里是个伪命题，因为 unraid 可以通过 docker 安装 video 服务来完成硬解， DSM 虚拟机可以不用到），不过不能不折腾。</p>
 <p>经过研究，Synology Photos应该使用了OpenCv的DNN神经网络来识别人脸。这个OpenCv库可根据群晖的型号调用不同的神经网络模型，并调用显卡的GPU来加速计算。如果硬件和库代码不匹配，那就无法人脸识别了。所以人脸识别主要是显卡的GPU调用的问题，跟洗白没关系。技术上可以打个补丁解决。最低要求是 intel 六代或者以上的 CPU。黑群晖 DS918-7.0.1 的 Synology Photos 套件人脸识别，与你的系统是否已经洗白并无直接关系。</p>
 </blockquote>
-<h3 id="41-先确认一下-synology-photos-的版本必须是-110-0224">4.1 先确认一下 Synology Photos 的版本必须是 1.1.0-0224</h3>
-<h3 id="42-先停用-synology-photos">4.2 先停用 Synology Photos</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png"
-        title="WX20211220-232127@2x"
-    /></p>
-<p>](<a href="https://post.smzdm.com/p/a5dl2808/pic_45/" target="_blank" rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_45/</a>)</p>
-<h3 id="43-ssh-登录群辉虚拟机然后执行以下命令">4.3 ssh 登录群辉虚拟机，然后执行以下命令</h3>
+<h3 id=41-先确认一下-synology-photos-的版本必须是-110-0224>4.1 先确认一下 Synology Photos 的版本必须是 1.1.0-0224</h3>
+<h3 id=42-先停用-synology-photos>4.2 先停用 Synology Photos</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232127@2x.png title=WX20211220-232127@2x></p>
+<p>](<a href=https://post.smzdm.com/p/a5dl2808/pic_45/ target=_blank rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_45/</a>)</p>
+<h3 id=43-ssh-登录群辉虚拟机然后执行以下命令>4.3 ssh 登录群辉虚拟机，然后执行以下命令</h3>
 <blockquote>
 <p>mv /var/packages/SynologyPhotos/target/usr/lib/libsynophoto-plugin-model.so.1.0 /var/packages/SynologyPhotos/target/usr/lib/libsynophoto-plugin-model.so.1.0.bak</p>
-<p>wget <a href="https://cdn.jsdelivr.net/gh/jinlife/Synology" target="_blank" rel="noopener noreffer">https://cdn.jsdelivr.net/gh/jinlife/Synology</a>_Photos_Face_Patch@main/libsynophoto-plugin-model.so -O /var/packages/SynologyPhotos/target/usr/lib/libsynophoto-plugin-model.so.1.0</p>
+<p>wget <a href=https://cdn.jsdelivr.net/gh/jinlife/Synology target=_blank rel="noopener noreffer">https://cdn.jsdelivr.net/gh/jinlife/Synology</a>_Photos_Face_Patch@main/libsynophoto-plugin-model.so -O /var/packages/SynologyPhotos/target/usr/lib/libsynophoto-plugin-model.so.1.0</p>
 <p>chmod 755 /var/packages/SynologyPhotos/target/usr/lib/libsynophoto-plugin-model.so.1.0</p>
 <p>chown SynologyPhotos:SynologyPhotos /var/packages/SynologyPhotos/target/usr/lib/libsynophoto-plugin-model.so.1.0</p>
 </blockquote>
-<h3 id="44-重新启动-synology-photos并打开人脸识别就正常了">4.4 重新启动 Synology Photos，并打开人脸识别，就正常了。</h3>
-<h2 id="五总结">五、总结</h2>
-<h3 id="51-群辉-ds918_701-目前人脸识别不正常的话那只能通过cpu进行人脸ai识别功能如果想要gpu的话还是老实用623的版本吧另外ds3615-70-因为用的是cpu进行人脸识别所以如果没有硬解视频的需求直接用ds3615就好了也就省的折腾时间成本也是白花花的大银子不说了都是泪">5.1 群辉 DS918+_7.0.1 目前人脸识别不正常的话，那只能通过CPU进行人脸AI识别功能，如果想要GPU的话，还是老实用6.2.3的版本吧，另外DS3615-7.0 因为用的是cpu进行人脸识别，所以如果没有硬解视频的需求，直接用DS3615就好了，也就省的折腾（时间成本也是白花花的大银子，不说了都是泪）</h3>
-<h3 id="52-ds918_701-cpu-驱动是jinlife大佬提出来的具体可以看一下链接">5.2 DS918+_7.0.1 CPU 驱动，是jinlife大佬提出来的，具体可以看一下链接</h3>
-<p><a href="https://github.com/jinlife/Synology_Photos_Face_Patch/" target="_blank" rel="noopener noreffer">https://github.com/jinlife/Synology_Photos_Face_Patch</a></p>
-<p><a href="https://blog.jinlife.com/index.php/archives/49/" target="_blank" rel="noopener noreffer">https://blog.jinlife.com/index.php/archives/49/</a></p>
-<p><a href="https://xpenology.com/forum/topic/45795-redpill-the-new-loader-for-624-discussion/page/123/?tab=comments#comment-226764" target="_blank" rel="noopener noreffer">https://xpenology.com/forum/topic/45795-redpill-the-new-loader-for-624-discussion/page/123/?tab=comments#comment-226764</a></p>
-<h3 id="53-ds91870以上成功的案例具体可以查看两个网站可以的统计信息和网友的评论">5.3 DS918+7.0以上成功的案例具体可以查看👇🏻两个网站可以的统计信息和网友的评论。</h3>
-<p><a href="https://www.openos.org/threads/redpill7-0cpu.3647/" target="_blank" rel="noopener noreffer">https://www.openos.org/threads/redpill7-0cpu.3647/</a></p>
-<p><a href="https://wp.gxnas.com/11458.html/" target="_blank" rel="noopener noreffer">https://wp.gxnas.com/11458.html</a></p>
-<h3 id="531-核显直通所需要的驱动包和-cpu-是否支持硬解的说明可以参考人生观大佬的文章">5.3.1 核显直通所需要的驱动包和 cpu 是否支持硬解的说明，可以参考人生观大佬的文章；</h3>
-<p><a href="https://wp.gxnas.com/7952.html" target="_blank" rel="noopener noreffer">https://wp.gxnas.com/7952.html</a></p>
-<h3 id="54-以上步骤都尝试之后如果还不能人脸识别可能有以下几个尝试不一定有用也可能是我瞎尝试乱讲且看且忘记">5.4 以上步骤都尝试之后，如果还不能人脸识别，可能有以下几个尝试，不一定有用，也可能是我瞎尝试，乱讲，且看且忘记</h3>
+<h3 id=44-重新启动-synology-photos并打开人脸识别就正常了>4.4 重新启动 Synology Photos，并打开人脸识别，就正常了。</h3>
+<h2 id=五总结>五、总结</h2>
+<h3 id=51-群辉-ds918_701-目前人脸识别不正常的话那只能通过cpu进行人脸ai识别功能如果想要gpu的话还是老实用623的版本吧另外ds3615-70-因为用的是cpu进行人脸识别所以如果没有硬解视频的需求直接用ds3615就好了也就省的折腾时间成本也是白花花的大银子不说了都是泪>5.1 群辉 DS918+_7.0.1 目前人脸识别不正常的话，那只能通过CPU进行人脸AI识别功能，如果想要GPU的话，还是老实用6.2.3的版本吧，另外DS3615-7.0 因为用的是cpu进行人脸识别，所以如果没有硬解视频的需求，直接用DS3615就好了，也就省的折腾（时间成本也是白花花的大银子，不说了都是泪）</h3>
+<h3 id=52-ds918_701-cpu-驱动是jinlife大佬提出来的具体可以看一下链接>5.2 DS918+_7.0.1 CPU 驱动，是jinlife大佬提出来的，具体可以看一下链接</h3>
+<p><a href=https://github.com/jinlife/Synology_Photos_Face_Patch/ target=_blank rel="noopener noreffer">https://github.com/jinlife/Synology_Photos_Face_Patch</a></p>
+<p><a href=https://blog.jinlife.com/index.php/archives/49/ target=_blank rel="noopener noreffer">https://blog.jinlife.com/index.php/archives/49/</a></p>
+<p><a href="https://xpenology.com/forum/topic/45795-redpill-the-new-loader-for-624-discussion/page/123/?tab=comments#comment-226764" target=_blank rel="noopener noreffer">https://xpenology.com/forum/topic/45795-redpill-the-new-loader-for-624-discussion/page/123/?tab=comments#comment-226764</a></p>
+<h3 id=53-ds91870以上成功的案例具体可以查看两个网站可以的统计信息和网友的评论>5.3 DS918+7.0以上成功的案例具体可以查看👇🏻两个网站可以的统计信息和网友的评论。</h3>
+<p><a href=https://www.openos.org/threads/redpill7-0cpu.3647/ target=_blank rel="noopener noreffer">https://www.openos.org/threads/redpill7-0cpu.3647/</a></p>
+<p><a href=https://wp.gxnas.com/11458.html/ target=_blank rel="noopener noreffer">https://wp.gxnas.com/11458.html</a></p>
+<h3 id=531-核显直通所需要的驱动包和-cpu-是否支持硬解的说明可以参考人生观大佬的文章>5.3.1 核显直通所需要的驱动包和 cpu 是否支持硬解的说明，可以参考人生观大佬的文章；</h3>
+<p><a href=https://wp.gxnas.com/7952.html target=_blank rel="noopener noreffer">https://wp.gxnas.com/7952.html</a></p>
+<h3 id=54-以上步骤都尝试之后如果还不能人脸识别可能有以下几个尝试不一定有用也可能是我瞎尝试乱讲且看且忘记>5.4 以上步骤都尝试之后，如果还不能人脸识别，可能有以下几个尝试，不一定有用，也可能是我瞎尝试，乱讲，且看且忘记</h3>
 <ul>
 <li>
-<p>上传 photos 的图片太少，可以把同一张图片在复制一次，上传测试看看，我试过好几次，这样就能识别出照片了，都是临时测试网<a href="https://pinpai.smzdm.com/31199/" target="_blank" rel="noopener noreffer">上下</a>载的；</p>
+<p>上传 photos 的图片太少，可以把同一张图片在复制一次，上传测试看看，我试过好几次，这样就能识别出照片了，都是临时测试网<a href=https://pinpai.smzdm.com/31199/ target=_blank rel="noopener noreffer">上下</a>载的；</p>
 </li>
 <li>
 <p>上传的图片名称有特殊符号，比如括号，我试过图片名称为 image(1)、images(2)的图片都无法识别，后面改了名称重新上传，就有了；</p>
@@ -644,164 +296,79 @@
 <p>群辉虚拟机分配 4 vcpu，内存超 4 g；</p>
 </li>
 </ul>
-<h3 id="55-unraid安装群辉虚拟系统名称不能用特殊符号否则会导致-intel-gvt-g-插件导入虚拟化核显失败不会显示那一段核显直通的代码">5.5 Unraid安装群辉虚拟系统名称不能用特殊符号，否则会导致 Intel GVT-g 插件导入虚拟化核显失败，不会显示那一段核显直通的代码</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png"
-        title="WX20211221-090806"
-    /></p>
-<h3 id="56-如果你之前手动在-unraid-开启过核显驱动并且在启动文件里面写好了需要删掉或注释掉">5.6 如果你之前手动在 Unraid 开启过核显驱动，并且在启动文件里面写好了，需要删掉或注释掉</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png"
-        title="WX20211220-213825@2x"
-    /></p>
-<h3 id="57-intel-gvt-g-插件支持的-cpu-型号">5.7 Intel-GVT-g 插件支持的 CPU 型号</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png"
-        title="WX20211220-214024@2x"
-    /></p>
-<h3 id="58-为什么gpu核显要在-000000020-的位置么因为虚拟机的核显id位置和物理机的核显id位置不一致httpspinpaismzdmcom102375其实最简单的做法就是用-lscpi-看看白裙的核显位置就是了另外一个就是intel-gvt-g-插件的位置也有显示">5.8 为什么GPU核显要在 0000.00.02.0 的位置么，因为虚拟机的核显ID位置和物理机的核显ID位置不<a href="https://pinpai.smzdm.com/102375/" target="_blank" rel="noopener noreffer">一致</a>，其实最简单的做法就是用 lscpi 看看白裙的核显位置就是了，另外一个就是Intel GVT-g 插件的位置也有显示。</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png"
-        title="WX20211221-092402"
-    />
+<h3 id=55-unraid安装群辉虚拟系统名称不能用特殊符号否则会导致-intel-gvt-g-插件导入虚拟化核显失败不会显示那一段核显直通的代码>5.5 Unraid安装群辉虚拟系统名称不能用特殊符号，否则会导致 Intel GVT-g 插件导入虚拟化核显失败，不会显示那一段核显直通的代码</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-090806.png title=WX20211221-090806></p>
+<h3 id=56-如果你之前手动在-unraid-开启过核显驱动并且在启动文件里面写好了需要删掉或注释掉>5.6 如果你之前手动在 Unraid 开启过核显驱动，并且在启动文件里面写好了，需要删掉或注释掉</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-213825@2x.png title=WX20211220-213825@2x></p>
+<h3 id=57-intel-gvt-g-插件支持的-cpu-型号>5.7 Intel-GVT-g 插件支持的 CPU 型号</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-214024@2x.png title=WX20211220-214024@2x></p>
+<h3 id=58-为什么gpu核显要在-000000020-的位置么因为虚拟机的核显id位置和物理机的核显id位置不一致httpspinpaismzdmcom102375其实最简单的做法就是用-lscpi-看看白裙的核显位置就是了另外一个就是intel-gvt-g-插件的位置也有显示>5.8 为什么GPU核显要在 0000.00.02.0 的位置么，因为虚拟机的核显ID位置和物理机的核显ID位置不<a href=https://pinpai.smzdm.com/102375/ target=_blank rel="noopener noreffer">一致</a>，其实最简单的做法就是用 lscpi 看看白裙的核显位置就是了，另外一个就是Intel GVT-g 插件的位置也有显示。</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-092402.png title=WX20211221-092402>
 lscpi显示pci设备</p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png"
-        title="WX20211220-232323@2x"
-    />
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211220-232323@2x.png title=WX20211220-232323@2x>
 Intel GVT-g 显示 Address 位置</p>
-<h3 id="59-intel-gvt-g-使用过程中因为多次导入gpu到虚拟机然后因为使用过程中没有正常停机从插件删除核显配置就把dsm虚拟机删了后面在重新到插件里面导入gpu就会报错gpu不够用了因为被分配到之前的机器上没有释放掉解决办法也简单先删除掉插件之后再重启unraid重新安装配置就好了">5.9 Intel-GVT-g 使用过程中因为多次导入gpu到虚拟机，然后因为使用过程中没有正常停机从插件删除核显配置，就把DSM虚拟机删了，后面在重新到插件里面导入gpu，就会报错gpu不够用了，因为被分配到之前的机器上没有释放掉，解决办法也简单，先删除掉插件之后再重启Unraid，重新安装配置就好了</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png"
-        title="WX20211221-091017"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png"
-        title="WX20211221-093955"
-    /></p>
-<p>](<a href="https://post.smzdm.com/p/a5dl2808/pic_52/%29Unraid" target="_blank" rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_52/)Unraid</a>系统日志报错</p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png"
-        title="WX20211221-093801"
-    /></p>
-<h3 id="510-正常的步骤如下先停止dsm群辉虚拟机然后从插件删除">5.10 正常的步骤如下，先停止DSM群辉虚拟机，然后从插件删除</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png"
-        title="WX20211221-180839"
-    /></p>
-<h3 id="511-为何要把-cpu-人脸识别驱动导入到某个位置因为另外两个都是软连接到-libsynophoto-plugin-modelso10就像是win的快捷方式一样都需要修改最终的boss才能生效">5.11 为何要把 cpu 人脸识别驱动导入到某个位置，因为另外两个都是软连接到 libsynophoto-plugin-model.so.1.0，就像是win的快捷方式一样，都需要修改最终的boss才能生效。</h3>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png"
-        title="WX20211221-091814"
-    /></p>
-<h3 id="512-命令行重建索引方式">5.12 命令行重建索引方式</h3>
+<h3 id=59-intel-gvt-g-使用过程中因为多次导入gpu到虚拟机然后因为使用过程中没有正常停机从插件删除核显配置就把dsm虚拟机删了后面在重新到插件里面导入gpu就会报错gpu不够用了因为被分配到之前的机器上没有释放掉解决办法也简单先删除掉插件之后再重启unraid重新安装配置就好了>5.9 Intel-GVT-g 使用过程中因为多次导入gpu到虚拟机，然后因为使用过程中没有正常停机从插件删除核显配置，就把DSM虚拟机删了，后面在重新到插件里面导入gpu，就会报错gpu不够用了，因为被分配到之前的机器上没有释放掉，解决办法也简单，先删除掉插件之后再重启Unraid，重新安装配置就好了</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091017.png title=WX20211221-091017></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093955.png title=WX20211221-093955></p>
+<p>](<a href=https://post.smzdm.com/p/a5dl2808/pic_52/%29Unraid target=_blank rel="noopener noreffer">https://post.smzdm.com/p/a5dl2808/pic_52/)Unraid</a>系统日志报错</p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-093801.png title=WX20211221-093801></p>
+<h3 id=510-正常的步骤如下先停止dsm群辉虚拟机然后从插件删除>5.10 正常的步骤如下，先停止DSM群辉虚拟机，然后从插件删除</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-180839.png title=WX20211221-180839></p>
+<h3 id=511-为何要把-cpu-人脸识别驱动导入到某个位置因为另外两个都是软连接到-libsynophoto-plugin-modelso10就像是win的快捷方式一样都需要修改最终的boss才能生效>5.11 为何要把 cpu 人脸识别驱动导入到某个位置，因为另外两个都是软连接到 libsynophoto-plugin-model.so.1.0，就像是win的快捷方式一样，都需要修改最终的boss才能生效。</h3>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20211221-091814.png title=WX20211221-091814></p>
+<h3 id=512-命令行重建索引方式>5.12 命令行重建索引方式</h3>
 <p>synoindex -R /var/services/homes/你的用户名/Photos</p>
-<h3 id="513-如果有些驱动没集成你也可以自己编译参考如下">5.13 如果有些驱动没集成，你也可以自己编译，参考如下</h3>
-<p>h<a href="https://github.com/RedPill-TTG/redpill-load/" target="_blank" rel="noopener noreffer">ttps://github.com/RedPill-TTG/redpill-load</a></p>
-<p><a href="https://github.com/RedPill-TTG/redpill-lkm/" target="_blank" rel="noopener noreffer">https://github.com/RedPill-TTG/redpill-lkm</a></p>
+<h3 id=513-如果有些驱动没集成你也可以自己编译参考如下>5.13 如果有些驱动没集成，你也可以自己编译，参考如下</h3>
+<p>h<a href=https://github.com/RedPill-TTG/redpill-load/ target=_blank rel="noopener noreffer">ttps://github.com/RedPill-TTG/redpill-load</a></p>
+<p><a href=https://github.com/RedPill-TTG/redpill-lkm/ target=_blank rel="noopener noreffer">https://github.com/RedPill-TTG/redpill-lkm</a></p>
 <p>作者声明本文无利益相关，欢迎值友理性交流，和谐讨论～</p>
-<p><img
-        class="lazyload"
-        data-src="https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png"
-        data-srcset="https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png, https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png 1.5x, https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png 2x"
-        data-sizes="auto"
-        alt="https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png"
-        title="https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png"
-    /></p></div>
-
-        <div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2021-12-26</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span><a class="link-to-mardown" href=/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
-                    </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/unraid/">Unraid</a>,&nbsp;<a href="/tags/nas/">nas</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/" class="prev" rel="prev" title="【Nginx】修改 nginx 用户 id 和 gid"><i class="fas fa-angle-left fa-fw"></i>【Nginx】修改 nginx 用户 id 和 gid</a></div>
+<p><img class=lazyload data-src=https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png data-srcset="https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png, https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png 1.5x, https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png 2x" data-sizes=auto alt=https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png title=https://res.smzdm.com/pc/pc_shequ/dist/img/the-end.png></p></div>
+<div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-12-26</span>
 </div>
-<div id="comments"><div id="waline" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
-            </noscript></div></article></div>
-        </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-            <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
-                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
-                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
-                    </span></div>
-            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-        </div></footer></div>
-
-    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
-            <i class="fas fa-arrow-up fa-fw"></i>
-        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-            <i class="fas fa-comment fa-fw"></i>
-        </a>
-    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'UA-168242983-1');
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
-
-<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://waline-lx1l07bh7-zhaouncle.vercel.app/","uploadImage":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script></div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span><a class=link-to-mardown href=/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/index.md target=_blank rel="noopener noreferrer">阅读原始文档</a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/unraid/>Unraid</a>,&nbsp;<a href=/tags/nas/>nas</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/ class=prev rel=prev title="【Nginx】修改 nginx 用户 id 和 gid"><i class="fas fa-angle-left fa-fw"></i>【Nginx】修改 nginx 用户 id 和 gid</a>
+<a href=/%E5%8D%95%E8%87%82%E7%9B%98%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/ class=next rel=next title=openwrt单臂盘路由端口转发>openwrt单臂盘路由端口转发<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=waline class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=http://zhaouncle.github.io target=_blank rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+<div class=footer-line>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=post-meta-item id=busuanzi_container_site_pv style=display:inline>
+<span class=post-meta-item-icon><i class="fa fa-eye"></i></span>
+<span class=site-pv title=总访问量><span id=busuanzi_value_site_pv></span></span>
+</span></div>
+<div class=footer-line><script type=text/javascript>document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))</script></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div id=cookieconsent-container></div><div class=assets><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js defer></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-168242983-1')</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{waline:{copyright:!0,dark:"body[theme='dark'], body[theme='black']",el:"#waline",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],highlight:!0,lang:"zh-cn",login:"enable",meta:["nick","mail","link"],pageSize:10,serverURL:"https://waline-lx1l07bh7-zhaouncle.vercel.app/",uploadImage:!0,visitor:!0}},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},data:{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},sharerjs:!0,typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},duration:-1,speed:100}}</script><script type=text/javascript src=/lib/waline/Waline.min.js defer></script><script type=text/javascript src=/js/waline.min.js defer></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/js/cookieconsent.min.js defer></script></div>
 </body>
-
 </html>

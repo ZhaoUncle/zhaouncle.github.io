@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>三毛 - 分类 - 易波叶平</title>
-        <link>https://zhaouncle.com/categories/%E4%B8%89%E6%AF%9B/</link>
-        <description>三毛 - 分类 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 12 Aug 2020 08:44:30 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/categories/%E4%B8%89%E6%AF%9B/" rel="self" type="application/rss+xml" /><item>
-    <title>三毛</title>
-    <link>https://zhaouncle.com/%E4%B8%89%E6%AF%9B/</link>
-    <pubDate>Wed, 12 Aug 2020 08:44:30 &#43;0800</pubDate><author>
-        <name>赵叔</name>
-    </author><guid>https://zhaouncle.com/%E4%B8%89%E6%AF%9B/</guid>
-    <description><![CDATA[三毛相关摘抄]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>三毛 - 分类 - 易波叶平</title><link>https://zhaouncle.com/categories/%E4%B8%89%E6%AF%9B/</link><description>三毛 - 分类 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 12 Aug 2020 08:44:30 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/categories/%E4%B8%89%E6%AF%9B/" rel="self" type="application/rss+xml"/><item><title>三毛</title><link>https://zhaouncle.com/%E4%B8%89%E6%AF%9B/</link><pubDate>Wed, 12 Aug 2020 08:44:30 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E4%B8%89%E6%AF%9B/</guid><description>三毛相关摘抄</description></item></channel></rss>

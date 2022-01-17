@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>nmap - 标签 - 易波叶平</title>
-        <link>https://zhaouncle.com/tags/nmap/</link>
-        <description>nmap - 标签 - 易波叶平</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 09 Nov 2020 16:35:16 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/nmap/" rel="self" type="application/rss+xml" /><item>
-    <title>端口扫描和脚本批量测通</title>
-    <link>https://zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</link>
-    <pubDate>Mon, 09 Nov 2020 16:35:16 &#43;0800</pubDate><author>
-        <name>赵叔</name>
-    </author><guid>https://zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>nmap - 标签 - 易波叶平</title><link>https://zhaouncle.com/tags/nmap/</link><description>nmap - 标签 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 09 Nov 2020 16:35:16 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/nmap/" rel="self" type="application/rss+xml"/><item><title>端口扫描和脚本批量测通</title><link>https://zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</link><pubDate>Mon, 09 Nov 2020 16:35:16 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/</guid><description></description></item></channel></rss>

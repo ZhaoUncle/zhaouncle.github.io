@@ -1,164 +1,124 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
+<!doctype html><html lang=zh-cn>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" />
-    <title class="pjax-title">【Python】如何结束退出 py 脚本 - 易波叶平</title><meta name="Description" content="【Python】如何结束退出 python 脚本"><meta property="og:title" content="【Python】如何结束退出 py 脚本" />
-<meta property="og:description" content="【Python】如何结束退出 python 脚本" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/" /><meta property="og:image" content="https://zhaouncle.com/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-10T18:02:16+08:00" />
-<meta property="article:modified_time" content="2020-11-10T18:02:16+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://zhaouncle.com/logo.png"/>
-
-<meta name="twitter:title" content="【Python】如何结束退出 py 脚本"/>
-<meta name="twitter:description" content="【Python】如何结束退出 python 脚本"/>
-<meta name="application-name" content="DoIt">
-<meta name="apple-mobile-web-app-title" content="DoIt">
-
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/" /><link rel="prev" href="https://zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" /><link rel="next" href="https://zhaouncle.com/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "【Python】如何结束退出 py 脚本",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/zhaouncle.com\/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "python","wordcount":  299 ,
-        "url": "https:\/\/zhaouncle.com\/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC\/","datePublished": "2020-11-10T18:02:16+08:00","dateModified": "2020-11-10T18:02:16+08:00","publisher": {
-            "@type": "Organization",
-            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
-                "@type": "Person",
-                "name": "赵叔"
-            },"description": "【Python】如何结束退出 python 脚本"
-    }
-    </script></head>
-
-<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
-        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
-        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
-        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
-        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
-    </script>
-    <div id="back-to-top"></div>
-    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
-                    <i class="fas fa-adjust fa-fw"></i>
-                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
-                        <option value="light">浅色</option>
-                        <option value="dark">深色</option>
-                        <option value="black">黑色</option>
-                        <option value="auto">跟随系统</option>
-                    </select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
-                <i class="fas fa-adjust fa-fw"></i>
-                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
-                    <option value="light">浅色</option>
-                    <option value="dark">深色</option>
-                    <option value="black">黑色</option>
-                    <option value="auto">跟随系统</option>
-                </select>
-            </a></div>
-    </div>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<title class=pjax-title>【Python】如何结束退出 py 脚本 - 易波叶平</title><meta name=Description content="【Python】如何结束退出 python 脚本"><meta property="og:title" content="【Python】如何结束退出 py 脚本">
+<meta property="og:description" content="【Python】如何结束退出 python 脚本">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/"><meta property="og:image" content="https://zhaouncle.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-11-10T18:02:16+08:00">
+<meta property="article:modified_time" content="2020-11-10T18:02:16+08:00"><meta property="og:site_name" content="我的全新 Hugo 网站 2021">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://zhaouncle.com/logo.png">
+<meta name=twitter:title content="【Python】如何结束退出 py 脚本">
+<meta name=twitter:description content="【Python】如何结束退出 python 脚本">
+<meta name=application-name content="DoIt">
+<meta name=apple-mobile-web-app-title content="DoIt">
+<meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://zhaouncle.com/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/><link rel=prev href=https://zhaouncle.com/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/><link rel=next href=https://zhaouncle.com/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0"><meta name=msvalidate.01 content="C7D99901D0D018E2FA741CC205405B28"><meta name=baidu-site-verification content="Dnx20VKWrw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"【Python】如何结束退出 py 脚本","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhaouncle.com\/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC\/"},"image":["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"python","wordcount":299,"url":"https:\/\/zhaouncle.com\/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC\/","datePublished":"2020-11-10T18:02:16+08:00","dateModified":"2020-11-10T18:02:16+08:00","publisher":{"@type":"Organization","name":"目瞪狗呆","logo":"https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author":{"@type":"Person","name":"赵叔"},"description":"【Python】如何结束退出 python 脚本"}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else'auto'==='light'||'auto'==='dark'||'auto'==='black'?(setTheme('auto'),saveTheme('auto')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=desktop-header-typeit class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/about> 关于 </a><a class=menu-item href=/categories/thoughts/ title=杂谈> 杂谈 </a><a class=menu-item href=/series/> 系列 </a><a class=menu-item href=https://link.zhaouncle.com rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i> </a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i> </a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i> </a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=mobile-header-typeit class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/about title>关于</a><a class=menu-item href=/categories/thoughts/ title=杂谈>杂谈</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=https://link.zhaouncle.com title rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i></a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i></a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i></a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i></a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
 </header>
 <div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
+<div id=search-dropdown-desktop></div>
 </div>
 <div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
+<div id=search-dropdown-mobile></div>
 </div>
-<main class="main">
-            <div class="container"><div class="toc" id="toc-auto">
-        <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Python】如何结束退出 py 脚本</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-10">2020-11-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-11-10">2020-11-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 299 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/" class="leancloud_visitors" data-flag-title="【Python】如何结束退出 py 脚本">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/" class="comment_count" data-flag-title="【Python】如何结束退出 py 脚本">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#需求">需求</a></li>
-    <li><a href="#方法">方法</a></li>
-  </ul>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Python】如何结束退出 py 脚本</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=http://zhaouncle.github.io title=Author target=_blank rel="noopener noreffer author" class=author>赵叔</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/python/><i class="far fa-folder fa-fw"></i>python</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-11-10>2020-11-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2020-11-10>2020-11-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 299 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/ class=leancloud_visitors data-flag-title="【Python】如何结束退出 py 脚本">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;<span id=/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/ class=comment_count data-flag-title="【Python】如何结束退出 py 脚本">
+<i class="far fa-comments fa-fw"></i>&nbsp;<span class=waline-comment-count id=waline-comment-count></span>&nbsp;条评论
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#需求>需求</a></li>
+<li><a href=#方法>方法</a></li>
+</ul>
 </nav></div>
-            </div><div class="content" id="content"><div class="details admonition warning open">
-                <div class="details-summary admonition-title">
-                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-                </div>
-                <div class="details-content">
-                    <div class="admonition-content">
-                        本文最后更新于 <span class="timeago" datetime="2020-11-10T18:02:16" title="November 10, 2020">2020-11-10</span>，文中内容可能已过时。</div>
-                </div>
-            </div><h1 id="需求">需求</h1>
+</div><div class=content id=content><div class="details admonition warning open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content>
+本文最后更新于 <span class=timeago datetime=2020-11-10T18:02:16 title="November 10, 2020">2020-11-10</span>，文中内容可能已过时。</div>
+</div>
+</div><h1 id=需求>需求</h1>
 <p>当你运行脚本，在判断条件满足时，就退出脚本，结束本次执行。</p>
-<h1 id="方法">方法</h1>
+<h1 id=方法>方法</h1>
 <ol>
 <li>
 <p>使用 <code>sys.exit()</code>，直接退出程序，但是会引发一个 SystemExit 异常；</p>
@@ -172,26 +132,26 @@
 </li>
 <li>
 <p>这个SystemExit异常，是唯一一个不会被认为是错误的异常，当没有设置异常捕获的话，是不会有报错的，可以进行正常退出，当然也可以捕获这个异常进行一些其他操作。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">sys</span>
-<span class="c1">#sys.exit()</span>
-<span class="c1">#sys.exit(0)</span>
-<span class="c1">#sys.exit(1)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">SystemExit</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="c1"># 1</span>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=kn>import</span> <span class=nn>sys</span>
+<span class=c1>#sys.exit()</span>
+<span class=c1>#sys.exit(0)</span>
+<span class=c1>#sys.exit(1)</span>
+<span class=k>try</span><span class=p>:</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=k>except</span> <span class=ne>SystemExit</span> <span class=k>as</span> <span class=n>err</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>err</span><span class=p>)</span> <span class=c1># 1</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -207,61 +167,52 @@
 <p>使用 <code>os.kill()</code>，用于直接 Kill 掉进程，只在 unix 平台上有效；</p>
 </li>
 </ol></div>
-
-        <div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2020-11-10</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span><a class="link-to-mardown" href=/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
-                    </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">python</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" class="prev" rel="prev" title="端口扫描和脚本批量测通"><i class="fas fa-angle-left fa-fw"></i>端口扫描和脚本批量测通</a>
-            <a href="/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="next" rel="next" title="解决 go get下载包慢或者失败的问题">解决 go get下载包慢或者失败的问题<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2020-11-10</span>
 </div>
-<div id="comments"><div id="waline" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
-            </noscript></div></article></div>
-        </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-            <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
-                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
-                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
-                    </span></div>
-            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-        </div></footer></div>
-
-    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
-            <i class="fas fa-arrow-up fa-fw"></i>
-        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-            <i class="fas fa-comment fa-fw"></i>
-        </a>
-    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'UA-168242983-1');
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
-
-<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://waline-lx1l07bh7-zhaouncle.vercel.app/","uploadImage":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script></div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span><a class=link-to-mardown href=/%E5%A6%82%E4%BD%95%E7%BB%93%E6%9D%9F%E9%80%80%E5%87%BApython%E8%84%9A%E6%9C%AC/index.md target=_blank rel="noopener noreferrer">阅读原始文档</a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/python/>python</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/ class=prev rel=prev title=端口扫描和脚本批量测通><i class="fas fa-angle-left fa-fw"></i>端口扫描和脚本批量测通</a>
+<a href=/%E8%A7%A3%E5%86%B3goget%E4%B8%8B%E8%BD%BD%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/ class=next rel=next title="解决 go get下载包慢或者失败的问题">解决 go get下载包慢或者失败的问题<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=waline class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=http://zhaouncle.github.io target=_blank rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+<div class=footer-line>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=post-meta-item id=busuanzi_container_site_pv style=display:inline>
+<span class=post-meta-item-icon><i class="fa fa-eye"></i></span>
+<span class=site-pv title=总访问量><span id=busuanzi_value_site_pv></span></span>
+</span></div>
+<div class=footer-line><script type=text/javascript>document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))</script></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div id=cookieconsent-container></div><div class=assets><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js defer></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-168242983-1')</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{waline:{copyright:!0,dark:"body[theme='dark'], body[theme='black']",el:"#waline",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],highlight:!0,lang:"zh-cn",login:"enable",meta:["nick","mail","link"],pageSize:10,serverURL:"https://waline-lx1l07bh7-zhaouncle.vercel.app/",uploadImage:!0,visitor:!0}},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},data:{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},sharerjs:!0,typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},duration:-1,speed:100}}</script><script type=text/javascript src=/lib/waline/Waline.min.js defer></script><script type=text/javascript src=/js/waline.min.js defer></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/js/cookieconsent.min.js defer></script></div>
 </body>
-
 </html>

@@ -1,447 +1,335 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
+<!doctype html><html lang=zh-cn>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" />
-    <title class="pjax-title">【Golang】vscode 设置 go 开发环境 - 易波叶平</title><meta name="Description" content="vscode 设置 Golang 开发环境"><meta property="og:title" content="【Golang】vscode 设置 go 开发环境" />
-<meta property="og:description" content="vscode 设置 Golang 开发环境" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" /><meta property="og:image" content="https://zhaouncle.com/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-01T16:47:16+08:00" />
-<meta property="article:modified_time" content="2020-11-01T16:47:16+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://zhaouncle.com/logo.png"/>
-
-<meta name="twitter:title" content="【Golang】vscode 设置 go 开发环境"/>
-<meta name="twitter:description" content="vscode 设置 Golang 开发环境"/>
-<meta name="application-name" content="DoIt">
-<meta name="apple-mobile-web-app-title" content="DoIt">
-
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" /><link rel="prev" href="https://zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/" /><link rel="next" href="https://zhaouncle.com/iptables/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "【Golang】vscode 设置 go 开发环境",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/zhaouncle.com\/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Golang, go","wordcount":  804 ,
-        "url": "https:\/\/zhaouncle.com\/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83\/","datePublished": "2020-11-01T16:47:16+08:00","dateModified": "2020-11-01T16:47:16+08:00","publisher": {
-            "@type": "Organization",
-            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
-                "@type": "Person",
-                "name": "赵叔"
-            },"description": "vscode 设置 Golang 开发环境"
-    }
-    </script></head>
-
-<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
-        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
-        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
-        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
-        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
-    </script>
-    <div id="back-to-top"></div>
-    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
-                    <i class="fas fa-adjust fa-fw"></i>
-                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
-                        <option value="light">浅色</option>
-                        <option value="dark">深色</option>
-                        <option value="black">黑色</option>
-                        <option value="auto">跟随系统</option>
-                    </select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
-                <i class="fas fa-adjust fa-fw"></i>
-                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
-                    <option value="light">浅色</option>
-                    <option value="dark">深色</option>
-                    <option value="black">黑色</option>
-                    <option value="auto">跟随系统</option>
-                </select>
-            </a></div>
-    </div>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<title class=pjax-title>【Golang】vscode 设置 go 开发环境 - 易波叶平</title><meta name=Description content="vscode 设置 Golang 开发环境"><meta property="og:title" content="【Golang】vscode 设置 go 开发环境">
+<meta property="og:description" content="vscode 设置 Golang 开发环境">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"><meta property="og:image" content="https://zhaouncle.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-11-01T16:47:16+08:00">
+<meta property="article:modified_time" content="2020-11-01T16:47:16+08:00"><meta property="og:site_name" content="我的全新 Hugo 网站 2021">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://zhaouncle.com/logo.png">
+<meta name=twitter:title content="【Golang】vscode 设置 go 开发环境">
+<meta name=twitter:description content="vscode 设置 Golang 开发环境">
+<meta name=application-name content="DoIt">
+<meta name=apple-mobile-web-app-title content="DoIt">
+<meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://zhaouncle.com/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/><link rel=prev href=https://zhaouncle.com/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/><link rel=next href=https://zhaouncle.com/iptables/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0"><meta name=msvalidate.01 content="C7D99901D0D018E2FA741CC205405B28"><meta name=baidu-site-verification content="Dnx20VKWrw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"【Golang】vscode 设置 go 开发环境","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhaouncle.com\/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83\/"},"image":["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Golang, go","wordcount":804,"url":"https:\/\/zhaouncle.com\/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83\/","datePublished":"2020-11-01T16:47:16+08:00","dateModified":"2020-11-01T16:47:16+08:00","publisher":{"@type":"Organization","name":"目瞪狗呆","logo":"https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author":{"@type":"Person","name":"赵叔"},"description":"vscode 设置 Golang 开发环境"}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else'auto'==='light'||'auto'==='dark'||'auto'==='black'?(setTheme('auto'),saveTheme('auto')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=desktop-header-typeit class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/about> 关于 </a><a class=menu-item href=/categories/thoughts/ title=杂谈> 杂谈 </a><a class=menu-item href=/series/> 系列 </a><a class=menu-item href=https://link.zhaouncle.com rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i> </a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i> </a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i> </a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=mobile-header-typeit class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/about title>关于</a><a class=menu-item href=/categories/thoughts/ title=杂谈>杂谈</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=https://link.zhaouncle.com title rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i></a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i></a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i></a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i></a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
+</a></div>
+</div>
 </header>
 <div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
+<div id=search-dropdown-desktop></div>
 </div>
 <div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
+<div id=search-dropdown-mobile></div>
 </div>
-<main class="main">
-            <div class="container"><div class="toc" id="toc-auto">
-        <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Golang】vscode 设置 go 开发环境</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-01">2020-11-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-11-01">2020-11-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 804 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="leancloud_visitors" data-flag-title="【Golang】vscode 设置 go 开发环境">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="comment_count" data-flag-title="【Golang】vscode 设置 go 开发环境">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#步骤">步骤</a>
-      <ul>
-        <li><a href="#1-始">1. 始</a></li>
-        <li><a href="#2-安装-go-插件">2. 安装 go 插件</a></li>
-        <li><a href="#3-设置-goproxy">3. 设置 GOPROXY</a></li>
-        <li><a href="#4-安装-go语言开发工具包">4. 安装 Go语言开发工具包</a></li>
-        <li><a href="#5-插件介绍">5. 插件介绍</a></li>
-        <li><a href="#6-打开vscode设置">6. 打开vscode设置</a></li>
-        <li><a href="#7-settingsjson-配置">7. settings.json 配置</a></li>
-        <li><a href="#8-settingsjson-参数介绍">8. settings.json 参数介绍：</a>
-          <ul>
-            <li><a href="#81-跳转到定义">8.1 跳转到定义</a></li>
-          </ul>
-        </li>
-        <li><a href="#9-效果">9. 效果</a></li>
-      </ul>
-    </li>
-    <li><a href="#参考链接">参考链接：</a></li>
-  </ul>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Golang】vscode 设置 go 开发环境</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=http://zhaouncle.github.io title=Author target=_blank rel="noopener noreffer author" class=author>赵叔</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/golang/><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-11-01>2020-11-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2020-11-01>2020-11-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 804 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id=/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ class=leancloud_visitors data-flag-title="【Golang】vscode 设置 go 开发环境">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+</span>&nbsp;<span id=/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ class=comment_count data-flag-title="【Golang】vscode 设置 go 开发环境">
+<i class="far fa-comments fa-fw"></i>&nbsp;<span class=waline-comment-count id=waline-comment-count></span>&nbsp;条评论
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#步骤>步骤</a>
+<ul>
+<li><a href=#1-始>1. 始</a></li>
+<li><a href=#2-安装-go-插件>2. 安装 go 插件</a></li>
+<li><a href=#3-设置-goproxy>3. 设置 GOPROXY</a></li>
+<li><a href=#4-安装-go语言开发工具包>4. 安装 Go语言开发工具包</a></li>
+<li><a href=#5-插件介绍>5. 插件介绍</a></li>
+<li><a href=#6-打开vscode设置>6. 打开vscode设置</a></li>
+<li><a href=#7-settingsjson-配置>7. settings.json 配置</a></li>
+<li><a href=#8-settingsjson-参数介绍>8. settings.json 参数介绍：</a>
+<ul>
+<li><a href=#81-跳转到定义>8.1 跳转到定义</a></li>
+</ul>
+</li>
+<li><a href=#9-效果>9. 效果</a></li>
+</ul>
+</li>
+<li><a href=#参考链接>参考链接：</a></li>
+</ul>
 </nav></div>
-            </div><div class="content" id="content"><div class="details admonition warning open">
-                <div class="details-summary admonition-title">
-                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-                </div>
-                <div class="details-content">
-                    <div class="admonition-content">
-                        本文最后更新于 <span class="timeago" datetime="2020-11-01T16:47:16" title="November 1, 2020">2020-11-01</span>，文中内容可能已过时。</div>
-                </div>
-            </div><h1 id="步骤">步骤</h1>
-<h2 id="1-始">1. 始</h2>
+</div><div class=content id=content><div class="details admonition warning open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content>
+本文最后更新于 <span class=timeago datetime=2020-11-01T16:47:16 title="November 1, 2020">2020-11-01</span>，文中内容可能已过时。</div>
+</div>
+</div><h1 id=步骤>步骤</h1>
+<h2 id=1-始>1. 始</h2>
 <p>Golang 语言开发选择一款合适的编辑器，能加速你敲字的灵感，这里推荐微软的 Visual Studio Code，简称 vscode。</p>
-<h2 id="2-安装-go-插件">2. 安装 go 插件</h2>
+<h2 id=2-安装-go-插件>2. 安装 go 插件</h2>
 <p>首先需要安装 go 语言插件，在 vscode 扩展中搜索 “go”，如下图，下载安装go插件</p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png"
-        title="image-20201101170130488"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png"
-        title="image-20201101170447244"
-    /></p>
-<h2 id="3-设置-goproxy">3. 设置 GOPROXY</h2>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170130488.png title=image-20201101170130488></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101170447244.png title=image-20201101170447244></p>
+<h2 id=3-设置-goproxy>3. 设置 GOPROXY</h2>
 <p>如果想要 vscode 在 Go语言开发的时候为我们提供诸如代码提示、代码自动补全等功能，需要安装 go tools，但是安装 tools 需要设置 goproxy，否则会因为网络问题无法下载 tools 工具。</p>
 <p>在此之前请先设置<code>GOPROXY</code>，打开终端执行以下命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">go env -w <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.cn,direct
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>go env -w <span class=nv>GOPROXY</span><span class=o>=</span>https://goproxy.cn,direct
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="4-安装-go语言开发工具包">4. 安装 Go语言开发工具包</h2>
-<p>安装 Golang Tools，按下 Ctrl/Cmd+P，输入<code>&gt; Go: Install/Update Tools</code>，然后回车，选择你要安装的 tools 插件</p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png"
-        title="image-20201101172850059"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png"
-        title="image-20201101173030140"
-    /></p>
-<h2 id="5-插件介绍">5. 插件介绍</h2>
+</div><h2 id=4-安装-go语言开发工具包>4. 安装 Go语言开发工具包</h2>
+<p>安装 Golang Tools，按下 Ctrl/Cmd+P，输入<code>> Go: Install/Update Tools</code>，然后回车，选择你要安装的 tools 插件</p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101172850059.png title=image-20201101172850059></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101173030140.png title=image-20201101173030140></p>
+<h2 id=5-插件介绍>5. 插件介绍</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">tools 名称</th>
+<th style=text-align:left>tools 名称</th>
 <th></th>
 <th>用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">gocode</td>
+<td style=text-align:left>gocode</td>
 <td>github.com/mdempsky/gocode</td>
 <td>代码自动完成</td>
 </tr>
 <tr>
-<td style="text-align:left">gopkgs</td>
+<td style=text-align:left>gopkgs</td>
 <td>github.com/uudashr/gopkgs/v2/cmd/gopkgs</td>
 <td>该工具为未导入的软件包提供自动补全功能</td>
 </tr>
 <tr>
-<td style="text-align:left">go-outline</td>
+<td style=text-align:left>go-outline</td>
 <td>github.com/ramya-rao-a/go-outline</td>
-<td>此工具提供了<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#document-outline" target="_blank" rel="noopener noreffer">文档大纲</a>功能以及当前文件功能中的<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#go-to-symbol" target="_blank" rel="noopener noreffer">转到符号</a>。</td>
+<td>此工具提供了<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#document-outline target=_blank rel="noopener noreffer">文档大纲</a>功能以及当前文件功能中的<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#go-to-symbol target=_blank rel="noopener noreffer">转到符号</a>。</td>
 </tr>
 <tr>
-<td style="text-align:left">go-symbols</td>
+<td style=text-align:left>go-symbols</td>
 <td>github.com/acroca/go-symbols</td>
-<td>此工具提供了工作空间中的<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#go-to-symbol" target="_blank" rel="noopener noreffer">转到符号</a>功能。</td>
+<td>此工具提供了工作空间中的<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#go-to-symbol target=_blank rel="noopener noreffer">转到符号</a>功能。</td>
 </tr>
 <tr>
-<td style="text-align:left">guru</td>
+<td style=text-align:left>guru</td>
 <td>golang.org/x/tools/cmd/guru</td>
-<td>该工具提供<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#find-references" target="_blank" rel="noopener noreffer">查找参考</a>和<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#find-interface-implementations" target="_blank" rel="noopener noreffer">查找接口实现</a>功能。<br />它也可用于通过设置提供<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#go-to-definition" target="_blank" rel="noopener noreffer">转到定义</a><a href="https://github.com/golang/vscode-go/blob/master/docs/settings.md#go.docsTool" target="_blank" rel="noopener noreffer"><code>&quot;go.docsTool&quot;</code></a>。</td>
+<td>该工具提供<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#find-references target=_blank rel="noopener noreffer">查找参考</a>和<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#find-interface-implementations target=_blank rel="noopener noreffer">查找接口实现</a>功能。<br>它也可用于通过设置提供<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#go-to-definition target=_blank rel="noopener noreffer">转到定义</a><a href=https://github.com/golang/vscode-go/blob/master/docs/settings.md#go.docsTool target=_blank rel="noopener noreffer"><code>"go.docsTool"</code></a>。</td>
 </tr>
 <tr>
-<td style="text-align:left">gorename</td>
+<td style=text-align:left>gorename</td>
 <td>golang.org/x/tools/cmd/gorename</td>
-<td>此工具提供了<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#rename-symbol" target="_blank" rel="noopener noreffer">重命名符号</a>功能。</td>
+<td>此工具提供了<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#rename-symbol target=_blank rel="noopener noreffer">重命名符号</a>功能。</td>
 </tr>
 <tr>
-<td style="text-align:left">gotests</td>
-<td>github.com/cweill/gotests/&hellip;</td>
-<td>该工具为<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#generate-unit-tests" target="_blank" rel="noopener noreffer"><code>Go: Generate Unit Tests</code></a>命令集提供支持。</td>
+<td style=text-align:left>gotests</td>
+<td>github.com/cweill/gotests/&mldr;</td>
+<td>该工具为<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#generate-unit-tests target=_blank rel="noopener noreffer"><code>Go: Generate Unit Tests</code></a>命令集提供支持。</td>
 </tr>
 <tr>
-<td style="text-align:left">gomodifytags</td>
+<td style=text-align:left>gomodifytags</td>
 <td>github.com/fatih/gomodifytags</td>
-<td>该工具支持<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#add-or-remove-struct-tags" target="_blank" rel="noopener noreffer"><code>Go: Add Tags to Struct Fields</code></a>和<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#add-or-remove-struct-tags" target="_blank" rel="noopener noreffer"><code>Go: Remove Tags From Struct Fields</code></a>命令。</td>
+<td>该工具支持<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#add-or-remove-struct-tags target=_blank rel="noopener noreffer"><code>Go: Add Tags to Struct Fields</code></a>和<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#add-or-remove-struct-tags target=_blank rel="noopener noreffer"><code>Go: Remove Tags From Struct Fields</code></a>命令。</td>
 </tr>
 <tr>
-<td style="text-align:left">impl</td>
+<td style=text-align:left>impl</td>
 <td>github.com/josharian/impl</td>
-<td>该工具为<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#generate-interface-implementation" target="_blank" rel="noopener noreffer"><code>Go: Generate Interface Stubs</code></a>命令提供支持。</td>
+<td>该工具为<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#generate-interface-implementation target=_blank rel="noopener noreffer"><code>Go: Generate Interface Stubs</code></a>命令提供支持。</td>
 </tr>
 <tr>
-<td style="text-align:left">fillstruct</td>
+<td style=text-align:left>fillstruct</td>
 <td>github.com/davidrjenni/reftools/cmd/fillstruct</td>
-<td>该工具提供了对<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#fill-struct-literals" target="_blank" rel="noopener noreffer"><code>Go: Fill struct</code></a>命令的支持。</td>
+<td>该工具提供了对<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#fill-struct-literals target=_blank rel="noopener noreffer"><code>Go: Fill struct</code></a>命令的支持。</td>
 </tr>
 <tr>
-<td style="text-align:left">goplay</td>
+<td style=text-align:left>goplay</td>
 <td>github.com/haya14busa/goplay/cmd/goplay</td>
-<td>该工具为<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#go-playground" target="_blank" rel="noopener noreffer"><code>Go: Run on Go Playground</code></a>命令提供支持。</td>
+<td>该工具为<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#go-playground target=_blank rel="noopener noreffer"><code>Go: Run on Go Playground</code></a>命令提供支持。</td>
 </tr>
 <tr>
-<td style="text-align:left">godoctor</td>
+<td style=text-align:left>godoctor</td>
 <td>github.com/godoctor/godoctor</td>
-<td>该工具提供了<a href="https://github.com/golang/vscode-go/blob/master/docs/features.md#refactor" target="_blank" rel="noopener noreffer">重构</a>功能。<br />它不支持Go模块，因此我们希望<a href="https://github.com/golang/vscode-go/blob/master/docs/gopls.md" target="_blank" rel="noopener noreffer"><code>gopls</code></a>它将提供此功能（<a href="https://github.com/golang/go/issues/37170" target="_blank" rel="noopener noreffer">golang / go＃37170</a>）。</td>
+<td>该工具提供了<a href=https://github.com/golang/vscode-go/blob/master/docs/features.md#refactor target=_blank rel="noopener noreffer">重构</a>功能。<br>它不支持Go模块，因此我们希望<a href=https://github.com/golang/vscode-go/blob/master/docs/gopls.md target=_blank rel="noopener noreffer"><code>gopls</code></a>它将提供此功能（<a href=https://github.com/golang/go/issues/37170 target=_blank rel="noopener noreffer">golang / go＃37170</a>）。</td>
 </tr>
 <tr>
-<td style="text-align:left">dlv</td>
+<td style=text-align:left>dlv</td>
 <td>github.com/go-delve/delve/cmd/dlv</td>
-<td>这是Go语言的调试器。它用于提供此扩展的<a href="https://github.com/golang/vscode-go/blob/master/docs/debugging.md" target="_blank" rel="noopener noreffer">调试</a>功能。</td>
+<td>这是Go语言的调试器。它用于提供此扩展的<a href=https://github.com/golang/vscode-go/blob/master/docs/debugging.md target=_blank rel="noopener noreffer">调试</a>功能。</td>
 </tr>
 <tr>
-<td style="text-align:left">gocode-gomod</td>
+<td style=text-align:left>gocode-gomod</td>
 <td>github.com/stamblerre/gocode</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">goreturns</td>
+<td style=text-align:left>goreturns</td>
 <td>github.com/sqs/goreturns</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">golint</td>
+<td style=text-align:left>golint</td>
 <td>golang.org/x/lint/golint</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="6-打开vscode设置">6. 打开vscode设置</h2>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png"
-        title="image-20201101174435968"
-    /></p>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png"
-        title="image-20201101174527975"
-    /></p>
-<h2 id="7-settingsjson-配置">7. settings.json 配置</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<h2 id=6-打开vscode设置>6. 打开vscode设置</h2>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174435968.png title=image-20201101174435968></p>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174527975.png title=image-20201101174527975></p>
+<h2 id=7-settingsjson-配置>7. settings.json 配置</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go">  <span class="s">&#34;go.inferGopath&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s">&#34;go.autocompleteUnimportedPackages&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s">&#34;go.gocodePackageLookupMode&#34;</span><span class="p">:</span> <span class="s">&#34;go&#34;</span><span class="p">,</span>
-  <span class="s">&#34;go.gotoSymbol.includeImports&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s">&#34;go.useCodeSnippetsOnFunctionSuggest&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s">&#34;go.useCodeSnippetsOnFunctionSuggestWithoutType&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s">&#34;go.docsTool&#34;</span><span class="p">:</span> <span class="s">&#34;guru&#34;</span><span class="p">,</span>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-go data-lang=go>  <span class=s>&#34;go.inferGopath&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=s>&#34;go.autocompleteUnimportedPackages&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=s>&#34;go.gocodePackageLookupMode&#34;</span><span class=p>:</span> <span class=s>&#34;go&#34;</span><span class=p>,</span>
+  <span class=s>&#34;go.gotoSymbol.includeImports&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=s>&#34;go.useCodeSnippetsOnFunctionSuggest&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=s>&#34;go.useCodeSnippetsOnFunctionSuggestWithoutType&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=s>&#34;go.docsTool&#34;</span><span class=p>:</span> <span class=s>&#34;guru&#34;</span><span class=p>,</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png"
-        title="image-20201101174633072"
-    /></p>
-<h2 id="8-settingsjson-参数介绍">8. settings.json 参数介绍：</h2>
-<h3 id="81-跳转到定义">8.1 跳转到定义</h3>
+</div><p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101174633072.png title=image-20201101174633072></p>
+<h2 id=8-settingsjson-参数介绍>8. settings.json 参数介绍：</h2>
+<h3 id=81-跳转到定义>8.1 跳转到定义</h3>
 <ul>
 <li>go.docsTools：这里有三个选项，默认使用 <strong>gogetdoc</strong>，不知为何我这里选择之后无法使用 <code>ctrl/cmd +鼠标左键</code>点击跳转函数或者源码，于是我选择了 <strong>guru</strong></li>
 </ul>
-<p><img
-        class="lazyload"
-        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png"
-        title="image-20201101175010106"
-    /></p>
-<h2 id="9-效果">9. 效果</h2>
-<p><img
-        class="lazyload"
-        data-src="https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif"
-        data-srcset="https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif, https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif 1.5x, https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif 2x"
-        data-sizes="auto"
-        alt="https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif"
-        title="QQ20201101-181724-HD"
-    /></p>
-<h1 id="参考链接">参考链接：</h1>
-<p><a href="https://github.com/microsoft/vscode-go" target="_blank" rel="noopener noreffer">https://github.com/microsoft/vscode-go</a></p>
-<p><a href="https://github.com/golang/vscode-go" target="_blank" rel="noopener noreffer">https://github.com/golang/vscode-go</a></p>
-<p><a href="https://github.com/golang/vscode-go/blob/master/docs/tools.md" target="_blank" rel="noopener noreffer">https://github.com/golang/vscode-go/blob/master/docs/tools.md</a></p>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer">https://golang.google.cn/</a></p></div>
-
-        <div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2020-11-01</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span><a class="link-to-mardown" href=/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
-                    </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/golang/">Golang</a>,&nbsp;<a href="/tags/go/">go</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/" class="prev" rel="prev" title="【Golang】字符串的查找方法小结"><i class="fas fa-angle-left fa-fw"></i>【Golang】字符串的查找方法小结</a>
-            <a href="/iptables/" class="next" rel="next" title="【iptables】 简单使用">【iptables】 简单使用<i class="fas fa-angle-right fa-fw"></i></a></div>
+<p><img class=lazyload data-src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20201101175010106.png title=image-20201101175010106></p>
+<h2 id=9-效果>9. 效果</h2>
+<p><img class=lazyload data-src=https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif data-srcset="https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif, https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif 1.5x, https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif 2x" data-sizes=auto alt=https://zhaouncle.com/image/blog/video/QQ20201101-181724-HD.gif title=QQ20201101-181724-HD></p>
+<h1 id=参考链接>参考链接：</h1>
+<p><a href=https://github.com/microsoft/vscode-go target=_blank rel="noopener noreffer">https://github.com/microsoft/vscode-go</a></p>
+<p><a href=https://github.com/golang/vscode-go target=_blank rel="noopener noreffer">https://github.com/golang/vscode-go</a></p>
+<p><a href=https://github.com/golang/vscode-go/blob/master/docs/tools.md target=_blank rel="noopener noreffer">https://github.com/golang/vscode-go/blob/master/docs/tools.md</a></p>
+<p><a href=https://golang.google.cn/ target=_blank rel="noopener noreffer">https://golang.google.cn/</a></p></div>
+<div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2020-11-01</span>
 </div>
-<div id="comments"><div id="waline" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
-            </noscript></div></article></div>
-        </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-            <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
-                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
-                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
-                    </span></div>
-            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-        </div></footer></div>
-
-    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
-            <i class="fas fa-arrow-up fa-fw"></i>
-        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-            <i class="fas fa-comment fa-fw"></i>
-        </a>
-    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'UA-168242983-1');
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
-
-<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://waline-lx1l07bh7-zhaouncle.vercel.app/","uploadImage":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script></div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span><a class=link-to-mardown href=/vscode%E8%AE%BE%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.md target=_blank rel="noopener noreferrer">阅读原始文档</a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/golang/>Golang</a>,&nbsp;<a href=/tags/go/>go</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E5%B0%8F%E7%BB%93-contains%E5%87%BD%E6%95%B0/ class=prev rel=prev title=【Golang】字符串的查找方法小结><i class="fas fa-angle-left fa-fw"></i>【Golang】字符串的查找方法小结</a>
+<a href=/iptables/ class=next rel=next title="【iptables】 简单使用">【iptables】 简单使用<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=waline class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=http://zhaouncle.github.io target=_blank rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+<div class=footer-line>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=post-meta-item id=busuanzi_container_site_pv style=display:inline>
+<span class=post-meta-item-icon><i class="fa fa-eye"></i></span>
+<span class=site-pv title=总访问量><span id=busuanzi_value_site_pv></span></span>
+</span></div>
+<div class=footer-line><script type=text/javascript>document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))</script></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div id=cookieconsent-container></div><div class=assets><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js defer></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-168242983-1')</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{waline:{copyright:!0,dark:"body[theme='dark'], body[theme='black']",el:"#waline",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],highlight:!0,lang:"zh-cn",login:"enable",meta:["nick","mail","link"],pageSize:10,serverURL:"https://waline-lx1l07bh7-zhaouncle.vercel.app/",uploadImage:!0,visitor:!0}},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},data:{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},sharerjs:!0,typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},duration:-1,speed:100}}</script><script type=text/javascript src=/lib/waline/Waline.min.js defer></script><script type=text/javascript src=/js/waline.min.js defer></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/js/cookieconsent.min.js defer></script></div>
 </body>
-
 </html>
