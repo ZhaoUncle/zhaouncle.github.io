@@ -1,7 +1,86 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>易波叶平</title><link>https://zhaouncle.com/</link><description>欲戴王冠，必承其重</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 29 Dec 2021 17:04:36 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/index.xml" rel="self" type="application/rss+xml"/><item><title>freenom免费域名自动续期和ddns</title><link>https://zhaouncle.com/%E7%94%B3%E8%AF%B7freenom%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E5%B9%B6%E8%87%AA%E5%8A%A8ddns%E8%A7%A3%E6%9E%90/</link><pubDate>Wed, 29 Dec 2021 17:04:36 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E7%94%B3%E8%AF%B7freenom%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E5%B9%B6%E8%87%AA%E5%8A%A8ddns%E8%A7%A3%E6%9E%90/</guid><description>&lt;div class="featured-image">
-&lt;img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/DDNSIcon.png" referrerpolicy="no-referrer">
-&lt;/div></description></item><item><title>openwrt单臂盘路由端口转发</title><link>https://zhaouncle.com/%E5%8D%95%E8%87%82%E7%9B%98%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link><pubDate>Mon, 27 Dec 2021 14:38:39 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E5%8D%95%E8%87%82%E7%9B%98%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid><description>&lt;div class="featured-image">
-&lt;img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/openwrt.png" referrerpolicy="no-referrer">
-&lt;/div></description></item><item><title>Unraid安装群晖DS918+7测试硬解和人脸识别</title><link>https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</link><pubDate>Sun, 26 Dec 2021 17:32:40 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</guid><description>&lt;div class="featured-image">
-&lt;img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png" referrerpolicy="no-referrer">
-&lt;/div></description></item><item><title>【Nginx】修改 nginx 用户 id 和 gid</title><link>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</link><pubDate>Sun, 16 May 2021 14:45:01 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</guid><description>【Nginx】修改 nginx 用户 id 和 gid</description></item><item><title>git 基于 master 创建删除 develop 分支</title><link>https://zhaouncle.com/%E5%9F%BA%E4%BA%8Emaster%E5%88%9B%E5%BB%BA%E5%BC%80%E5%8F%91%E5%88%86%E6%94%AF/</link><pubDate>Sun, 18 Apr 2021 11:53:00 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E5%9F%BA%E4%BA%8Emaster%E5%88%9B%E5%BB%BA%E5%BC%80%E5%8F%91%E5%88%86%E6%94%AF/</guid><description>git 基于 master 创建删除 develop 分支</description></item><item><title>standford parser 和 jdk 版本对应关系</title><link>https://zhaouncle.com/standford%E5%92%8Cjdk%E7%89%88%E6%9C%AC%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</link><pubDate>Fri, 16 Apr 2021 09:29:51 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/standford%E5%92%8Cjdk%E7%89%88%E6%9C%AC%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</guid><description>standford parser 和 jdk 版本对应关系</description></item><item><title>Pipeline 片段语法生成器</title><link>https://zhaouncle.com/pipeline%E8%AF%AD%E6%B3%95%E7%94%9F%E6%88%90%E5%99%A8/</link><pubDate>Thu, 15 Apr 2021 09:24:21 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/pipeline%E8%AF%AD%E6%B3%95%E7%94%9F%E6%88%90%E5%99%A8/</guid><description>Pipeline 片段语法生成器</description></item><item><title>DNS刷新办法</title><link>https://zhaouncle.com/dns%E5%88%B7%E6%96%B0%E5%8A%9E%E6%B3%95/</link><pubDate>Tue, 13 Apr 2021 10:07:33 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/dns%E5%88%B7%E6%96%B0%E5%8A%9E%E6%B3%95/</guid><description>DNS刷新办法</description></item><item><title>【k8s】部署 jenkins 并部署 tomcat 服务示例</title><link>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/</link><pubDate>Mon, 12 Apr 2021 22:22:02 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/</guid><description>【k8s】部署 jenkins 并部署 tomcat 服务示例</description></item><item><title>云 cdn 汇总介绍</title><link>https://zhaouncle.com/%E4%BA%91cdn%E6%B1%87%E6%80%BB%E4%BB%8B%E7%BB%8D/</link><pubDate>Mon, 12 Apr 2021 16:37:46 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E4%BA%91cdn%E6%B1%87%E6%80%BB%E4%BB%8B%E7%BB%8D/</guid><description>云 cdn 汇总介绍</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>易波叶平</title>
+        <link>https://zhaouncle.com/</link>
+        <description>欲戴王冠，必承其重</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 17 Jan 2022 23:30:50 &#43;0800</lastBuildDate>
+            <atom:link href="https://zhaouncle.com/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>子模块索引已存在问题处理</title>
+    <link>https://zhaouncle.com/%E5%AD%90%E6%A8%A1%E5%9D%97%E7%B4%A2%E5%BC%95%E5%B7%B2%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</link>
+    <pubDate>Mon, 17 Jan 2022 23:30:50 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/%E5%AD%90%E6%A8%A1%E5%9D%97%E7%B4%A2%E5%BC%95%E5%B7%B2%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>freenom免费域名自动续期和ddns</title>
+    <link>https://zhaouncle.com/%E7%94%B3%E8%AF%B7freenom%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E5%B9%B6%E8%87%AA%E5%8A%A8ddns%E8%A7%A3%E6%9E%90/</link>
+    <pubDate>Wed, 29 Dec 2021 17:04:36 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/%E7%94%B3%E8%AF%B7freenom%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F%E5%B9%B6%E8%87%AA%E5%8A%A8ddns%E8%A7%A3%E6%9E%90/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/DDNSIcon.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
+    <title>openwrt单臂盘路由端口转发</title>
+    <link>https://zhaouncle.com/%E5%8D%95%E8%87%82%E7%9B%98%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+    <pubDate>Mon, 27 Dec 2021 14:38:39 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/%E5%8D%95%E8%87%82%E7%9B%98%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/openwrt.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
+    <title>Unraid安装群晖DS918&#43;7测试硬解和人脸识别</title>
+    <link>https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</link>
+    <pubDate>Sun, 26 Dec 2021 17:32:40 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85%E7%BE%A4%E6%99%96ds918-7%E6%B5%8B%E8%AF%95%E7%A1%AC%E8%A7%A3%E5%92%8C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/unraid_logo.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
+    <title>【Nginx】修改 nginx 用户 id 和 gid</title>
+    <link>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</link>
+    <pubDate>Sun, 16 May 2021 14:45:01 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</guid>
+    <description><![CDATA[【Nginx】修改 nginx 用户 id 和 gid]]></description>
+</item><item>
+    <title>git 基于 master 创建删除 develop 分支</title>
+    <link>https://zhaouncle.com/%E5%9F%BA%E4%BA%8Emaster%E5%88%9B%E5%BB%BA%E5%BC%80%E5%8F%91%E5%88%86%E6%94%AF/</link>
+    <pubDate>Sun, 18 Apr 2021 11:53:00 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/%E5%9F%BA%E4%BA%8Emaster%E5%88%9B%E5%BB%BA%E5%BC%80%E5%8F%91%E5%88%86%E6%94%AF/</guid>
+    <description><![CDATA[git 基于 master 创建删除 develop 分支]]></description>
+</item><item>
+    <title>standford parser 和 jdk 版本对应关系</title>
+    <link>https://zhaouncle.com/standford%E5%92%8Cjdk%E7%89%88%E6%9C%AC%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</link>
+    <pubDate>Fri, 16 Apr 2021 09:29:51 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/standford%E5%92%8Cjdk%E7%89%88%E6%9C%AC%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</guid>
+    <description><![CDATA[standford parser 和 jdk 版本对应关系]]></description>
+</item><item>
+    <title>Pipeline 片段语法生成器</title>
+    <link>https://zhaouncle.com/pipeline%E8%AF%AD%E6%B3%95%E7%94%9F%E6%88%90%E5%99%A8/</link>
+    <pubDate>Thu, 15 Apr 2021 09:24:21 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/pipeline%E8%AF%AD%E6%B3%95%E7%94%9F%E6%88%90%E5%99%A8/</guid>
+    <description><![CDATA[Pipeline 片段语法生成器]]></description>
+</item><item>
+    <title>DNS刷新办法</title>
+    <link>https://zhaouncle.com/dns%E5%88%B7%E6%96%B0%E5%8A%9E%E6%B3%95/</link>
+    <pubDate>Tue, 13 Apr 2021 10:07:33 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/dns%E5%88%B7%E6%96%B0%E5%8A%9E%E6%B3%95/</guid>
+    <description><![CDATA[DNS刷新办法]]></description>
+</item><item>
+    <title>【k8s】部署 jenkins 并部署 tomcat 服务示例</title>
+    <link>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/</link>
+    <pubDate>Mon, 12 Apr 2021 22:22:02 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/</guid>
+    <description><![CDATA[【k8s】部署 jenkins 并部署 tomcat 服务示例]]></description>
+</item></channel>
+</rss>

@@ -1,177 +1,217 @@
-<!doctype html><html lang=zh-cn>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<title class=pjax-title>Hugo（一）Github Pages 搭建个人博客 - 易波叶平</title><meta name=Description content="hugo 使用 LoveIt 主题搭建个人博客"><meta property="og:title" content="Hugo（一）Github Pages 搭建个人博客">
-<meta property="og:description" content="hugo 使用 LoveIt 主题搭建个人博客">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://zhaouncle.com/hugo/"><meta property="og:image" content="https://zhaouncle.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-06-05T08:53:52+08:00">
-<meta property="article:modified_time" content="2021-12-26T23:53:54+08:00"><meta property="og:site_name" content="我的全新 Hugo 网站 2021">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://zhaouncle.com/logo.png">
-<meta name=twitter:title content="Hugo（一）Github Pages 搭建个人博客">
-<meta name=twitter:description content="hugo 使用 LoveIt 主题搭建个人博客">
-<meta name=application-name content="DoIt">
-<meta name=apple-mobile-web-app-title content="DoIt">
-<meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://zhaouncle.com/hugo/><link rel=prev href=https://zhaouncle.com/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/><link rel=next href=https://zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
-<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
-<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0"><meta name=msvalidate.01 content="C7D99901D0D018E2FA741CC205405B28"><meta name=baidu-site-verification content="Dnx20VKWrw"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hugo（一）Github Pages 搭建个人博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhaouncle.com\/hugo\/"},"image":["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"hugo, 博客","wordcount":915,"url":"https:\/\/zhaouncle.com\/hugo\/","datePublished":"2020-06-05T08:53:52+08:00","dateModified":"2021-12-26T23:53:54+08:00","publisher":{"@type":"Organization","name":"目瞪狗呆","logo":"https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author":{"@type":"Person","name":"赵叔"},"description":"hugo 使用 LoveIt 主题搭建个人博客"}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else'auto'==='light'||'auto'==='dark'||'auto'==='black'?(setTheme('auto'),saveTheme('auto')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let metaColors={light:'#f8f8f8',dark:'#252627',black:'#000000'};getMeta('theme-color').content=metaColors[document.body.getAttribute('theme')]</script>
-<div id=back-to-top></div>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=desktop-header-typeit class=typeit></span></a>
-</div>
-<div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/about> 关于 </a><a class=menu-item href=/categories/thoughts/ title=杂谈> 杂谈 </a><a class=menu-item href=/series/> 系列 </a><a class=menu-item href=https://link.zhaouncle.com rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i> </a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i> </a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i> </a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
-<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-<select class=color-theme-select id=theme-select-desktop title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
-</a></div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=易波叶平><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=mobile-header-typeit class=typeit></span></a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div>
-<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
-取消
-</a>
-</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/about title>关于</a><a class=menu-item href=/categories/thoughts/ title=杂谈>杂谈</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=https://link.zhaouncle.com title rel="noopener noreffer" target=_blank><i class="fas fa-link fa-fw"></i></a><a class=menu-item href=https://github.com/dillonzq/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a class=menu-item href=/uptime-status/ title=UpStatus><i class="fas fa-heart fa-fw"></i></a><a class=menu-item href=https://k8syaml.com/ title=k8syaml rel="noopener noreffer" target=_blank><i class="fab fa-docker"></i></a><a class=menu-item href=https://www.cnblogs.com/UncleZhao/ title=博客园 rel="noopener noreffer" target=_blank><i class="fas fa-blog"></i></a><a href=# onclick=return!1 class="menu-item theme-select" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-<select class=color-theme-select id=theme-select-mobile title=切换主题><option value=light>浅色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟随系统</option></select>
-</a></div>
-</div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Hugo（一）Github Pages 搭建个人博客 - 易波叶平</title><meta name="Description" content="hugo 使用 LoveIt 主题搭建个人博客"><meta property="og:title" content="Hugo（一）Github Pages 搭建个人博客" />
+<meta property="og:description" content="hugo 使用 LoveIt 主题搭建个人博客" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhaouncle.com/hugo/" /><meta property="og:image" content="https://zhaouncle.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-05T08:53:52+08:00" />
+<meta property="article:modified_time" content="2021-12-26T23:53:54+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://zhaouncle.com/logo.png"/>
+
+<meta name="twitter:title" content="Hugo（一）Github Pages 搭建个人博客"/>
+<meta name="twitter:description" content="hugo 使用 LoveIt 主题搭建个人博客"/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://zhaouncle.com/hugo/" /><link rel="prev" href="https://zhaouncle.com/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/" /><link rel="next" href="https://zhaouncle.com/centos7-%E5%AE%89%E8%A3%85-elk7/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo（一）Github Pages 搭建个人博客",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zhaouncle.com\/hugo\/"
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  915 ,
+        "url": "https:\/\/zhaouncle.com\/hugo\/","datePublished": "2020-06-05T08:53:52+08:00","dateModified": "2021-12-26T23:53:54+08:00","publisher": {
+            "@type": "Organization",
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "赵叔"
+            },"description": "hugo 使用 LoveIt 主题搭建个人博客"
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
 </header>
 <div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
+    <div id="search-dropdown-desktop"></div>
 </div>
 <div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
+    <div id="search-dropdown-mobile"></div>
 </div>
-<main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>目录</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo（一）Github Pages 搭建个人博客</h1><div class=post-meta>
-<div class=post-meta-line>
-<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=http://zhaouncle.github.io title=Author target=_blank rel="noopener noreffer author" class=author>赵叔</a>
-</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/hugo/><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-06-05>2020-06-05</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-12-26>2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 915 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id=/hugo/ class=leancloud_visitors data-flag-title="Hugo（一）Github Pages 搭建个人博客">
-<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-</span>&nbsp;<span id=/hugo/ class=comment_count data-flag-title="Hugo（一）Github Pages 搭建个人博客">
-<i class="far fa-comments fa-fw"></i>&nbsp;<span class=waline-comment-count id=waline-comment-count></span>&nbsp;条评论
-</span>&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#序言>序言</a></li>
-<li><a href=#安装>安装</a></li>
-<li><a href=#构建-hugo-项目>构建 hugo 项目</a></li>
-<li><a href=#添加-loveit-主题>添加 LoveIt 主题</a></li>
-<li><a href=#启动-hugo-server>启动 hugo server</a></li>
-<li><a href=#配置-github-pages>配置 Github Pages</a></li>
-</ul>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo（一）Github Pages 搭建个人博客</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-05">2020-06-05</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-12-26">2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 915 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/hugo/" class="leancloud_visitors" data-flag-title="Hugo（一）Github Pages 搭建个人博客">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/hugo/" class="comment_count" data-flag-title="Hugo（一）Github Pages 搭建个人博客">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#序言">序言</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#构建-hugo-项目">构建 hugo 项目</a></li>
+    <li><a href="#添加-loveit-主题">添加 LoveIt 主题</a></li>
+    <li><a href="#启动-hugo-server">启动 hugo server</a></li>
+    <li><a href="#配置-github-pages">配置 Github Pages</a></li>
+  </ul>
 </nav></div>
-</div><div class=content id=content><h1 id=序言>序言</h1>
+            </div><div class="content" id="content"><h1 id="序言">序言</h1>
 <p>Hugo 号称构建网站最快的框架，看过其他相关资料，hexo 在文章数量大的前提下，建站成静态文件的速度很慢，另外从主题（themes）这个角度去考虑，简单也是我的首选，于是从 hugo 下手自己的第一个博客网站。</p>
-<h1 id=安装>安装</h1>
+<h1 id="安装">安装</h1>
 <ol>
 <li>mac 安装 hugo</li>
 </ol>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>brew install hugo
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">brew install hugo
 </code></pre></td></tr></table>
 </div>
-</div><ol start=2>
+</div><ol start="2">
 <li>确认安装成功，可用命令行检查版本号进行测试</li>
 </ol>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>hugo version
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo version
 </code></pre></td></tr></table>
 </div>
-</div><ol start=3>
+</div><ol start="3">
 <li>
 <p>其他平台可用直接下载二进制包进行使用，无需编译</p>
-<p><a href=https://github.com/gohugoio/hugo/releases target=_blank rel="noopener noreffer">https://github.com/gohugoio/hugo/releases</a></p>
+<p><a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">https://github.com/gohugoio/hugo/releases</a></p>
 </li>
 </ol>
-<h1 id=构建-hugo-项目>构建 hugo 项目</h1>
+<h1 id="构建-hugo-项目">构建 hugo 项目</h1>
 <ol>
 <li>新建博客站点</li>
 </ol>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>hugo new site MyBlogHugo
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo new site MyBlogHugo
 </code></pre></td></tr></table>
 </div>
-</div><ol start=2>
+</div><ol start="2">
 <li>创建完站点后的文件结构</li>
 </ol>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>MyBlogHugo
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">MyBlogHugo
 ├── archetypes
 │   └── default.md
 ├── config.toml
@@ -182,39 +222,39 @@
 └── themes
 </code></pre></td></tr></table>
 </div>
-</div><h1 id=添加-loveit-主题>添加 LoveIt 主题</h1>
+</div><h1 id="添加-loveit-主题">添加 LoveIt 主题</h1>
 <ol>
 <li>
 <p>Why choose it?</p>
-<p>在 <a href=https://themes.gohugo.io// target=_blank rel="noopener noreffer">Hugo 主题市场</a> 挑了半天，还是决定用 <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer">LoveIt</a> 这个主题。</p>
-<p>这个 themes 简单好看，功能齐全，作者也一直在努力更新，还支持多语言版本，包括 seo、搜索等功能都有，可以参考 <a href=https://hugoloveit.com/zh-cn/ target=_blank rel="noopener noreffer">demo 地址</a>。</p>
+<p>在 <a href="https://themes.gohugo.io//" target="_blank" rel="noopener noreffer">Hugo 主题市场</a> 挑了半天，还是决定用 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer">LoveIt</a> 这个主题。</p>
+<p>这个 themes 简单好看，功能齐全，作者也一直在努力更新，还支持多语言版本，包括 seo、搜索等功能都有，可以参考 <a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer">demo 地址</a>。</p>
 </li>
 <li>
 <p>将主题作为子模块</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>cd</span> MyBlogHugo
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> MyBlogHugo
 git init
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
-<h1 id=启动-hugo-server>启动 hugo server</h1>
+<h1 id="启动-hugo-server">启动 hugo server</h1>
 <ol>
 <li>
 <p>启动 hugo 作为本地调试使用，在浏览器打开 http://localhost:1313/ 即可查看效果。</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>hugo server --disableFastRender
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo server --disableFastRender
 </code></pre></td></tr></table>
 </div>
 </div><p>参数含义：</p>
@@ -222,107 +262,107 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </li>
 <li>
 <p>生成静态文件，会在MyBlogHugo 下面生成 public 的静态文件目录</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>hugo
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">hugo
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>我是使用 LoveIt 主题自带的 exampleSite 的 config.toml 来进行修改和配置的。</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>cd</span> MyBlogHugo     
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> MyBlogHugo     
 cp themes/LoveIt/exampleSite/config.toml .                
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>创建博客文章之前，我会使用example 的默认创建初始化详情来进行配置和修改.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>cp themes/LoveIt/archetypes/default.md archetypes/
-<span class=c1># 这样，你每次创建文章的时候，都会使用这里的默认配置进行创建</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cp themes/LoveIt/archetypes/default.md archetypes/
+<span class="c1"># 这样，你每次创建文章的时候，都会使用这里的默认配置进行创建</span>
 hugo new posts/test01.md
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>default.md 查看</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=se>\-</span>--
-title: <span class=s2>&#34;{{ replace .TranslationBaseName &#34;</span>-<span class=s2>&#34; &#34;</span> <span class=s2>&#34; | title }}&#34;</span>
-subtitle: <span class=s2>&#34;&#34;</span>
-date: <span class=o>{{</span> .Date <span class=o>}}</span>
-lastmod: <span class=o>{{</span> .Date <span class=o>}}</span>
-draft: <span class=nb>false</span> <span class=c1>#是否作为草稿，如果为 true，不会生产静态文件到 public 目录</span>
-author: <span class=s2>&#34;赵叔&#34;</span>
-authorLink: <span class=s2>&#34;&#34;</span>
-description: <span class=s2>&#34;&#34;</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="se">\-</span>--
+title: <span class="s2">&#34;{{ replace .TranslationBaseName &#34;</span>-<span class="s2">&#34; &#34;</span> <span class="s2">&#34; | title }}&#34;</span>
+subtitle: <span class="s2">&#34;&#34;</span>
+date: <span class="o">{{</span> .Date <span class="o">}}</span>
+lastmod: <span class="o">{{</span> .Date <span class="o">}}</span>
+draft: <span class="nb">false</span> <span class="c1">#是否作为草稿，如果为 true，不会生产静态文件到 public 目录</span>
+author: <span class="s2">&#34;赵叔&#34;</span>
+authorLink: <span class="s2">&#34;&#34;</span>
+description: <span class="s2">&#34;&#34;</span>
 
-tags: <span class=o>[]</span>
-categories: <span class=o>[]</span>
+tags: <span class="o">[]</span>
+categories: <span class="o">[]</span>
 
-hiddenFromHomePage: <span class=nb>false</span>
-hiddenFromSearch: <span class=nb>false</span>
+hiddenFromHomePage: <span class="nb">false</span>
+hiddenFromSearch: <span class="nb">false</span>
 
-featuredImage: <span class=s2>&#34;&#34;</span>
-featuredImagePreview: <span class=s2>&#34;&#34;</span>
+featuredImage: <span class="s2">&#34;&#34;</span>
+featuredImagePreview: <span class="s2">&#34;&#34;</span>
 
 toc:
-  enable: <span class=nb>true</span>	<span class=c1>#是 否展开右边目录栏</span>
+  enable: <span class="nb">true</span>	<span class="c1">#是 否展开右边目录栏</span>
 math:
-  enable: <span class=nb>false</span>
-lightgallery: <span class=nb>false</span>
-license: <span class=s2>&#34;&#34;</span>
+  enable: <span class="nb">false</span>
+lightgallery: <span class="nb">false</span>
+license: <span class="s2">&#34;&#34;</span>
 
-<span class=se>\-</span>--
+<span class="se">\-</span>--
 
 &lt;!--more--&gt;
 
@@ -331,106 +371,115 @@ license: <span class=s2>&#34;&#34;</span>
 </div>
 </div></li>
 </ol>
-<h1 id=配置-github-pages>配置 Github Pages</h1>
+<h1 id="配置-github-pages">配置 Github Pages</h1>
 <ol>
 <li>登录 github，在设置那里创建个人 repo 仓库，一共 2 个，一个是 <username>.github.io 作为个人站点 public 的静态文件，一个是 MyBlogHugo 作为除了 public 这个静态目录的所有文件的仓库。记得创建空repo，不要添加 README 文件哦。</li>
 </ol>
-<img src=https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20200605-112904@2x.png width=800 hegiht=250 align=center/>
-<ol start=2>
+  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/WX20200605-112904@2x.png" width="800" hegiht="250" align=center/>
+<ol start="2">
 <li>初始化仓库 MyBlogHugo，public 目录要忽略，不上传</li>
 </ol>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>cd</span> MyBlogHugo
-<span class=nb>echo</span> <span class=s2>&#34;!public/&#34;</span> &gt;&gt; .gitignore 
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> MyBlogHugo
+<span class="nb">echo</span> <span class="s2">&#34;!public/&#34;</span> &gt;&gt; .gitignore 
 git init
 git remote add origin git@github.com:ZhaoUncle/MyBlogHugo.git
 git add .
-git commit -m <span class=s2>&#34;no public&#34;</span>
+git commit -m <span class="s2">&#34;no public&#34;</span>
 git pull --rebase origin master
 git push -u origin master
 </code></pre></td></tr></table>
 </div>
-</div><ol start=3>
+</div><ol start="3">
 <li>初始化仓库 zhaouncle.github.io</li>
 </ol>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=nb>cd</span> public
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> public
 git init
 git remote add origin git@github.com:ZhaoUncle/zhaouncle.github.io.git
 git add .
-git commit -m <span class=s2>&#34;my blog hugo&#34;</span>
+git commit -m <span class="s2">&#34;my blog hugo&#34;</span>
 git pull --rebase origin master
 git push -u origin master
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>之后就可以打开 http://&lt;username>.github.io 进入到你的博客了。</strong></p></div>
-<div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>更新于 2021-12-26</span>
+</div><p><strong>之后就可以打开 http://&lt;username&gt;.github.io 进入到你的博客了。</strong></p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-12-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/hugo/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">hugo</a>,&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/" class="prev" rel="prev" title="万事开头难"><i class="fas fa-angle-left fa-fw"></i>万事开头难</a>
+            <a href="/centos7-%E5%AE%89%E8%A3%85-elk7/" class="next" rel="next" title="【ELK】Centos7 安装 elk 7.6.2">【ELK】Centos7 安装 elk 7.6.2<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
-<div class=post-info-md><span><a class=link-to-mardown href=/hugo/index.md target=_blank rel="noopener noreferrer">阅读原始文档</a>
-</span></div>
-<div class=post-info-share>
-<span></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/hugo/>hugo</a>,&nbsp;<a href=/tags/%E5%8D%9A%E5%AE%A2/>博客</a></section>
-<section>
-<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
-</section>
-</div>
-<div class=post-nav><a href=/%E4%B8%87%E4%BA%8B%E5%BC%80%E5%A4%B4%E9%9A%BE/ class=prev rel=prev title=万事开头难><i class="fas fa-angle-left fa-fw"></i>万事开头难</a>
-<a href=/centos7-%E5%AE%89%E8%A3%85-elk7/ class=next rel=next title="【ELK】Centos7 安装 elk 7.6.2">【ELK】Centos7 安装 elk 7.6.2<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=waline class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://waline.js.org/>Waline</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>
-由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=http://zhaouncle.github.io target=_blank rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-<div class=footer-line>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=post-meta-item id=busuanzi_container_site_pv style=display:inline>
-<span class=post-meta-item-icon><i class="fa fa-eye"></i></span>
-<span class=site-pv title=总访问量><span id=busuanzi_value_site_pv></span></span>
-</span></div>
-<div class=footer-line><script type=text/javascript>document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))</script></div>
-</div></footer></div>
-<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论>
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><div id=cookieconsent-container></div><div class=assets><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js defer></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-168242983-1')</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
-<div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{waline:{copyright:!0,dark:"body[theme='dark'], body[theme='black']",el:"#waline",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],highlight:!0,lang:"zh-cn",login:"enable",meta:["nick","mail","link"],pageSize:10,serverURL:"https://waline-lx1l07bh7-zhaouncle.vercel.app/",uploadImage:!0,visitor:!0}},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},data:{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},sharerjs:!0,typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},duration:-1,speed:100}}</script><script type=text/javascript src=/lib/waline/Waline.min.js defer></script><script type=text/javascript src=/js/waline.min.js defer></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/js/cookieconsent.min.js defer></script></div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
+                    </span></div>
+            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168242983-1');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://waline-lx1l07bh7-zhaouncle.vercel.app/","uploadImage":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script></div>
 </body>
+
 </html>

@@ -1,1 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>helm - 标签 - 易波叶平</title><link>https://zhaouncle.com/tags/helm/</link><description>helm - 标签 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Tue, 06 Apr 2021 17:54:05 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/helm/" rel="self" type="application/rss+xml"/><item><title>【k8s】Helm 安装 mysql 多版本</title><link>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/</link><pubDate>Tue, 06 Apr 2021 17:54:05 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/</guid><description>【k8s】Helm 安装 mysql 多版本</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>helm - 标签 - 易波叶平</title>
+        <link>https://zhaouncle.com/tags/helm/</link>
+        <description>helm - 标签 - 易波叶平</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Tue, 06 Apr 2021 17:54:05 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/helm/" rel="self" type="application/rss+xml" /><item>
+    <title>【k8s】Helm 安装 mysql 多版本</title>
+    <link>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/</link>
+    <pubDate>Tue, 06 Apr 2021 17:54:05 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E5%AE%89%E8%A3%85mysql%E5%A4%9A%E7%89%88%E6%9C%AC/</guid>
+    <description><![CDATA[【k8s】Helm 安装 mysql 多版本]]></description>
+</item></channel>
+</rss>

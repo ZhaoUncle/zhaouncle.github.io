@@ -1,1 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>gitlab - 标签 - 易波叶平</title><link>https://zhaouncle.com/tags/gitlab/</link><description>gitlab - 标签 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 04 Apr 2021 22:01:12 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/gitlab/" rel="self" type="application/rss+xml"/><item><title>Gitlab安装</title><link>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/</link><pubDate>Sun, 04 Apr 2021 22:01:12 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/</guid><description>Gitlab 安装</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>gitlab - 标签 - 易波叶平</title>
+        <link>https://zhaouncle.com/tags/gitlab/</link>
+        <description>gitlab - 标签 - 易波叶平</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 04 Apr 2021 22:01:12 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/gitlab/" rel="self" type="application/rss+xml" /><item>
+    <title>Gitlab安装</title>
+    <link>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/</link>
+    <pubDate>Sun, 04 Apr 2021 22:01:12 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/</guid>
+    <description><![CDATA[Gitlab 安装]]></description>
+</item></channel>
+</rss>

@@ -1,1 +1,36 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>nginx - 标签 - 易波叶平</title><link>https://zhaouncle.com/tags/nginx/</link><description>nginx - 标签 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 16 May 2021 14:45:01 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/nginx/" rel="self" type="application/rss+xml"/><item><title>【Nginx】修改 nginx 用户 id 和 gid</title><link>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</link><pubDate>Sun, 16 May 2021 14:45:01 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</guid><description>【Nginx】修改 nginx 用户 id 和 gid</description></item><item><title>Nginx 允许 frame 嵌套</title><link>https://zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/</link><pubDate>Fri, 02 Apr 2021 09:28:45 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/</guid><description>Nginx 允许 frame 嵌套</description></item><item><title>【Nginx】 正则在线测试</title><link>https://zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</link><pubDate>Tue, 05 Jan 2021 15:35:17 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</guid><description>【Nginx】 正则在线测试</description></item><item><title>【Nginx】url 带有 “https://” 双斜杠特殊处理</title><link>https://zhaouncle.com/nginx-uri%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86/</link><pubDate>Tue, 05 Jan 2021 14:16:03 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/nginx-uri%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86/</guid><description>【Nginx】url 带有 “https://” 双斜杠特殊处理</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>nginx - 标签 - 易波叶平</title>
+        <link>https://zhaouncle.com/tags/nginx/</link>
+        <description>nginx - 标签 - 易波叶平</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 16 May 2021 14:45:01 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/nginx/" rel="self" type="application/rss+xml" /><item>
+    <title>【Nginx】修改 nginx 用户 id 和 gid</title>
+    <link>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</link>
+    <pubDate>Sun, 16 May 2021 14:45:01 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/nginx-%E4%BF%AE%E6%94%B9nginx%E7%94%A8%E6%88%B7id%E5%92%8Cgid/</guid>
+    <description><![CDATA[【Nginx】修改 nginx 用户 id 和 gid]]></description>
+</item><item>
+    <title>Nginx 允许 frame 嵌套</title>
+    <link>https://zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/</link>
+    <pubDate>Fri, 02 Apr 2021 09:28:45 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/nginx%E5%85%81%E8%AE%B8frame%E5%B5%8C%E5%A5%97/</guid>
+    <description><![CDATA[Nginx 允许 frame 嵌套]]></description>
+</item><item>
+    <title>【Nginx】 正则在线测试</title>
+    <link>https://zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</link>
+    <pubDate>Tue, 05 Jan 2021 15:35:17 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/nginx-rule%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95/</guid>
+    <description><![CDATA[【Nginx】 正则在线测试]]></description>
+</item><item>
+    <title>【Nginx】url 带有 “https://” 双斜杠特殊处理</title>
+    <link>https://zhaouncle.com/nginx-uri%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86/</link>
+    <pubDate>Tue, 05 Jan 2021 14:16:03 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/nginx-uri%E7%89%B9%E6%AE%8A%E5%A4%84%E7%90%86/</guid>
+    <description><![CDATA[【Nginx】url 带有 “https://” 双斜杠特殊处理]]></description>
+</item></channel>
+</rss>

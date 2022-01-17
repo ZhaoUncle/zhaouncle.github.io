@@ -1,1 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>庄子 - 标签 - 易波叶平</title><link>https://zhaouncle.com/tags/%E5%BA%84%E5%AD%90/</link><description>庄子 - 标签 - 易波叶平</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor><webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 19 Jul 2020 12:36:31 +0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/%E5%BA%84%E5%AD%90/" rel="self" type="application/rss+xml"/><item><title>庄子*逍遥游</title><link>https://zhaouncle.com/%E5%BA%84%E5%AD%90/</link><pubDate>Sun, 19 Jul 2020 12:36:31 +0800</pubDate><author><name>赵叔</name></author><guid>https://zhaouncle.com/%E5%BA%84%E5%AD%90/</guid><description>逍遥游</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>庄子 - 标签 - 易波叶平</title>
+        <link>https://zhaouncle.com/tags/%E5%BA%84%E5%AD%90/</link>
+        <description>庄子 - 标签 - 易波叶平</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Sun, 19 Jul 2020 12:36:31 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/%E5%BA%84%E5%AD%90/" rel="self" type="application/rss+xml" /><item>
+    <title>庄子*逍遥游</title>
+    <link>https://zhaouncle.com/%E5%BA%84%E5%AD%90/</link>
+    <pubDate>Sun, 19 Jul 2020 12:36:31 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/%E5%BA%84%E5%AD%90/</guid>
+    <description><![CDATA[逍遥游]]></description>
+</item></channel>
+</rss>
