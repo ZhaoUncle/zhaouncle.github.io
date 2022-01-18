@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "cdn","wordcount":  601 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "cdn","wordcount":  608 ,
         "url": "https:\/\/zhaouncle.com\/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98\/","datePublished": "2020-09-30T10:46:26+08:00","dateModified": "2020-09-30T10:46:26+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,12 +126,19 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-cdn-缓存">1. cdn 缓存</a></li>
+    <li><a href="#2-jsdelivr的cdn使用规则">2. jsdelivr的cdn使用规则</a></li>
+    <li><a href="#3-jsdelivr-缓存刷新方法">3. jsdelivr 缓存刷新方法</a></li>
+    <li><a href="#4-发现推送上去但是-cdn-打不开啥原因">4. 发现推送上去，但是 cdn 打不开？啥原因</a></li>
+  </ul>
+</nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">jsdelivr 缓存刷新</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/cdn/"><i class="far fa-folder fa-fw"></i>cdn</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-30">2020-09-30</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-09-30">2020-09-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 601 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-30">2020-09-30</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-09-30">2020-09-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 608 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98/" class="leancloud_visitors" data-flag-title="jsdelivr 缓存刷新">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;<span id="/jsdelivr%E6%B8%85%E7%BC%93%E5%AD%98/" class="comment_count" data-flag-title="jsdelivr 缓存刷新">
@@ -142,14 +149,7 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-cdn-缓存">1. cdn 缓存</a></li>
-    <li><a href="#2-jsdelivr的cdn使用规则">2. jsdelivr的cdn使用规则</a></li>
-    <li><a href="#3-jsdelivr-缓存刷新方法">3. jsdelivr 缓存刷新方法</a></li>
-    <li><a href="#4-发现推送上去但是-cdn-打不开啥原因">4. 发现推送上去，但是 cdn 打不开？啥原因</a></li>
-  </ul>
-</nav></div>
+                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -158,12 +158,12 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2020-09-30T10:46:26" title="September 30, 2020">2020-09-30</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="1-cdn-缓存">1. cdn 缓存</h1>
-<p>jsDelivr 提供的全球 CDN 加速，CDN的分流作用不仅减少了用户的访问延时，也减少的源站的负载。因为 jsDelivr 是开源的免费 cdn，所以我个人一直在使用他，当然，你可以使用腾讯云，每个月 10G 基本上也足够用了，老用户甚至还要 50G 每月的流量，也着实很香。</p>
+            </div><h1 id="1-cdn-缓存" class="headerLink">
+    <a href="#1-cdn-%e7%bc%93%e5%ad%98" class="header-mark"></a>1. cdn 缓存</h1><p>jsDelivr 提供的全球 CDN 加速，CDN的分流作用不仅减少了用户的访问延时，也减少的源站的负载。因为 jsDelivr 是开源的免费 cdn，所以我个人一直在使用他，当然，你可以使用腾讯云，每个月 10G 基本上也足够用了，老用户甚至还要 50G 每月的流量，也着实很香。</p>
 <p><strong>缺点：</strong></p>
 <p>当网站更新时，如果CDN节点上数据没有及时更新，即便用户在浏览器使用 Ctrl +F5（win）或者 command+shift+R（mac）的强制刷新方式使浏览器端的缓存失效，也会因为CDN边缘节点没有同步最新数据而导致用户端未能及时更新。</p>
-<h1 id="2-jsdelivr的cdn使用规则">2. jsdelivr的cdn使用规则</h1>
-<p>其实如何使用 jsdelivr，在<a href="https://www.jsdelivr.com/features" target="_blank" rel="noopener noreffer">官网</a>上面就有介绍了，不过还是简单介绍下我经常使用的 github</p>
+<h1 id="2-jsdelivr的cdn使用规则" class="headerLink">
+    <a href="#2-jsdelivr%e7%9a%84cdn%e4%bd%bf%e7%94%a8%e8%a7%84%e5%88%99" class="header-mark"></a>2. jsdelivr的cdn使用规则</h1><p>其实如何使用 jsdelivr，在<a href="https://www.jsdelivr.com/features" target="_blank" rel="noopener noreffer">官网</a>上面就有介绍了，不过还是简单介绍下我经常使用的 github</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -192,8 +192,8 @@ https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
 https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="3-jsdelivr-缓存刷新方法">3. jsdelivr 缓存刷新方法</h1>
-<p>对于 jsDelivr，缓存刷新的方式也很简单，只需将想刷新的链接的开头的cdn 更改为 purge，不过官网说后面会推出刷新工具，我这边还在观望中</p>
+</div><h1 id="3-jsdelivr-缓存刷新方法" class="headerLink">
+    <a href="#3-jsdelivr-%e7%bc%93%e5%ad%98%e5%88%b7%e6%96%b0%e6%96%b9%e6%b3%95" class="header-mark"></a>3. jsdelivr 缓存刷新方法</h1><p>对于 jsDelivr，缓存刷新的方式也很简单，只需将想刷新的链接的开头的cdn 更改为 purge，不过官网说后面会推出刷新工具，我这边还在观望中</p>
 <p><code>https://cdn.jsdelivr.net/</code></p>
 <p>切换为</p>
 <p><code>https://purge.jsdelivr.net/</code></p>
@@ -207,8 +207,8 @@ https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200930110114144.png"
         title="image-20200930110114144"
     /></p>
-<h1 id="4-发现推送上去但是-cdn-打不开啥原因">4. 发现推送上去，但是 cdn 打不开？啥原因</h1>
-<p>其实也就是 cdn 缓存边缘节点还没缓存过去，方法如 3 那样直接 purge 访问强制刷新到边缘节点就好啦。</p></div>
+<h1 id="4-发现推送上去但是-cdn-打不开啥原因" class="headerLink">
+    <a href="#4-%e5%8f%91%e7%8e%b0%e6%8e%a8%e9%80%81%e4%b8%8a%e5%8e%bb%e4%bd%86%e6%98%af-cdn-%e6%89%93%e4%b8%8d%e5%bc%80%e5%95%a5%e5%8e%9f%e5%9b%a0" class="header-mark"></a>4. 发现推送上去，但是 cdn 打不开？啥原因</h1><p>其实也就是 cdn 缓存边缘节点还没缓存过去，方法如 3 那样直接 purge 访问强制刷新到边缘节点就好啦。</p></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -242,15 +242,17 @@ https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/avatar.png
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

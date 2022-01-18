@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s, skywalking","wordcount":  969 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s, skywalking","wordcount":  977 ,
         "url": "https:\/\/zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking\/","datePublished": "2021-04-11T17:34:51+08:00","dateModified": "2021-04-11T17:34:51+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,23 +126,7 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【k8s】Helm 部署 skywalking</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 969 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" class="leancloud_visitors" data-flag-title="【k8s】Helm 部署 skywalking">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" class="comment_count" data-flag-title="【k8s】Helm 部署 skywalking">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-前言">1. 前言</a></li>
     <li><a href="#2-环境">2. 环境</a></li>
@@ -159,6 +143,22 @@
     <li><a href="#6-部署一个-java-微服务示例并接入-skywalking">6. 部署一个 java 微服务示例，并接入 skywalking</a></li>
   </ul>
 </nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【k8s】Helm 部署 skywalking</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-04-11">2021-04-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 977 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" class="leancloud_visitors" data-flag-title="【k8s】Helm 部署 skywalking">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" class="comment_count" data-flag-title="【k8s】Helm 部署 skywalking">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -167,10 +167,10 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2021-04-11T17:34:51" title="April 11, 2021">2021-04-11</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="1-前言">1. 前言</h1>
-<p>本实验文档基于单机 es7 作为 skywalking 的后端存储，使用 nfs 动态卷 storageclass，es 没有使用账号密码。</p>
-<h1 id="2-环境">2. 环境</h1>
-<ul>
+            </div><h1 id="1-前言" class="headerLink">
+    <a href="#1-%e5%89%8d%e8%a8%80" class="header-mark"></a>1. 前言</h1><p>本实验文档基于单机 es7 作为 skywalking 的后端存储，使用 nfs 动态卷 storageclass，es 没有使用账号密码。</p>
+<h1 id="2-环境" class="headerLink">
+    <a href="#2-%e7%8e%af%e5%a2%83" class="header-mark"></a>2. 环境</h1><ul>
 <li>k8s 集群：v1.20.4 版本</li>
 </ul>
 <table>
@@ -208,9 +208,9 @@
 </ul>
 <p>#3. nfs 安装</p>
 <p><strong>参考</strong>：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" target="_blank" rel="noopener noreffer">K8s环境 nfs 动态存储卷部署</a></p>
-<h1 id="4-elasticsearch-安装">4. elasticsearch 安装</h1>
-<h2 id="41-安装-es-7120">4.1 安装 es 7.12.0</h2>
-<div class="highlight"><div class="chroma">
+<h1 id="4-elasticsearch-安装" class="headerLink">
+    <a href="#4-elasticsearch-%e5%ae%89%e8%a3%85" class="header-mark"></a>4. elasticsearch 安装</h1><h2 id="41-安装-es-7120" class="headerLink">
+    <a href="#41-%e5%ae%89%e8%a3%85-es-7120" class="header-mark"></a>4.1 安装 es 7.12.0</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -372,9 +372,9 @@ EOF
 kubectl apply -f elasticsearch-single.yaml 
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="5-安装-skywalking">5. 安装 skywalking</h1>
-<h2 id="51-安装-helm">5.1 安装 helm</h2>
-<div class="highlight"><div class="chroma">
+</div><h1 id="5-安装-skywalking" class="headerLink">
+    <a href="#5-%e5%ae%89%e8%a3%85-skywalking" class="header-mark"></a>5. 安装 skywalking</h1><h2 id="51-安装-helm" class="headerLink">
+    <a href="#51-%e5%ae%89%e8%a3%85-helm" class="header-mark"></a>5.1 安装 helm</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -560,8 +560,8 @@ service/skywalking-ui    NodePort    10.0.0.87    &lt;none&gt;        80:30553/T
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210411183850.png"
         title="image-20210411183850273"
     /></p>
-<h1 id="6-部署一个-java-微服务示例并接入-skywalking">6. 部署一个 java 微服务示例，并接入 skywalking</h1>
-<p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" target="_blank" rel="noopener noreffer">K8s java 微服务部署示例</a></p>
+<h1 id="6-部署一个-java-微服务示例并接入-skywalking" class="headerLink">
+    <a href="#6-%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aa-java-%e5%be%ae%e6%9c%8d%e5%8a%a1%e7%a4%ba%e4%be%8b%e5%b9%b6%e6%8e%a5%e5%85%a5-skywalking" class="header-mark"></a>6. 部署一个 java 微服务示例，并接入 skywalking</h1><p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" target="_blank" rel="noopener noreffer">K8s java 微服务部署示例</a></p>
 <p>#7. 参考：</p>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&amp;mid=2247495145&amp;idx=1&amp;sn=87c5ff37f836d53c98304a88870d2e6d&amp;chksm=eac6ccc0ddb145d6192df1ec738b885f979a868f96dbd6116eb05953989e64a67713d78f039e&amp;mpshare=1&amp;scene=1&amp;srcid=04098L9gzve10EptJBFeLVHq&amp;sharer_sharetime=1617928300892&amp;sharer_shareid=09464b4a0389b967659ba78076a1ef58#rd" target="_blank" rel="noopener noreffer">https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&mid=2247495145&idx=1&sn=87c5ff37f836d53c98304a88870d2e6d&chksm=eac6ccc0ddb145d6192df1ec738b885f979a868f96dbd6116eb05953989e64a67713d78f039e&mpshare=1&scene=1&srcid=04098L9gzve10EptJBFeLVHq&sharer_sharetime=1617928300892&sharer_shareid=09464b4a0389b967659ba78076a1ef58#rd</a></li>
@@ -599,15 +599,17 @@ service/skywalking-ui    NodePort    10.0.0.87    &lt;none&gt;        80:30553/T
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

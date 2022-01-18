@@ -126,7 +126,21 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#notion-绑定自定义域名">Notion 绑定自定义域名</a>
+      <ul>
+        <li><a href="#原理说明">原理说明</a></li>
+        <li><a href="#准备工作">准备工作</a>
+          <ul>
+            <li><a href="#操作过程">操作过程</a></li>
+            <li><a href="#worker-代码">Worker 代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Notion 绑定自定义域名</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
@@ -142,21 +156,7 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#notion-绑定自定义域名">Notion 绑定自定义域名</a>
-      <ul>
-        <li><a href="#原理说明">原理说明</a></li>
-        <li><a href="#准备工作">准备工作</a>
-          <ul>
-            <li><a href="#操作过程">操作过程</a></li>
-            <li><a href="#worker-代码">Worker 代码</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
+                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -165,8 +165,8 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2020-10-29T14:55:40" title="October 29, 2020">2020-10-29</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="notion-绑定自定义域名">Notion 绑定自定义域名</h1>
-<p>自定义域名是个很常见的需求，很多 Notion 用户拿 Notion 作博客，想给自己绑定个性化的域名却发现没有很好的途径，最后域名只能做个转发，跳转到 Notion 官方页面。</p>
+            </div><h1 id="notion-绑定自定义域名" class="headerLink">
+    <a href="#notion-%e7%bb%91%e5%ae%9a%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%9f%e5%90%8d" class="header-mark"></a>Notion 绑定自定义域名</h1><p>自定义域名是个很常见的需求，很多 Notion 用户拿 Notion 作博客，想给自己绑定个性化的域名却发现没有很好的途径，最后域名只能做个转发，跳转到 Notion 官方页面。</p>
 <p>考虑到很多 Notion 用户并非程序员，所以这个文章不会解释过多的技术细节，是新手向的教程。</p>
 <p>按照下面的教程做完，将会实现。</p>
 <ol>
@@ -174,8 +174,8 @@
 <li>浏览器地址上显示自己的域名</li>
 <li>访问页面时会有一定程度的加速效果</li>
 </ol>
-<h2 id="原理说明">原理说明</h2>
-<p>官方目前不打算推出自定义域名的特性。如果你将自己的域名设置为隐式转发会在前端看到一个这样的提示。</p>
+<h2 id="原理说明" class="headerLink">
+    <a href="#%e5%8e%9f%e7%90%86%e8%af%b4%e6%98%8e" class="header-mark"></a>原理说明</h2><p>官方目前不打算推出自定义域名的特性。如果你将自己的域名设置为隐式转发会在前端看到一个这样的提示。</p>
 <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion01.png" width="800" hegiht="250" align=center/>
 <p>其主要的检验手段是在前端 js 做校验， Notion 是一个典型的单页应用，利用 Cloudflare 的 worker 做代理，将 js 中的 <a href="http://notion.so/" target="_blank" rel="noopener noreffer">notion.so</a> 全部替换成自己的域名，这样即可绕过校验。</p>
 <ol>
@@ -187,8 +187,8 @@
 <li>只读，无法登陆，无法评论。仅仅做展示用。</li>
 <li>部分第三发接口无法调用（反正是只读，也没啥问题）</li>
 </ol>
-<h2 id="准备工作">准备工作</h2>
-<ul>
+<h2 id="准备工作" class="headerLink">
+    <a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="header-mark"></a>准备工作</h2><ul>
 <li>
 <p>域名一个</p>
 </li>
@@ -196,8 +196,8 @@
 <p>Cloudflare 帐号一枚 （后面简称 cf）</p>
 </li>
 </ul>
-<h3 id="操作过程">操作过程</h3>
-<ol>
+<h3 id="操作过程" class="headerLink">
+    <a href="#%e6%93%8d%e4%bd%9c%e8%bf%87%e7%a8%8b" class="header-mark"></a>操作过程</h3><ol>
 <li>域名 DNS 服务器设置为 cf （略）。</li>
 <li>为域名配置一条 a 记录，ip 地址随便填（不知道填什么就 ping 下 <a href="http://www.cloudfare.com" target="_blank" rel="noopener noreffer">www.cloudfare.com</a> ，例如 104.17.209.9 ），但是要通过 cf proxy，打开 Cloudflare 的「DNS」编辑页面，添加一条记录。如下图：</li>
 </ol>
@@ -212,8 +212,8 @@
 <li>添加一条 route，并指向上方的 worker rule</li>
 </ol>
 <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/notion05.png" width="800" hegiht="250" align=center/>
-<h3 id="worker-代码">Worker 代码</h3>
-<p>配置 worker：https://www.bilibili.com/video/av64011915/</p>
+<h3 id="worker-代码" class="headerLink">
+    <a href="#worker-%e4%bb%a3%e7%a0%81" class="header-mark"></a>Worker 代码</h3><p>配置 worker：https://www.bilibili.com/video/av64011915/</p>
 <p>cloudfare网址链接：<a href="https://dash.cloudflare.com/" target="_blank" rel="noopener noreffer">https://dash.cloudflare.com</a></p>
 <p><strong>复制下面代码</strong></p>
 <p>第一行改为你的域名。</p>
@@ -410,15 +410,17 @@ async <span class="k">function</span> fetchAndApply<span class="o">(</span>reque
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

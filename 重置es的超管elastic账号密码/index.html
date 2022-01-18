@@ -126,7 +126,12 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-没有忘记-elastic-的超管密码">1. 没有忘记 elastic 的超管密码</a></li>
+    <li><a href="#2-忘记了-elastic-的超管密码">2. 忘记了 elastic 的超管密码</a></li>
+  </ul>
+</nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【ELK】重置 elasticsearch 的超管 elastic 账号密码</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
@@ -142,12 +147,7 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-没有忘记-elastic-的超管密码">1. 没有忘记 elastic 的超管密码</a></li>
-    <li><a href="#2-忘记了-elastic-的超管密码">2. 忘记了 elastic 的超管密码</a></li>
-  </ul>
-</nav></div>
+                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -157,18 +157,18 @@
                         本文最后更新于 <span class="timeago" datetime="2021-03-25T16:11:38" title="March 25, 2021">2021-03-25</span>，文中内容可能已过时。</div>
                 </div>
             </div><p>按照下述步骤创建本地超级账户，然后使用api接口本地超级账户重置elastic账户的密码</p>
-<h1 id="1-没有忘记-elastic-的超管密码">1. 没有忘记 elastic 的超管密码</h1>
-<p>直接通过 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.6/security-api-change-password.html" target="_blank" rel="noopener noreffer">api</a> 重置 elastic 超级管理员的密码</p>
+<h1 id="1-没有忘记-elastic-的超管密码" class="headerLink">
+    <a href="#1-%e6%b2%a1%e6%9c%89%e5%bf%98%e8%ae%b0-elastic-%e7%9a%84%e8%b6%85%e7%ae%a1%e5%af%86%e7%a0%81" class="header-mark"></a>1. 没有忘记 elastic 的超管密码</h1><p>直接通过 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.6/security-api-change-password.html" target="_blank" rel="noopener noreffer">api</a> 重置 elastic 超级管理员的密码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">H</span><span class="w"> </span><span class="s">&#34;Content-Type:application/json&#34;</span><span class="w"> </span><span class="o">-</span><span class="n">XPOST</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">elastic</span><span class="w"> </span><span class="o">&#39;</span><span class="na">http</span>:<span class="c1">//127.0.0.1:9200/_xpack/security/user/elastic/_password&#39; -d &#39;{ &#34;password&#34; : &#34;newpassword&#34; }&#39;
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">H</span><span class="w"> </span><span class="s">&#34;Content-Type:application/json&#34;</span><span class="w"> </span><span class="o">-</span><span class="n">XPOST</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">elastic</span><span class="w"> </span><span class="na">&#39;http</span>:<span class="c1">//127.0.0.1:9200/_xpack/security/user/elastic/_password&#39; -d &#39;{ &#34;password&#34; : &#34;newpassword&#34; }&#39;
 </span></code></pre></td></tr></table>
 </div>
-</div><h1 id="2-忘记了-elastic-的超管密码">2. 忘记了 elastic 的超管密码</h1>
-<ol>
+</div><h1 id="2-忘记了-elastic-的超管密码" class="headerLink">
+    <a href="#2-%e5%bf%98%e8%ae%b0%e4%ba%86-elastic-%e7%9a%84%e8%b6%85%e7%ae%a1%e5%af%86%e7%a0%81" class="header-mark"></a>2. 忘记了 elastic 的超管密码</h1><ol>
 <li>
 <p>确保你的配置文件中支持本地账户认证支持，如果你使用的是xpack的默认配置则无需做特殊修改；如果你配置了其他认证方式则需要确保<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.12/configuring-security.html" target="_blank" rel="noopener noreffer">配置本地认证方式</a>在ES_HOME/config/elasticsearch.yml中；</p>
 </li>
@@ -195,7 +195,7 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">temp_admin</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">temp_admin_passwd</span><span class="w"> </span><span class="o">-</span><span class="n">XPUT</span><span class="w"> </span><span class="o">&#39;</span><span class="na">http</span>:<span class="c1">//127.0.0.1:9200/_xpack/security/user/elastic/_password&#39; -H &#39;Content-Type: application/json&#39; -d&#39;
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">temp_admin</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">temp_admin_passwd</span><span class="w"> </span><span class="o">-</span><span class="n">XPUT</span><span class="w"> </span><span class="na">&#39;http</span>:<span class="c1">//127.0.0.1:9200/_xpack/security/user/elastic/_password&#39; -H &#39;Content-Type: application/json&#39; -d&#39;
 </span><span class="c1"></span><span class="p">{</span><span class="w">
 </span><span class="w">  </span><span class="s">&#34;password&#34;</span><span class="w"> </span>: <span class="s">&#34;new_password&#34;</span><span class="w">
 </span><span class="w"></span><span class="p">}</span><span class="w">
@@ -209,7 +209,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">elastic</span><span class="w"> </span><span class="o">&#39;</span><span class="na">http</span>:<span class="c1">//localhost:9200/_xpack/security/_authenticate?pretty&#39;
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">elastic</span><span class="w"> </span><span class="na">&#39;http</span>:<span class="c1">//localhost:9200/_xpack/security/_authenticate?pretty&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="5">
@@ -248,15 +248,17 @@
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

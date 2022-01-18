@@ -1,8 +1,8 @@
-# 子模块索引已存在问题处理
+# git子模块submodule索引已存在问题处理
 
 <!--more-->
 
-问题： 'public' already exists in the index
+问题： 'public' already exists in the index 或者 fatal: in unpopulated submodule 'public'
 
 场景：github repo 添加 submodule 子模块，使用命令 `git submodule add  git@github.com:test.git public` 报错
 
@@ -10,7 +10,7 @@
 
 最终解决办法：
 
-`git rm -r --cached public`
+`git rm -rf --cached public`
 
 `git submodule add  git@github.com:test.git public`
 

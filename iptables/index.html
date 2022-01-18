@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/iptables\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "iptables","wordcount":  481 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "iptables","wordcount":  502 ,
         "url": "https:\/\/zhaouncle.com\/iptables\/","datePublished": "2020-11-09T16:33:47+08:00","dateModified": "2021-01-22T17:07:11+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,23 +126,7 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【iptables】 简单使用</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/iptables/"><i class="far fa-folder fa-fw"></i>iptables</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-09">2020-11-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-01-22">2021-01-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 481 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/iptables/" class="leancloud_visitors" data-flag-title="【iptables】 简单使用">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/iptables/" class="comment_count" data-flag-title="【iptables】 简单使用">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
     <li><a href="#iptables-管理">iptables 管理</a></li>
     <li><a href="#ip-白名单">ip 白名单</a>
@@ -157,6 +141,22 @@
     </li>
   </ul>
 </nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【iptables】 简单使用</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/iptables/"><i class="far fa-folder fa-fw"></i>iptables</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-09">2020-11-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-01-22">2021-01-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 502 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/iptables/" class="leancloud_visitors" data-flag-title="【iptables】 简单使用">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/iptables/" class="comment_count" data-flag-title="【iptables】 简单使用">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -165,15 +165,15 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2021-01-22T17:07:11" title="January 22, 2021">2021-01-22</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="iptables-管理">iptables 管理</h1>
-<p>iptables 端口映射配置步骤：</p>
+            </div><h1 id="iptables-管理" class="headerLink">
+    <a href="#iptables-%e7%ae%a1%e7%90%86" class="header-mark"></a>iptables 管理</h1><p>iptables 端口映射配置步骤：</p>
 <ol>
 <li>保存现有配置，执行如下命令：iptables-save &gt; iptables.config</li>
 <li>编辑iptables.config 映射对应端口</li>
 <li>更新配置，执行如下命令：iptables-restore &lt; iptables.config</li>
 </ol>
-<h1 id="ip-白名单">ip 白名单</h1>
-<div class="highlight"><div class="chroma">
+<h1 id="ip-白名单" class="headerLink">
+    <a href="#ip-%e7%99%bd%e5%90%8d%e5%8d%95" class="header-mark"></a>ip 白名单</h1><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -255,10 +255,10 @@
 COMMIT
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="1-禁止访问外部某个端口">1. 禁止访问外部某个端口</h3>
-<p><code>iptables -A OUTPUT -p tcp --dport 6382 -j DROP</code></p>
-<h3 id="2-禁止访问某个-ip-的某个端口">2. 禁止访问某个 ip 的某个端口</h3>
-<p><code>iptables -A OUTPUT -p tcp -d 192.168.1.10 --dport 6382 -j DROP</code></p></div>
+</div><h3 id="1-禁止访问外部某个端口" class="headerLink">
+    <a href="#1-%e7%a6%81%e6%ad%a2%e8%ae%bf%e9%97%ae%e5%a4%96%e9%83%a8%e6%9f%90%e4%b8%aa%e7%ab%af%e5%8f%a3" class="header-mark"></a>1. 禁止访问外部某个端口</h3><p><code>iptables -A OUTPUT -p tcp --dport 6382 -j DROP</code></p>
+<h3 id="2-禁止访问某个-ip-的某个端口" class="headerLink">
+    <a href="#2-%e7%a6%81%e6%ad%a2%e8%ae%bf%e9%97%ae%e6%9f%90%e4%b8%aa-ip-%e7%9a%84%e6%9f%90%e4%b8%aa%e7%ab%af%e5%8f%a3" class="header-mark"></a>2. 禁止访问某个 ip 的某个端口</h3><p><code>iptables -A OUTPUT -p tcp -d 192.168.1.10 --dport 6382 -j DROP</code></p></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -292,15 +292,17 @@ COMMIT
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
