@@ -1,22 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>chrome - 标签 - 易波叶平</title>
-        <link>https://zhaouncle.com/tags/chrome/</link>
-        <description>chrome - 标签 - 易波叶平</description>
+        <title>chrome - 分类 - 易波叶平</title>
+        <link>https://zhaouncle.com/categories/chrome/</link>
+        <description>chrome - 分类 - 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 19 Jan 2022 15:15:54 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/tags/chrome/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 19 Jan 2022 15:15:54 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/categories/chrome/" rel="self" type="application/rss+xml" /><item>
     <title>超详细！Chrome 浏览器、浏览器插件下载和安装教程</title>
     <link>https://zhaouncle.com/chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
     <pubDate>Wed, 19 Jan 2022 15:15:54 &#43;0800</pubDate><author>
         <name>赵叔</name>
     </author><guid>https://zhaouncle.com/chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[超详细！Chrome 浏览器、浏览器插件下载和安装教程]]></description>
-</item><item>
-    <title>Chrome 书签同步</title>
-    <link>https://zhaouncle.com/chrome%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5/</link>
-    <pubDate>Wed, 02 Sep 2020 14:30:55 &#43;0800</pubDate><author>
-        <name>赵叔</name>
-    </author><guid>https://zhaouncle.com/chrome%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5/</guid>
-    <description><![CDATA[Chrome 谷歌浏览器书签同步方法]]></description>
 </item></channel>
 </rss>

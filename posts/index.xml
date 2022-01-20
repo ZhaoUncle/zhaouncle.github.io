@@ -4,7 +4,14 @@
         <link>https://zhaouncle.com/posts/</link>
         <description>所有文章 | 易波叶平</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>123zhaoweiping@gmail.com (赵叔)</managingEditor>
-            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Mon, 17 Jan 2022 23:30:50 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>123zhaoweiping@gmail.com (赵叔)</webMaster><lastBuildDate>Wed, 19 Jan 2022 15:15:54 &#43;0800</lastBuildDate><atom:link href="https://zhaouncle.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>超详细！Chrome 浏览器、浏览器插件下载和安装教程</title>
+    <link>https://zhaouncle.com/chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Wed, 19 Jan 2022 15:15:54 &#43;0800</pubDate><author>
+        <name>赵叔</name>
+    </author><guid>https://zhaouncle.com/chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[超详细！Chrome 浏览器、浏览器插件下载和安装教程]]></description>
+</item><item>
     <title>git子模块submodule索引已存在问题处理</title>
     <link>https://zhaouncle.com/git%E5%AD%90%E6%A8%A1%E5%9D%97%E7%B4%A2%E5%BC%95%E5%B7%B2%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</link>
     <pubDate>Mon, 17 Jan 2022 23:30:50 &#43;0800</pubDate><author>
@@ -75,12 +82,5 @@
         <name>赵叔</name>
     </author><guid>https://zhaouncle.com/pipeline%E8%AF%AD%E6%B3%95%E7%94%9F%E6%88%90%E5%99%A8/</guid>
     <description><![CDATA[Pipeline 片段语法生成器]]></description>
-</item><item>
-    <title>DNS刷新办法</title>
-    <link>https://zhaouncle.com/dns%E5%88%B7%E6%96%B0%E5%8A%9E%E6%B3%95/</link>
-    <pubDate>Tue, 13 Apr 2021 10:07:33 &#43;0800</pubDate><author>
-        <name>赵叔</name>
-    </author><guid>https://zhaouncle.com/dns%E5%88%B7%E6%96%B0%E5%8A%9E%E6%B3%95/</guid>
-    <description><![CDATA[DNS刷新办法]]></description>
 </item></channel>
 </rss>
