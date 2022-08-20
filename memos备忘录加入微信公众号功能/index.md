@@ -3,7 +3,9 @@
 
 <!--more-->
 
-# 1. 没有80和443端口就不要看了，浪费时间，因为微信公众号接入只支持80和443
+# 1. 注意
+
+**没有80和443端口就不要看了，浪费时间，因为微信公众号接入只支持80和443**
 
 
 # 2. 安装memos
@@ -142,7 +144,7 @@ server {
 <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442033.png" alt="image-20220820144216003" style="zoom:33%;" />
 3. 按相应要求填写**URL、Token、EncodingAESKey**，然后选择**明文模式**，提交，确认提交成功就好了。
  url 地址是：https://memos-proxy.test.com/wechat
- <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442725.png" alt="image-20220820144228686" style="zoom: 33%;" />
+  <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442725.png" alt="image-20220820144228686" style="zoom: 33%;" />
 
 4. 点击**启用**。
 <img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442298.png" alt="image-20220820144245265" style="zoom:50%;" />
