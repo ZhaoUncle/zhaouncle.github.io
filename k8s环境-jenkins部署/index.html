@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s","wordcount":  6609 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s","wordcount":  6596 ,
         "url": "https:\/\/zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2\/","datePublished": "2021-04-12T22:22:02+08:00","dateModified": "2021-04-12T22:22:02+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,7 +126,23 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【k8s】部署 jenkins 并部署 tomcat 服务示例</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6596 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 14 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="【k8s】部署 jenkins 并部署 tomcat 服务示例">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/" class="comment_count" data-flag-title="【k8s】部署 jenkins 并部署 tomcat 服务示例">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-环境">1. 环境</a></li>
     <li><a href="#2-发布流程">2. 发布流程</a></li>
@@ -162,22 +178,6 @@
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【k8s】部署 jenkins 并部署 tomcat 服务示例</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-04-12">2021-04-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6609 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 14 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="【k8s】部署 jenkins 并部署 tomcat 服务示例">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-jenkins%E9%83%A8%E7%BD%B2/" class="comment_count" data-flag-title="【k8s】部署 jenkins 并部署 tomcat 服务示例">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -186,8 +186,8 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2021-04-12T22:22:02" title="April 12, 2021">2021-04-12</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="1-环境" class="headerLink">
-    <a href="#1-%e7%8e%af%e5%a2%83" class="header-mark"></a>1. 环境</h1><ul>
+            </div><h1 id="1-环境">1. 环境</h1>
+<ul>
 <li>k8s 集群：v1.20.4 版本</li>
 </ul>
 <table>
@@ -216,8 +216,8 @@
 </tr>
 </tbody>
 </table>
-<h1 id="2-发布流程" class="headerLink">
-    <a href="#2-%e5%8f%91%e5%b8%83%e6%b5%81%e7%a8%8b" class="header-mark"></a>2. 发布流程</h1><p><img
+<h1 id="2-发布流程">2. 发布流程</h1>
+<p><img
         class="lazyload"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412222813.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412222813.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412222813.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412222813.png 2x"
@@ -233,12 +233,12 @@
 <li>使用yaml 模板文件部署用镜像仓库中的镜像，kubectl 命令部署pod</li>
 <li>开发测试</li>
 </ul>
-<h1 id="3-harbor-部署" class="headerLink">
-    <a href="#3-harbor-%e9%83%a8%e7%bd%b2" class="header-mark"></a>3. harbor 部署</h1><p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-harbor%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener noreffer">Harbor安装</a></p>
-<h1 id="4-gitlab-部署" class="headerLink">
-    <a href="#4-gitlab-%e9%83%a8%e7%bd%b2" class="header-mark"></a>4. gitlab 部署</h1><p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener noreffer">Gitlab安装</a></p>
-<h1 id="5-nfs-server-部署" class="headerLink">
-    <a href="#5-nfs-server-%e9%83%a8%e7%bd%b2" class="header-mark"></a>5. nfs server 部署</h1><p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" target="_blank" rel="noopener noreffer">K8s环境 nfs 动态存储卷部署</a></p>
+<h1 id="3-harbor-部署">3. harbor 部署</h1>
+<p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-harbor%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener noreffer">Harbor安装</a></p>
+<h1 id="4-gitlab-部署">4. gitlab 部署</h1>
+<p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-gitlab%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener noreffer">Gitlab安装</a></p>
+<h1 id="5-nfs-server-部署">5. nfs server 部署</h1>
+<p>参考：<a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-nfs%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E5%8D%B7%E9%83%A8%E7%BD%B2/" target="_blank" rel="noopener noreffer">K8s环境 nfs 动态存储卷部署</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -253,8 +253,8 @@ echo &#34;/data/nfs/jenkins *(rw,sync,no_root_squash,no_subtree_check)&#34; &gt;
 systemctl restart nfs &amp;&amp; systemctl restart rpcbind
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="6-在-kubernetes-中部署-jenkins" class="headerLink">
-    <a href="#6-%e5%9c%a8-kubernetes-%e4%b8%ad%e9%83%a8%e7%bd%b2-jenkins" class="header-mark"></a>6. 在 Kubernetes 中部署 jenkins</h1><p><img
+</div><h1 id="6-在-kubernetes-中部署-jenkins">6. 在 Kubernetes 中部署 jenkins</h1>
+<p><img
         class="lazyload"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412223131.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412223131.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412223131.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412223131.png 2x"
@@ -262,8 +262,8 @@ systemctl restart nfs &amp;&amp; systemctl restart rpcbind
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412223131.png"
         title="img"
     /></p>
-<h2 id="61-创建-jenkins-动态-pvc" class="headerLink">
-    <a href="#61-%e5%88%9b%e5%bb%ba-jenkins-%e5%8a%a8%e6%80%81-pvc" class="header-mark"></a>6.1 创建 jenkins 动态 pvc</h2><div class="highlight"><div class="chroma">
+<h2 id="61-创建-jenkins-动态-pvc">6.1 创建 jenkins 动态 pvc</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -340,8 +340,8 @@ pod/jenkins-nfs-storage-nfs-client-provisioner-6d8974459b-wwh88   1/1     Runnin
 storageclass.storage.k8s.io/jenkins-nfs-client    cluster.local/jenkins-nfs-storage-nfs-client-provisioner   Delete          Immediate           true                   50s
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="62-yaml-部署-jenkins" class="headerLink">
-    <a href="#62-yaml-%e9%83%a8%e7%bd%b2-jenkins" class="header-mark"></a>6.2 yaml 部署 jenkins</h2><div class="highlight"><div class="chroma">
+</div><h2 id="62-yaml-部署-jenkins">6.2 yaml 部署 jenkins</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
@@ -636,8 +636,8 @@ NAME              TYPE       CLUSTER-IP   EXTERNAL-IP   PORT(S)                 
 service/jenkins   NodePort   10.0.0.229   &lt;none&gt;        80:30008/TCP,50000:30619/TCP   20s   name=jenkins
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="63-控制台访问" class="headerLink">
-    <a href="#63-%e6%8e%a7%e5%88%b6%e5%8f%b0%e8%ae%bf%e9%97%ae" class="header-mark"></a>6.3 控制台访问</h2><p>访问方式：k8s master/node ip+ NodePort</p>
+</div><h2 id="63-控制台访问">6.3 控制台访问</h2>
+<p>访问方式：k8s master/node ip+ NodePort</p>
 <p>访问地址：192.168.110.235:30008</p>
 <p>查看密码：<code>kubectl logs -n ops jenkins-f656474b8-bjv5s |grep -A 3 password</code></p>
 <p><img
@@ -672,8 +672,8 @@ service/jenkins   NodePort   10.0.0.229   &lt;none&gt;        80:30008/TCP,50000
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412231130.png"
         title="img"
     /></p>
-<h2 id="64-jenkins-安装插件" class="headerLink">
-    <a href="#64-jenkins-%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6" class="header-mark"></a>6.4 jenkins 安装插件</h2><p>默认从国外网络下载插件，会比较慢，建议修改成国内源：</p>
+<h2 id="64-jenkins-安装插件">6.4 jenkins 安装插件</h2>
+<p>默认从国外网络下载插件，会比较慢，建议修改成国内源：</p>
 <p>只需要到nfs上，修改PVC挂载的内容即可</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -699,8 +699,8 @@ sed -i &#39;s/http:\/\/www.google.com/https:\/\/www.baidu.com/g&#39; default.jso
 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="65-删除-pod-重建" class="headerLink">
-    <a href="#65-%e5%88%a0%e9%99%a4-pod-%e9%87%8d%e5%bb%ba" class="header-mark"></a>6.5 删除 pod 重建</h2><p><code>kubectl delete pod -n ops jenkins-f656474b8-bjv5s</code></p>
+</div><h2 id="65-删除-pod-重建">6.5 删除 pod 重建</h2>
+<p><code>kubectl delete pod -n ops jenkins-f656474b8-bjv5s</code></p>
 <p>修改完后，jenkins 会重建，打开浏览器访问: <a href="http://nodeport:30008/" target="_blank" rel="noopener noreffer">http://NodeIP:30008</a></p>
 <p>输入账户密码从新登陆 jenkins 控制台</p>
 <p><img
@@ -772,8 +772,8 @@ sed -i &#39;s/http:\/\/www.google.com/https:\/\/www.baidu.com/g&#39; default.jso
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412233541.png"
         title="img"
     /></p>
-<h2 id="66-jenkins-在-k8s-中动态创建代理" class="headerLink">
-    <a href="#66-jenkins-%e5%9c%a8-k8s-%e4%b8%ad%e5%8a%a8%e6%80%81%e5%88%9b%e5%bb%ba%e4%bb%a3%e7%90%86" class="header-mark"></a>6.6 jenkins 在 k8s 中动态创建代理</h2><p><img
+<h2 id="66-jenkins-在-k8s-中动态创建代理">6.6 jenkins 在 k8s 中动态创建代理</h2>
+<p><img
         class="lazyload"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412233619.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412233619.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412233619.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412233619.png 2x"
@@ -789,8 +789,8 @@ sed -i &#39;s/http:\/\/www.google.com/https:\/\/www.baidu.com/g&#39; default.jso
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414115808.png"
         title="img"
     /></p>
-<h3 id="661-在-jenkins-中添加-kubernetes-" class="headerLink">
-    <a href="#661-%e5%9c%a8-jenkins-%e4%b8%ad%e6%b7%bb%e5%8a%a0-kubernetes-" class="header-mark"></a>6.6.1 在 jenkins 中添加 kubernetes ☁️</h3><p>管理Jenkins-&gt;Manage Nodes and Clouds-&gt;configureClouds-&gt;Add</p>
+<h3 id="661-在-jenkins-中添加-kubernetes-">6.6.1 在 jenkins 中添加 kubernetes ☁️</h3>
+<p>管理Jenkins-&gt;Manage Nodes and Clouds-&gt;configureClouds-&gt;Add</p>
 <p>输入Kubernetes 地址： <a href="https://kubernetes.default/" target="_blank" rel="noopener noreffer">https://kubernetes.default</a> ，点击连接测试，测试通过的话，会显示k8s的版本信息</p>
 <p>输入Jenkins 地址： <a href="http://jenkins.ops/" target="_blank" rel="noopener noreffer">http://jenkins.ops</a></p>
 <p><img
@@ -825,8 +825,8 @@ sed -i &#39;s/http:\/\/www.google.com/https:\/\/www.baidu.com/g&#39; default.jso
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412234821.png"
         title="img"
     /></p>
-<h3 id="662-构建-jenkins-slave-镜像" class="headerLink">
-    <a href="#662-%e6%9e%84%e5%bb%ba-jenkins-slave-%e9%95%9c%e5%83%8f" class="header-mark"></a>6.6.2 构建 jenkins-slave 镜像</h3><p>基于官方镜像提供的 jnlp-slave 使用</p>
+<h3 id="662-构建-jenkins-slave-镜像">6.6.2 构建 jenkins-slave 镜像</h3>
+<p>基于官方镜像提供的 jnlp-slave 使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1009,8 +1009,8 @@ spec:
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414094413.png"
         title="image-20210414094412922"
     /></p>
-<h3 id="663-给-jenkins-slave-pod-添加存储卷以及挂载docker-命令到pod-中" class="headerLink">
-    <a href="#663-%e7%bb%99-jenkins-slave-pod-%e6%b7%bb%e5%8a%a0%e5%ad%98%e5%82%a8%e5%8d%b7%e4%bb%a5%e5%8f%8a%e6%8c%82%e8%bd%bddocker-%e5%91%bd%e4%bb%a4%e5%88%b0pod-%e4%b8%ad" class="header-mark"></a>6.6.3 给 Jenkins-Slave pod 添加存储卷，以及挂载docker 命令到Pod 中</h3><p>因为每次maven 打包会产生依赖的库文件，为了加快每次编译打包的速度，我们可以创建一个pvc 用来存储maven 每次打包产生的依赖文件。以及 我们需要将 k8s 集群 node 主机上的docker 命令挂载到Pod 中，用于镜像的打包 ，推送</p>
+<h3 id="663-给-jenkins-slave-pod-添加存储卷以及挂载docker-命令到pod-中">6.6.3 给 Jenkins-Slave pod 添加存储卷，以及挂载docker 命令到Pod 中</h3>
+<p>因为每次maven 打包会产生依赖的库文件，为了加快每次编译打包的速度，我们可以创建一个pvc 用来存储maven 每次打包产生的依赖文件。以及 我们需要将 k8s 集群 node 主机上的docker 命令挂载到Pod 中，用于镜像的打包 ，推送</p>
 <p>直接创建pvc, 这里使用的动态补给的PV（直接使用上面以及创建好一个jenkins-nfs-client storageClass ）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1172,8 +1172,8 @@ spec:
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210414114703.png"
         title="image-20210414114703498"
     /></p>
-<h3 id="创建-jenkins-job" class="headerLink">
-    <a href="#%e5%88%9b%e5%bb%ba-jenkins-job" class="header-mark"></a>创建 jenkins job</h3><p>使用pipeline 生成 git 拉取代码的语法</p>
+<h3 id="创建-jenkins-job">创建 jenkins job</h3>
+<p>使用pipeline 生成 git 拉取代码的语法</p>
 <p>jenkins 官方提供一个pipeline 语法的生成器</p>
 <p>任意创建一个流水线项目</p>
 <p><img
@@ -1225,8 +1225,8 @@ spec:
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">mvn</span> <span class="nx">clean</span> <span class="kn">package</span> <span class="o">-</span><span class="nx">Dmaven</span><span class="p">.</span><span class="nx">skip</span><span class="p">.</span><span class="nx">test</span><span class="p">=</span><span class="kc">true</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="测试案例-tomcat-java-demo-gitlim-的-dockerfile" class="headerLink">
-    <a href="#%e6%b5%8b%e8%af%95%e6%a1%88%e4%be%8b-tomcat-java-demo-gitlim-%e7%9a%84-dockerfile" class="header-mark"></a>测试案例 tomcat-java-demo gitlim 的 Dockerfile</h3><div class="highlight"><div class="chroma">
+</div><h3 id="测试案例-tomcat-java-demo-gitlim-的-dockerfile">测试案例 tomcat-java-demo gitlim 的 Dockerfile</h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1240,8 +1240,8 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 ADD target/*.war /usr/local/tomcat/webapps/ROOT.war 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="授权创建-kubeconfig-文件并保存在-jenkins-中" class="headerLink">
-    <a href="#%e6%8e%88%e6%9d%83%e5%88%9b%e5%bb%ba-kubeconfig-%e6%96%87%e4%bb%b6%e5%b9%b6%e4%bf%9d%e5%ad%98%e5%9c%a8-jenkins-%e4%b8%ad" class="header-mark"></a>授权创建 kubeconfig 文件，并保存在 jenkins 中</h3><p>准备好创建K8S 集群的那一套 ca证书</p>
+</div><h3 id="授权创建-kubeconfig-文件并保存在-jenkins-中">授权创建 kubeconfig 文件，并保存在 jenkins 中</h3>
+<p>准备好创建K8S 集群的那一套 ca证书</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1459,8 +1459,8 @@ k8s-node1     Ready    &lt;none&gt;   10d   v1.20.4
 k8s-node2     Ready    &lt;none&gt;   10d   v1.20.4
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="把生成的kubeconfig配置文件存放在jenkins-中" class="headerLink">
-    <a href="#%e6%8a%8a%e7%94%9f%e6%88%90%e7%9a%84kubeconfig%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%ad%98%e6%94%be%e5%9c%a8jenkins-%e4%b8%ad" class="header-mark"></a>把生成的kubeconfig配置文件存放在jenkins 中</h3><p>Manage Jenkins -&gt; Managed files -&gt; Add a new Config -&gt; Custom file（自定义文件）</p>
+</div><h3 id="把生成的kubeconfig配置文件存放在jenkins-中">把生成的kubeconfig配置文件存放在jenkins 中</h3>
+<p>Manage Jenkins -&gt; Managed files -&gt; Add a new Config -&gt; Custom file（自定义文件）</p>
 <p>输入 Name： k8s-kubeconfig</p>
 <p>把生成的kubeconfig 文件内容 复制到 Content 文本框中</p>
 <p><img
@@ -1504,8 +1504,8 @@ k8s-node2     Ready    &lt;none&gt;   10d   v1.20.4
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210417151920.png"
         title="image-20210417151920204"
     /></p>
-<h3 id="把managed-files-中的配置文件-转换成pipeline-语法" class="headerLink">
-    <a href="#%e6%8a%8amanaged-files-%e4%b8%ad%e7%9a%84%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6-%e8%bd%ac%e6%8d%a2%e6%88%90pipeline-%e8%af%ad%e6%b3%95" class="header-mark"></a>把Managed files 中的配置文件 转换成pipeline 语法</h3><p>直接打开 http://192.168.110.235:30008/pipeline-syntax/就可以了，不需要创建 job</p>
+<h3 id="把managed-files-中的配置文件-转换成pipeline-语法">把Managed files 中的配置文件 转换成pipeline 语法</h3>
+<p>直接打开 http://192.168.110.235:30008/pipeline-syntax/就可以了，不需要创建 job</p>
 <p>点击片段生成器，Sample Step 下拉选项框中 选择 configFileProvider: Provide Configuration files</p>
 <p>在File 下拉选项框中，选中 刚刚创建的 自定义文件 k8s-kubeconfig</p>
 <p>在Target 中 输入 admin.kubeconfig (target 表示把 自定义的文件 挂载到 jenkin-slave 镜像的什么路径下，这边定义了文件名称，就相当于把 admin.kubeconfig 文件 放在 jenkin-slave 镜像 的默认工作路径下/home/jenkins/agent/workspace/XX 下面 )</p>
@@ -1530,8 +1530,8 @@ k8s-node2     Ready    &lt;none&gt;   10d   v1.20.4
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210415093714.png"
         title="image-20210415093714811"
     /></p>
-<h3 id="编写标准的deployyaml-模板" class="headerLink">
-    <a href="#%e7%bc%96%e5%86%99%e6%a0%87%e5%87%86%e7%9a%84deployyaml-%e6%a8%a1%e6%9d%bf" class="header-mark"></a>编写标准的deploy.yaml 模板</h3><p>本项目是 使用Jenkins在Kubernetes中持续部署一个无状态的tomcat pod 应用；涉及到 deployment 控制器 以及采用NodePort 的方式去 访问pod</p>
+<h3 id="编写标准的deployyaml-模板">编写标准的deploy.yaml 模板</h3>
+<p>本项目是 使用Jenkins在Kubernetes中持续部署一个无状态的tomcat pod 应用；涉及到 deployment 控制器 以及采用NodePort 的方式去 访问pod</p>
 <p>deployment.yaml 和 service.yaml 我把他合并在一个deploy.yaml 文件中</p>
 <p>另外deploy.yaml 文件 必须和 项目的代码 在同一个路径下（否则kubectl 无法指定yaml 文件就 无法创建pod）</p>
 <div class="highlight"><div class="chroma">
@@ -1656,8 +1656,8 @@ spec:
 EOF
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="在k8s-集群中创建sercret-用于连接harbor仓库用于k8s创建pod时-拉取镜像" class="headerLink">
-    <a href="#%e5%9c%a8k8s-%e9%9b%86%e7%be%a4%e4%b8%ad%e5%88%9b%e5%bb%basercret-%e7%94%a8%e4%ba%8e%e8%bf%9e%e6%8e%a5harbor%e4%bb%93%e5%ba%93%e7%94%a8%e4%ba%8ek8s%e5%88%9b%e5%bb%bapod%e6%97%b6-%e6%8b%89%e5%8f%96%e9%95%9c%e5%83%8f" class="header-mark"></a>在K8S 集群中创建sercret 用于连接Harbor仓库（用于K8S创建POD时 拉取镜像）</h3><p>备注：</p>
+</div><h3 id="在k8s-集群中创建sercret-用于连接harbor仓库用于k8s创建pod时-拉取镜像">在K8S 集群中创建sercret 用于连接Harbor仓库（用于K8S创建POD时 拉取镜像）</h3>
+<p>备注：</p>
 <p>应用启动过程中可能需要一些敏感信息，比如访问数据库的用户名密码或者秘钥。将这些信息直接保存在容器镜像中显然不妥，Kubernetes 提供的解决方案是 Secret。</p>
 <p>Secret 会以密文的方式存储数据，避免了直接在配置文件中保存敏感信息。Secret 会以 Volume 的形式被 mount 到 Pod，容器可通过文件的方式使用 Secret 中的敏感数据；此外，容器也可以环境变量的方式使用这些数据。</p>
 <p>找一台登陆过的Harbor 的 node 的节点，查看 cat ~/.docker/config.json 问价里的内容</p>
@@ -1764,8 +1764,8 @@ default-token-p44zj   kubernetes.io/service-account-token   3      51m
 secret-dockercfg      kubernetes.io/dockerconfigjson        1      51m
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="定义环境变量使用参数化构建修改deployyaml文件" class="headerLink">
-    <a href="#%e5%ae%9a%e4%b9%89%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e4%bd%bf%e7%94%a8%e5%8f%82%e6%95%b0%e5%8c%96%e6%9e%84%e5%bb%ba%e4%bf%ae%e6%94%b9deployyaml%e6%96%87%e4%bb%b6" class="header-mark"></a>定义环境变量，使用参数化构建，修改deploy.yaml文件</h3><p>需要提前定义好的环境变量：</p>
+</div><h3 id="定义环境变量使用参数化构建修改deployyaml文件">定义环境变量，使用参数化构建，修改deploy.yaml文件</h3>
+<p>需要提前定义好的环境变量：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1909,9 +1909,9 @@ kubectl apply -f deploy.yaml -n ${Namespace} --kubeconfig=admin.kubeconfig
 &#34;&#34;&#34;
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="heading" class="headerLink">
-    <a href="#heading" class="header-mark"></a></h3><h2 id="完整的pipeline-流水线-脚本" class="headerLink">
-    <a href="#%e5%ae%8c%e6%95%b4%e7%9a%84pipeline-%e6%b5%81%e6%b0%b4%e7%ba%bf-%e8%84%9a%e6%9c%ac" class="header-mark"></a>完整的pipeline 流水线 脚本</h2><div class="highlight"><div class="chroma">
+</div><h3 id="heading"></h3>
+<h2 id="完整的pipeline-流水线-脚本">完整的pipeline 流水线 脚本</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
@@ -2178,8 +2178,8 @@ service/tomcat-java-demo   NodePort   10.0.0.222   &lt;none&gt;        80:32088/
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210416202515.png"
         title="image-20210416202515414"
     /></p>
-<h1 id="参考" class="headerLink">
-    <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考</h1><ul>
+<h1 id="参考">参考</h1>
+<ul>
 <li>
 <p>摘抄至，略有删改。https://github.com/fxkjnj/kubernetes/tree/main/jenkins-for_kubernetes/jenkins_deploy_kubernetes</p>
 </li>
@@ -2220,17 +2220,15 @@ service/tomcat-java-demo   NodePort   10.0.0.222   &lt;none&gt;        80:32088/
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-            <div class="footer-line">
-            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

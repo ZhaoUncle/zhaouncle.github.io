@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">保持自己github的forks自动和上游仓库同步并推送到 gitee - 易波叶平</title><meta name="Description" content="欲戴王冠，必承其重"><meta property="og:title" content="保持自己github的forks自动和上游仓库同步并推送到 gitee" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhaouncle.com/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/" /><meta property="og:image" content="https://zhaouncle.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-22T21:23:20+08:00" />
+<meta property="article:modified_time" content="2022-01-22T21:23:20+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://zhaouncle.com/logo.png"/>
+
+<meta name="twitter:title" content="保持自己github的forks自动和上游仓库同步并推送到 gitee"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://zhaouncle.com/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/" /><link rel="prev" href="https://zhaouncle.com/chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://zhaouncle.com/markdown%E6%96%87%E7%AB%A0%E5%90%8C%E6%AD%A5%E5%B9%B3%E5%8F%B0%E4%B9%8Bdoocs-md%E6%B5%8B%E8%AF%84/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "保持自己github的forks自动和上游仓库同步并推送到 gitee",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zhaouncle.com\/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5\/"
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1788 ,
+        "url": "https:\/\/zhaouncle.com\/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5\/","datePublished": "2022-01-22T21:23:20+08:00","dateModified": "2022-01-22T21:23:20+08:00","publisher": {
+            "@type": "Organization",
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "赵叔"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">保持自己github的forks自动和上游仓库同步并推送到 gitee</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-22">2022-01-22</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-22">2022-01-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1788 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/" class="leancloud_visitors" data-flag-title="保持自己github的forks自动和上游仓库同步并推送到 gitee">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/" class="comment_count" data-flag-title="保持自己github的forks自动和上游仓库同步并推送到 gitee">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242327394.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242327394.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242327394.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242327394.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242327394.png"
+        title="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242327394.png" height="auto" width="auto"
+    /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一自动拉取-fork-源上游">一、自动拉取 fork 源上游</a>
+      <ul>
+        <li><a href="#方法一apps-pull">方法一：apps pull</a>
+          <ul>
+            <li><a href="#安装-github-app">安装 github app</a></li>
+            <li><a href="#如何打开进入安装好的-app">如何打开进入安装好的 APP</a></li>
+          </ul>
+        </li>
+        <li><a href="#方法二github-actions">方法二：github Actions</a>
+          <ul>
+            <li><a href="#fork-sync">Fork Sync</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#二手动拉取-fork-源上游">二、手动拉取 fork 源上游</a>
+      <ul>
+        <li><a href="#情况一代码不冲突">情况一：代码不冲突</a>
+          <ul>
+            <li><a href="#方法一fetch-upstream">方法一：Fetch upstream</a></li>
+            <li><a href="#方法二pull-requests">方法二：Pull requests</a>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#如果你显示的不全需要点击compare-across-forks">如果你显示的不全，需要点击“compare across forks”</a></li>
+                    <li><a href="#该方法会导致-commit-记录比-fork-的源多如果你要保持该仓库的干净整洁这种-merge-pull-requests-的情况就不合适了">该方法会导致 commit 记录比 fork 的源多，如果你要保持该仓库的干净整洁，这种 merge pull requests 的情况就不合适了。</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#方法三命令行同步复制">方法三：命令行同步复制</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#三自动推送到-gitee">三、自动推送到 gitee</a>
+      <ul>
+        <li><a href="#github-actions-方法">github Actions 方法</a></li>
+        <li><a href="#hub-mirror-action">Hub Mirror Action</a>
+          <ul>
+            <li><a href="#参考列表">参考列表：</a></li>
+            <li><a href="#过程">过程</a></li>
+            <li><a href="#个人使用模板">个人使用模板</a></li>
+            <li><a href="#配置参数">配置参数：</a>
+              <ul>
+                <li><a href="#参考一">参考一：</a></li>
+                <li><a href="#参考二">参考二：</a></li>
+              </ul>
+            </li>
+            <li><a href="#想简单使用可以直接使用以下方式">想简单使用，可以直接使用以下方式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#四推荐阅读">四、推荐阅读</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+                <div class="details-summary admonition-title">
+                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+                </div>
+                <div class="details-content">
+                    <div class="admonition-content">
+                        本文最后更新于 <span class="timeago" datetime="2022-01-22T21:23:20" title="January 22, 2022">2022-01-22</span>，文中内容可能已过时。</div>
+                </div>
+            </div><h1 id="一自动拉取-fork-源上游">一、自动拉取 fork 源上游</h1>
+<h2 id="方法一apps-pull">方法一：apps pull</h2>
+<p>📢：只要你不改fork 库的内容，那么是纯净同步模式，时间点都和上游仓库一致。同步更新时间 3 个小时以上。</p>
+<h3 id="安装-github-app">安装 github app</h3>
+<p>访问地址：https://github.com/apps/pull</p>
+<p>开源地址：https://github.com/wei/pull#readme</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231201782.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231201782.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231201782.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231201782.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231201782.png"
+        title="image-20220123120123689"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202125.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202125.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202125.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202125.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202125.png"
+        title="image-20220123120230081"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202207.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202207.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202207.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202207.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231202207.png"
+        title="image-20220123120259166"
+    /></p>
+<h3 id="如何打开进入安装好的-app">如何打开进入安装好的 APP</h3>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231205095.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231205095.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231205095.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231205095.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231205095.png"
+        title="image-20220123120525050"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231208795.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231208795.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231208795.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231208795.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231208795.png"
+        title="iShot2022-01-23 12.06.01"
+    /></p>
+<p>上游仓库改变，过了几个小时后，自动同步成功</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232019716.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232019716.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232019716.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232019716.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232019716.png"
+        title="image-20220123201914666"
+    /></p>
+<h2 id="方法二github-actions">方法二：github Actions</h2>
+<table>
+<thead>
+<tr>
+<th>列表</th>
+<th>github 商店</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/tgymnich/fork-sync" target="_blank" rel="noopener noreffer">Fork Sync</a></td>
+<td><a href="https://github.com/marketplace/actions/fork-sync" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/fork-sync</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aormsby/Fork-Sync-With-Upstream-action" target="_blank" rel="noopener noreffer">Github Action: Upstream Sync</a></td>
+<td><a href="https://github.com/marketplace/actions/upstream-sync" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/upstream-sync</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fork-sync">Fork Sync</h3>
+<p>自用配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># .github/workflows/sync.yml
+name: Sync Fork
+
+on:
+  push: # push 时触发, 主要是为了测试配置有没有问题
+  schedule:
+    - cron: &#39;* */3 * * *&#39; # 每3小时触发, 对于一些更新不那么频繁的项目可以设置为每天一次, 低碳一点
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TG908/fork-sync@v1.6.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ZhaoUncle # fork 的上游仓库 user
+          head: main # fork 的上游仓库 branch
+          base: main # 本地仓库 branch
+
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242244658.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242244658.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242244658.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242244658.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201242244658.png"
+        title="iShot2022-01-24 22.40.12"
+    /></p>
+<h1 id="二手动拉取-fork-源上游">二、手动拉取 fork 源上游</h1>
+<h2 id="情况一代码不冲突">情况一：代码不冲突</h2>
+<h3 id="方法一fetch-upstream">方法一：Fetch upstream</h3>
+<p>📢：同步是干净的，完全同步</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248532.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248532.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248532.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248532.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248532.png"
+        title="image-20220123124833425"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248726.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248726.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248726.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248726.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231248726.png"
+        title="image-20220123124852658"
+    /></p>
+<h3 id="方法二pull-requests">方法二：Pull requests</h3>
+<p>📢：注意，一定是从源仓库，也叫做上游，——&raquo; merge 到，本地仓库，箭头方向一定要对。</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231250643.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231250643.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231250643.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231250643.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231250643.png"
+        title="image-20220123125053571"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231253167.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231253167.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231253167.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231253167.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231253167.png"
+        title="image-20220123125348122"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231254198.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231254198.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231254198.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231254198.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231254198.png"
+        title="image-20220123125457153"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255390.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255390.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255390.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255390.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255390.png"
+        title="image-20220123125515344"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255621.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255621.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255621.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255621.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255621.png"
+        title="image-20220123125531576"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255292.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255292.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255292.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255292.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231255292.png"
+        title="image-20220123125548247"
+    /></p>
+<p>####遇到的问题</p>
+<h5 id="如果你显示的不全需要点击compare-across-forks">如果你显示的不全，需要点击“compare across forks”</h5>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231258806.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231258806.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231258806.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231258806.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231258806.png"
+        title="image-20220123125820763"
+    /></p>
+<h5 id="该方法会导致-commit-记录比-fork-的源多如果你要保持该仓库的干净整洁这种-merge-pull-requests-的情况就不合适了">该方法会导致 commit 记录比 fork 的源多，如果你要保持该仓库的干净整洁，这种 merge pull requests 的情况就不合适了。</h5>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231301502.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231301502.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231301502.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231301502.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201231301502.png"
+        title="image-20220123130139463"
+    /></p>
+<h3 id="方法三命令行同步复制">方法三：命令行同步复制</h3>
+<p>参考官方文档：https://docs.github.com/cn/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork</p>
+<p>指定fork 的上游仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+</code></pre></td></tr></table>
+</div>
+</div><p>验证</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ git remote -v
+</code></pre></td></tr></table>
+</div>
+</div><p>验证，显示结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt; upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+&gt; upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+</code></pre></td></tr></table>
+</div>
+</div><p>进入本地仓库</p>
+<p>从上游获取提交数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git fetch upstream
+</code></pre></td></tr></table>
+</div>
+</div><p>检出 fork 的本地默认分支，这里用 main 测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git checkout main
+</code></pre></td></tr></table>
+</div>
+</div><p>将上游默认分支，本例中为 upstream/main 的更改合并到本地默认分支，记得要按 q 退出编辑模式，不会就直接关闭当前命令行在进入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git merge upstream/main
+</code></pre></td></tr></table>
+</div>
+</div><p>推送到 github</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git push origin main
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="三自动推送到-gitee">三、自动推送到 gitee</h1>
+<h2 id="github-actions-方法">github Actions 方法</h2>
+<table>
+<thead>
+<tr>
+<th>推荐列表</th>
+<th>github 商店</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Yikun/hub-mirror-action" target="_blank" rel="noopener noreffer">Hub Mirror Action</a></td>
+<td><a href="https://github.com/marketplace/actions/hub-mirror-action" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/hub-mirror-action</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/marketplace/actions/mirroring-repository" target="_blank" rel="noopener noreffer">repository-mirroring-action</a></td>
+<td><a href="https://github.com/pixta-dev/repository-mirroring-action" target="_blank" rel="noopener noreffer">https://github.com/pixta-dev/repository-mirroring-action</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/wearerequired/git-mirror-action" target="_blank" rel="noopener noreffer">Git Mirror Action</a></td>
+<td><a href="https://github.com/marketplace/actions/mirror-a-repository-using-ssh" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/mirror-a-repository-using-ssh</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/yesolutions/mirror-action" target="_blank" rel="noopener noreffer">mirror-action</a></td>
+<td><a href="https://github.com/marketplace/actions/mirror-repository" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/mirror-repository</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/SvanBoxel/gitlab-mirror-and-ci-action" target="_blank" rel="noopener noreffer">Mirror to GitLab and trigger GitLab CI</a></td>
+<td><a href="https://github.com/marketplace/actions/mirror-to-gitlab-and-run-gitlab-ci#mirror-to-gitlab-and-trigger-gitlab-ci" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/mirror-to-gitlab-and-run-gitlab-ci#mirror-to-gitlab-and-trigger-gitlab-ci</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="hub-mirror-action">Hub Mirror Action</h2>
+<h3 id="参考列表">参考列表：</h3>
+<ul>
+<li><a href="https://github.com/Yikun/hub-mirror-action" target="_blank" rel="noopener noreffer">Hub Mirror Action</a> ：github 源码库</li>
+<li><a href="https://github.com/yi-Xu-0100/hub-mirror" target="_blank" rel="noopener noreffer">Sync GitHub to other hub</a> ：一个用于展示如何使用这个action的模板仓库</li>
+<li><a href="https://github.com/ShixiangWang/sync2gitee" target="_blank" rel="noopener noreffer">自动镜像 GitHub 仓库到 Gitee</a>：一个关于如何使用这个action的介绍</li>
+<li><a href="http://yikun.github.io/2020/01/17/%e5%b7%a7%e7%94%a8Github-Action%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%88%b0Gitee/" target="_blank" rel="noopener noreffer">巧用Github Action同步代码到Gitee</a>: Github Action第一篇软文</li>
+</ul>
+<h3 id="过程">过程</h3>
+<ol>
+<li>一开始在 github 商店找 actions 方法，还是打算直接通过集成实现，因为 gitee 免费版不具备相关自动化的功能。</li>
+</ol>
+<p><a href="https://github.com/marketplace?type=actions&amp;query=gitee&#43;" target="_blank" rel="noopener noreffer">https://github.com/marketplace?type=actions&query=gitee+</a></p>
+<p>然后发现，stars 数最高的一个项目，参考下，可以支持多 repo 仓库，那么可以单独拆开，也可以设置一个统一的推送仓库来配置，非常不错</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232341293.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232341293.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232341293.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232341293.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201232341293.png"
+        title="image-20220123234100222"
+    /></p>
+<ol start="2">
+<li>
+<p>代码核心流程</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241330192.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241330192.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241330192.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241330192.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241330192.png"
+        title="image-20220124133035101"
+    /></p>
+</li>
+</ol>
+<h3 id="个人使用模板">个人使用模板</h3>
+<p>要注意的地方： on.push.branches 或者 on.pull_request.branches 不管是哪个仓库，由于 github 上面旧的仓库还是 master 而不是 main，所以你要改成对应的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">name: Gitee repos mirror periodic job
+
+on:
+  push: # 有 push 代码的时候会执行
+    branches: [ main ]
+  pull_request: # 有 pull_request 代码的时候会执行
+    branches: [ main ]
+  schedule: 
+    # 每3个小时跑一次
+    - cron:  &#39;0 */3 * * *&#39;
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Mirror the Github organization repos to Gitee.
+      uses: Yikun/hub-mirror-action@v1.0
+      with:
+        src: github/ZhaoUncle	# 必选，需要同步的Github用户（源）
+        dst: gitee/qingfeng689 # 必选，需要同步到的Gitee的用户（目的）
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # 必选，Gitee公钥对应的私钥，https://gitee.com/profile/sshkeys
+        dst_token:  ${{ secrets.GITEE_TOKEN }} # 必选，Gitee对应的用于创建仓库的token，https://gitee.com/profile/personal_access_tokens
+        account_type: user # 如果是组织，指定组织即可，默认为用户user
+        timeout: 600 # git 命令超时时间
+        debug: true # 测试用，正常可以关掉
+        force_update: true # 强制推送到 dst 仓库
+        white_list: &#34;test2,community.applications&#34; # 白名单机制，可以用于更新某些指定库
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置参数">配置参数：</h3>
+<p>我直接借用大佬们的截图，我这里就不做展示了，请见谅</p>
+<h4 id="参考一">参考一：</h4>
+<p><a href="https://github.com/marketplace/actions/hub-mirror-action" target="_blank" rel="noopener noreffer">https://github.com/marketplace/actions/hub-mirror-action</a></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241316027.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241316027.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241316027.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241316027.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241316027.png"
+        title="image-20220124131638919"
+    /></p>
+<h4 id="参考二">参考二：</h4>
+<p><a href="https://github.com/yi-Xu-0100/hub-mirror" target="_blank" rel="noopener noreffer">https://github.com/yi-Xu-0100/hub-mirror</a></p>
+<p>用到的地址：</p>
+<ul>
+<li>github ssh key 配置地址：https://github.com/settings/keys</li>
+<li>gitee ssh key 配置地址：https://gitee.com/profile/sshkeys</li>
+<li>github toekn 配置地址：https://github.com/settings/tokens</li>
+<li>gitee token 配置地址：https://gitee.com/profile/personal_access_tokens</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241317019.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241317019.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241317019.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241317019.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241317019.png"
+        title="image-20220124131741921"
+    /></p>
+<h3 id="想简单使用可以直接使用以下方式">想简单使用，可以直接使用以下方式</h3>
+<p>fork 该仓库到你本地，然后修改 相关参数就好了，截图如下</p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241334323.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241334323.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241334323.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241334323.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202201241334323.png"
+        title="image-20220124133456241"
+    /></p>
+<h1 id="四推荐阅读">四、推荐阅读</h1>
+<p><a href="https://github.com/selfteaching/the-craft-of-selfteaching/issues/67" target="_blank" rel="noopener noreffer">Github进行fork后如何与原仓库同步：重新fork很省事，但不如反复练习版本合并</a></p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-01-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/%E4%BF%9D%E6%8C%81%E8%87%AA%E5%B7%B1github%E7%9A%84forks%E8%87%AA%E5%8A%A8%E5%92%8C%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="超详细！Chrome 浏览器、浏览器插件下载和安装教程"><i class="fas fa-angle-left fa-fw"></i>超详细！Chrome 浏览器、浏览器插件下载和安装教程</a>
+            <a href="/markdown%E6%96%87%E7%AB%A0%E5%90%8C%E6%AD%A5%E5%B9%B3%E5%8F%B0%E4%B9%8Bdoocs-md%E6%B5%8B%E8%AF%84/" class="next" rel="next" title="Markdown文章同步平台之doocs Md测评">Markdown文章同步平台之doocs Md测评<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
+                    </span></div>
+            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168242983-1');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://waline-lx1l07bh7-zhaouncle.vercel.app/","uploadImage":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script></div>
+</body>
+
+</html>

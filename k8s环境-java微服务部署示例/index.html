@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s, 微服务部署","wordcount":  2128 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s, 微服务部署","wordcount":  2115 ,
         "url": "https:\/\/zhaouncle.com\/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B\/","datePublished": "2021-04-05T13:15:31+08:00","dateModified": "2021-04-05T13:15:31+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,7 +126,23 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【k8s】java 微服务部署示例</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-05">2021-04-05</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-04-05">2021-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2115 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" class="leancloud_visitors" data-flag-title="【k8s】java 微服务部署示例">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" class="comment_count" data-flag-title="【k8s】java 微服务部署示例">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-环境">1. 环境</a></li>
     <li><a href="#2-java-微服务部署">2. java 微服务部署</a>
@@ -153,22 +169,6 @@
     <li><a href="#4-参考">4. 参考</a></li>
   </ul>
 </nav></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【k8s】java 微服务部署示例</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/k8s/"><i class="far fa-folder fa-fw"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-05">2021-04-05</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-04-05">2021-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2128 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" class="leancloud_visitors" data-flag-title="【k8s】java 微服务部署示例">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/k8s%E7%8E%AF%E5%A2%83-java%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E7%A4%BA%E4%BE%8B/" class="comment_count" data-flag-title="【k8s】java 微服务部署示例">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -177,8 +177,8 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2021-04-05T13:15:31" title="April 5, 2021">2021-04-05</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="1-环境" class="headerLink">
-    <a href="#1-%e7%8e%af%e5%a2%83" class="header-mark"></a>1. 环境</h1><ul>
+            </div><h1 id="1-环境">1. 环境</h1>
+<ul>
 <li>
 <p>k8s：1.20</p>
 <table>
@@ -208,8 +208,8 @@
 <p>java：1.8</p>
 </li>
 </ul>
-<h1 id="2-java-微服务部署" class="headerLink">
-    <a href="#2-java-%e5%be%ae%e6%9c%8d%e5%8a%a1%e9%83%a8%e7%bd%b2" class="header-mark"></a>2. java 微服务部署</h1><p>##2.1 安装 java jdk1.8</p>
+<h1 id="2-java-微服务部署">2. java 微服务部署</h1>
+<p>##2.1 安装 java jdk1.8</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -240,8 +240,8 @@ git checkout remotes/origin/dev4-skywalking
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<h2 id="部署须知" class="headerLink">
-    <a href="#%e9%83%a8%e7%bd%b2%e9%a1%bb%e7%9f%a5" class="header-mark"></a>部署须知</h2></blockquote>
+<h2 id="部署须知">部署须知</h2>
+</blockquote>
 <ol>
 <li>导入db目录下数据库文件到自己的MySQL服务器
 <ul>
@@ -272,8 +272,8 @@ git checkout remotes/origin/dev4-skywalking
 </ul>
 </li>
 </ol>
-<h3 id="构建-java-命令介绍" class="headerLink">
-    <a href="#%e6%9e%84%e5%bb%ba-java-%e5%91%bd%e4%bb%a4%e4%bb%8b%e7%bb%8d" class="header-mark"></a>构建 java 命令介绍</h3><div class="highlight"><div class="chroma">
+<h3 id="构建-java-命令介绍">构建 java 命令介绍</h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -383,8 +383,8 @@ db      default         1               2021-04-06 22:04:19.545636699 +0800 CST 
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">helm delete db #kubectl get pod 就会就看不见了
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="24-mysql-登录然后创建-db-和-tables-数据" class="headerLink">
-    <a href="#24-mysql-%e7%99%bb%e5%bd%95%e7%84%b6%e5%90%8e%e5%88%9b%e5%bb%ba-db-%e5%92%8c-tables-%e6%95%b0%e6%8d%ae" class="header-mark"></a>2.4 mysql 登录然后创建 db 和 tables 数据</h2><div class="highlight"><div class="chroma">
+</div><h2 id="24-mysql-登录然后创建-db-和-tables-数据">2.4 mysql 登录然后创建 db 和 tables 数据</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -415,8 +415,8 @@ db      default         1               2021-04-06 22:04:19.545636699 +0800 CST 
 </span></code></pre></td></tr></table>
 </div>
 </div><p>虽然 sql 文件介绍说使用的mysql5.6 的版本，但是经过测试 5.7 这里是正常使用，所以你想用 helm 安装 mysql5.6，可以参考另一篇文章<a href="" rel="">K8s环境 Helm 安装 mysql 多版本</a></p>
-<h2 id="25-修改配置文件密码和-mysql-ip-端口创建-namesapce" class="headerLink">
-    <a href="#25-%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%af%86%e7%a0%81%e5%92%8c-mysql-ip-%e7%ab%af%e5%8f%a3%e5%88%9b%e5%bb%ba-namesapce" class="header-mark"></a>2.5 修改配置文件密码和 mysql ip 端口，创建 namesapce</h2><p>语法介绍：<code>sed -i 's#abc#def#g' filename</code>，将 filename 文件里面所有的 abc 替换成 def。</p>
+<h2 id="25-修改配置文件密码和-mysql-ip-端口创建-namesapce">2.5 修改配置文件密码和 mysql ip 端口，创建 namesapce</h2>
+<p>语法介绍：<code>sed -i 's#abc#def#g' filename</code>，将 filename 文件里面所有的 abc 替换成 def。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -461,8 +461,8 @@ for i in `find ./ -name &#34;Dockerfile&#34;`;do  sed -i &#39;s#192.168.31.90:11
 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="26--docker_buildsh-介绍" class="headerLink">
-    <a href="#26--docker_buildsh-%e4%bb%8b%e7%bb%8d" class="header-mark"></a>2.6  docker_build.sh 介绍</h2><p><code>vi /data/simple-microservice/k8s/docker_build.sh </code></p>
+</div><h2 id="26--docker_buildsh-介绍">2.6  docker_build.sh 介绍</h2>
+<p><code>vi /data/simple-microservice/k8s/docker_build.sh </code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -531,8 +531,8 @@ mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true
 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="27-部署-ms-java-服务" class="headerLink">
-    <a href="#27-%e9%83%a8%e7%bd%b2-ms-java-%e6%9c%8d%e5%8a%a1" class="header-mark"></a>2.7 部署 ms java 服务</h2><p>部署：</p>
+</div><h2 id="27-部署-ms-java-服务">2.7 部署 ms java 服务</h2>
+<p>部署：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -635,11 +635,11 @@ ingress.networking.k8s.io/portal    &lt;none&gt;   portal.ctnrs.com             
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210406235023.png"
         title="image-20210406235023413"
     /></p>
-<h1 id="3-接入-skywalking" class="headerLink">
-    <a href="#3-%e6%8e%a5%e5%85%a5-skywalking" class="header-mark"></a>3. 接入 skywalking</h1><h2 id="31-skywalking-server-版部署请参考" class="headerLink">
-    <a href="#31-skywalking-server-%e7%89%88%e9%83%a8%e7%bd%b2%e8%af%b7%e5%8f%82%e8%80%83" class="header-mark"></a>3.1 Skywalking server 版部署，请参考</h2><p><a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" target="_blank" rel="noopener noreffer">K8s环境 Helm部署skywalking</a></p>
-<h2 id="32-下载-skywalking-840版本" class="headerLink">
-    <a href="#32-%e4%b8%8b%e8%bd%bd-skywalking-840%e7%89%88%e6%9c%ac" class="header-mark"></a>3.2 下载 skywalking 8.4.0版本</h2><blockquote>
+<h1 id="3-接入-skywalking">3. 接入 skywalking</h1>
+<h2 id="31-skywalking-server-版部署请参考">3.1 Skywalking server 版部署，请参考</h2>
+<p><a href="https://zhaouncle.com/k8s%E7%8E%AF%E5%A2%83-helm%E9%83%A8%E7%BD%B2skywalking/" target="_blank" rel="noopener noreffer">K8s环境 Helm部署skywalking</a></p>
+<h2 id="32-下载-skywalking-840版本">3.2 下载 skywalking 8.4.0版本</h2>
+<blockquote>
 <p>我们主要使用 agen 端，一定要与 server 端版本对应</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -660,8 +660,8 @@ tar xf apache-skywalking-apm-es7-8.4.0.tar.gz
 for i in `find  /data/simple-microservice/ -name skywalking`;do rm -rf $i &amp;&amp; cp -rp /data/apache-skywalking-apm-bin-es7/agent/ $i;done
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="33-修改-dockerfile-中-java-的启动命令" class="headerLink">
-    <a href="#33-%e4%bf%ae%e6%94%b9-dockerfile-%e4%b8%ad-java-%e7%9a%84%e5%90%af%e5%8a%a8%e5%91%bd%e4%bb%a4" class="header-mark"></a>3.3 修改 Dockerfile 中 java 的启动命令</h2><p>之前我们改成了 ip+nodeport 的形式，现在改回去直接 k8s 内部 serviceName+namespace 的访问形式。</p>
+</div><h2 id="33-修改-dockerfile-中-java-的启动命令">3.3 修改 Dockerfile 中 java 的启动命令</h2>
+<p>之前我们改成了 ip+nodeport 的形式，现在改回去直接 k8s 内部 serviceName+namespace 的访问形式。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -685,8 +685,8 @@ skywalking-oap   ClusterIP   10.0.0.3     &lt;none&gt;        12800/TCP,11800/TC
 skywalking-ui    NodePort    10.0.0.232   &lt;none&gt;        80:30008/TCP          5h22m
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="34-查看-skywalking-的-java-微服务" class="headerLink">
-    <a href="#34-%e6%9f%a5%e7%9c%8b-skywalking-%e7%9a%84-java-%e5%be%ae%e6%9c%8d%e5%8a%a1" class="header-mark"></a>3.4 查看 skywalking 的 java 微服务</h2><p><img
+</div><h2 id="34-查看-skywalking-的-java-微服务">3.4 查看 skywalking 的 java 微服务</h2>
+<p><img
         class="lazyload"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png 2x"
@@ -694,8 +694,8 @@ skywalking-ui    NodePort    10.0.0.232   &lt;none&gt;        80:30008/TCP      
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/20210412000307.png"
         title="image-20210412000307837"
     /></p>
-<h1 id="4-参考" class="headerLink">
-    <a href="#4-%e5%8f%82%e8%80%83" class="header-mark"></a>4. 参考</h1><ul>
+<h1 id="4-参考">4. 参考</h1>
+<ul>
 <li><a href="https://github.com/lizhenliang/simple-microservice" target="_blank" rel="noopener noreffer">https://github.com/lizhenliang/simple-microservice</a></li>
 </ul></div>
 
@@ -731,17 +731,15 @@ skywalking-ui    NodePort    10.0.0.232   &lt;none&gt;        80:30008/TCP      
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-            <div class="footer-line">
-            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

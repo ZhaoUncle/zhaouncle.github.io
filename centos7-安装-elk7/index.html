@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/centos7-%E5%AE%89%E8%A3%85-elk7\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ELK, elasticsearch, kibana, logstash","wordcount":  3765 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ELK, elasticsearch, kibana, logstash","wordcount":  3622 ,
         "url": "https:\/\/zhaouncle.com\/centos7-%E5%AE%89%E8%A3%85-elk7\/","datePublished": "2020-06-08T15:36:44+08:00","dateModified": "2020-06-08T15:36:44+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,7 +126,23 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【ELK】Centos7 安装 elk 7.6.2</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>ELK</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3622 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/centos7-%E5%AE%89%E8%A3%85-elk7/" class="leancloud_visitors" data-flag-title="【ELK】Centos7 安装 elk 7.6.2">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/centos7-%E5%AE%89%E8%A3%85-elk7/" class="comment_count" data-flag-title="【ELK】Centos7 安装 elk 7.6.2">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-初始化环境">1. 初始化环境</a>
       <ul>
@@ -202,22 +218,6 @@
     </li>
   </ul>
 </nav></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【ELK】Centos7 安装 elk 7.6.2</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/elk/"><i class="far fa-folder fa-fw"></i>ELK</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-06-08">2020-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3765 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/centos7-%E5%AE%89%E8%A3%85-elk7/" class="leancloud_visitors" data-flag-title="【ELK】Centos7 安装 elk 7.6.2">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/centos7-%E5%AE%89%E8%A3%85-elk7/" class="comment_count" data-flag-title="【ELK】Centos7 安装 elk 7.6.2">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -226,11 +226,11 @@
                     <div class="admonition-content">
                         本文最后更新于 <span class="timeago" datetime="2020-06-08T15:36:44" title="June 8, 2020">2020-06-08</span>，文中内容可能已过时。</div>
                 </div>
-            </div><h1 id="1-初始化环境" class="headerLink">
-    <a href="#1-%e5%88%9d%e5%a7%8b%e5%8c%96%e7%8e%af%e5%a2%83" class="header-mark"></a>1. 初始化环境</h1><h2 id="10-初始化环境官网参考" class="headerLink">
-    <a href="#10-%e5%88%9d%e5%a7%8b%e5%8c%96%e7%8e%af%e5%a2%83%e5%ae%98%e7%bd%91%e5%8f%82%e8%80%83" class="header-mark"></a>1.0 初始化环境官网参考</h2><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html</a></p>
-<h2 id="11-架构" class="headerLink">
-    <a href="#11-%e6%9e%b6%e6%9e%84" class="header-mark"></a>1.1 架构</h2><table>
+            </div><h1 id="1-初始化环境">1. 初始化环境</h1>
+<h2 id="10-初始化环境官网参考">1.0 初始化环境官网参考</h2>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html</a></p>
+<h2 id="11-架构">1.1 架构</h2>
+<table>
 <thead>
 <tr>
 <th>主机 ip</th>
@@ -256,8 +256,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="12-配置-hosts" class="headerLink">
-    <a href="#12-%e9%85%8d%e7%bd%ae-hosts" class="header-mark"></a>1.2 配置 hosts</h2><div class="highlight"><div class="chroma">
+<h2 id="12-配置-hosts">1.2 配置 hosts</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -273,8 +273,8 @@
 </span><span class="s">EOF</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="13-修改-hostname" class="headerLink">
-    <a href="#13-%e4%bf%ae%e6%94%b9-hostname" class="header-mark"></a>1.3 修改 hostname</h2><div class="highlight"><div class="chroma">
+</div><h2 id="13-修改-hostname">1.3 修改 hostname</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -286,8 +286,8 @@ hostnamectl set-hostname node02
 hostnamectl set-hostname node03
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="14-时间同步联网状态" class="headerLink">
-    <a href="#14-%e6%97%b6%e9%97%b4%e5%90%8c%e6%ad%a5%e8%81%94%e7%bd%91%e7%8a%b6%e6%80%81" class="header-mark"></a>1.4 时间同步(联网状态)</h2><div class="highlight"><div class="chroma">
+</div><h2 id="14-时间同步联网状态">1.4 时间同步(联网状态)</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -297,8 +297,8 @@ hostnamectl set-hostname node03
 /bin/echo <span class="s2">&#34;* */1 * * * /usr/sbin/ntpdate pool.ntp.org &gt; /dev/null 2&gt;&amp;1&#34;</span> &gt;&gt; /var/spool/cron/root
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="15-关闭-selinux" class="headerLink">
-    <a href="#15-%e5%85%b3%e9%97%ad-selinux" class="header-mark"></a>1.5 关闭 selinux</h2><div class="highlight"><div class="chroma">
+</div><h2 id="15-关闭-selinux">1.5 关闭 selinux</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -308,8 +308,8 @@ hostnamectl set-hostname node03
 sed -i <span class="s1">&#39;s/enforcing/disabled/&#39;</span> /etc/selinux/config <span class="c1">#永久，重启生效</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="16-关闭防火墙" class="headerLink">
-    <a href="#16-%e5%85%b3%e9%97%ad%e9%98%b2%e7%81%ab%e5%a2%99" class="header-mark"></a>1.6 关闭防火墙</h2><div class="highlight"><div class="chroma">
+</div><h2 id="16-关闭防火墙">1.6 关闭防火墙</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -321,8 +321,8 @@ systemctl stop firewalld
 systemctl disable firewalld
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="17-内存解锁和文件限制" class="headerLink">
-    <a href="#17-%e5%86%85%e5%ad%98%e8%a7%a3%e9%94%81%e5%92%8c%e6%96%87%e4%bb%b6%e9%99%90%e5%88%b6" class="header-mark"></a>1.7 内存解锁和文件限制</h2><div class="highlight"><div class="chroma">
+</div><h2 id="17-内存解锁和文件限制">1.7 内存解锁和文件限制</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -346,8 +346,8 @@ cat <span class="s">&lt;&lt; EOF &gt;&gt;/etc/security/limits.conf
 </span><span class="s">EOF</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="18-关闭-swap-缓存" class="headerLink">
-    <a href="#18-%e5%85%b3%e9%97%ad-swap-%e7%bc%93%e5%ad%98" class="header-mark"></a>1.8 关闭 swap 缓存</h2><div class="highlight"><div class="chroma">
+</div><h2 id="18-关闭-swap-缓存">1.8 关闭 swap 缓存</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -357,8 +357,8 @@ cat <span class="s">&lt;&lt; EOF &gt;&gt;/etc/security/limits.conf
 sed -i <span class="s1">&#39;/swap/s/^/#/&#39;</span> /etc/fstab <span class="c1">#永久 </span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="19-设置-es-用户内存限制大小" class="headerLink">
-    <a href="#19-%e8%ae%be%e7%bd%ae-es-%e7%94%a8%e6%88%b7%e5%86%85%e5%ad%98%e9%99%90%e5%88%b6%e5%a4%a7%e5%b0%8f" class="header-mark"></a>1.9 设置 es 用户内存限制大小</h2><div class="highlight"><div class="chroma">
+</div><h2 id="19-设置-es-用户内存限制大小">1.9 设置 es 用户内存限制大小</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -368,9 +368,9 @@ sed -i <span class="s1">&#39;/swap/s/^/#/&#39;</span> /etc/fstab <span class="c1
 <span class="nb">echo</span> <span class="s1">&#39;vm.max_map_count=262144&#39;</span> &gt;&gt; /etc/sysctl.conf
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="110-不能-root-用户启动" class="headerLink">
-    <a href="#110-%e4%b8%8d%e8%83%bd-root-%e7%94%a8%e6%88%b7%e5%90%af%e5%8a%a8" class="header-mark"></a>1.10 不能 root 用户启动</h2><h2 id="111-java版本" class="headerLink">
-    <a href="#111-java%e7%89%88%e6%9c%ac" class="header-mark"></a>1.11 java版本</h2><blockquote>
+</div><h2 id="110-不能-root-用户启动">1.10 不能 root 用户启动</h2>
+<h2 id="111-java版本">1.11 java版本</h2>
+<blockquote>
 <p>es 7.*之后的版本不需要安装环境 java，默认自带 jdk 环境，但是其他的服务还是需要 jdk 环境的，所以还是要统一安装，另外 jdk 版本要为 8 或者 11，我这里默认 8 就好了，直接 yum 安装</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -381,9 +381,9 @@ sed -i <span class="s1">&#39;/swap/s/^/#/&#39;</span> /etc/fstab <span class="c1
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="2-安装-es-集群" class="headerLink">
-    <a href="#2-%e5%ae%89%e8%a3%85-es-%e9%9b%86%e7%be%a4" class="header-mark"></a>2. 安装 es 集群</h1><h2 id="21-官网下载" class="headerLink">
-    <a href="#21-%e5%ae%98%e7%bd%91%e4%b8%8b%e8%bd%bd" class="header-mark"></a>2.1 官网下载</h2><div class="highlight"><div class="chroma">
+</div><h1 id="2-安装-es-集群">2. 安装 es 集群</h1>
+<h2 id="21-官网下载">2.1 官网下载</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -399,8 +399,8 @@ wget https://artifacts.elastic.co/downloads/logstash/logstash-7.6.2.rpm
 wget https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-7.6.2-x86_64.rpm
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="22-yum-直接安装则可" class="headerLink">
-    <a href="#22-yum-%e7%9b%b4%e6%8e%a5%e5%ae%89%e8%a3%85%e5%88%99%e5%8f%af" class="header-mark"></a>2.2 yum 直接安装则可</h2><div class="highlight"><div class="chroma">
+</div><h2 id="22-yum-直接安装则可">2.2 yum 直接安装则可</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -414,8 +414,8 @@ yum -y install filebeat
 yum -y install auditbeat
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="23-es-配置修改3-台机都要其中-nodename-配置不同其他一样" class="headerLink">
-    <a href="#23-es-%e9%85%8d%e7%bd%ae%e4%bf%ae%e6%94%b93-%e5%8f%b0%e6%9c%ba%e9%83%bd%e8%a6%81%e5%85%b6%e4%b8%ad-nodename-%e9%85%8d%e7%bd%ae%e4%b8%8d%e5%90%8c%e5%85%b6%e4%bb%96%e4%b8%80%e6%a0%b7" class="header-mark"></a>2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样</h2><div class="highlight"><div class="chroma">
+</div><h2 id="23-es-配置修改3-台机都要其中-nodename-配置不同其他一样">2.3 es 配置修改，3 台机都要，其中 node.name 配置不同，其他一样</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -499,8 +499,8 @@ xpack.security.enabled: true  启用 xpack 安全模块
 xpack.security.transport.ssl.enabled: true  TLS 功能，可对通信进行加密
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="24-如果是-yum-安装的方式需要修改es的启动文件" class="headerLink">
-    <a href="#24-%e5%a6%82%e6%9e%9c%e6%98%af-yum-%e5%ae%89%e8%a3%85%e7%9a%84%e6%96%b9%e5%bc%8f%e9%9c%80%e8%a6%81%e4%bf%ae%e6%94%b9es%e7%9a%84%e5%90%af%e5%8a%a8%e6%96%87%e4%bb%b6" class="header-mark"></a>2.4 如果是 yum 安装的方式需要修改es的启动文件</h2><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html#systemd" target="_blank" rel="noopener noreffer">参考地址</a></p>
+</div><h2 id="24-如果是-yum-安装的方式需要修改es的启动文件">2.4 如果是 yum 安装的方式需要修改es的启动文件</h2>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html#systemd" target="_blank" rel="noopener noreffer">参考地址</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -523,8 +523,8 @@ sed -i <span class="s1">&#39;/\[Service\]/a\LimitMEMLOCK=infinity&#39;</span> /u
 sudo systemctl daemon-reload
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="25-如果你要设置-es-的内存大小有两个地方" class="headerLink">
-    <a href="#25-%e5%a6%82%e6%9e%9c%e4%bd%a0%e8%a6%81%e8%ae%be%e7%bd%ae-es-%e7%9a%84%e5%86%85%e5%ad%98%e5%a4%a7%e5%b0%8f%e6%9c%89%e4%b8%a4%e4%b8%aa%e5%9c%b0%e6%96%b9" class="header-mark"></a>2.5 如果你要设置 es 的内存大小，有两个地方</h2><div class="highlight"><div class="chroma">
+</div><h2 id="25-如果你要设置-es-的内存大小有两个地方">2.5 如果你要设置 es 的内存大小，有两个地方</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -544,8 +544,8 @@ cat /etc/elasticsearch/jvm.options
 /etc/sysconfig/elasticsearch 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="26--在-node01-配置证书我这里设置的空密码直接回车便可" class="headerLink">
-    <a href="#26--%e5%9c%a8-node01-%e9%85%8d%e7%bd%ae%e8%af%81%e4%b9%a6%e6%88%91%e8%bf%99%e9%87%8c%e8%ae%be%e7%bd%ae%e7%9a%84%e7%a9%ba%e5%af%86%e7%a0%81%e7%9b%b4%e6%8e%a5%e5%9b%9e%e8%bd%a6%e4%be%bf%e5%8f%af" class="header-mark"></a>2.6  在 node01 配置证书，我这里设置的空密码，直接回车便可。</h2><div class="highlight"><div class="chroma">
+</div><h2 id="26--在-node01-配置证书我这里设置的空密码直接回车便可">2.6  在 node01 配置证书，我这里设置的空密码，直接回车便可。</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -585,8 +585,8 @@ chmod 640 /etc/elasticsearch/elastic-certificates.p12
 /usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.transport.ssl.truststore.secure_password
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="27-node01启动-es" class="headerLink">
-    <a href="#27-node01%e5%90%af%e5%8a%a8-es" class="header-mark"></a>2.7 node01启动 es</h2><div class="highlight"><div class="chroma">
+</div><h2 id="27-node01启动-es">2.7 node01启动 es</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -598,8 +598,8 @@ systemctl enable elasticsearch
 systemctl status elasticsearch
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="28-node01配置账号密码完成tls通信" class="headerLink">
-    <a href="#28-node01%e9%85%8d%e7%bd%ae%e8%b4%a6%e5%8f%b7%e5%af%86%e7%a0%81%e5%ae%8c%e6%88%90tls%e9%80%9a%e4%bf%a1" class="header-mark"></a>2.8 node01，配置账号密码完成tls通信</h2><p>命令：</p>
+</div><h2 id="28-node01配置账号密码完成tls通信">2.8 node01，配置账号密码完成tls通信</h2>
+<p>命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -723,8 +723,8 @@ Caused by: java.nio.file.AccessDeniedException: /etc/elasticsearch/elastic-certi
 [root@node01 elasticsearch]# chmod 640 /etc/elasticsearch/elastic-certificates.p12 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="29-将-node01-的证书-scp-到-02-和-03并启动-02-和-03的-es" class="headerLink">
-    <a href="#29-%e5%b0%86-node01-%e7%9a%84%e8%af%81%e4%b9%a6-scp-%e5%88%b0-02-%e5%92%8c-03%e5%b9%b6%e5%90%af%e5%8a%a8-02-%e5%92%8c-03%e7%9a%84-es" class="header-mark"></a>2.9 将 node01 的证书 scp 到 02 和 03，并启动 02 和 03的 es</h2><blockquote>
+</div><h2 id="29-将-node01-的证书-scp-到-02-和-03并启动-02-和-03的-es">2.9 将 node01 的证书 scp 到 02 和 03，并启动 02 和 03的 es</h2>
+<blockquote>
 <p>这里有三个证书</p>
 <blockquote>
 <p>elasticsearch.keystore：这里存放的是 elastic和 123456 的账号密码，给 es 集群使用，默认读取
@@ -750,8 +750,8 @@ systemctl enable elasticsearch
 systemctl status elasticsearch
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="210-基于-api-的检查集群是否搭建成功" class="headerLink">
-    <a href="#210-%e5%9f%ba%e4%ba%8e-api-%e7%9a%84%e6%a3%80%e6%9f%a5%e9%9b%86%e7%be%a4%e6%98%af%e5%90%a6%e6%90%ad%e5%bb%ba%e6%88%90%e5%8a%9f" class="header-mark"></a>2.10 基于 api 的检查，集群是否搭建成功。</h2><blockquote>
+</div><h2 id="210-基于-api-的检查集群是否搭建成功">2.10 基于 api 的检查，集群是否搭建成功。</h2>
+<blockquote>
 <p>#查看集群健康状态</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -798,9 +798,9 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 192.168.110.247           29          76  13    0.89    0.29     0.13 dilm      -      node03
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="3-安装-es-的-web-ui" class="headerLink">
-    <a href="#3-%e5%ae%89%e8%a3%85-es-%e7%9a%84-web-ui" class="header-mark"></a>3. 安装 es 的 web UI</h1><h2 id="30-有哪些-web-ui" class="headerLink">
-    <a href="#30-%e6%9c%89%e5%93%aa%e4%ba%9b-web-ui" class="header-mark"></a>3.0 有哪些 web ui</h2><table>
+</div><h1 id="3-安装-es-的-web-ui">3. 安装 es 的 web UI</h1>
+<h2 id="30-有哪些-web-ui">3.0 有哪些 web ui</h2>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -846,8 +846,8 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 </tr>
 </tbody>
 </table>
-<h2 id="31-如果带账号密码访问的话-url" class="headerLink">
-    <a href="#31-%e5%a6%82%e6%9e%9c%e5%b8%a6%e8%b4%a6%e5%8f%b7%e5%af%86%e7%a0%81%e8%ae%bf%e9%97%ae%e7%9a%84%e8%af%9d-url" class="header-mark"></a>3.1 如果带账号密码访问的话 url</h2><div class="highlight"><div class="chroma">
+<h2 id="31-如果带账号密码访问的话-url">3.1 如果带账号密码访问的话 url</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -855,8 +855,8 @@ ip              heap.percent ram.percent cpu load_1m load_5m load_15m node.role 
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">http://elastic:123456@192.168.110.245:9200
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="32-安装web-ui管理工具elastichd" class="headerLink">
-    <a href="#32-%e5%ae%89%e8%a3%85web-ui%e7%ae%a1%e7%90%86%e5%b7%a5%e5%85%b7elastichd" class="header-mark"></a>3.2 安装web UI管理工具ElasticHD:</h2><blockquote>
+</div><h2 id="32-安装web-ui管理工具elastichd">3.2 安装web UI管理工具ElasticHD:</h2>
+<blockquote>
 <p>普通安装：</p>
 </blockquote>
 <p>（1）安装supervisord</p>
@@ -931,9 +931,9 @@ supervisorctl status
 </code></pre></td></tr></table>
 </div>
 </div><p>web端访问结果：http://192.168.110.245:9800/</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_01.png" width="800" hegiht="250" align=center /></p>
-<h2 id="33-安装-elasticsearch--hq" class="headerLink">
-    <a href="#33-%e5%ae%89%e8%a3%85-elasticsearch--hq" class="header-mark"></a>3.3 安装 elasticsearch -HQ</h2><blockquote>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_01.png" width="800" hegiht="250" align=center />
+<h2 id="33-安装-elasticsearch--hq">3.3 安装 elasticsearch -HQ</h2>
+<blockquote>
 <p>普通安装：</p>
 </blockquote>
 <p>(1)安装python3.6</p>
@@ -1002,17 +1002,17 @@ supervisorctl status
 </code></pre></td></tr></table>
 </div>
 </div><p>web端访问结果：http://192.168.110.245:5000/</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_02.png" width="800" hegiht="250" align=center /></p>
-<h1 id="4-安装-kibana" class="headerLink">
-    <a href="#4-%e5%ae%89%e8%a3%85-kibana" class="header-mark"></a>4. 安装 Kibana</h1><h2 id="41-引用" class="headerLink">
-    <a href="#41-%e5%bc%95%e7%94%a8" class="header-mark"></a>4.1 引用：</h2><blockquote>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_02.png" width="800" hegiht="250" align=center />
+<h1 id="4-安装-kibana">4. 安装 Kibana</h1>
+<h2 id="41-引用">4.1 引用：</h2>
+<blockquote>
 <p>Kibana是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用Kibana，可以通过各种图表进行高级数据分析及展示。</p>
 </blockquote>
 <blockquote>
 <p>Kibana让海量数据更容易理解。它操作简单，基于浏览器的用户界面可以快速创建仪表板（dashboard）实时显示Elasticsearch查询动态。</p>
 </blockquote>
-<h2 id="42-安装" class="headerLink">
-    <a href="#42-%e5%ae%89%e8%a3%85" class="header-mark"></a>4.2 安装：</h2><div class="highlight"><div class="chroma">
+<h2 id="42-安装">4.2 安装：</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1032,8 +1032,8 @@ chmod -R 755 /var/log/kibana/
 chown -R kibana /var/log/kibana/
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="43-修改配置文件" class="headerLink">
-    <a href="#43-%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="header-mark"></a>4.3 修改配置文件</h2><div class="highlight"><div class="chroma">
+</div><h2 id="43-修改配置文件">4.3 修改配置文件</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1079,8 +1079,8 @@ logging.verbose: false
 xpack.security.enabled: true
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="44-启动" class="headerLink">
-    <a href="#44-%e5%90%af%e5%8a%a8" class="header-mark"></a>4.4 启动</h2><div class="highlight"><div class="chroma">
+</div><h2 id="44-启动">4.4 启动</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1090,15 +1090,15 @@ xpack.security.enabled: true
 systemctl status kibana
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="45-open-kibana-url" class="headerLink">
-    <a href="#45-open-kibana-url" class="header-mark"></a>4.5 open kibana url</h2><p>http://192.168.110.245:5601/ ，这里要用 elastic 账号登录，使用 kibana 登录是无法，会报错 403 没权限</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_03.png" width="800" hegiht="250" align=center /></p>
-<h2 id="46-内存限制" class="headerLink">
-    <a href="#46-%e5%86%85%e5%ad%98%e9%99%90%e5%88%b6" class="header-mark"></a>4.6 内存限制</h2><p>参考资料：<a href="https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es</a></p>
+</div><h2 id="45-open-kibana-url">4.5 open kibana url</h2>
+<p>http://192.168.110.245:5601/ ，这里要用 elastic 账号登录，使用 kibana 登录是无法，会报错 403 没权限</p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_03.png" width="800" hegiht="250" align=center />
+<h2 id="46-内存限制">4.6 内存限制</h2>
+<p>参考资料：<a href="https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/kibana/7.2/production.html#load-balancing-es</a></p>
 <p>默认内存限制 1.4GB，如果过需要可以通过环境变量进行替换，一般不需要更改。</p>
-<h1 id="5-node02-安装-logstash" class="headerLink">
-    <a href="#5-node02-%e5%ae%89%e8%a3%85-logstash" class="header-mark"></a>5. node02 安装 logstash</h1><h2 id="51-安装-logstash" class="headerLink">
-    <a href="#51-%e5%ae%89%e8%a3%85-logstash" class="header-mark"></a>5.1 安装 logstash</h2><div class="highlight"><div class="chroma">
+<h1 id="5-node02-安装-logstash">5. node02 安装 logstash</h1>
+<h2 id="51-安装-logstash">5.1 安装 logstash</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1108,8 +1108,8 @@ systemctl status kibana
 cp /etc/logstash/logstash.yml /etc/logstash/logstash.yml.orig
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="52-配置文件" class="headerLink">
-    <a href="#52-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="header-mark"></a>5.2 配置文件</h2><div class="highlight"><div class="chroma">
+</div><h2 id="52-配置文件">5.2 配置文件</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1129,8 +1129,8 @@ config.reload.interval: 10s
 path.logs: /var/log/logstash
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="53-修改内存地址" class="headerLink">
-    <a href="#53-%e4%bf%ae%e6%94%b9%e5%86%85%e5%ad%98%e5%9c%b0%e5%9d%80" class="header-mark"></a>5.3 修改内存地址</h2><div class="highlight"><div class="chroma">
+</div><h2 id="53-修改内存地址">5.3 修改内存地址</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1142,8 +1142,8 @@ path.logs: /var/log/logstash
 -Xmx1g
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="54-手动测试输入-hello" class="headerLink">
-    <a href="#54-%e6%89%8b%e5%8a%a8%e6%b5%8b%e8%af%95%e8%be%93%e5%85%a5-hello" class="header-mark"></a>5.4 手动测试，输入 hello</h2><div class="highlight"><div class="chroma">
+</div><h2 id="54-手动测试输入-hello">5.4 手动测试，输入 hello</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1155,10 +1155,10 @@ path.logs: /var/log/logstash
 hello
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_04.png" width="800" hegiht="250" align=center /></p>
-<h1 id="6-node0203安装-filebeat" class="headerLink">
-    <a href="#6-node0203%e5%ae%89%e8%a3%85-filebeat" class="header-mark"></a>6. node02、03安装 filebeat</h1><h2 id="61-安装" class="headerLink">
-    <a href="#61-%e5%ae%89%e8%a3%85" class="header-mark"></a>6.1 安装</h2><div class="highlight"><div class="chroma">
+</div><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_04.png" width="800" hegiht="250" align=center />
+<h1 id="6-node0203安装-filebeat">6. node02、03安装 filebeat</h1>
+<h2 id="61-安装">6.1 安装</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1170,13 +1170,13 @@ cd /etc/filebeat
 cp filebeat.yml filebeat.yml.orig
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="7-日志处理" class="headerLink">
-    <a href="#7-%e6%97%a5%e5%bf%97%e5%a4%84%e7%90%86" class="header-mark"></a>7. 日志处理</h1><h2 id="案例一官方例子" class="headerLink">
-    <a href="#%e6%a1%88%e4%be%8b%e4%b8%80%e5%ae%98%e6%96%b9%e4%be%8b%e5%ad%90" class="header-mark"></a>案例一：官方例子</h2><h2 id="参考" class="headerLink">
-    <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考：</h2><p><a href="https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html</a>
+</div><h1 id="7-日志处理">7. 日志处理</h1>
+<h2 id="案例一官方例子">案例一：官方例子</h2>
+<h2 id="参考">参考：</h2>
+<p><a href="https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/logstash/7.7/plugins-inputs-beats.html</a>
 <a href="https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html" target="_blank" rel="noopener noreffer">https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html</a></p>
-<h2 id="711在-node02-调整-logstash-配置" class="headerLink">
-    <a href="#711%e5%9c%a8-node02-%e8%b0%83%e6%95%b4-logstash-%e9%85%8d%e7%bd%ae" class="header-mark"></a>7.1.1在 node02 调整 logstash 配置</h2><div class="highlight"><div class="chroma">
+<h2 id="711在-node02-调整-logstash-配置">7.1.1在 node02 调整 logstash 配置</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1218,8 +1218,8 @@ EOF
 systemctl restart logstash
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="712检查端口是否启动" class="headerLink">
-    <a href="#712%e6%a3%80%e6%9f%a5%e7%ab%af%e5%8f%a3%e6%98%af%e5%90%a6%e5%90%af%e5%8a%a8" class="header-mark"></a>7.1.2检查端口是否启动：</h2><div class="highlight"><div class="chroma">
+</div><h2 id="712检查端口是否启动">7.1.2检查端口是否启动：</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1229,8 +1229,8 @@ systemctl restart logstash
 tcp6       0      0 :::5044                 :::*                    LISTEN      31422/java   
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="713-在-node02-配置-filebeat" class="headerLink">
-    <a href="#713-%e5%9c%a8-node02-%e9%85%8d%e7%bd%ae-filebeat" class="header-mark"></a>7.1.3 在 node02 配置 filebeat</h2><div class="highlight"><div class="chroma">
+</div><h2 id="713-在-node02-配置-filebeat">7.1.3 在 node02 配置 filebeat</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1258,8 +1258,8 @@ output.logstash:
 EOF
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="714-启动-filebeat" class="headerLink">
-    <a href="#714-%e5%90%af%e5%8a%a8-filebeat" class="header-mark"></a>7.1.4 启动 filebeat</h2><div class="highlight"><div class="chroma">
+</div><h2 id="714-启动-filebeat">7.1.4 启动 filebeat</h2>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -1268,16 +1268,16 @@ EOF
 </code></pre></td></tr></table>
 </div>
 </div><p>启动结果部分截图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_05.png" width="800" hegiht="250" align=center /></p>
-<h2 id="715-在-kibana-打开management-elasticsearch-indexmanagement可以看到-filebeat-的索引" class="headerLink">
-    <a href="#715-%e5%9c%a8-kibana-%e6%89%93%e5%bc%80management-elasticsearch-indexmanagement%e5%8f%af%e4%bb%a5%e7%9c%8b%e5%88%b0-filebeat-%e7%9a%84%e7%b4%a2%e5%bc%95" class="header-mark"></a>7.1.5 在 kibana 打开“Management”-&raquo;“Elasticsearch”-&raquo;“IndexManagement”，可以看到 filebeat 的索引</h2><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_06.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_05.png" width="800" hegiht="250" align=center />
+<h2 id="715-在-kibana-打开management-elasticsearch-indexmanagement可以看到-filebeat-的索引">7.1.5 在 kibana 打开“Management”-&raquo;“Elasticsearch”-&raquo;“IndexManagement”，可以看到 filebeat 的索引</h2>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk_06.png" width="800" hegiht="250" align=center />
 <p>然后我们到 kiabana 那里添加 index 试试。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk10.png" width="800" hegiht="250" align=center /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk07.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk10.png" width="800" hegiht="250" align=center />
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk07.png" width="800" hegiht="250" align=center />
 <p>创建成功</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk08.png" width="800" hegiht="250" align=center /></p>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk08.png" width="800" hegiht="250" align=center />
 <p>最后我们到 Discover 这里就可以看到相关试图了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk09.png" width="800" hegiht="250" align=center /></p></div>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/elk09.png" width="800" hegiht="250" align=center /></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -1311,17 +1311,15 @@ EOF
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-            <div class="footer-line">
-            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

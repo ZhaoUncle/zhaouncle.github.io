@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Memos备忘录加入微信公众号功能 - 易波叶平</title><meta name="Description" content="欲戴王冠，必承其重"><meta property="og:title" content="Memos备忘录加入微信公众号功能" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhaouncle.com/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/" /><meta property="og:image" content="https://zhaouncle.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-20T14:30:37+08:00" />
+<meta property="article:modified_time" content="2022-08-20T14:30:37+08:00" /><meta property="og:site_name" content="我的全新 Hugo 网站 2021" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://zhaouncle.com/logo.png"/>
+
+<meta name="twitter:title" content="Memos备忘录加入微信公众号功能"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://zhaouncle.com/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/" /><link rel="prev" href="https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85docker-compose/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="L0x8CmbrOx9V21ZwTit7tRmDxdYk3kxALRLqR8GSFg0" /><meta name="msvalidate.01" content="C7D99901D0D018E2FA741CC205405B28" /><meta name="baidu-site-verification" content="Dnx20VKWrw" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Memos备忘录加入微信公众号功能",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zhaouncle.com\/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD\/"
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "memos 备忘录, nas","wordcount":  1081 ,
+        "url": "https:\/\/zhaouncle.com\/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD\/","datePublished": "2022-08-20T14:30:37+08:00","dateModified": "2022-08-20T14:30:37+08:00","publisher": {
+            "@type": "Organization",
+            "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "赵叔"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><a class="menu-item" href="/categories/thoughts/" title="杂谈"> 杂谈 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="https://link.zhaouncle.com" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i>  </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i>  </a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i>  </a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="易波叶平"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a class="menu-item" href="/categories/thoughts/" title="杂谈">杂谈</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="https://link.zhaouncle.com" title="" rel="noopener noreffer" target="_blank"><i class='fas fa-link fa-fw'></i></a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/uptime-status/" title="UpStatus"><i class='fas fa-heart fa-fw'></i></a><a class="menu-item" href="https://k8syaml.com/" title="k8syaml" rel="noopener noreffer" target="_blank"><i class='fab fa-docker'></i></a><a class="menu-item" href="https://www.cnblogs.com/UncleZhao/" title="博客园" rel="noopener noreffer" target="_blank"><i class='fas fa-blog'></i></a><a href="#" onclick="return false;" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Memos备忘录加入微信公众号功能</h1><h2 class="single-subtitle">Memos备忘录便利贴加入微信公众号功能</h2><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/memos-%E5%A4%87%E5%BF%98%E5%BD%95/"><i class="far fa-folder fa-fw"></i>memos 备忘录</a>&nbsp;<a href="/categories/nas/"><i class="far fa-folder fa-fw"></i>nas</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-20">2022-08-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-20">2022-08-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1081 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/" class="leancloud_visitors" data-flag-title="Memos备忘录加入微信公众号功能">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/" class="comment_count" data-flag-title="Memos备忘录加入微信公众号功能">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-没有80和443端口就不要看了浪费时间因为微信公众号接入只支持80和443">1. 没有80和443端口就不要看了，浪费时间，因为微信公众号接入只支持80和443</a></li>
+    <li><a href="#2-安装memos">2. 安装memos</a>
+      <ul>
+        <li><a href="#21-docker-安装">2.1 docker 安装</a></li>
+        <li><a href="#22-docker-compose-安装">2.2 docker-compose 安装</a>
+          <ul>
+            <li><a href="#23-nginx-反代-memos-对外访问">2.3 nginx 反代 memos 对外访问</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-memos-proxy-代理服务启动">3. memos-proxy 代理服务启动</a>
+      <ul>
+        <li><a href="#31-简易安装">3.1 简易安装</a>
+          <ul>
+            <li><a href="#32-nginx-反代">3.2 nginx 反代</a></li>
+            <li><a href="#33-如果要限制用户从公众号访问memos需要在configini限制openid">3.3 如果要限制用户从公众号访问memos，需要在config.ini限制openid</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-微信公众号接入指南">4. 微信公众号接入指南：</a></li>
+    <li><a href="#5-扩展">5. 扩展</a>
+      <ul>
+        <li><a href="#功能从以下copy-懒得写">功能从以下copy ，懒得写</a>
+          <ul>
+            <li><a href="#之前账号名称太长了可以将用户名称改短一点">之前账号名称太长了，可以将用户名称改短一点</a></li>
+            <li><a href="#这里可以创建多个账号">这里可以创建多个账号</a></li>
+            <li><a href="#创建信息和上传图片也没有太大问题这里有个小bug图片名称如果有上传显示会有问题">创建信息和上传图片也没有太大问题，这里有个小bug，图片名称如果有“（）”，上传显示会有问题</a></li>
+            <li><a href="#创建tag记得tag-后面说有空格">创建#tag，记得“#tag ”后面说有空格</a></li>
+            <li><a href="#归档点击archive感觉相当于回收站">归档，点击“Archive”，感觉相当于回收站</a></li>
+            <li><a href="#删除文件需要点击两次">删除文件，需要点击两次</a></li>
+            <li><a href="#资源存放图片的">资源，存放图片的</a></li>
+            <li><a href="#每日回顾卡片形式挺好看的">每日回顾，卡片形式挺好看的</a></li>
+            <li><a href="#捷径相当于筛选功能">捷径，相当于筛选功能</a></li>
+            <li><a href="#这样就可以比较快速筛选想要的信息了">这样就可以比较快速筛选想要的信息了</a></li>
+          </ul>
+        </li>
+        <li><a href="#flomo--浮墨笔记">flomo · 浮墨笔记</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="1-没有80和443端口就不要看了浪费时间因为微信公众号接入只支持80和443">1. 没有80和443端口就不要看了，浪费时间，因为微信公众号接入只支持80和443</h1>
+<h1 id="2-安装memos">2. 安装memos</h1>
+<blockquote>
+<p><a href="https://github.com/usememos/memos" target="_blank" rel="noopener noreffer">https://github.com/usememos/memos</a></p>
+</blockquote>
+<h2 id="21-docker-安装">2.1 docker 安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">docker run \
+  --name memos \
+  --publish 5230:5230 \
+  --volume ~/.memos/:/var/opt/memos \
+  neosmemo/memos:latest \
+  --mode prod \
+  --port 5230
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="22-docker-compose-安装">2.2 docker-compose 安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">version: &#39;3&#39;
+
+services:
+  memos:
+    image: neosmemo/memos:latest 
+    container_name: memos
+    ports:
+      - 5230:5230 
+    volumes:
+      - ./memos/:/var/opt/memos
+    command: &#34;--mode prod --port 5230&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>打开登录页面，注册新账号密码
+<img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201432855.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201432855.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201432855.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201432855.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201432855.png"
+        title="image-20220820143219776"
+    />
+登录之后需要 api 到 python 脚本。
+<img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201440724.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201440724.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201440724.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201440724.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201440724.png"
+        title="image-20220820144031676"
+    /></p>
+<h3 id="23-nginx-反代-memos-对外访问">2.3 nginx 反代 memos 对外访问</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">server {
+    listen  80 ;
+    server_name memos.test.com;
+    return 301 https://$host$request_uri ;
+}
+server {
+    listen  443 ssl ;
+    server_name memos.test.com;
+
+    ssl_protocols       TLSv1.1 TLSv1.2;
+    ssl_certificate     ssl/test.com/cert.pem;
+    ssl_certificate_key  ssl/test.com/key.pem;
+
+    client_header_buffer_size 128k;
+    large_client_header_buffers 4 128k;
+    client_max_body_size    5m;
+
+    location /  {
+         proxy_pass http://127.0.0.1:5230 ;
+           proxy_http_version 1.1;
+           proxy_set_header Connection &#34;&#34;;
+           proxy_set_header  Host $host;
+           proxy_set_header Cdn-Src-Ip $http_true_client_ip ;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for ;
+    }
+
+    access_log  /var/log/nginx/memos.acc main;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="3-memos-proxy-代理服务启动">3. memos-proxy 代理服务启动</h1>
+<blockquote>
+<p><a href="https://github.com/ZhaoUncle/memos-proxy" target="_blank" rel="noopener noreffer">https://github.com/ZhaoUncle/memos-proxy</a></p>
+</blockquote>
+<h2 id="31-简易安装">3.1 简易安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/ZhaoUncle/memos-proxy.git
+cd memos-proxy
+mv config_demo.ini config.ini
+
+## 按需修改config.ini里面的配置，主要是把memos 的外网访问地址和微信公众号的token复制进去替换启动就行
+
+## docker-compose 安装
+
+docker-compose up -d
+
+## docker run 安装
+
+docker run -d -p 5000:5000  -v &#34;/data/go/memos-proxy/config.ini:/app/config.ini&#34; --name memos-proxy zhaoweiping/memos-proxy
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="32-nginx-反代">3.2 nginx 反代</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">server {
+    listen  80 ;
+    server_name memos-proxy.test.com;
+    return 301 https://$host$request_uri ;
+}
+server {
+    listen  443 ssl ;
+    server_name memos-proxy.test.com;
+
+    ssl_protocols       TLSv1.1 TLSv1.2;
+    ssl_certificate     ssl/test.com/cert.pem;
+    ssl_certificate_key  ssl/test.com/key.pem;
+
+    client_header_buffer_size 128k;
+    large_client_header_buffers 4 128k;
+    client_max_body_size    5m;
+
+    location /  {
+         proxy_pass http://127.0.0.1:5000 ;
+           proxy_http_version 1.1;
+           proxy_set_header Connection &#34;&#34;;
+           proxy_set_header  Host $host;
+           proxy_set_header Cdn-Src-Ip $http_true_client_ip ;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for ;
+    }
+
+    access_log  /var/log/nginx/wechat.acc main;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="33-如果要限制用户从公众号访问memos需要在configini限制openid">3.3 如果要限制用户从公众号访问memos，需要在config.ini限制openid</h3>
+<p>第一次要访问失败报错，让他显示openid出来，然后提取出来放到config.ini
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201441274.png" alt="image-20220820144150234" style="zoom: 33%;" /></p>
+<p><img
+        class="lazyload"
+        data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442903.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442903.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442903.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442903.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442903.png"
+        title="image-20220820144200851"
+    /></p>
+<h1 id="4-微信公众号接入指南">4. 微信公众号接入指南：</h1>
+<p>参考：https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html</p>
+<ol>
+<li>
+<p>登录微信公众号：https://mp.weixin.qq.com/</p>
+</li>
+<li>
+<p>打开“设置于开发”&ndash;&gt;“基本配置”&ndash;&gt;“服务器配置（已启用）”&ndash;&gt;“修改配置”
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442033.png" alt="image-20220820144216003" style="zoom:33%;" /></p>
+</li>
+<li>
+<p>按相应要求填写<strong>URL、Token、EncodingAESKey</strong>，然后选择<strong>明文模式</strong>，提交，确认提交成功就好了。
+url 地址是：https://memos-proxy.test.com/wechat
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442725.png" alt="image-20220820144228686" style="zoom: 33%;" /></p>
+</li>
+<li>
+<p>点击<strong>启用</strong>。
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442298.png" alt="image-20220820144245265" style="zoom:50%;" /></p>
+</li>
+</ol>
+<p>python 代码参考：https://blog.51cto.com/u_13916362/3801595</p>
+<h1 id="5-扩展">5. 扩展</h1>
+<h2 id="功能从以下copy-懒得写">功能从以下copy ，懒得写</h2>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/s/JqzNE6yWTL7KkKzb3MIqfw" target="_blank" rel="noopener noreffer">https://mp.weixin.qq.com/s/JqzNE6yWTL7KkKzb3MIqfw</a>
+<a href="https://blog.csdn.net/wbsu2004/article/details/125594736" target="_blank" rel="noopener noreffer">https://blog.csdn.net/wbsu2004/article/details/125594736</a></p>
+</blockquote>
+<h3 id="之前账号名称太长了可以将用户名称改短一点">之前账号名称太长了，可以将用户名称改短一点</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201442471.png" alt="image-20220820144255439" style="zoom:50%;" />
+<h3 id="这里可以创建多个账号">这里可以创建多个账号</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201443013.png" alt="image-20220820144303985" style="zoom:50%;" />
+<h3 id="创建信息和上传图片也没有太大问题这里有个小bug图片名称如果有上传显示会有问题">创建信息和上传图片也没有太大问题，这里有个小bug，图片名称如果有“（）”，上传显示会有问题</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201443356.png" alt="image-20220820144313324" style="zoom:50%;" />
+<h3 id="创建tag记得tag-后面说有空格">创建#tag，记得“#tag ”后面说有空格</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201443348.png" alt="image-20220820144322315" style="zoom:50%;" />
+<h3 id="归档点击archive感觉相当于回收站">归档，点击“Archive”，感觉相当于回收站</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201443626.png" alt="image-20220820144332594" style="zoom:50%;" />
+<h3 id="删除文件需要点击两次">删除文件，需要点击两次</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201443626.png" style="zoom:50%;" />
+<h3 id="资源存放图片的">资源，存放图片的</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201443732.png" alt="image-20220820144353702" style="zoom: 50%;" />
+<h3 id="每日回顾卡片形式挺好看的">每日回顾，卡片形式挺好看的</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201444983.png" alt="image-20220820144407913" style="zoom: 50%;" />
+<h3 id="捷径相当于筛选功能">捷径，相当于筛选功能</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201444985.png" alt="image-20220820144417909" style="zoom:50%;" />
+<h3 id="这样就可以比较快速筛选想要的信息了">这样就可以比较快速筛选想要的信息了</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/202208201444476.png" alt="image-20220820144431414" style="zoom:50%;" />
+<h2 id="flomo--浮墨笔记">flomo · 浮墨笔记</h2>
+<p><a href="https://flomoapp.com/" target="_blank" rel="noopener noreffer">https://flomoapp.com/</a></p>
+<p><img
+        class="lazyload"
+        data-src="/Users/aomine/Documents/hugo/MyBlogHugo/content/posts/nas/:/786d5ac4959f4797b1b8c4309f967c75"
+        data-srcset="/Users/aomine/Documents/hugo/MyBlogHugo/content/posts/nas/:/786d5ac4959f4797b1b8c4309f967c75, /Users/aomine/Documents/hugo/MyBlogHugo/content/posts/nas/:/786d5ac4959f4797b1b8c4309f967c75 1.5x, /Users/aomine/Documents/hugo/MyBlogHugo/content/posts/nas/:/786d5ac4959f4797b1b8c4309f967c75 2x"
+        data-sizes="auto"
+        alt="/Users/aomine/Documents/hugo/MyBlogHugo/content/posts/nas/:/786d5ac4959f4797b1b8c4309f967c75"
+        title="f1a7052eccfb72223d48f608a2fd86e6.png"
+    /></p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-20</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/memos-%E5%A4%87%E5%BF%98%E5%BD%95/">memos 备忘录</a>,&nbsp;<a href="/tags/nas/">nas</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/unraid%E5%AE%89%E8%A3%85docker-compose/" class="prev" rel="prev" title="Unraid 安装 Docker Compose"><i class="fas fa-angle-left fa-fw"></i>Unraid 安装 Docker Compose</a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
+                        <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
+                    </span></div>
+            <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-168242983-1');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-168242983-1" async></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://waline-lx1l07bh7-zhaouncle.vercel.app/","uploadImage":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"易波叶平","mobile-header-typeit":"易波叶平"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script></div>
+</body>
+
+</html>

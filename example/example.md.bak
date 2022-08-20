@@ -1,0 +1,27 @@
+---
+title: ""
+subtitle: ""
+date: {{date:YYYY-MM-DD}}T{{time:HH:mm:ssZ}}
+lastmod: {{date:YYYY-MM-DD}}T{{time:HH:mm:ssZ}}
+draft: true
+author: "赵叔"
+authorLink: ""
+description: "test"
+
+tags: [""]
+categories: [""]
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+
+featuredImage: ""
+featuredImagePreview: ""
+
+toc:
+  enable: true
+math:
+  enable: false
+lightgallery: false
+license: ""
+
+---

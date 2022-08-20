@@ -20,7 +20,7 @@
 
 github 更新列表，欢迎大家提交pr或者issues来这里，进行更新，喜欢的话，点下 Star 吧：[https://github.com/ZhaoUncle/Awesome-Homepage](https://github.com/ZhaoUncle/Awesome-Homepage)
 
-后面可能会同步更新到公众号：unclezhao689
+
 
 | 功能类型                                                                                   | 推荐指数             | 静态导航页 | 动态导航页 | 后台管理 | 用户登录 | demo 页面（直接打开体验）                                                                                                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------ | -------------------- | ---------- | ---------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,6 +60,10 @@ github 更新列表，欢迎大家提交pr或者issues来这里，进行更新�
 | [startup-page](https://github.com/timothypholmes/startup-page)                                | ⭐️⭐️             | ✅         |            |          |          |                                                                                                                                                                                                                                                            |
 | [startpages](https://github.com/grtcdr/startpages)                                            | ⭐️⭐️             | ✅         |            |          |          |                                                                                                                                                                                                                                                            |
 | [the-glorious-startpage](https://github.com/manilarome/the-glorious-startpage/)               | ⭐️⭐️             | ✅         |            |          |          | Firefox 和 Chrome 浏览器起始页                                                                                                                                                                                                                             |
+| [smashing](https://github.com/Smashing/smashing)               |              |          |            |          |          | http://dashingdemo.herokuapp.com/sample                                                                                                                                                                                                                             |
+| [homelab_proxy](https://github.com/jmztaylor/homelab_proxy)               |              |          |            |          |          |                                                                                                                                                                                                                             |
+                                      |
+| [simple-dash](https://github.com/kutyla-philipp/simple-dash)               |              |          |            |          |          |    https://kutyla-philipp.github.io/simple-dash/                                                                                                                                                                                                                         |
 
 # 四、安装前准备
 
@@ -1105,50 +1109,50 @@ notion 的使用方法，其实就是借助他的几种格式，比如 Table、B
    ```
    方法1. 使用静态托管
    最简单快速上线自己的导航网站，你可以直接下载本项目修改内容既可部署上线。
-
+   
    方法2. 使用基于 Laravel 搭建的后台系统🔥(感谢@hui-ho提供)
    开源地址：https://github.com/hui-ho/WebStack-Laravel
-
+   
    Docker部署版本:https://hub.docker.com/r/arvon2014/webstack-laravel
-
+   
    方法3. Hexo主题
    开源地址： https://github.com/HCLonely/hexo-theme-webstack
-
+   
    方法4. Hugo主题
    开源地址： https://github.com/iplaycode/webstack-hugo 主题演示： https://iplaycode.github.io/nav/
-
+   
    方法5. 基于Java开发的后台系统🔥(感谢@jsnjfz提供)
    开源地址：https://github.com/jsnjfz/WebStack-Guns
-
+   
    方法6. springboot后台 Nikati-WebStack-Guns ❤️ (感谢Nikati (Nikati)提供)
    开源地址：https://github.com/Nikati/WebStack-Guns-NKT
-
+   
    方法7.1 使用 Jekyll 版本的后台🔥(感谢@0xl2oot提供)
    开源地址：https://github.com/0xl2oot/webstack-jekyll
-
+   
    方法7.2 从Chrome书签生成Jekyll版本配置的工具
    体验网址： https://w.hanxi.info/convert.html 开源地址： https://github.com/hanxi/webstack-jekyll
-
+   
    方法8.1 钻芒二开Typecho主题
    开源地址：https://www.zmki.cn/5366.html 比较详细的安装教程：https://www.waoww.com/typecho-theme/zmki-webstack.html 预览地址：https://tool.zmki.cn/
-
+   
    方法8.2 SEOGO二开Typecho主题
    开源地址：https://www.seogo.me/muban/webstack.html
-
+   
    方法9. 静态博客Gridea主题
    开源地址: https://github.com/lmm214/gridea-theme-webstack 在线预览: https://edui.fun/
-
+   
    方法10. VUE版本
    开源地址: https://github.com/Anjaxs/WebStack-vue/tree/master
-
+   
    方法11. flask-blog-platform
    开源地址: https://github.com/shitianfang/flask-blog-platform/tree/master
-
+   
    方法12. 自己写后台系统
    可以按照自己的喜好和框架搭建后台系统，也可以参考我设计好的后台框架自行搭建。本站设计开发过程在我的博客文章有详细讲到《webstack | viggo》。静态源码（半成品）：https://github.com/WebStackPage/webstack-Admin
-
+   
    如果你有更好的解决方案，并且能够开源供大家使用，可以在本项目提Issus，或者直接通过我个人网站中的联系方式联系我。
-
+   
    JUST DOWNLOAD AND DO WHAT THE FUCK YOU WANT TO.
    ```
 

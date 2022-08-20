@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Golang, go","wordcount":  483 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Golang, go","wordcount":  465 ,
         "url": "https:\/\/zhaouncle.com\/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2\/","datePublished": "2020-11-13T14:37:16+08:00","dateModified": "2020-11-13T14:37:16+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,7 +126,23 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Golang】类型转换之 cast 包</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-13">2020-11-13</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-11-13">2020-11-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 465 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="leancloud_visitors" data-flag-title="【Golang】类型转换之 cast 包">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="comment_count" data-flag-title="【Golang】类型转换之 cast 包">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#cast包">cast包</a>
       <ul>
@@ -141,22 +157,6 @@
     </li>
   </ul>
 </nav></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">【Golang】类型转换之 cast 包</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-13">2020-11-13</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2020-11-13">2020-11-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 483 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="leancloud_visitors" data-flag-title="【Golang】类型转换之 cast 包">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/%E6%A0%87%E5%87%86%E5%BA%93-cast%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="comment_count" data-flag-title="【Golang】类型转换之 cast 包">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
                 <div class="details-summary admonition-title">
                     <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -166,16 +166,16 @@
                         本文最后更新于 <span class="timeago" datetime="2020-11-13T14:37:16" title="November 13, 2020">2020-11-13</span>，文中内容可能已过时。</div>
                 </div>
             </div><p>Go语言中<code>cast</code>包实现了基本数据类型和其字符串表示的相互转换。</p>
-<h1 id="cast包" class="headerLink">
-    <a href="#cast%e5%8c%85" class="header-mark"></a>cast包</h1><p>cast 包实现了基本数据类型与其字符串表示的转换，在Go中轻松安全地从一种类型转换为另一种类型.</p>
+<h1 id="cast包">cast包</h1>
+<p>cast 包实现了基本数据类型与其字符串表示的转换，在Go中轻松安全地从一种类型转换为另一种类型.</p>
 <p>更多函数请查看<a href="https://github.com/spf13/cast" target="_blank" rel="noopener noreffer">官方文档</a>。</p>
-<h2 id="用法" class="headerLink">
-    <a href="#%e7%94%a8%e6%b3%95" class="header-mark"></a>用法</h2><p>Cast提供了一些To_____方法。这些方法将始终返回所需的类型。<strong>如果提供了不会转换为该类型的输入，则将返回该类型的0或nil值</strong>。</p>
+<h2 id="用法">用法</h2>
+<p>Cast提供了一些To_____方法。这些方法将始终返回所需的类型。<strong>如果提供了不会转换为该类型的输入，则将返回该类型的0或nil值</strong>。</p>
 <p>Cast还提供了与To_____E相同的方法。这些返回与To_____方法相同的结果，外加一个附加错误，告诉您是否成功转换。使用这些方法，您可以分辨出输入何时与零值匹配或转换失败与返回零值之间的区别。</p>
-<h2 id="string与int类型转换" class="headerLink">
-    <a href="#string%e4%b8%8eint%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2" class="header-mark"></a>string与int类型转换</h2><p>这一组函数是我们平时编程中用的最多的。</p>
-<h3 id="tostring" class="headerLink">
-    <a href="#tostring" class="header-mark"></a>ToString()</h3><p><code>ToString()</code>函数用于将<strong>非字符串类型</strong>的整数转换为<strong>字符串</strong>类型，函数签名如下。</p>
+<h2 id="string与int类型转换">string与int类型转换</h2>
+<p>这一组函数是我们平时编程中用的最多的。</p>
+<h3 id="tostring">ToString()</h3>
+<p><code>ToString()</code>函数用于将<strong>非字符串类型</strong>的整数转换为<strong>字符串</strong>类型，函数签名如下。</p>
 <p>示例代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -199,8 +199,8 @@
 <span class="nx">cast</span><span class="p">.</span><span class="nf">ToString</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>                <span class="c1">// &#34;one more time&#34;
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="toint" class="headerLink">
-    <a href="#toint" class="header-mark"></a>ToInt()</h3><p><code>ToInt()</code>函数用于将<strong>非 int类型</strong>数据转换为对应的<strong>int</strong>表示，具体的函数签名如下。</p>
+</div><h3 id="toint">ToInt()</h3>
+<p><code>ToInt()</code>函数用于将<strong>非 int类型</strong>数据转换为对应的<strong>int</strong>表示，具体的函数签名如下。</p>
 <p>示例代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -260,17 +260,15 @@
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-            <div class="footer-line">
-            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

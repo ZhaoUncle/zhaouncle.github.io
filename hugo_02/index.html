@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/zhaouncle.com\/hugo_02\/"
-        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  1061 ,
+        },"image": ["https:\/\/zhaouncle.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, 博客","wordcount":  1037 ,
         "url": "https:\/\/zhaouncle.com\/hugo_02\/","datePublished": "2020-06-27T13:07:02+08:00","dateModified": "2021-12-26T21:26:19+08:00","publisher": {
             "@type": "Organization",
             "name": "目瞪狗呆","logo": "https:\/\/cdn.jsdelivr.net\/gh\/ZhaoUncle\/image@main\/blog\/avatar.png"},"author": {
@@ -126,7 +126,23 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo（二）algolia 博客搜索及自动化处理脚本</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-27">2020-06-27</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-12-26">2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1037 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/hugo_02/" class="leancloud_visitors" data-flag-title="Hugo（二）algolia 博客搜索及自动化处理脚本">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/hugo_02/" class="comment_count" data-flag-title="Hugo（二）algolia 博客搜索及自动化处理脚本">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -164,26 +180,18 @@
     </li>
   </ul>
 </nav></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo（二）algolia 博客搜索及自动化处理脚本</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="http://zhaouncle.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">赵叔</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-27">2020-06-27</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-12-26">2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1061 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/hugo_02/" class="leancloud_visitors" data-flag-title="Hugo（二）algolia 博客搜索及自动化处理脚本">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/hugo_02/" class="comment_count" data-flag-title="Hugo（二）algolia 博客搜索及自动化处理脚本">
-                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count"></span>&nbsp;条评论
-                    </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+                <div class="details-summary admonition-title">
+                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"></div>
-            </div><div class="content" id="content"><p>使用一些简单的 shell 脚本处理自己的 hugo 博客和搜索</p>
-<h2 id="1-configtoml-配置" class="headerLink">
-    <a href="#1-configtoml-%e9%85%8d%e7%bd%ae" class="header-mark"></a>1 config.toml 配置</h2><h3 id="11-首先我们配置好-configtoml-的-algolia-的配置" class="headerLink">
-    <a href="#11-%e9%a6%96%e5%85%88%e6%88%91%e4%bb%ac%e9%85%8d%e7%bd%ae%e5%a5%bd-configtoml-%e7%9a%84-algolia-%e7%9a%84%e9%85%8d%e7%bd%ae" class="header-mark"></a>1.1 首先我们配置好 config.toml 的 algolia 的配置</h3><div class="highlight"><div class="chroma">
+                <div class="details-content">
+                    <div class="admonition-content">
+                        本文最后更新于 <span class="timeago" datetime="2021-12-26T21:26:19" title="December 26, 2021">2021-12-26</span>，文中内容可能已过时。</div>
+                </div>
+            </div><p>使用一些简单的 shell 脚本处理自己的 hugo 博客和搜索</p>
+<h2 id="1-configtoml-配置">1 config.toml 配置</h2>
+<h3 id="11-首先我们配置好-configtoml-的-algolia-的配置">1.1 首先我们配置好 config.toml 的 algolia 的配置</h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -231,18 +239,18 @@
           <span class="nx">searchKey</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="2-algolia-配置" class="headerLink">
-    <a href="#2-algolia-%e9%85%8d%e7%bd%ae" class="header-mark"></a>2 Algolia 配置</h2>2.1 登录 <h3 id="21-登录-algolia-官网httpswwwalgoliacom-注册账号创建-application-名为-test01作为举例默认选择-free-即可这里自定义名称" class="headerLink">
-    <a href="#21-%e7%99%bb%e5%bd%95-algolia-%e5%ae%98%e7%bd%91httpswwwalgoliacom-%e6%b3%a8%e5%86%8c%e8%b4%a6%e5%8f%b7%e5%88%9b%e5%bb%ba-application-%e5%90%8d%e4%b8%ba-test01%e4%bd%9c%e4%b8%ba%e4%b8%be%e4%be%8b%e9%bb%98%e8%ae%a4%e9%80%89%e6%8b%a9-free-%e5%8d%b3%e5%8f%af%e8%bf%99%e9%87%8c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%90%8d%e7%a7%b0" class="header-mark"></a><a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer">Algolia 官网</a> ，注册账号，创建 Application 名为 “test01”作为举例，默认选择 “FREE” 即可，这里自定义名称</h3><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627215434095.png" width="800" hegiht="250" align=center/>
-<h3 id="22-我这里选择香港作为存储地区" class="headerLink">
-    <a href="#22-%e6%88%91%e8%bf%99%e9%87%8c%e9%80%89%e6%8b%a9%e9%a6%99%e6%b8%af%e4%bd%9c%e4%b8%ba%e5%ad%98%e5%82%a8%e5%9c%b0%e5%8c%ba" class="header-mark"></a>2.2 我这里选择香港作为存储地区</h3><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627220838802.png" width="800" hegiht="250" align=center /></p>
-<h3 id="23-创建index要与configtoml-的配置-index-一样" class="headerLink">
-    <a href="#23-%e5%88%9b%e5%bb%baindex%e8%a6%81%e4%b8%8econfigtoml-%e7%9a%84%e9%85%8d%e7%bd%ae-index-%e4%b8%80%e6%a0%b7" class="header-mark"></a>2.3 创建index，要与config.toml 的配置 index 一样</h3><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627220936376.png" width="800" hegiht="250" align=center /></p>
-<h3 id="24-将-api-keys-里面补充到-configtoml-里面" class="headerLink">
-    <a href="#24-%e5%b0%86-api-keys-%e9%87%8c%e9%9d%a2%e8%a1%a5%e5%85%85%e5%88%b0-configtoml-%e9%87%8c%e9%9d%a2" class="header-mark"></a>2.4 将 API Keys 里面补充到 config.toml 里面</h3><p><img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627221400836.png" width="800" hegiht="250" align=center /></p>
-<h3 id="25-如何删除不需要的app" class="headerLink">
-    <a href="#25-%e5%a6%82%e4%bd%95%e5%88%a0%e9%99%a4%e4%b8%8d%e9%9c%80%e8%a6%81%e7%9a%84app" class="header-mark"></a>2.5 如何删除不需要的APP</h3><h3 id="251-找到设置界面" class="headerLink">
-    <a href="#251-%e6%89%be%e5%88%b0%e8%ae%be%e7%bd%ae%e7%95%8c%e9%9d%a2" class="header-mark"></a>2.5.1 找到设置界面</h3><p><img
+</div><h2 id="2-algolia-配置">2 Algolia 配置</h2>
+<h3 id="21-登录-algolia-官网httpswwwalgoliacom-注册账号创建-application-名为-test01作为举例默认选择-free-即可这里自定义名称">2.1 登录 <a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer">Algolia 官网</a> ，注册账号，创建 Application 名为 “test01”作为举例，默认选择 “FREE” 即可，这里自定义名称</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627215434095.png" width="800" hegiht="250" align=center/>
+<h3 id="22-我这里选择香港作为存储地区">2.2 我这里选择香港作为存储地区</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627220838802.png" width="800" hegiht="250" align=center />
+<h3 id="23-创建index要与configtoml-的配置-index-一样">2.3 创建index，要与config.toml 的配置 index 一样</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627220936376.png" width="800" hegiht="250" align=center />
+<h3 id="24-将-api-keys-里面补充到-configtoml-里面">2.4 将 API Keys 里面补充到 config.toml 里面</h3>
+<img src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200627221400836.png" width="800" hegiht="250" align=center />
+<h3 id="25-如何删除不需要的app">2.5 如何删除不需要的APP</h3>
+<h3 id="251-找到设置界面">2.5.1 找到设置界面</h3>
+<p><img
         class="lazyload"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135909204.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135909204.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135909204.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135909204.png 2x"
@@ -250,8 +258,8 @@
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135909204.png"
         title="image-20200702135909204"
     /></p>
-<h3 id="252-进入-applications-配置点击-小三点进行删除" class="headerLink">
-    <a href="#252-%e8%bf%9b%e5%85%a5-applications-%e9%85%8d%e7%bd%ae%e7%82%b9%e5%87%bb-%e5%b0%8f%e4%b8%89%e7%82%b9%e8%bf%9b%e8%a1%8c%e5%88%a0%e9%99%a4" class="header-mark"></a>2.5.2 进入 Applications 配置，点击 小三点进行删除</h3><p><img
+<h3 id="252-进入-applications-配置点击-小三点进行删除">2.5.2 进入 Applications 配置，点击 小三点进行删除</h3>
+<p><img
         class="lazyload"
         data-src="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135956072.png"
         data-srcset="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135956072.png, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135956072.png 1.5x, https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135956072.png 2x"
@@ -259,10 +267,10 @@
         alt="https://cdn.jsdelivr.net/gh/ZhaoUncle/image@main/blog/image-20200702135956072.png"
         title="image-20200702135956072"
     /></p>
-3 使用 <h2 id="3-使用-atomic-algoliahttpsgithubcomchrisdmacraeatomic-algolia-来完成自动更新索引" class="headerLink">
-    <a href="#3-%e4%bd%bf%e7%94%a8-atomic-algoliahttpsgithubcomchrisdmacraeatomic-algolia-%e6%9d%a5%e5%ae%8c%e6%88%90%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0%e7%b4%a2%e5%bc%95" class="header-mark"></a><a href="https://github.com/chrisdmacrae/atomic-algolia" target="_blank" rel="noopener noreffer">atomic-algolia</a> 来完成自动更新索引</h2><h3 id="31-首先安装-npm这里不介绍" class="headerLink">
-    <a href="#31-%e9%a6%96%e5%85%88%e5%ae%89%e8%a3%85-npm%e8%bf%99%e9%87%8c%e4%b8%8d%e4%bb%8b%e7%bb%8d" class="header-mark"></a>3.1 首先安装 npm，这里不介绍</h3><h3 id="32-安装-atomic-algolia" class="headerLink">
-    <a href="#32-%e5%ae%89%e8%a3%85-atomic-algolia" class="header-mark"></a>3.2 安装 atomic-algolia</h3><div class="highlight"><div class="chroma">
+<h2 id="3-使用-atomic-algoliahttpsgithubcomchrisdmacraeatomic-algolia-来完成自动更新索引">3 使用 <a href="https://github.com/chrisdmacrae/atomic-algolia" target="_blank" rel="noopener noreffer">atomic-algolia</a> 来完成自动更新索引</h2>
+<h3 id="31-首先安装-npm这里不介绍">3.1 首先安装 npm，这里不介绍</h3>
+<h3 id="32-安装-atomic-algolia">3.2 安装 atomic-algolia</h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -270,8 +278,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">npm -g install atomic-algolia
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="33--创建-env-文件存放-algolia-配置" class="headerLink">
-    <a href="#33--%e5%88%9b%e5%bb%ba-env-%e6%96%87%e4%bb%b6%e5%ad%98%e6%94%be-algolia-%e9%85%8d%e7%bd%ae" class="header-mark"></a>3.3  创建 .env 文件存放 algolia 配置</h3><blockquote>
+</div><h3 id="33--创建-env-文件存放-algolia-配置">3.3  创建 .env 文件存放 algolia 配置</h3>
+<blockquote>
 <p>注意：只有执行<code>hugo</code> 生成静态文件，才会在 public 目录生成index.json 索引。</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -288,8 +296,8 @@
 <span class="nv">ALGOLIA_INDEX_FILE</span><span class="o">=</span><span class="s2">&#34;public/index.json&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="34-创建-push_algolia_jsonjs-脚本" class="headerLink">
-    <a href="#34-%e5%88%9b%e5%bb%ba-push_algolia_jsonjs-%e8%84%9a%e6%9c%ac" class="header-mark"></a>3.4 创建 push_algolia_json.js 脚本</h3><div class="highlight"><div class="chroma">
+</div><h3 id="34-创建-push_algolia_jsonjs-脚本">3.4 创建 push_algolia_json.js 脚本</h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -319,8 +327,8 @@ atomicalgolia(indexName, indexPath, cb)
 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="35-手动执行将索引到-algolia" class="headerLink">
-    <a href="#35-%e6%89%8b%e5%8a%a8%e6%89%a7%e8%a1%8c%e5%b0%86%e7%b4%a2%e5%bc%95%e5%88%b0-algolia" class="header-mark"></a>3.5 手动执行将索引到 algolia</h3><div class="highlight"><div class="chroma">
+</div><h3 id="35-手动执行将索引到-algolia">3.5 手动执行将索引到 algolia</h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -330,9 +338,9 @@ atomicalgolia(indexName, indexPath, cb)
 node push_algolia_json.js
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="4-定制化脚本" class="headerLink">
-    <a href="#4-%e5%ae%9a%e5%88%b6%e5%8c%96%e8%84%9a%e6%9c%ac" class="header-mark"></a>4 定制化脚本</h2>4.1 统一脚本<code>deploy.sh</code>，配合<h3 id="41-统一脚本deploysh配合hugo一github-pages-搭建个人博客httpszhaounclecom202006hugo" class="headerLink">
-    <a href="#41-%e7%bb%9f%e4%b8%80%e8%84%9a%e6%9c%acdeploysh%e9%85%8d%e5%90%88hugo%e4%b8%80github-pages-%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2httpszhaounclecom202006hugo" class="header-mark"></a><a href="https://zhaouncle.com/2020/06/hugo/" target="_blank" rel="noopener noreffer">Hugo（一）Github Pages 搭建个人博客</a></h3><div class="highlight"><div class="chroma">
+</div><h2 id="4-定制化脚本">4 定制化脚本</h2>
+<h3 id="41-统一脚本deploysh配合hugo一github-pages-搭建个人博客httpszhaounclecom202006hugo">4.1 统一脚本<code>deploy.sh</code>，配合<a href="https://zhaouncle.com/2020/06/hugo/" target="_blank" rel="noopener noreffer">Hugo（一）Github Pages 搭建个人博客</a></h3>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -547,17 +555,15 @@ push_zhaouncle<span class="o">(){</span>
             </noscript></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://zhaouncle.github.io" target="_blank" rel="noopener noreferrer">赵叔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
             <div class="footer-line">
-                    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
                         <span class="post-meta-item-icon"><i class="fa fa-eye"></i></span>
                         <span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span>
                     </span></div>
             <div class="footer-line"><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279796942'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279796942%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div>
-            <div class="footer-line">
-            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
