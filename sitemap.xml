@@ -2,15 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://zhaouncle.com/categories/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/tags/memos-%E5%A4%87%E5%BF%98%E5%BD%95/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/categories/memos-%E5%A4%87%E5%BF%98%E5%BD%95/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/tags/nas/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/categories/nas/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/posts/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/tags/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://zhaouncle.com/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://zhaouncle.com/categories/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/tags/memos-%E5%A4%87%E5%BF%98%E5%BD%95/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/categories/memos-%E5%A4%87%E5%BF%98%E5%BD%95/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/memos%E5%A4%87%E5%BF%98%E5%BD%95%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/tags/nas/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/categories/nas/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/posts/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/tags/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://zhaouncle.com/</loc><lastmod>2022-08-20T14:30:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://zhaouncle.com/tags/unraid/</loc><lastmod>2022-02-08T16:13:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://zhaouncle.com/categories/unraid/</loc><lastmod>2022-02-08T16:13:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://zhaouncle.com/unraid%E5%AE%89%E8%A3%85docker-compose/</loc><lastmod>2022-02-08T16:13:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
